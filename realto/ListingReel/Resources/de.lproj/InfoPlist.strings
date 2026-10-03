@@ -1,0 +1,6 @@
+/* System permission prompts. Keep in sync with the English source in project.yml. */
+
+"NSCameraUsageDescription" = "Realto verwendet die Kamera, damit du Rundgang-Clips der Immobilie direkt in der App aufnehmen kannst.";
+"NSMicrophoneUsageDescription" = "Realto verwendet das Mikrofon, um Ton zu deinen Rundgang-Clips aufzunehmen.";
+"NSPhotoLibraryUsageDescription" = "Realto importiert deine Immobilien-Clips und -Fotos und speichert fertige Videos wieder in deiner Mediathek.";
+"NSPhotoLibraryAddUsageDescription" = "Realto speichert deine fertigen Listing-Videos in deiner Fotomediathek.";

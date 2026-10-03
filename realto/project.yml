@@ -1,0 +1,240 @@
+name: ListingReel
+options:
+  bundleIdPrefix: com.adaptiveservices
+  deploymentTarget:
+    iOS: "17.0"
+    macOS: "14.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    DEVELOPMENT_TEAM: "J5WZTVZJ44"
+    CODE_SIGN_STYLE: Automatic
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    TARGETED_DEVICE_FAMILY: "1"
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+packages:
+  Firebase:
+    url: https://github.com/firebase/firebase-ios-sdk
+    from: "12.0.0"
+targets:
+  ListingReel:
+    type: application
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: ListingReel
+        excludes:
+          # Mac Inbox (watched-folder auto-import + background batch export)
+          # is macOS-only by product decision, feature-flagged there too —
+          # excluded here so it doesn't even compile into the iPhone app
+          # (spec §3.7; mirrors the macOS target's Capture exclusion below).
+          - "Domain/MacInbox/**"
+          - "Data/MacInbox/**"
+          - "Presentation/MacInbox/**"
+          # xcodegen only auto-excludes a target's own `info.path` file from
+          # being swept up as a plain resource — not the sibling platform's.
+          # Left in, the macOS Info.plist gets copied verbatim (unexpanded
+          # $(VAR) placeholders and all) into this app's bundle.
+          - "App/Info-macOS.plist"
+    dependencies:
+      - package: Firebase
+        product: FirebaseCore
+      - package: Firebase
+        product: FirebaseCrashlytics
+      - package: Firebase
+        product: FirebaseAnalytics
+    info:
+      path: ListingReel/App/Info.plist
+      properties:
+        CFBundleDisplayName: Realto
+        # Pin these explicitly to the build settings above so project.yml stays
+        # the single source of truth — otherwise XcodeGen can bake in whatever
+        # literal values were already on disk instead of tracking
+        # MARKETING_VERSION / CURRENT_PROJECT_VERSION.
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        # UI strings live in Resources/Localizable.xcstrings (auto-discovered by
+        # the build system); Info.plist permission strings are overridden per
+        # locale by Resources/<lang>.lproj/InfoPlist.strings. This list is what
+        # actually drives the App Store "supported languages" + the in-app
+        # language picker in iOS Settings — keep it in sync with the catalog.
+        CFBundleDevelopmentRegion: en
+        CFBundleLocalizations: [en, es, de, fr, it]
+        UILaunchScreen:
+          UIColorName: ""
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        NSCameraUsageDescription: "Realto uses the camera so you can record property walkthrough clips directly in the app."
+        NSMicrophoneUsageDescription: "Realto uses the microphone to record audio with your walkthrough clips."
+        NSPhotoLibraryUsageDescription: "Realto imports your property clips and photos, and saves finished videos back to your library."
+        NSPhotoLibraryAddUsageDescription: "Realto saves your finished listing videos to your photo library."
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.adaptiveservices.realto
+        GENERATE_INFOPLIST_FILE: NO
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        # Firebase ships static binaries whose Objective-C classes are only
+        # found at runtime; without -ObjC the linker drops FirebaseAnalytics /
+        # GoogleAppMeasurement entirely and no events are ever collected.
+        OTHER_LDFLAGS: ["$(inherited)", "-ObjC"]
+    postbuildScripts:
+      - name: Firebase Crashlytics Upload Symbols
+        script: |
+          # Simulator builds have no real dSYM to upload (Firebase's own guidance
+          # is to skip this script there — it fails trying to read GOOGLE_APP_ID
+          # from a simulator-built Info.plist).
+          if [ "${PLATFORM_NAME}" = "iphonesimulator" ]; then
+            echo "note: Simulator build — skipping Crashlytics symbol upload."
+          elif [ -f "${SRCROOT}/ListingReel/GoogleService-Info.plist" ]; then
+            "${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run"
+          else
+            echo "warning: GoogleService-Info.plist not found — skipping Crashlytics symbol upload. See README."
+          fi
+        inputFiles:
+          - "$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)"
+          - "${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}"
+        # GOOGLE_APP_ID is read from GoogleService-Info.plist at build time, not
+        # hardcoded here — this app's ID is 1:621420780353:ios:8c1c3e639ac80a67071fc0
+  ListingReel-macOS:
+    type: application
+    platform: macOS
+    deploymentTarget: "14.0"
+    sources:
+      - path: ListingReel
+        excludes:
+          # In-app camera capture (F2) is iOS-only in v1 — Mac users import
+          # existing footage rather than film with a laptop camera (spec note).
+          - "Presentation/Capture/**"
+          - "Data/Services/CaptureService.swift"
+          # Firebase isn't linked on this target (FirebaseAnalytics doesn't
+          # support macOS at all; Crashlytics is out of scope for this pass).
+          - "App/AppDelegate.swift"
+          - "GoogleService-Info.plist"
+          # Mirror of the iOS target's exclude below — without it, the iOS
+          # Info.plist gets copied verbatim (unexpanded $(VAR) placeholders
+          # and all) into Contents/Resources, which is exactly what App
+          # Store Connect's validator was rejecting as a bogus nested bundle.
+          - "App/Info.plist"
+    info:
+      path: ListingReel/App/Info-macOS.plist
+      properties:
+        CFBundleDisplayName: Realto
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        CFBundleDevelopmentRegion: en
+        CFBundleLocalizations: [en, es, de, fr, it]
+        LSApplicationCategoryType: public.app-category.productivity
+        NSPhotoLibraryUsageDescription: "Realto imports your property clips and photos, and saves finished videos back to your library."
+        NSPhotoLibraryAddUsageDescription: "Realto saves your finished listing videos to your photo library."
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.adaptiveservices.realto
+        # Target is still named ListingReel-macOS (renaming it is a bigger,
+        # more disruptive change — scheme/test-host references, DerivedData
+        # paths, etc.); PRODUCT_NAME is what actually names the built
+        # Realto.app bundle/binary, independent of the target name.
+        PRODUCT_NAME: Realto
+        # PRODUCT_NAME also drives the Swift module name by default — pinning
+        # it separately keeps `@testable import ListingReel_macOS` (used by
+        # ListingReelMacInboxTests) working regardless of the bundle name.
+        PRODUCT_MODULE_NAME: ListingReel_macOS
+        GENERATE_INFOPLIST_FILE: NO
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        CODE_SIGN_ENTITLEMENTS: ListingReel/App/ListingReel-macOS.entitlements
+        # Same bundle ID as the iOS target (Universal Purchase, spec §7): the
+        # one-time "Unlock Full Version" StoreKit purchase restores on both
+        # platforms under the same Apple ID.
+  ListingReelTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: ListingReelTests
+    dependencies:
+      - target: ListingReel
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.adaptiveservices.realto.tests
+        GENERATE_INFOPLIST_FILE: YES
+        # Hosted by the app so `Bundle.main` resolves to the real ListingReel.app
+        # bundle at test time (Data-layer tests need the real bundled templates,
+        # music, and fixture resources — not the bare xctest runner bundle).
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/ListingReel.app/ListingReel"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+  ListingReelUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: ListingReelUITests
+    dependencies:
+      - target: ListingReel
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.adaptiveservices.realto.uitests
+        GENERATE_INFOPLIST_FILE: YES
+  ListingReelMacInboxTests:
+    # A new, wholly-separate macOS unit-test target for the Mac Inbox feature
+    # — deliberately not folded into `ListingReelTests` (that target is
+    # iOS-only, hosted by the iOS app, and its fixtures are unrelated). Pure
+    # Domain coverage only, same "fast, no device" spirit as `DomainTests.swift`.
+    type: bundle.unit-test
+    platform: macOS
+    deploymentTarget: "14.0"
+    sources:
+      - path: ListingReelMacInboxTests
+    dependencies:
+      - target: ListingReel-macOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.adaptiveservices.realto.macinboxtests
+        GENERATE_INFOPLIST_FILE: YES
+        # Host app bundle/binary are named Realto (PRODUCT_NAME on
+        # ListingReel-macOS), not the target name.
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/Realto.app/Contents/MacOS/Realto"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+  ListingReelMacOSUITests:
+    # macOS mirror of `ListingReelUITests` — drives the real app (not a host
+    # process like the unit-test target above) to capture App Store Connect
+    # screenshot material. Separate target because UI-testing bundles launch
+    # their own XCUIApplication process rather than being hosted in-process.
+    type: bundle.ui-testing
+    platform: macOS
+    deploymentTarget: "14.0"
+    sources:
+      - path: ListingReelMacOSUITests
+    dependencies:
+      - target: ListingReel-macOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.adaptiveservices.realto.macuitests
+        GENERATE_INFOPLIST_FILE: YES
+schemes:
+  ListingReel:
+    build:
+      targets:
+        ListingReel: all
+    run:
+      config: Debug
+      storeKitConfiguration: ListingReel/Resources/ListingReel.storekit
+    test:
+      targets:
+        - ListingReelTests
+        - ListingReelUITests
+  ListingReel-macOS:
+    build:
+      targets:
+        ListingReel-macOS: all
+    run:
+      config: Debug
+      # Same StoreKit config as iOS so the shared "Unlock Full Version"
+      # product is testable on the Mac build too (spec §7).
+      storeKitConfiguration: ListingReel/Resources/ListingReel.storekit
+    test:
+      targets:
+        - ListingReelMacInboxTests
+        - ListingReelMacOSUITests

@@ -1,0 +1,6 @@
+/* System permission prompts. Keep in sync with the English source in project.yml. */
+
+"NSCameraUsageDescription" = "Realto usa la fotocamera per permetterti di registrare i clip del sopralluogo dell'immobile direttamente nell'app.";
+"NSMicrophoneUsageDescription" = "Realto usa il microfono per registrare l'audio insieme ai clip del sopralluogo.";
+"NSPhotoLibraryUsageDescription" = "Realto importa i tuoi clip e le foto dell'immobile e salva i video finiti nella tua libreria.";
+"NSPhotoLibraryAddUsageDescription" = "Realto salva i video degli annunci finiti nella tua libreria foto.";

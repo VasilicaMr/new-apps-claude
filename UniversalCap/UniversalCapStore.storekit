@@ -1,0 +1,25 @@
+{
+  "identifier" : "UniversalCap",
+  "nonConsumableProducts" : [
+    {
+      "displayPrice" : "7.99",
+      "familyShareable" : true,
+      "internalID" : "pro_lifetime",
+      "localizations" : [
+        {
+          "description" : "Unlock unlimited history, iCloud sync, CSV export, and custom categories. One payment, forever.",
+          "displayName" : "UniversalCap Pro",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.universalcap.app.pro_lifetime",
+      "referenceName" : "Pro Lifetime",
+      "type" : "NonConsumable"
+    }
+  ],
+  "version" : {
+    "major" : 2,
+    "minor" : 0,
+    "patch" : 0
+  }
+}

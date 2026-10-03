@@ -1,0 +1,25 @@
+{
+  "identifier" : "A1B2C3D4-E5F6-7890-ABCD-EF1234567890",
+  "nonConsumableIAPs" : [
+    {
+      "displayName" : "ScoreCap Premium",
+      "displayPrice" : "2.99",
+      "familyShareable" : false,
+      "internalID" : "1001",
+      "localizations" : [
+        {
+          "description" : "Unlock unlimited session history, full player leaderboards, and widget support.",
+          "displayName" : "ScoreCap Premium",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.yourapp.sportscore.premium",
+      "referenceName" : "ScoreCap Premium",
+      "type" : "NonConsumable"
+    }
+  ],
+  "version" : {
+    "major" : 2,
+    "minor" : 0
+  }
+}

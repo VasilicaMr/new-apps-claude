@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!--
+	First-party privacy manifest for the ListingReel (Realto) app target.
+	Firebase's own SDKs (FirebaseAnalytics, FirebaseCrashlytics, FirebaseCore)
+	ship their own bundled PrivacyInfo.xcprivacy files describing what THEY
+	collect/access — this file only covers APIs our own app code calls
+	directly and data our own code collects (none, currently).
+	-->
+	<key>NSPrivacyTracking</key>
+	<false/>
+	<key>NSPrivacyTrackingDomains</key>
+	<array/>
+	<key>NSPrivacyCollectedDataTypes</key>
+	<array/>
+	<key>NSPrivacyAccessedAPITypes</key>
+	<array>
+		<dict>
+			<!--
+			File timestamp API: AVVideoCompositionService reads
+			FileManager.attributesOfItem(atPath:) on the exported video file
+			(inside the app's own sandbox) to report its size to the user in
+			ExportStepView — never on files outside our own container.
+			-->
+			<key>NSPrivacyAccessedAPIType</key>
+			<string>NSPrivacyAccessedAPICategoryFileTimestamp</string>
+			<key>NSPrivacyAccessedAPITypeReasons</key>
+			<array>
+				<string>DDA9.1</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>
