@@ -6,7 +6,11 @@ enum AppTheme {
         static let accent = Color.blue
         static let destructive = Color.red
         static let success = Color.green
+        #if os(tvOS)
+        static let scoreCard = Color.white.opacity(0.08)
+        #else
         static let scoreCard = Color(.secondarySystemBackground)
+        #endif
     }
 
     // MARK: - Typography

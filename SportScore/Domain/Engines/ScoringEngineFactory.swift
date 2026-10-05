@@ -51,6 +51,7 @@ final class ScoringEngineFactory: Sendable {
         case .foosball:         return FoosballScoringEngine()
         case .pinball:          return PinballScoringEngine()
         case .armWrestling:     return ArmWrestlingScoringEngine()
+        case .houseGame:        return HouseGameScoringEngine()
         }
     }
 }

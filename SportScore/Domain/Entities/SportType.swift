@@ -66,6 +66,9 @@ enum SportType: String, CaseIterable, Identifiable, Codable, Sendable {
     case pinball
     case armWrestling
 
+    // Home & custom games (rules come from the session's HouseGame config)
+    case houseGame
+
     var id: String { rawValue }
 
     var displayName: String {
@@ -118,6 +121,7 @@ enum SportType: String, CaseIterable, Identifiable, Codable, Sendable {
         case .foosball:        return "Foosball"
         case .pinball:         return "Pinball"
         case .armWrestling:    return "Arm Wrestling"
+        case .houseGame:       return "Home Game"
         }
     }
 
@@ -171,6 +175,7 @@ enum SportType: String, CaseIterable, Identifiable, Codable, Sendable {
         case .foosball:        return "figure.soccer"
         case .pinball:         return "circle.grid.cross.fill"
         case .armWrestling:    return "figure.strengthtraining.traditional"
+        case .houseGame:       return "star.fill"
         }
     }
 
@@ -196,6 +201,8 @@ enum SportType: String, CaseIterable, Identifiable, Codable, Sendable {
             return .iceOutdoor
         case .airHockey, .foosball, .pinball, .armWrestling:
             return .pubParlour
+        case .houseGame:
+            return .cardTile
         }
     }
 
@@ -251,6 +258,7 @@ enum SportCategory: String, CaseIterable, Identifiable, Sendable {
     }
 
     var sports: [SportType] {
-        SportType.allCases.filter { $0.category == self }
+        // Home games are listed from HouseGameCatalog, not as a sport.
+        SportType.allCases.filter { $0.category == self && $0 != .houseGame }
     }
 }

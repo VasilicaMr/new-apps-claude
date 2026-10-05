@@ -1,0 +1,71 @@
+name: CouchScore
+
+options:
+  bundleIdPrefix: com.adaptiveservices
+  deploymentTarget:
+    tvOS: "18.0"
+  createIntermediateGroups: true
+  xcodeVersion: "16.4"
+  generateEmptyDirectories: false
+  defaultConfig: Debug
+
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    TVOS_DEPLOYMENT_TARGET: "18.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+    ENABLE_PREVIEWS: YES
+
+targets:
+
+  # ─────────────────────────────────────────
+  # tvOS App
+  # ─────────────────────────────────────────
+  CouchScore:
+    type: application
+    platform: tvOS
+    deploymentTarget: "18.0"
+
+    sources:
+      - path: App
+      - path: Models
+      - path: Store
+      - path: Theme
+      - path: Views
+      - path: Resources
+
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.adaptiveservices.couchscore
+        PRODUCT_NAME: CouchScore
+        INFOPLIST_KEY_CFBundleDisplayName: Couch Score
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.board-games
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UIUserInterfaceStyle: Dark
+        ASSETCATALOG_COMPILER_APPICON_NAME: "App Icon & Top Shelf Image"
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: J5WZTVZJ44
+        SWIFT_EMIT_LOC_STRINGS: YES
+      configs:
+        Debug:
+          SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG
+          SWIFT_OPTIMIZATION_LEVEL: "-Onone"
+        Release:
+          SWIFT_OPTIMIZATION_LEVEL: "-O"
+          VALIDATE_PRODUCT: YES
+
+schemes:
+  CouchScore:
+    build:
+      targets:
+        CouchScore: all
+    run:
+      config: Debug
+    profile:
+      config: Release
+    archive:
+      config: Release

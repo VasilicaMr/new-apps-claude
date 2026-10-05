@@ -1,6 +1,6 @@
 # SportScore — Product & Technical Requirements
 
-**Platform**: iOS 26+  
+**Platform**: iOS 26+ (iPhone, iPad) · tvOS 26+ (Apple TV)  
 **Language**: Swift 6  
 **UI**: SwiftUI  
 **Architecture**: Clean Architecture + Coordinator Pattern  
@@ -23,6 +23,9 @@
 8. [Widget Extension](#8-widget-extension)
 9. [iOS 26 Specific Features](#9-ios-26-specific-features)
 10. [Feature Requirements by Sport](#10-feature-requirements-by-sport)
+11. [Apple TV App](#11-apple-tv-app)
+
+The full list of games players can pick (48 sports, 38 home games, custom games) is in [`games.md`](games.md#games-playable-in-scorecap).
 
 ---
 
@@ -120,6 +123,17 @@ SportScore/
 │   └── Stats/
 │       ├── StatsView.swift
 │       └── StatsViewModel.swift
+│
+├── TV/                                Apple TV presentation layer (shares Domain/Data/Core/view models)
+│   ├── App/                           ScoreCapTVApp, TVAppCoordinator + TVRootView (tabs)
+│   └── Presentation/
+│       ├── Components/                TVTheme (tokens), TVGrid (eager grid), TVNumberPadView
+│       ├── Home/                      Play tab: Your Games, Home Game Night, Sports
+│       ├── HomeGames/                 Custom game editor, CustomGamesViewModel
+│       ├── Session/                   Setup, full-screen scoreboard, per-sport entry views
+│       ├── Plans/  History/  Players/  Stats/  Premium/
+│
+├── TVUITests/                         Siri Remote UI tests for every Apple TV screen and pop-up
 │
 └── WidgetExtension/
     ├── SportScoreWidget.swift
@@ -1136,6 +1150,9 @@ NavigationStack(path: $coordinator.navigationPath) {
 | F-18 | No login, no account required |
 | F-19 | Dark mode + Dynamic Type fully supported |
 | F-20 | iPad layout: sidebar + detail column |
+| F-21 | Home games: 38 built-in card, board, party and video games with default rules |
+| F-22 | Custom games: name, icon, winner rule (highest / lowest / count down), scoring style (tally / points), target or start score |
+| F-23 | Apple TV app: every screen and pop-up fully usable with the Siri Remote (see §11) |
 
 ### Sport-Specific Requirements
 
@@ -1180,12 +1197,70 @@ NavigationStack(path: $coordinator.navigationPath) {
 
 ---
 
+## 11. Apple TV App
+
+Target `SportScoreTV` (product name ScoreCap, same bundle ID as iOS for a universal purchase). Only `TV/` is tvOS-specific; Domain, Data, Core and the view models are shared with iOS.
+
+### Screen map
+
+| Tab / screen | What's on it | Pop-ups |
+|---|---|---|
+| **Play** (home) | Continue banner, Your Games (Create Custom Game + saved games), Home Game Night (4 categories), Sports (8 categories) | Context menu on a tile (hold Select): Play / Edit / Delete for custom games, Customize Rules… for home games; delete confirmation alert |
+| Custom game editor | Left: preview tile, Save & Play, Save, Delete Game. Right: name, icon, winner, scoring, target/start pickers | Picker lists, delete confirmation alert |
+| Setup | Left: game info, Edit Game / Customize Rules…, Variant picker, Start. Right: players list, Add new player… | New Player alert (text field), Variant menu |
+| Scoreboard (full screen) | Header: Undo, End game / Show result. Tally games: one card per player. Turn games: player strip, entry panel, Switch player | End game menu, player card context menu (−1, Add points…, Undo), number pad, Game Over overlay (View Results, Undo last, See scores, Done) |
+| Results | Summary + Resume game, match info and final scores | — |
+| **Plans** | New Plan, plan cards with a 26-week habit grid | Plan editor sheet, card context menu (Edit / Delete) |
+| **History** | Past games, locked row (free tier) | Row context menu (Delete), Paywall sheet |
+| **Players** | Add player, player list | New Player alert, row context menu (Delete) |
+| **Stats** | Leaderboard (Premium) and per-game lists side by side | Paywall sheet |
+
+### Focus rules (Siri Remote)
+
+The tvOS focus engine only moves to an item that lies in the direction pressed. These rules keep every button reachable:
+
+1. **Two-column screens** (editor, setup, stats, scoreboard panel): each column is a `.focusSection()`, so left/right always lands in the other column even when the buttons sit at the bottom and the list starts at the top.
+2. **Grids use `TVGrid`, never `LazyVGrid`**: a lazy grid doesn't create off-screen tiles, so pressing down finds nothing (this blocked the home screen below "Create Custom Game"). Each home section is also a focus section, so up/down works from any column.
+3. **Header rows** (scoreboard Undo / End game) are focus sections, so up from the score buttons reaches them.
+4. **Overlays drawn by the app** (Game Over) disable the content behind them and focus their main button; the number pad starts on "1" and is opaque.
+5. Context menus and `Menu`s are drawn by tvOS, open with their first item focused, and close with Menu.
+
+### Theme
+
+`TVTheme` (`TV/Presentation/Components/TVTheme.swift`) holds the tokens; every colour adapts to the TV's Light/Dark appearance.
+
+| Token | Use |
+|---|---|
+| `Radius.button` 18 | All bordered / prominent buttons, applied app-wide with `.tvThemed()` (rounded rectangle, never capsule) |
+| `Radius.tile` 16 · `panel` 36 · `sheet` 44 | Player chips and score cards · entry panel and score banners · number pad and Game Over |
+| `Colors.surface` / `outline` | Inactive tiles, empty habit squares, snooker "free ball" tile |
+| `Colors.scoreboardTop/Bottom` | Scoreboard gradient (light blue in light mode, navy in dark mode) |
+| `Colors.popup` / `scrim` | Opaque pop-up background / dimming behind overlays |
+
+Game tiles use the system `.card` style; list rows keep the plain system selection (no extra shape). The accent colour comes from the `AccentColor` asset (green).
+
+### UI tests
+
+`TVUITests/` drives the app with `XCUIRemote` like a user: it moves focus with the arrows, asserts what is focused, and opens every alert, sheet, menu and overlay. The app is launched with `--uitesting`, which uses an in-memory database and an empty plans store.
+
+```bash
+xcodegen generate
+xcodebuild test -project SportScore.xcodeproj -scheme SportScoreTV \
+  -destination 'platform=tvOS Simulator,name=Apple TV 4K (3rd generation)'
+# Screenshots of every screen (also attached to the .xcresult):
+TEST_RUNNER_SCREENSHOT_DIR=/tmp/scorecap-shots xcodebuild test ... \
+  -only-testing:SportScoreTVUITests/TVScreenshotTests
+```
+
+---
+
 ## Deployment Target
 
 - **Minimum iOS version**: iOS 26.0
+- **Minimum tvOS version**: tvOS 26.0 (Apple TV app)
 - **Swift version**: Swift 6 (strict concurrency)
 - **Xcode**: Xcode 18+
-- **Supported devices**: iPhone (all sizes) + iPad
+- **Supported devices**: iPhone (all sizes) + iPad + Apple TV (HD and 4K)
 - **Orientations**: Portrait primary; Landscape supported for Live Score view
 
 ---

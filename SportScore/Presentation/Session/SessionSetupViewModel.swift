@@ -4,6 +4,8 @@ import Foundation
 @MainActor
 final class SessionSetupViewModel {
     let sport: SportType
+    /// Rules snapshot for home/custom games, stored with the session.
+    let configJSON: Data?
     var selectedVariant: String
     var selectedPlayers: [Player] = []
     var allPlayers: [Player] = []
@@ -14,8 +16,9 @@ final class SessionSetupViewModel {
     private let fetchPlayers: FetchPlayersUseCase
     private let createPlayer: CreatePlayerUseCase
 
-    init(sport: SportType, startSession: StartSessionUseCase, fetchPlayers: FetchPlayersUseCase, createPlayer: CreatePlayerUseCase) {
+    init(sport: SportType, configJSON: Data? = nil, startSession: StartSessionUseCase, fetchPlayers: FetchPlayersUseCase, createPlayer: CreatePlayerUseCase) {
         self.sport = sport
+        self.configJSON = configJSON
         self.startSession = startSession
         self.fetchPlayers = fetchPlayers
         self.createPlayer = createPlayer
@@ -59,8 +62,9 @@ final class SessionSetupViewModel {
         do {
             let session = try await startSession.execute(
                 sport: sport,
-                variant: selectedVariant,
-                players: selectedPlayers
+                variant: configJSON == nil ? selectedVariant : nil,
+                players: selectedPlayers,
+                configJSON: configJSON
             )
             return session.id
         } catch {

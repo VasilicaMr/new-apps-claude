@@ -1,8 +1,62 @@
 # SportScore — Game Catalog
 
-**Total sports**: 49 (Pool cross-listed in Cue Sports and Pub/Parlour — one engine, two categories)  
-**Total categories**: 8  
+**What you can play in ScoreCap** (iPhone, iPad and Apple TV):
+
+| Group | Count | Scored by |
+|---|---|---|
+| Sports | 48 (8 categories) | One engine per sport, see the index below |
+| Home games | 38 (4 categories) | `HouseGameScoringEngine` with each game's default rules |
+| Custom games | Unlimited | `HouseGameScoringEngine` with the family's own rules |
+
 **Engine protocol**: `ScoringEngine` — see `sportscore.md §7`
+
+---
+
+## Games playable in ScoreCap
+
+This is the list players see on the Play screen, in the same order.
+
+### Your Games (custom)
+
+- **Create Custom Game**: any game not listed below. Pick a name, an icon and the rules:
+  - **Winner**: highest score wins, lowest score wins, or count down to zero (darts style)
+  - **Scoring**: click a player for +1 (tally), or enter points each turn
+  - **Play to / Game ends at / Start at**: optional target (3 – 10,000) or start score (101 – 1001)
+- Any home game below can be opened with **Customize Rules…** (hold Select on Apple TV), which saves an editable copy to Your Games and leaves the original untouched.
+
+### Home Game Night — 38 games (`HouseGameCatalog`)
+
+| Card Games | Board Games | Party Games | Video Games |
+|---|---|---|---|
+| Uno — first to 500 | Monopoly — tally | Charades — tally | Video Game Wins — tally |
+| Hearts — ends at 100, lowest wins | Catan — first to 10 | Pictionary — tally | Racing Cup — points |
+| Spades — first to 500 | Ticket to Ride — points | Taboo — points | Fighting Tournament — tally |
+| Rummy 500 — first to 500 | Yahtzee — points | Heads Up! — points | Sports Video Game — tally |
+| Gin Rummy — first to 100 | Clue — tally | Codenames — tally | Party Video Game — points |
+| Euchre — first to 10 | Sorry! — tally | Apples to Apples — first to 7 | |
+| Pinochle — first to 1500 | Trivial Pursuit — first to 6 | Trivia Night — tally | |
+| Canasta — first to 5000 | Risk — tally | Jenga — tally | |
+| Phase 10 — lowest wins | Boggle — points | Bingo — tally | |
+| Crazy Eights — first to 100 | Connect 4 — tally | Beer Pong — first to 10 | |
+| Skip-Bo — tally | Battleship — tally | | |
+| Go Fish — tally | | | |
+
+*Tally* = click a player to give them +1 (rounds, wins, victory points); *points* = players take turns entering their points with presets or the number pad. Games without a target are ended from **End game** on the scoreboard.
+
+### Sports — 48 sports (`SportType`, grouped by `SportCategory`)
+
+| Category | Sports | Variants offered at setup |
+|---|---|---|
+| Precision & Aiming (7) | Darts, Archery, Sport Shooting, Axe Throwing, Knife Throwing, Slingshot, Blowgun | Darts: 501, 301, Cricket, Around The Clock, Shanghai |
+| Cue Sports (4) | Pool / Billiards, Snooker, Carom Billiards, Cushion Caroms | Pool: 8-Ball, 9-Ball, 10-Ball, Straight Pool, One Pocket |
+| Bowling (9) | Ten-Pin, Nine-Pin, Candlepin, Duckpin Bowling, Bocce Ball, Pétanque, Boules, Lawn Bowls, Skittles | — |
+| Racket (7) | Table Tennis, Badminton, Squash, Racquetball, Tennis, Padel, Pickleball | Tennis: best of 3/5 · Table Tennis: best of 3/5/7 · Squash: PAR, HiHo · Pickleball: singles, doubles |
+| Card & Tile (4) | Dominoes, Mahjong, Cribbage, Poker (Tournament) | Dominoes: Draw, Block, Mexican Train, All Fives · Mahjong: Chinese, Japanese, American · Poker: Freezeout, Rebuy, Bounty |
+| Mind Sports (5) | Chess, Checkers, Go, Backgammon, Scrabble | Chess: Standard, Chess960 · Checkers: 8×8, 10×10, 12×12 · Go: 9×9, 13×13, 19×19 |
+| Ice & Outdoor (8) | Curling, Horseshoes, Cornhole, Ring Toss, Disc Golf, Kubb, Croquet, Shuffleboard | Croquet: Association, Golf Croquet |
+| Pub & Parlour (4) | Air Hockey, Foosball, Pinball, Arm Wrestling | — |
+
+Pool is listed once in the app (Cue Sports); the pub setup is the same engine with the 8-Ball variant.
 
 ---
 
@@ -867,6 +921,9 @@ enum SportType: String, CaseIterable, Identifiable, Codable {
     case pinball
     case armWrestling
 
+    // Home & custom games (rules stored in the session's configJSON)
+    case houseGame
+
     var id: String { rawValue }
 }
 ```
@@ -897,6 +954,8 @@ extension SportType {
             return .iceOutdoor
         case .airHockey, .foosball, .pinball, .armWrestling:
             return .pubParlour
+        case .houseGame:
+            return .cardTile // not shown in the sports grid; home games come from HouseGameCatalog
         }
     }
 }
@@ -921,8 +980,9 @@ enum SportCategory: String, CaseIterable {
 // BocceScoringEngine      →  bocce, petanque, boules
 // CaromScoringEngine      →  caroms, cushionCaroms
 // PoolScoringEngine       →  pool (all variants + pub context)
+// HouseGameScoringEngine  →  houseGame (all 38 home games and every custom game)
 ```
 
 ---
 
-*Generated from `sportscore.md`. Total unique `SportType` cases: 48. Pool serves both Cue Sports and Pub/Parlour via category tag.*
+*Generated from `sportscore.md`. `SportType` has 48 sport cases plus `.houseGame`, which scores the 38 home games and all custom games. Pool serves both Cue Sports and Pub/Parlour via category tag.*

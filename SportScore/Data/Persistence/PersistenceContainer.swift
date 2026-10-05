@@ -7,12 +7,16 @@ enum PersistenceContainer {
             PlayerModel.self,
             GameSessionModel.self,
             ScoreFrameModel.self,
-            ScoreEntryModel.self
+            ScoreEntryModel.self,
+            CustomGameModel.self
         ])
         #if DEBUG
+        // UI tests start from an empty, throwaway store.
+        let isUITesting = ProcessInfo.processInfo.arguments.contains("--uitesting")
         let config = ModelConfiguration(
             "SportScore",
             schema: schema,
+            isStoredInMemoryOnly: isUITesting,
             groupContainer: .none,
             cloudKitDatabase: .none
         )

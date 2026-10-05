@@ -1,3 +1,4 @@
+#if os(iOS)
 import UIKit
 
 @MainActor
@@ -22,3 +23,15 @@ enum Haptics {
         generator.selectionChanged()
     }
 }
+#else
+/// Apple TV has no haptics; keeps shared view models platform-neutral.
+@MainActor
+enum Haptics {
+    enum FeedbackStyle { case light, medium, heavy, soft, rigid }
+
+    static func impact(_ style: FeedbackStyle = .medium) {}
+    static func error() {}
+    static func success() {}
+    static func selection() {}
+}
+#endif

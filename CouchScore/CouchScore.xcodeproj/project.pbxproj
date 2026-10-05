@@ -1,0 +1,455 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0974A75356B8D3A40EE5D829 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E17ECCABE3D4AC22E62266 /* Palette.swift */; };
+		1825F5FB33D86EDDB4AFABFF /* GameCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7EFE84E1A4504FEBD9D8FB /* GameCatalog.swift */; };
+		1AF8CA2A3DD8E8D16C99AA56 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E146B5B437239A94CDAF1DAC /* HistoryView.swift */; };
+		2F8552CBBDA08090BD4DC7DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE04763B834E9C1716301B71 /* Assets.xcassets */; };
+		33A200862FD4C797905A57E6 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ACECC9DB29DC6BDF526942 /* AppStore.swift */; };
+		3D63F8ECBFDB44AA12011C65 /* ScoreboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0DC26CF31EFA9A486453FF /* ScoreboardView.swift */; };
+		5C8472DCCBA83B6F8D90961B /* CouchScoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A959244A861CD43DD2778356 /* CouchScoreApp.swift */; };
+		67949CA18BEA7F331057F283 /* GameDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA83262405BFC01386A8BCC /* GameDefinition.swift */; };
+		7EA3876FB823923B1461C736 /* PlayersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6782F9828176EF681D1FAECF /* PlayersView.swift */; };
+		9F7581A6FFE6AD790AEB09ED /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01C36B02ABDF90B3DDD4876 /* PlayView.swift */; };
+		B3466C99AB6DF6FE0846700F /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD5633B243DE5BA93BDACF5 /* ResultsView.swift */; };
+		B4B51B14ACBB130571310669 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7365361E407E0B98ADAF9D78 /* Match.swift */; };
+		C587F4DB1C6AC90CEEF66897 /* MatchSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F23A725723170C09E76F4E /* MatchSetupView.swift */; };
+		C986301646E7B406A34434EE /* PointsPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7359DE22BC930B5BB9E20AEA /* PointsPadView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4D7EFE84E1A4504FEBD9D8FB /* GameCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCatalog.swift; sourceTree = "<group>"; };
+		6782F9828176EF681D1FAECF /* PlayersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersView.swift; sourceTree = "<group>"; };
+		7359DE22BC930B5BB9E20AEA /* PointsPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsPadView.swift; sourceTree = "<group>"; };
+		7365361E407E0B98ADAF9D78 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		8DD5633B243DE5BA93BDACF5 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
+		9030A0B5DEF6FB1D5F692E26 /* CouchScore.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = CouchScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		92E17ECCABE3D4AC22E62266 /* Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
+		A1F23A725723170C09E76F4E /* MatchSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchSetupView.swift; sourceTree = "<group>"; };
+		A959244A861CD43DD2778356 /* CouchScoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouchScoreApp.swift; sourceTree = "<group>"; };
+		C01C36B02ABDF90B3DDD4876 /* PlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayView.swift; sourceTree = "<group>"; };
+		C6ACECC9DB29DC6BDF526942 /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
+		CA0DC26CF31EFA9A486453FF /* ScoreboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardView.swift; sourceTree = "<group>"; };
+		CDA83262405BFC01386A8BCC /* GameDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDefinition.swift; sourceTree = "<group>"; };
+		E146B5B437239A94CDAF1DAC /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		EE04763B834E9C1716301B71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		1AE403C6E85474C41A560C85 = {
+			isa = PBXGroup;
+			children = (
+				E6A6EA28CA54070DBC3E5CE1 /* App */,
+				5E03D7BE339127C2C6ACA65E /* Models */,
+				1FE5762F39015255F196B9E5 /* Resources */,
+				57CF3CF15C4ED2DBCC97F994 /* Store */,
+				FB55E8007D5885A12D17A0EE /* Theme */,
+				78164D686DC34D2B96B310AA /* Views */,
+				4A33880D1C4554BA2595AC8B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1E9D831A0E8A633F7F47E4F9 /* Play */ = {
+			isa = PBXGroup;
+			children = (
+				C01C36B02ABDF90B3DDD4876 /* PlayView.swift */,
+			);
+			path = Play;
+			sourceTree = "<group>";
+		};
+		1FE5762F39015255F196B9E5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EE04763B834E9C1716301B71 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		260A7F6FCCDE81140012018D /* History */ = {
+			isa = PBXGroup;
+			children = (
+				E146B5B437239A94CDAF1DAC /* HistoryView.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		4A33880D1C4554BA2595AC8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9030A0B5DEF6FB1D5F692E26 /* CouchScore.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		55B72A39D355194B4F4DCF82 /* Players */ = {
+			isa = PBXGroup;
+			children = (
+				6782F9828176EF681D1FAECF /* PlayersView.swift */,
+			);
+			path = Players;
+			sourceTree = "<group>";
+		};
+		57CF3CF15C4ED2DBCC97F994 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				C6ACECC9DB29DC6BDF526942 /* AppStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		5D80A910BDD46BDAE0E89EAE /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				A1F23A725723170C09E76F4E /* MatchSetupView.swift */,
+			);
+			path = Setup;
+			sourceTree = "<group>";
+		};
+		5E03D7BE339127C2C6ACA65E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4D7EFE84E1A4504FEBD9D8FB /* GameCatalog.swift */,
+				CDA83262405BFC01386A8BCC /* GameDefinition.swift */,
+				7365361E407E0B98ADAF9D78 /* Match.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		78164D686DC34D2B96B310AA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				260A7F6FCCDE81140012018D /* History */,
+				1E9D831A0E8A633F7F47E4F9 /* Play */,
+				55B72A39D355194B4F4DCF82 /* Players */,
+				D69BB3ECAD705760FBF34536 /* Scoreboard */,
+				5D80A910BDD46BDAE0E89EAE /* Setup */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D69BB3ECAD705760FBF34536 /* Scoreboard */ = {
+			isa = PBXGroup;
+			children = (
+				7359DE22BC930B5BB9E20AEA /* PointsPadView.swift */,
+				8DD5633B243DE5BA93BDACF5 /* ResultsView.swift */,
+				CA0DC26CF31EFA9A486453FF /* ScoreboardView.swift */,
+			);
+			path = Scoreboard;
+			sourceTree = "<group>";
+		};
+		E6A6EA28CA54070DBC3E5CE1 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A959244A861CD43DD2778356 /* CouchScoreApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		FB55E8007D5885A12D17A0EE /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				92E17ECCABE3D4AC22E62266 /* Palette.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		66AB93BD1DC57C3A7E4B68E0 /* CouchScore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1102C6E622B56A67D9163E65 /* Build configuration list for PBXNativeTarget "CouchScore" */;
+			buildPhases = (
+				1422C58B0CDC05F680A1D2B8 /* Sources */,
+				37E0122E28514A065A572F5A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CouchScore;
+			productName = CouchScore;
+			productReference = 9030A0B5DEF6FB1D5F692E26 /* CouchScore.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		382566E57B08B928367262D7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					66AB93BD1DC57C3A7E4B68E0 = {
+						DevelopmentTeam = J5WZTVZJ44;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 6CC92052C71707BB0DFEBD62 /* Build configuration list for PBXProject "CouchScore" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 1AE403C6E85474C41A560C85;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				66AB93BD1DC57C3A7E4B68E0 /* CouchScore */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		37E0122E28514A065A572F5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F8552CBBDA08090BD4DC7DB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1422C58B0CDC05F680A1D2B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33A200862FD4C797905A57E6 /* AppStore.swift in Sources */,
+				5C8472DCCBA83B6F8D90961B /* CouchScoreApp.swift in Sources */,
+				1825F5FB33D86EDDB4AFABFF /* GameCatalog.swift in Sources */,
+				67949CA18BEA7F331057F283 /* GameDefinition.swift in Sources */,
+				1AF8CA2A3DD8E8D16C99AA56 /* HistoryView.swift in Sources */,
+				B4B51B14ACBB130571310669 /* Match.swift in Sources */,
+				C587F4DB1C6AC90CEEF66897 /* MatchSetupView.swift in Sources */,
+				0974A75356B8D3A40EE5D829 /* Palette.swift in Sources */,
+				9F7581A6FFE6AD790AEB09ED /* PlayView.swift in Sources */,
+				7EA3876FB823923B1461C736 /* PlayersView.swift in Sources */,
+				C986301646E7B406A34434EE /* PointsPadView.swift in Sources */,
+				B3466C99AB6DF6FE0846700F /* ResultsView.swift in Sources */,
+				3D63F8ECBFDB44AA12011C65 /* ScoreboardView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		25C8D9927A184A93B57F8A38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				TVOS_DEPLOYMENT_TARGET = 18.0;
+			};
+			name = Release;
+		};
+		3643F047D2AF475D862F2036 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J5WZTVZJ44;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Couch Score";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.board-games";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adaptiveservices.couchscore;
+				PRODUCT_NAME = CouchScore;
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 18.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5705653C318F5B30EC7747BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J5WZTVZJ44;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Couch Score";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.board-games";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adaptiveservices.couchscore;
+				PRODUCT_NAME = CouchScore;
+				SDKROOT = appletvos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 18.0;
+			};
+			name = Debug;
+		};
+		F2ADA0173A30910C79F54182 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				TVOS_DEPLOYMENT_TARGET = 18.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1102C6E622B56A67D9163E65 /* Build configuration list for PBXNativeTarget "CouchScore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5705653C318F5B30EC7747BF /* Debug */,
+				3643F047D2AF475D862F2036 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6CC92052C71707BB0DFEBD62 /* Build configuration list for PBXProject "CouchScore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2ADA0173A30910C79F54182 /* Debug */,
+				25C8D9927A184A93B57F8A38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 382566E57B08B928367262D7 /* Project object */;
+}
