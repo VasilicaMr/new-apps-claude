@@ -41,7 +41,6 @@ enum HouseGameCatalog {
         game("Trivia Night", "questionmark.bubble.fill", .party, .highestWins, .tally),
         game("Jenga", "square.stack.3d.up.fill", .party, .highestWins, .tally),
         game("Bingo", "circle.grid.3x3", .party, .highestWins, .tally),
-        game("Beer Pong", "cup.and.saucer.fill", .party, .highestWins, .tally, target: 10),
 
         // Video games
         game("Video Game Wins", "gamecontroller.fill", .video, .highestWins, .tally),

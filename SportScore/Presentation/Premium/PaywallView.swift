@@ -2,13 +2,14 @@ import SwiftUI
 
 struct PaywallView: View {
     @Environment(\.dismiss) private var dismiss
+    /// Set when shown at the end of the tutorial: called instead of `dismiss`, and after a purchase.
+    var onClose: (() -> Void)?
     private let premium = PremiumManager.shared
 
     private let features: [(String, String)] = [
         ("clock.badge.checkmark.fill", "Unlimited session history"),
         ("chart.bar.fill", "Full stats & player leaderboards"),
         ("rectangle.3.group.fill", "Widget on your Home Screen"),
-        ("icloud.fill", "Never lose your data"),
     ]
 
     var body: some View {
@@ -25,7 +26,7 @@ struct PaywallView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Not now") { dismiss() }
+                    Button("Not now") { close() }
                 }
             }
             .alert("Purchase Error", isPresented: Binding(
@@ -36,7 +37,14 @@ struct PaywallView: View {
             } message: {
                 Text(premium.purchaseError ?? "")
             }
+            .onChange(of: premium.isPremium) { _, isPremium in
+                if isPremium, onClose != nil { close() }
+            }
         }
+    }
+
+    private func close() {
+        if let onClose { onClose() } else { dismiss() }
     }
 
     private var headerSection: some View {

@@ -1,0 +1,34 @@
+[
+  {
+    "segment": "economy",
+    "firstYearRate": 0.18,
+    "annualRate": 0.11,
+    "expectedAnnualKm": 25000,
+    "mileageAdjustmentPer10kKm": 0.025,
+    "residualFloorRate": 0.12
+  },
+  {
+    "segment": "sedan",
+    "firstYearRate": 0.2,
+    "annualRate": 0.12,
+    "expectedAnnualKm": 30000,
+    "mileageAdjustmentPer10kKm": 0.02,
+    "residualFloorRate": 0.12
+  },
+  {
+    "segment": "suv",
+    "firstYearRate": 0.19,
+    "annualRate": 0.11,
+    "expectedAnnualKm": 25000,
+    "mileageAdjustmentPer10kKm": 0.02,
+    "residualFloorRate": 0.15
+  },
+  {
+    "segment": "van",
+    "firstYearRate": 0.16,
+    "annualRate": 0.1,
+    "expectedAnnualKm": 30000,
+    "mileageAdjustmentPer10kKm": 0.015,
+    "residualFloorRate": 0.1
+  }
+]

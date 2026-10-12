@@ -11,7 +11,7 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
     ) -> Bool {
-        FirebaseApp.configure()
+//        FirebaseApp.configure()
 
         #if DEBUG
         // Verifies the Analytics pipeline end to end: launch with

@@ -52,8 +52,7 @@ struct MusicStepView: View {
                     .foregroundStyle(selected ? Theme.Palette.accent : Theme.Palette.textSecondary)
             }
             .padding(Theme.Spacing.m)
-            .background(Theme.Palette.surface)
-            .clipShape(RoundedRectangle(cornerRadius: Theme.Radius.control))
+            .cardSurface(radius: Theme.Radius.control)
         }
     }
 }

@@ -1,6 +1,123 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Add your walkthrough clips" : {
+      "comment" : "Home empty state: one of three steps to make a listing video",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add your walkthrough clips"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Füge deine Rundgang-Clips hinzu"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añade tus clips del recorrido"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajoutez vos clips de visite"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aggiungi le clip della visita"
+          }
+        }
+      }
+    },
+    "Export for Reels, feed and YouTube" : {
+      "comment" : "Home empty state: one of three steps to make a listing video",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Export for Reels, feed and YouTube"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exportiere für Reels, Feed und YouTube"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exporta para Reels, feed y YouTube"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exportez pour les Reels, le fil et YouTube"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esporta per Reels, feed e YouTube"
+          }
+        }
+      }
+    },
+    "Hosting an open house?" : {
+
+    },
+    "Make the announcement reel from this footage." : {
+
+    },
+    "On the title card" : {
+
+    },
+    "Pick a style and add your branding" : {
+      "comment" : "Home empty state: one of three steps to make a listing video",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pick a style and add your branding"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wähle einen Stil und füge dein Branding hinzu"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elige un estilo y añade tu marca"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisissez un style et ajoutez votre image de marque"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scegli uno stile e aggiungi il tuo branding"
+          }
+        }
+      }
+    },
+    "The end time needs to be after the start." : {
+
+    },
     "·" : {
       "comment" : "Bullet separator between two short pieces of text",
       "localizations" : {

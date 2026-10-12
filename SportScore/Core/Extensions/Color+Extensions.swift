@@ -10,7 +10,7 @@ extension Color {
         case .cardTile:        return .purple
         case .mindSports:      return .indigo
         case .iceOutdoor:      return .cyan
-        case .pubParlour:      return .pink
+        case .gameRoom:        return .pink
         }
     }
 

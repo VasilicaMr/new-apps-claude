@@ -1,4 +1,4 @@
-# SportScore — Game Catalog
+# ScoreCap — Game Catalog
 
 **What you can play in ScoreCap** (iPhone, iPad and Apple TV):
 
@@ -24,7 +24,7 @@ This is the list players see on the Play screen, in the same order.
   - **Play to / Game ends at / Start at**: optional target (3 – 10,000) or start score (101 – 1001)
 - Any home game below can be opened with **Customize Rules…** (hold Select on Apple TV), which saves an editable copy to Your Games and leaves the original untouched.
 
-### Home Game Night — 38 games (`HouseGameCatalog`)
+### Home Game Night — 37 games (`HouseGameCatalog`)
 
 | Card Games | Board Games | Party Games | Video Games |
 |---|---|---|---|
@@ -37,7 +37,7 @@ This is the list players see on the Play screen, in the same order.
 | Pinochle — first to 1500 | Trivial Pursuit — first to 6 | Trivia Night — tally | |
 | Canasta — first to 5000 | Risk — tally | Jenga — tally | |
 | Phase 10 — lowest wins | Boggle — points | Bingo — tally | |
-| Crazy Eights — first to 100 | Connect 4 — tally | Beer Pong — first to 10 | |
+| Crazy Eights — first to 100 | Connect 4 — tally | | |
 | Skip-Bo — tally | Battleship — tally | | |
 | Go Fish — tally | | | |
 
@@ -54,9 +54,9 @@ This is the list players see on the Play screen, in the same order.
 | Card & Tile (4) | Dominoes, Mahjong, Cribbage, Poker (Tournament) | Dominoes: Draw, Block, Mexican Train, All Fives · Mahjong: Chinese, Japanese, American · Poker: Freezeout, Rebuy, Bounty |
 | Mind Sports (5) | Chess, Checkers, Go, Backgammon, Scrabble | Chess: Standard, Chess960 · Checkers: 8×8, 10×10, 12×12 · Go: 9×9, 13×13, 19×19 |
 | Ice & Outdoor (8) | Curling, Horseshoes, Cornhole, Ring Toss, Disc Golf, Kubb, Croquet, Shuffleboard | Croquet: Association, Golf Croquet |
-| Pub & Parlour (4) | Air Hockey, Foosball, Pinball, Arm Wrestling | — |
+| Game Room (4) | Air Hockey, Foosball, Pinball, Arm Wrestling | — |
 
-Pool is listed once in the app (Cue Sports); the pub setup is the same engine with the 8-Ball variant.
+Pool is listed once in the app (Cue Sports); the game-room setup is the same engine with the 8-Ball variant.
 
 ---
 
@@ -108,11 +108,11 @@ Pool is listed once in the app (Cue Sports); the pub setup is the same engine wi
 | 42 | Kubb | Ice & Outdoor | `.kubb` | `KubbScoringEngine` |
 | 43 | Croquet | Ice & Outdoor | `.croquet` | `CroquetScoringEngine` |
 | 44 | Shuffleboard | Ice & Outdoor | `.shuffleboard` | `ShuffleboardScoringEngine` |
-| 45 | Air Hockey | Pub / Parlour | `.airHockey` | `AirHockeyScoringEngine` |
-| 46 | Foosball | Pub / Parlour | `.foosball` | `FoosballScoringEngine` |
-| 47 | Pinball | Pub / Parlour | `.pinball` | `PinballScoringEngine` |
-| 48 | Arm Wrestling | Pub / Parlour | `.armWrestling` | `ArmWrestlingScoringEngine` |
-| —  | Pool (pub context) | Pub / Parlour | `.pool` | `PoolScoringEngine` *(same as #08)* |
+| 45 | Air Hockey | Game Room | `.airHockey` | `AirHockeyScoringEngine` |
+| 46 | Foosball | Game Room | `.foosball` | `FoosballScoringEngine` |
+| 47 | Pinball | Game Room | `.pinball` | `PinballScoringEngine` |
+| 48 | Arm Wrestling | Game Room | `.armWrestling` | `ArmWrestlingScoringEngine` |
+| —  | Pool (game room) | Game Room | `.pool` | `PoolScoringEngine` *(same as #08)* |
 
 ---
 
@@ -791,7 +791,7 @@ Score announced as `"serving-receiving-server#"` (e.g. `"7-5-2"`)
 
 ---
 
-## Category 8 — Pub / Parlour
+## Category 8 — Game Room
 
 ### 45 · Air Hockey
 | Property | Value |
@@ -847,9 +847,9 @@ Score announced as `"serving-receiving-server#"` (e.g. `"7-5-2"`)
 
 ---
 
-### Pool (pub context) — cross-listed from #08
-Same `PoolScoringEngine` as Cue Sports entry. Category tag = `Pub/Parlour`.  
-No separate engine or `SportType` case — `.pool` with variant `8Ball` is the default pub setup.
+### Pool (game room) — cross-listed from #08
+Same `PoolScoringEngine` as Cue Sports entry. Category tag = `Game Room`.  
+No separate engine or `SportType` case — `.pool` with variant `8Ball` is the default game-room setup.
 
 ---
 
@@ -915,7 +915,7 @@ enum SportType: String, CaseIterable, Identifiable, Codable {
     case croquet
     case shuffleboard
 
-    // Pub / Parlour
+    // Game Room
     case airHockey
     case foosball
     case pinball
@@ -953,7 +953,7 @@ extension SportType {
              .discGolf, .kubb, .croquet, .shuffleboard:
             return .iceOutdoor
         case .airHockey, .foosball, .pinball, .armWrestling:
-            return .pubParlour
+            return .gameRoom
         case .houseGame:
             return .cardTile // not shown in the sports grid; home games come from HouseGameCatalog
         }
@@ -968,7 +968,7 @@ enum SportCategory: String, CaseIterable {
     case cardTile        = "Card & Tile"
     case mindSports      = "Mind Sports"
     case iceOutdoor      = "Ice & Outdoor"
-    case pubParlour      = "Pub & Parlour"
+    case gameRoom      = "Game Room"
 }
 ```
 
@@ -979,10 +979,10 @@ enum SportCategory: String, CaseIterable {
 // ZoneBasedScoringEngine  →  knifeThrowing, slingshot, blowgun
 // BocceScoringEngine      →  bocce, petanque, boules
 // CaromScoringEngine      →  caroms, cushionCaroms
-// PoolScoringEngine       →  pool (all variants + pub context)
+// PoolScoringEngine       →  pool (all variants + game room)
 // HouseGameScoringEngine  →  houseGame (all 38 home games and every custom game)
 ```
 
 ---
 
-*Generated from `sportscore.md`. `SportType` has 48 sport cases plus `.houseGame`, which scores the 38 home games and all custom games. Pool serves both Cue Sports and Pub/Parlour via category tag.*
+*Generated from `sportscore.md`. `SportType` has 48 sport cases plus `.houseGame`, which scores the 38 home games and all custom games. Pool serves both Cue Sports and Game Room via category tag.*

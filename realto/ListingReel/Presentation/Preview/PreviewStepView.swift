@@ -51,6 +51,9 @@ struct PreviewStepView: View {
         .navigationTitle("Preview")
         #if os(iOS)
         .navigationBarTitleDisplayMode(.inline)
+        // The video sits on black in both appearances, so the bar stays dark too.
+        .toolbarBackground(.black, for: .navigationBar)
+        .toolbarColorScheme(.dark, for: .navigationBar)
         #endif
         .toolbar {
             if model.canUseVoiceover {

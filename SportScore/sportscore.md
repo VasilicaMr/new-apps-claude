@@ -1,4 +1,4 @@
-# SportScore — Product & Technical Requirements
+# ScoreCap — Product & Technical Requirements
 
 **Platform**: iOS 26+ (iPhone, iPad) · tvOS 26+ (Apple TV)  
 **Language**: Swift 6  
@@ -34,7 +34,7 @@ The full list of games players can pick (48 sports, 38 home games, custom games)
 ```
 SportScore/
 ├── App/
-│   ├── SportScoreApp.swift
+│   ├── ScoreCapApp.swift
 │   ├── AppContainer.swift             DI root — builds all dependencies
 │   └── AppCoordinator.swift           Root coordinator
 │
@@ -136,7 +136,7 @@ SportScore/
 ├── TVUITests/                         Siri Remote UI tests for every Apple TV screen and pop-up
 │
 └── WidgetExtension/
-    ├── SportScoreWidget.swift
+    ├── ScoreCapWidget.swift
     ├── ScoreTimelineProvider.swift
     ├── WidgetViews/
     │   ├── SmallScoreWidget.swift
@@ -912,7 +912,7 @@ final class ScoringEngineFactory {
 
 ---
 
-### Category: Pub / Parlour
+### Category: Game Room
 
 #### Air Hockey (`AirHockeyScoringEngine`)
 - Goal increment per player; first to 7 (configurable)
@@ -1199,7 +1199,7 @@ NavigationStack(path: $coordinator.navigationPath) {
 
 ## 11. Apple TV App
 
-Target `SportScoreTV` (product name ScoreCap, same bundle ID as iOS for a universal purchase). Only `TV/` is tvOS-specific; Domain, Data, Core and the view models are shared with iOS.
+Target `ScoreCapTV` ( same bundle ID as iOS for a universal purchase). Only `TV/` is tvOS-specific; Domain, Data, Core and the view models are shared with iOS.
 
 ### Screen map
 
@@ -1245,11 +1245,11 @@ Game tiles use the system `.card` style; list rows keep the plain system selecti
 
 ```bash
 xcodegen generate
-xcodebuild test -project SportScore.xcodeproj -scheme SportScoreTV \
+xcodebuild test -project ScoreCap.xcodeproj -scheme ScoreCapTV \
   -destination 'platform=tvOS Simulator,name=Apple TV 4K (3rd generation)'
 # Screenshots of every screen (also attached to the .xcresult):
 TEST_RUNNER_SCREENSHOT_DIR=/tmp/scorecap-shots xcodebuild test ... \
-  -only-testing:SportScoreTVUITests/TVScreenshotTests
+  -only-testing:ScoreCapTVUITests/TVScreenshotTests
 ```
 
 ---

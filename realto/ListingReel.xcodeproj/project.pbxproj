@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -263,15 +263,15 @@
 		178F7F3895F0C52399B7D827 /* MacInboxSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacInboxSettingsView.swift; sourceTree = "<group>"; };
 		1A28F860488519132C2BC0D1 /* BatchExportQueueUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchExportQueueUseCaseTests.swift; sourceTree = "<group>"; };
 		1A8DB737DB1BEDCB2B0798A9 /* AVVideoCompositionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVVideoCompositionService.swift; sourceTree = "<group>"; };
-		1C4794C7A2EE9D4C12278EB2 /* calm_01.m4a */ = {isa = PBXFileReference; path = calm_01.m4a; sourceTree = "<group>"; };
+		1C4794C7A2EE9D4C12278EB2 /* calm_01.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = calm_01.m4a; sourceTree = "<group>"; };
 		1C4C2807A1E08068FEF1DF30 /* CaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureView.swift; sourceTree = "<group>"; };
 		1D7CAE004D81FDD9E36911EE /* AVAssetResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVAssetResolver.swift; sourceTree = "<group>"; };
 		27C7343C7A46E310B8E8E4DF /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		29761DDD534696916FD1D1DD /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
-		29880631D9D710A40DF99264 /* ListingReel.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ListingReel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		29880631D9D710A40DF99264 /* ListingReel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListingReel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A038E14708FD1D651DFC733 /* VoiceoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceoverViewModel.swift; sourceTree = "<group>"; };
 		2D61CBCC84C58E21A653238F /* MacInboxRepositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacInboxRepositories.swift; sourceTree = "<group>"; };
-		31B4EBDDBDD37BE4E176958F /* uitest_clip3.mp4 */ = {isa = PBXFileReference; path = uitest_clip3.mp4; sourceTree = "<group>"; };
+		31B4EBDDBDD37BE4E176958F /* uitest_clip3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = uitest_clip3.mp4; sourceTree = "<group>"; };
 		325E91044F4843AB6B50EBA4 /* ColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHex.swift; sourceTree = "<group>"; };
 		329141F81756E2CF28C5DFE4 /* WriteVoiceoverScriptUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteVoiceoverScriptUseCase.swift; sourceTree = "<group>"; };
 		34D250527BC0A54E0BB06425 /* OpenHousePostTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenHousePostTests.swift; sourceTree = "<group>"; };
@@ -291,7 +291,7 @@
 		60B782CFA6F570793D11BA40 /* BrandingStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandingStepView.swift; sourceTree = "<group>"; };
 		62FC7086E61B4CB3C09C7491 /* ListingPromptFacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingPromptFacts.swift; sourceTree = "<group>"; };
 		64EA11F2F694EA017E2C3D6E /* DefaultMusicRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultMusicRepository.swift; sourceTree = "<group>"; };
-		651FC6E370C1CEF7D9E07AA1 /* exterior_landscape.mp4 */ = {isa = PBXFileReference; path = exterior_landscape.mp4; sourceTree = "<group>"; };
+		651FC6E370C1CEF7D9E07AA1 /* exterior_landscape.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = exterior_landscape.mp4; sourceTree = "<group>"; };
 		664FC241B9072FCF251F947B /* ExportVideoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportVideoUseCase.swift; sourceTree = "<group>"; };
 		67AA510AA9A3541D83AAAA37 /* BatchExportQueueUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchExportQueueUseCase.swift; sourceTree = "<group>"; };
 		6A0CB9467CD6F26757DDA30A /* ExportSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportSettings.swift; sourceTree = "<group>"; };
@@ -314,7 +314,7 @@
 		86D46C58C2A3AE1B9799BF8D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		873BAECFF813E7184EBC39E7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8BCF8B9F968719AB66A2E2C8 /* SpeechVoiceCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechVoiceCatalog.swift; sourceTree = "<group>"; };
-		8F24371B8F60771F11C8D78B /* uitest_clip1.mp4 */ = {isa = PBXFileReference; path = uitest_clip1.mp4; sourceTree = "<group>"; };
+		8F24371B8F60771F11C8D78B /* uitest_clip1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = uitest_clip1.mp4; sourceTree = "<group>"; };
 		9238F4CB285A48088ECB8452 /* UserNotificationExportNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationExportNotifier.swift; sourceTree = "<group>"; };
 		94AA62C62FBA010286A69D59 /* AppStoreScreenshotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreScreenshotUITests.swift; sourceTree = "<group>"; };
 		98B747A600911C1493F611A7 /* AppStoreScreenshotMacUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreScreenshotMacUITests.swift; sourceTree = "<group>"; };
@@ -330,10 +330,10 @@
 		A62A7C0030653E968C117DB0 /* Template.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
 		A644E1B8E8A9B2A43CFC249E /* MediaStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaStepView.swift; sourceTree = "<group>"; };
 		A9B0427EE2A66E85628681B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		AB737E92C61FF5A7C342B562 /* kitchen_rotated.mp4 */ = {isa = PBXFileReference; path = kitchen_rotated.mp4; sourceTree = "<group>"; };
-		B1235EE673A78E174208A683 /* upbeat_01.m4a */ = {isa = PBXFileReference; path = upbeat_01.m4a; sourceTree = "<group>"; };
+		AB737E92C61FF5A7C342B562 /* kitchen_rotated.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = kitchen_rotated.mp4; sourceTree = "<group>"; };
+		B1235EE673A78E174208A683 /* upbeat_01.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = upbeat_01.m4a; sourceTree = "<group>"; };
 		B240854080F211CA5F11E908 /* AppRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoute.swift; sourceTree = "<group>"; };
-		B914D3D901A764661CA62AC3 /* ListingReel.storekit */ = {isa = PBXFileReference; path = ListingReel.storekit; sourceTree = "<group>"; };
+		B914D3D901A764661CA62AC3 /* ListingReel.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = ListingReel.storekit; sourceTree = "<group>"; };
 		B96B5ADDF726F62399D1DD3F /* PreviewStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewStepView.swift; sourceTree = "<group>"; };
 		BA1101CD021E49093BF32C1C /* CaptureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewModel.swift; sourceTree = "<group>"; };
 		BB15A0C366731279CBB7C5E0 /* DemoMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoMode.swift; sourceTree = "<group>"; };
@@ -341,15 +341,15 @@
 		BCB2F325A39B38C0DC5B9368 /* SubscriptionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionManager.swift; sourceTree = "<group>"; };
 		C2483DB2BD11D90ACB9C0EA3 /* DocumentCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCameraView.swift; sourceTree = "<group>"; };
 		C285206769E8135D84E6CD8E /* MediaClip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaClip.swift; sourceTree = "<group>"; };
-		C53AEF9AB7C0577F4BEF2C03 /* cinematic_01.m4a */ = {isa = PBXFileReference; path = cinematic_01.m4a; sourceTree = "<group>"; };
-		C53C1D88B7AAAF9E6F835024 /* living_room_portrait.mp4 */ = {isa = PBXFileReference; path = living_room_portrait.mp4; sourceTree = "<group>"; };
+		C53AEF9AB7C0577F4BEF2C03 /* cinematic_01.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = cinematic_01.m4a; sourceTree = "<group>"; };
+		C53C1D88B7AAAF9E6F835024 /* living_room_portrait.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = living_room_portrait.mp4; sourceTree = "<group>"; };
 		C5761FF1E9C196DD53230020 /* MusicStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicStepView.swift; sourceTree = "<group>"; };
 		C7E138871AB4791084F9DE2D /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		CAD7EEBC0945EE18ED0997BC /* ListingReelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingReelApp.swift; sourceTree = "<group>"; };
 		CE9B95926133616E7E5AA9BB /* NarrateVoiceoverUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarrateVoiceoverUseCase.swift; sourceTree = "<group>"; };
 		D12E38E13AB917081548E689 /* InboxViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxViewModel.swift; sourceTree = "<group>"; };
 		D1478F6C49E252FD913BB138 /* BrandProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandProfile.swift; sourceTree = "<group>"; };
-		D3C1DF4C5EA1B08E95E16DAC /* uitest_clip2.mp4 */ = {isa = PBXFileReference; path = uitest_clip2.mp4; sourceTree = "<group>"; };
+		D3C1DF4C5EA1B08E95E16DAC /* uitest_clip2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = uitest_clip2.mp4; sourceTree = "<group>"; };
 		D55B73F6A776C0CCB8D4DCD9 /* OverlayLayerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayLayerFactory.swift; sourceTree = "<group>"; };
 		D5C3C16A545650CE95D563E2 /* MusicTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTrack.swift; sourceTree = "<group>"; };
 		D5D48BC4168580369F54A044 /* ListingSheetScanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingSheetScanTests.swift; sourceTree = "<group>"; };
@@ -358,8 +358,8 @@
 		D7D0CD7DF437E3AA515666A4 /* EditorFlowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorFlowModel.swift; sourceTree = "<group>"; };
 		E161ECF8E288A1F5A02A36F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3748AF1FFE20DB942A0E086 /* WatchedFolderExportArchiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchedFolderExportArchiver.swift; sourceTree = "<group>"; };
-		E3D387E74E9F0E338F7E8F00 /* ListingReel-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ListingReel-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E62392B90928080527AAF9DF /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		E3D387E74E9F0E338F7E8F00 /* ListingReel-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "ListingReel-macOS.app"; path = Realto.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E62392B90928080527AAF9DF /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		E6F685CD3663CCA2154C320F /* TrimEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrimEditorView.swift; sourceTree = "<group>"; };
 		E754A2D2A0C49CF77C9E7E18 /* MacInboxSettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacInboxSettingsStore.swift; sourceTree = "<group>"; };
 		E8E041AD3508C8D6CEA93822 /* ExportFlowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportFlowUITests.swift; sourceTree = "<group>"; };
@@ -372,7 +372,7 @@
 		F2CACFFF01D6D48596A100E1 /* FoundationModelsVoiceoverScriptWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationModelsVoiceoverScriptWriter.swift; sourceTree = "<group>"; };
 		F354C41EEF93F3FAEE6524D9 /* FileBrandProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileBrandProfileRepository.swift; sourceTree = "<group>"; };
 		F38C319DD6788C5E5CB0EF57 /* AssetThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetThumbnailView.swift; sourceTree = "<group>"; };
-		F47AC2F78418BF69EBF7E0C9 /* hallway_long.mp4 */ = {isa = PBXFileReference; path = hallway_long.mp4; sourceTree = "<group>"; };
+		F47AC2F78418BF69EBF7E0C9 /* hallway_long.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = hallway_long.mp4; sourceTree = "<group>"; };
 		FA43AB909651331588DD538B /* VideoThumbnailStrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoThumbnailStrip.swift; sourceTree = "<group>"; };
 		FA8E6A83CA0451BB24D9B55A /* StillImageVideoGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StillImageVideoGenerator.swift; sourceTree = "<group>"; };
 		FA9DB12F23C7D4DE10ECEE01 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
@@ -1354,13 +1354,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 7;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = ListingReel/App/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Realto;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.video";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.3;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -1566,13 +1570,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 7;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = ListingReel/App/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Realto;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.video";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.3;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

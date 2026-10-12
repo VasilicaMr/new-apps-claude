@@ -1,0 +1,133 @@
+# Regenerate the Xcode project after adding/removing files:  cd CodeRelay && xcodegen
+name: CodeRelay
+options:
+  bundleIdPrefix: com.adaptiveservices
+  deploymentTarget:
+    iOS: "26.0"
+    macOS: "14.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    DEVELOPMENT_TEAM: ""
+packages:
+  RelayKit:
+    path: Packages/RelayKit
+targets:
+  # iOS / iPadOS client (App Store)
+  CodeRelay:
+    type: application
+    platform: iOS
+    sources:
+      - path: CodeRelay
+    dependencies:
+      - package: RelayKit
+    entitlements:
+      path: CodeRelay/Resources/CodeRelay.entitlements
+      properties: {}
+    info:
+      path: CodeRelay/Resources/Info.plist
+      properties:
+        CFBundleDisplayName: CodeRelay
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        LSApplicationCategoryType: public.app-category.developer-tools
+        ITSAppUsesNonExemptEncryption: false
+        NSLocalNetworkUsageDescription: CodeRelay finds and connects to your Mac running CodeRelay Host on your local network.
+        NSBonjourServices:
+          - _coderelay._tcp
+        UILaunchScreen:
+          UIColorName: LaunchBackground
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: true
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.adaptiveservices.coderelay
+        TARGETED_DEVICE_FAMILY: "1,2"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ENABLE_PREVIEWS: YES
+
+  CodeRelayTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: CodeRelayTests
+    dependencies:
+      - target: CodeRelay
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.adaptiveservices.coderelay.tests
+        GENERATE_INFOPLIST_FILE: YES
+
+  # macOS menu-bar companion (Developer ID, notarized — not Mac App Store)
+  CodeRelayHost:
+    type: application
+    platform: macOS
+    sources:
+      - path: CodeRelayHost
+    dependencies:
+      - package: RelayKit
+    entitlements:
+      path: CodeRelayHost/Resources/CodeRelayHost.entitlements
+      properties:
+        com.apple.security.network.server: true
+        com.apple.security.network.client: true
+    info:
+      path: CodeRelayHost/Resources/Info.plist
+      properties:
+        CFBundleDisplayName: CodeRelay Host
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        LSApplicationCategoryType: public.app-category.developer-tools
+        LSUIElement: true
+        NSLocalNetworkUsageDescription: CodeRelay Host lets your paired iPhone connect to Claude Code on this Mac.
+        NSBonjourServices:
+          - _coderelay._tcp
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.adaptiveservices.coderelay.host
+        PRODUCT_NAME: CodeRelay Host
+        ENABLE_HARDENED_RUNTIME: YES
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        CODE_SIGN_IDENTITY: "-"
+  CodeRelayHostTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: CodeRelayHostTests
+    dependencies:
+      - target: CodeRelayHost
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.adaptiveservices.coderelay.host.tests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/CodeRelay Host.app/Contents/MacOS/CodeRelay Host"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+        CODE_SIGN_IDENTITY: "-"
+schemes:
+  CodeRelay:
+    build:
+      targets:
+        CodeRelay: all
+    test:
+      targets:
+        - CodeRelayTests
+  CodeRelayHost:
+    build:
+      targets:
+        CodeRelayHost: all
+    test:
+      targets:
+        - CodeRelayHostTests

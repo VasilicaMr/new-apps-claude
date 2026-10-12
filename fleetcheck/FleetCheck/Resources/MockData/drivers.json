@@ -1,0 +1,82 @@
+[
+  {
+    "id": "drv-01",
+    "name": "Andrei Popescu",
+    "phone": "+40 797 669 867",
+    "hireDate": "2022-12-13",
+    "licenseExpiry": "2029-06-19",
+    "assignedVehicleId": "veh-001"
+  },
+  {
+    "id": "drv-02",
+    "name": "Mihai Ionescu",
+    "phone": "+40 772 491 201",
+    "hireDate": "2024-07-25",
+    "licenseExpiry": "2027-11-24",
+    "assignedVehicleId": "veh-002"
+  },
+  {
+    "id": "drv-03",
+    "name": "Elena Dumitru",
+    "phone": "+40 782 393 150",
+    "hireDate": "2020-10-16",
+    "licenseExpiry": "2028-07-14",
+    "assignedVehicleId": "veh-003"
+  },
+  {
+    "id": "drv-04",
+    "name": "Cristian Stan",
+    "phone": "+40 793 372 354",
+    "hireDate": "2023-08-13",
+    "licenseExpiry": "2026-10-30",
+    "assignedVehicleId": "veh-004"
+  },
+  {
+    "id": "drv-05",
+    "name": "Ioana Gheorghe",
+    "phone": "+40 742 880 430",
+    "hireDate": "2021-05-01",
+    "licenseExpiry": "2031-12-25",
+    "assignedVehicleId": "veh-005"
+  },
+  {
+    "id": "drv-06",
+    "name": "Vlad Marinescu",
+    "phone": "+40 746 854 805",
+    "hireDate": "2020-06-13",
+    "licenseExpiry": "2028-05-07",
+    "assignedVehicleId": "veh-006"
+  },
+  {
+    "id": "drv-07",
+    "name": "Radu Constantin",
+    "phone": "+40 795 709 396",
+    "hireDate": "2024-12-14",
+    "licenseExpiry": "2031-01-29",
+    "assignedVehicleId": "veh-007"
+  },
+  {
+    "id": "drv-08",
+    "name": "Ana Matei",
+    "phone": "+40 777 926 115",
+    "hireDate": "2025-06-24",
+    "licenseExpiry": "2030-09-30",
+    "assignedVehicleId": "veh-008"
+  },
+  {
+    "id": "drv-09",
+    "name": "George Florea",
+    "phone": "+40 753 269 541",
+    "hireDate": "2024-08-31",
+    "licenseExpiry": "2031-04-25",
+    "assignedVehicleId": "veh-009"
+  },
+  {
+    "id": "drv-10",
+    "name": "Maria Niculescu",
+    "phone": "+40 747 578 152",
+    "hireDate": "2020-06-13",
+    "licenseExpiry": "2027-06-21",
+    "assignedVehicleId": "veh-010"
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "id": "cmp-001",
+  "name": "Bucharest Mobility SRL",
+  "currencyCode": "EUR",
+  "timezone": "Europe/Bucharest",
+  "dataAsOf": "2026-10-11",
+  "homeBase": {
+    "name": "Main Depot",
+    "latitude": 44.4355,
+    "longitude": 26.045
+  },
+  "trackingPolicy": {
+    "distanceThresholdMeters": 50,
+    "heartbeatSeconds": 300,
+    "desiredAccuracyMeters": 100
+  }
+}

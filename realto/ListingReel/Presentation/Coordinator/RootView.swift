@@ -37,7 +37,6 @@ struct RootView: View {
             }
         }
         .tint(Theme.Palette.accent)
-        .preferredColorScheme(.dark)
     }
 
     private var mainContent: some View {

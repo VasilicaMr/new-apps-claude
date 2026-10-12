@@ -10,6 +10,7 @@ enum PersistenceContainer {
             ScoreEntryModel.self,
             CustomGameModel.self
         ])
+        // The store keeps its pre-rename name: changing it would start users on an empty store.
         #if DEBUG
         // UI tests start from an empty, throwaway store.
         let isUITesting = ProcessInfo.processInfo.arguments.contains("--uitesting")

@@ -60,7 +60,7 @@ enum SportType: String, CaseIterable, Identifiable, Codable, Sendable {
     case croquet
     case shuffleboard
 
-    // Pub / Parlour
+    // Game Room
     case airHockey
     case foosball
     case pinball
@@ -200,7 +200,7 @@ enum SportType: String, CaseIterable, Identifiable, Codable, Sendable {
              .discGolf, .kubb, .croquet, .shuffleboard:
             return .iceOutdoor
         case .airHockey, .foosball, .pinball, .armWrestling:
-            return .pubParlour
+            return .gameRoom
         case .houseGame:
             return .cardTile
         }
@@ -240,7 +240,7 @@ enum SportCategory: String, CaseIterable, Identifiable, Sendable {
     case cardTile        = "Card & Tile"
     case mindSports      = "Mind Sports"
     case iceOutdoor      = "Ice & Outdoor"
-    case pubParlour      = "Pub & Parlour"
+    case gameRoom        = "Game Room"
 
     var id: String { rawValue }
 
@@ -253,7 +253,7 @@ enum SportCategory: String, CaseIterable, Identifiable, Sendable {
         case .cardTile:        return "suit.spade.fill"
         case .mindSports:      return "crown"
         case .iceOutdoor:      return "snowflake"
-        case .pubParlour:      return "mug"
+        case .gameRoom:        return "arcade.stick"
         }
     }
 

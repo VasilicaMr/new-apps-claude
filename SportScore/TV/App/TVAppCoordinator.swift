@@ -185,8 +185,24 @@ final class TVAppCoordinator {
 
 struct TVRootView: View {
     @Bindable var coordinator: TVAppCoordinator
+    @AppStorage(Onboarding.completedKey) private var hasCompletedOnboarding = false
+    @State private var showsOnboarding = Onboarding.shouldShow(
+        completed: UserDefaults.standard.bool(forKey: Onboarding.completedKey)
+    )
 
     var body: some View {
+        if showsOnboarding {
+            TVOnboardingView {
+                hasCompletedOnboarding = true
+                showsOnboarding = false
+            }
+            .tvThemed()
+        } else {
+            tabs
+        }
+    }
+
+    private var tabs: some View {
         TabView(selection: $coordinator.selectedTab) {
             Tab("Play", systemImage: "play.circle.fill", value: TVTab.home) {
                 NavigationStack(path: $coordinator.homePath) {

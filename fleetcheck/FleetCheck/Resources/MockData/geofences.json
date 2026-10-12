@@ -1,0 +1,34 @@
+[
+  {
+    "id": "geo-01",
+    "name": "Main Depot",
+    "type": "depot",
+    "latitude": 44.4355,
+    "longitude": 26.045,
+    "radiusMeters": 150
+  },
+  {
+    "id": "geo-02",
+    "name": "Pipera Client Hub",
+    "type": "client",
+    "latitude": 44.483,
+    "longitude": 26.118,
+    "radiusMeters": 250
+  },
+  {
+    "id": "geo-03",
+    "name": "Airport Pickup",
+    "type": "client",
+    "latitude": 44.5711,
+    "longitude": 26.085,
+    "radiusMeters": 400
+  },
+  {
+    "id": "geo-04",
+    "name": "Old Town (restricted)",
+    "type": "restricted",
+    "latitude": 44.431,
+    "longitude": 26.101,
+    "radiusMeters": 350
+  }
+]

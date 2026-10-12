@@ -1,0 +1,110 @@
+[
+  {
+    "id": "alr-001",
+    "vehicleId": "veh-006",
+    "timestamp": "2026-10-11T08:00:00Z",
+    "severity": "critical",
+    "type": "diagnosticCode",
+    "message": "Engine code P0299: turbocharger underboost",
+    "acknowledged": false
+  },
+  {
+    "id": "alr-002",
+    "vehicleId": "veh-006",
+    "timestamp": "2026-10-11T07:00:00Z",
+    "severity": "warning",
+    "type": "batteryLow",
+    "message": "12V battery at 11.7 V while parked",
+    "acknowledged": false
+  },
+  {
+    "id": "alr-003",
+    "vehicleId": "veh-005",
+    "timestamp": "2026-10-11T06:00:00Z",
+    "severity": "warning",
+    "type": "lowFuel",
+    "message": "Fuel level 12% - nearest station 1.2 km",
+    "acknowledged": false
+  },
+  {
+    "id": "alr-004",
+    "vehicleId": "veh-002",
+    "timestamp": "2026-10-11T04:00:00Z",
+    "severity": "warning",
+    "type": "harshBraking",
+    "message": "4 harsh braking events in 20 minutes",
+    "acknowledged": false
+  },
+  {
+    "id": "alr-005",
+    "vehicleId": "veh-008",
+    "timestamp": "2026-10-08T11:00:00Z",
+    "severity": "critical",
+    "type": "diagnosticCode",
+    "message": "Hybrid system code P0A94 - vehicle sent to service",
+    "acknowledged": true
+  },
+  {
+    "id": "alr-006",
+    "vehicleId": "veh-003",
+    "timestamp": "2026-10-11T01:00:00Z",
+    "severity": "info",
+    "type": "geofenceExit",
+    "message": "Left Main Depot at 06:42",
+    "acknowledged": false
+  },
+  {
+    "id": "alr-007",
+    "vehicleId": "veh-002",
+    "timestamp": "2026-10-10T07:00:00Z",
+    "severity": "warning",
+    "type": "speeding",
+    "message": "92 km/h in a 50 km/h zone on Bd. Iuliu Maniu",
+    "acknowledged": false
+  },
+  {
+    "id": "alr-008",
+    "vehicleId": "veh-001",
+    "timestamp": "2026-10-10T05:00:00Z",
+    "severity": "info",
+    "type": "geofenceEnter",
+    "message": "Entered Airport Pickup",
+    "acknowledged": false
+  },
+  {
+    "id": "alr-009",
+    "vehicleId": "veh-009",
+    "timestamp": "2026-10-10T03:00:00Z",
+    "severity": "info",
+    "type": "maintenanceDue",
+    "message": "Service due in less than 1,000 km",
+    "acknowledged": false
+  },
+  {
+    "id": "alr-010",
+    "vehicleId": "veh-007",
+    "timestamp": "2026-10-09T09:00:00Z",
+    "severity": "info",
+    "type": "idle",
+    "message": "Vehicle parked for 52 hours",
+    "acknowledged": true
+  },
+  {
+    "id": "alr-011",
+    "vehicleId": "veh-004",
+    "timestamp": "2026-10-09T03:00:00Z",
+    "severity": "warning",
+    "type": "geofenceEnter",
+    "message": "Entered Old Town (restricted) zone",
+    "acknowledged": true
+  },
+  {
+    "id": "alr-012",
+    "vehicleId": "veh-006",
+    "timestamp": "2026-10-07T09:00:00Z",
+    "severity": "warning",
+    "type": "engineTemperature",
+    "message": "Engine temperature 104 C",
+    "acknowledged": true
+  }
+]

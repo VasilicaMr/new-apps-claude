@@ -82,8 +82,7 @@ struct ExportStepView: View {
                     .foregroundStyle(Theme.Palette.accent)
             }
             .padding(Theme.Spacing.m)
-            .background(Theme.Palette.surface)
-            .clipShape(RoundedRectangle(cornerRadius: Theme.Radius.control))
+            .cardSurface(radius: Theme.Radius.control)
         }
     }
 
@@ -101,8 +100,7 @@ struct ExportStepView: View {
                     .foregroundStyle(selected ? Theme.Palette.accent : Theme.Palette.textSecondary)
             }
             .padding(Theme.Spacing.m)
-            .background(Theme.Palette.surface)
-            .clipShape(RoundedRectangle(cornerRadius: Theme.Radius.control))
+            .cardSurface(radius: Theme.Radius.control)
         }
     }
 
@@ -160,8 +158,7 @@ struct ExportStepView: View {
                     }
                 }
                 .padding(Theme.Spacing.m)
-                .background(Theme.Palette.surface)
-                .clipShape(RoundedRectangle(cornerRadius: Theme.Radius.control))
+                .cardSurface(radius: Theme.Radius.control)
             }
             if let exportModel, exportModel.savedToPhotos {
                 Label("Saved to Photos", systemImage: "checkmark.seal.fill")
@@ -276,8 +273,7 @@ struct ExportStepView: View {
                 Image(systemName: "chevron.right").foregroundStyle(Theme.Palette.textSecondary)
             }
             .padding(Theme.Spacing.m)
-            .background(Theme.Palette.surface)
-            .clipShape(RoundedRectangle(cornerRadius: Theme.Radius.card))
+            .cardSurface(radius: Theme.Radius.card)
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier("export.openHousePost")

@@ -63,11 +63,10 @@ struct OnboardingView: View {
     private var welcomePage: some View {
         VStack(spacing: Theme.Spacing.m) {
             Spacer(minLength: Theme.Spacing.xl)
-            Image(systemName: "house.and.flag.fill")
-                .font(.system(size: 64))
-                .foregroundStyle(Theme.Palette.accent)
+            GradientIconBadge(systemImage: "house.and.flag.fill", size: 96)
+                .shadow(color: Theme.Palette.accent.opacity(0.25), radius: 16, y: 8)
             Text("Welcome to Realto")
-                .font(.title.bold())
+                .font(.system(.title, design: .rounded).bold())
                 .foregroundStyle(Theme.Palette.textPrimary)
             Text("Turn raw walkthroughs into\nbranded listing videos")
                 .multilineTextAlignment(.center)
@@ -137,18 +136,15 @@ struct OnboardingView: View {
 
     private func infoRow(systemImage: String, title: LocalizedStringKey, subtitle: LocalizedStringKey) -> some View {
         HStack(alignment: .top, spacing: Theme.Spacing.m) {
-            Image(systemName: systemImage)
-                .font(.title2)
-                .foregroundStyle(Theme.Palette.accent)
-                .frame(width: 32)
+            GradientIconBadge(systemImage: systemImage, gradient: Theme.Gradients.primary, size: 40)
             VStack(alignment: .leading, spacing: Theme.Spacing.xs) {
                 Text(title).font(.headline).foregroundStyle(Theme.Palette.textPrimary)
                 Text(subtitle).font(.subheadline).foregroundStyle(Theme.Palette.textSecondary)
             }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
         .padding(Theme.Spacing.m)
-        .background(Theme.Palette.surface)
-        .clipShape(RoundedRectangle(cornerRadius: Theme.Radius.card))
+        .cardSurface()
     }
 
     // MARK: - Ready
@@ -156,11 +152,10 @@ struct OnboardingView: View {
     private var readyPage: some View {
         VStack(spacing: Theme.Spacing.m) {
             Spacer(minLength: Theme.Spacing.xl)
-            Image(systemName: "sparkles")
-                .font(.system(size: 56))
-                .foregroundStyle(Theme.Palette.accent)
+            GradientIconBadge(systemImage: "sparkles", gradient: Theme.Gradients.premium, size: 96)
+                .shadow(color: Theme.Palette.accentAlt.opacity(0.3), radius: 16, y: 8)
             Text("You're all set")
-                .font(.title.bold())
+                .font(.system(.title, design: .rounded).bold())
                 .foregroundStyle(Theme.Palette.textPrimary)
             Text("Your first export includes a small watermark. Upgrade anytime to remove it and unlock 4K — no subscription, pay once.")
                 .font(.subheadline)

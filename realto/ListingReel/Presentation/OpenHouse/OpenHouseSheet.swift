@@ -60,8 +60,7 @@ struct OpenHouseSheet: View {
         }
         .foregroundStyle(Theme.Palette.textPrimary)
         .padding(Theme.Spacing.m)
-        .background(Theme.Palette.surface)
-        .clipShape(RoundedRectangle(cornerRadius: Theme.Radius.control))
+        .cardSurface(radius: Theme.Radius.control)
         .disabled(model.isCreating || model.createdProject != nil)
     }
 

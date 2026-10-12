@@ -1,0 +1,830 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		016FCB02085BC86631A4E16B /* ValuationCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25142518CAFBCC17BAF23C9 /* ValuationCalculator.swift */; };
+		06FE863143C7D4CB30538BD4 /* VehicleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB859F4994F4B8E40F6628 /* VehicleListView.swift */; };
+		0780E2147491A69E72BB9E98 /* trips.json in Resources */ = {isa = PBXBuildFile; fileRef = 87A8897709B22C7A7E493BE0 /* trips.json */; };
+		0A17FE792DD83D90BF6DFD73 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC789942DF55E2D42DE10D /* Components.swift */; };
+		0E1DFB52DAF41FD6F9300A23 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56740B9E457B0BC27DDDEA1 /* SettingsView.swift */; };
+		0F1DCDAD0C192001B9D1D2F3 /* ValuationCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340A506DB5684C88D2818EB0 /* ValuationCalculatorTests.swift */; };
+		13E4481392C96D00473CDB0F /* VehicleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FE6F6AC9459B7C37B31559 /* VehicleDetailView.swift */; };
+		1C89B859A906F1B268033525 /* LiveMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0D9446E0C70CEABB94741F /* LiveMapView.swift */; };
+		1E88F16ACDB876E72CE6A984 /* URLSessionAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AC3C925D1B02AF2DD89C67 /* URLSessionAPIClient.swift */; };
+		1FE01CEC902CCB05BA37E6DA /* InsightsEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1639363603090C2E6FCBAC78 /* InsightsEngine.swift */; };
+		2CF2DFE24B4E1560311C20D8 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F86D92250E8C4B36CBEA036 /* Driver.swift */; };
+		2F8F1B3B47E04DF68D6CAF40 /* AnalyticsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78434831E9EE86D96420D8E6 /* AnalyticsTests.swift */; };
+		2F98C78A046828F1DEFF833D /* vehicles.json in Resources */ = {isa = PBXBuildFile; fileRef = 435D8D19EAB9583C4E817843 /* vehicles.json */; };
+		353ADABA9413196A9E9FAAF8 /* LiveTrackingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A103854316CCA78D8DA9D96 /* LiveTrackingStore.swift */; };
+		3C048D70DAFBF5A380DD446D /* SimulatedPositionStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4D3CA35D023242A5CE1D6A /* SimulatedPositionStream.swift */; };
+		3C646A52E04ADB8A5956E231 /* Maintenance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C310F7E7E38126A5F8191D /* Maintenance.swift */; };
+		3DFF32B79667512FFE2F5D55 /* FleetCheckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4CADD82F1874F49AAABE46 /* FleetCheckApp.swift */; };
+		490DEF63A6949818C8F18260 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92379B5B85207D5B384430A /* Formatters.swift */; };
+		4F7A79DC6FB654F3D3894337 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455E735EAFC54816F91087AE /* Alerts.swift */; };
+		5053DCA29FE828B2FC413BC1 /* FleetAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A960E640E5517373F40C10 /* FleetAnalyzer.swift */; };
+		523C5B12F1E4697529DBABF3 /* telemetry_latest.json in Resources */ = {isa = PBXBuildFile; fileRef = 7D26C2ECF95F49BEA27BABE4 /* telemetry_latest.json */; };
+		5434EF6B2ACAD5AC95700723 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2219E2EB66AF9353A16D1 /* RootView.swift */; };
+		55BD9C245937DC0CABBA7CBA /* drivers.json in Resources */ = {isa = PBXBuildFile; fileRef = 8F9BD5C9E19EAA0AD31DE526 /* drivers.json */; };
+		5BB94DFC99F6A26B5E253428 /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19A7239B0D901E8B1B75B0E /* AppDependencies.swift */; };
+		5D471348E38192A393E2D831 /* MockAPIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1477A5B1028D200B4377D0 /* MockAPIClientTests.swift */; };
+		5E721ADB16B28DE5E662DAA5 /* DeviceLocationTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2109702D593B616E974540F /* DeviceLocationTracker.swift */; };
+		5F2745A464F02EB3FDE35912 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBFFFE7B5C5120E6E844131 /* APIClient.swift */; };
+		6120771FD9AACEE1CC81C695 /* expenses.json in Resources */ = {isa = PBXBuildFile; fileRef = D053940CEC3421FB05DEAD90 /* expenses.json */; };
+		62B5ED5A598BB31C158B00AC /* DateRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BA69F13E1FD4647426FEFB /* DateRange.swift */; };
+		6CCC394CBA2403D5DF22BC60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AD6F29BC1C2FEB8086A93BC /* Assets.xcassets */; };
+		71C7C7758CA5223991644386 /* FleetStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C111D97822D382CD16D8C1D /* FleetStore.swift */; };
+		767BDA581D3C3F346BA3E285 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586D3036E4B749423D8F5B34 /* Endpoint.swift */; };
+		76A81EE277AF456C43DA0A13 /* maintenance_records.json in Resources */ = {isa = PBXBuildFile; fileRef = E5634AEF00265EF76CC835A9 /* maintenance_records.json */; };
+		7AC8DBA293A834EDC22D77B0 /* MockAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4C3DEA7D20F87048858B57 /* MockAPIClient.swift */; };
+		811984FDE6D1DF5BE3804F7E /* InsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076DCF54C6B69554E00AEF51 /* InsightsView.swift */; };
+		93264C113E5AFDB4AC54FABE /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72010B8085B0E9162A684C0D /* Company.swift */; };
+		95BB1A4A38021CE5CECD6989 /* TestSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F50D412E82E4F801363C1B /* TestSupport.swift */; };
+		9AE16C586C46F9446C5AF778 /* location_event_ack.json in Resources */ = {isa = PBXBuildFile; fileRef = 1614111A03B3748F9C6AE43B /* location_event_ack.json */; };
+		9CF2DCBC127346670F16A49A /* MaintenancePlanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A12484E1792D398C1C3AC9E /* MaintenancePlanner.swift */; };
+		AA8071B357A154DAE0009AE9 /* alerts.json in Resources */ = {isa = PBXBuildFile; fileRef = EF80C3C0C11D646BF4D4DA3E /* alerts.json */; };
+		B1CAFE173BD34366CA15F2BA /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53862895FBDDEF5E57F30CE8 /* DashboardView.swift */; };
+		BB8C7450D427606843E916D0 /* LocationChangeFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2427674445B4AF101375349 /* LocationChangeFilter.swift */; };
+		CCC18ABFA549C45D55C59DDE /* company.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C0F629B9B75ECBB01E324A7 /* company.json */; };
+		CE63307864D5B3843C52D793 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73F6BCA9D21C8CFFB03B594 /* TutorialView.swift */; };
+		CF06B5F1337D5B5B93B71D5A /* LocationChangeFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5873542B1CDF8076F802E397 /* LocationChangeFilterTests.swift */; };
+		D49966660F0076DFF9F2574A /* FinancialAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC637A67559D73E84CDAB3C7 /* FinancialAnalyzer.swift */; };
+		D792BD8C3054868749916275 /* daily_metrics.json in Resources */ = {isa = PBXBuildFile; fileRef = 5EB5255E1A3F6ACBBC383473 /* daily_metrics.json */; };
+		DAAC0FEC072FCE1A7ED3897D /* DefaultFleetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD50680D6EE796D331A4A50 /* DefaultFleetRepository.swift */; };
+		DC5AFD0ED33A8B56C0D8A13B /* valuation_models.json in Resources */ = {isa = PBXBuildFile; fileRef = 3F48570C79C4BF67420B0047 /* valuation_models.json */; };
+		E18B4906A10EB95447201F9D /* FleetSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EB15A4C7EF0ADDA943CE2C /* FleetSnapshot.swift */; };
+		F114268A69FBE62E7A14AF5B /* FleetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6166E6DEA1FDF03A016DF0 /* FleetRepository.swift */; };
+		F47E1527115F05278026E6E5 /* geofences.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F908B2FF445F5EC3A581B18 /* geofences.json */; };
+		F50DC847E05DE944B744ABC7 /* DriverModeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF073D433F7318272A0AB72 /* DriverModeStore.swift */; };
+		F5F7D49C39E068C5D67B3387 /* Telemetry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E319F4C0C6D67BEC7E6EEE /* Telemetry.swift */; };
+		F6FF52898B5564519EECAB30 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E55D1093F3C4E7F259EE25 /* Theme.swift */; };
+		FE06A787D72033BCFCA881B1 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBDF75E4D4B982476F93E32 /* Vehicle.swift */; };
+		FE127FD1D3CE14F9534834D5 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7F2148108B227ECC0AEEEF /* Location.swift */; };
+		FE1B9C442F25E51006EC47B4 /* Valuation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2906B6EFDB05564AEB10A7DB /* Valuation.swift */; };
+		FF430334DEBC7DACD4B7A3B5 /* live_routes.json in Resources */ = {isa = PBXBuildFile; fileRef = E20F526F7C79C60BA87BB738 /* live_routes.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FE72C87F63FB50DC7AC646F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 650149568308B48A487441B6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D96A74119898092ED6A19FD4;
+			remoteInfo = FleetCheck;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		076DCF54C6B69554E00AEF51 /* InsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsView.swift; sourceTree = "<group>"; };
+		1614111A03B3748F9C6AE43B /* location_event_ack.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = location_event_ack.json; sourceTree = "<group>"; };
+		1639363603090C2E6FCBAC78 /* InsightsEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsEngine.swift; sourceTree = "<group>"; };
+		256C1A94BFFD5A1AF352581D /* FleetCheckTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = FleetCheckTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2906B6EFDB05564AEB10A7DB /* Valuation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Valuation.swift; sourceTree = "<group>"; };
+		2AD6F29BC1C2FEB8086A93BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2BBFFFE7B5C5120E6E844131 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		340A506DB5684C88D2818EB0 /* ValuationCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValuationCalculatorTests.swift; sourceTree = "<group>"; };
+		35AC3C925D1B02AF2DD89C67 /* URLSessionAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionAPIClient.swift; sourceTree = "<group>"; };
+		3A103854316CCA78D8DA9D96 /* LiveTrackingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTrackingStore.swift; sourceTree = "<group>"; };
+		3AEC789942DF55E2D42DE10D /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		3F48570C79C4BF67420B0047 /* valuation_models.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = valuation_models.json; sourceTree = "<group>"; };
+		41A960E640E5517373F40C10 /* FleetAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetAnalyzer.swift; sourceTree = "<group>"; };
+		435D8D19EAB9583C4E817843 /* vehicles.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = vehicles.json; sourceTree = "<group>"; };
+		454C96AD61CB0C5E60B715AC /* FleetCheck.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = FleetCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		455E735EAFC54816F91087AE /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		4BF073D433F7318272A0AB72 /* DriverModeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverModeStore.swift; sourceTree = "<group>"; };
+		53862895FBDDEF5E57F30CE8 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		586D3036E4B749423D8F5B34 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		5873542B1CDF8076F802E397 /* LocationChangeFilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationChangeFilterTests.swift; sourceTree = "<group>"; };
+		5C0D9446E0C70CEABB94741F /* LiveMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveMapView.swift; sourceTree = "<group>"; };
+		5EB5255E1A3F6ACBBC383473 /* daily_metrics.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = daily_metrics.json; sourceTree = "<group>"; };
+		6A12484E1792D398C1C3AC9E /* MaintenancePlanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintenancePlanner.swift; sourceTree = "<group>"; };
+		6A4D3CA35D023242A5CE1D6A /* SimulatedPositionStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatedPositionStream.swift; sourceTree = "<group>"; };
+		6A7F2148108B227ECC0AEEEF /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		6C111D97822D382CD16D8C1D /* FleetStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetStore.swift; sourceTree = "<group>"; };
+		6DBDF75E4D4B982476F93E32 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		6F86D92250E8C4B36CBEA036 /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
+		70F2219E2EB66AF9353A16D1 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		72010B8085B0E9162A684C0D /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		78434831E9EE86D96420D8E6 /* AnalyticsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsTests.swift; sourceTree = "<group>"; };
+		7A1477A5B1028D200B4377D0 /* MockAPIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIClientTests.swift; sourceTree = "<group>"; };
+		7D26C2ECF95F49BEA27BABE4 /* telemetry_latest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = telemetry_latest.json; sourceTree = "<group>"; };
+		87A8897709B22C7A7E493BE0 /* trips.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = trips.json; sourceTree = "<group>"; };
+		8AD50680D6EE796D331A4A50 /* DefaultFleetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFleetRepository.swift; sourceTree = "<group>"; };
+		8F9BD5C9E19EAA0AD31DE526 /* drivers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = drivers.json; sourceTree = "<group>"; };
+		9C0F629B9B75ECBB01E324A7 /* company.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = company.json; sourceTree = "<group>"; };
+		9F908B2FF445F5EC3A581B18 /* geofences.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = geofences.json; sourceTree = "<group>"; };
+		A6E55D1093F3C4E7F259EE25 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		A73F6BCA9D21C8CFFB03B594 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
+		B2109702D593B616E974540F /* DeviceLocationTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceLocationTracker.swift; sourceTree = "<group>"; };
+		B25142518CAFBCC17BAF23C9 /* ValuationCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValuationCalculator.swift; sourceTree = "<group>"; };
+		B56740B9E457B0BC27DDDEA1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		B7E319F4C0C6D67BEC7E6EEE /* Telemetry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Telemetry.swift; sourceTree = "<group>"; };
+		B92379B5B85207D5B384430A /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
+		BBBB859F4994F4B8E40F6628 /* VehicleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleListView.swift; sourceTree = "<group>"; };
+		C2427674445B4AF101375349 /* LocationChangeFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationChangeFilter.swift; sourceTree = "<group>"; };
+		C8BA69F13E1FD4647426FEFB /* DateRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRange.swift; sourceTree = "<group>"; };
+		CA4CADD82F1874F49AAABE46 /* FleetCheckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetCheckApp.swift; sourceTree = "<group>"; };
+		D053940CEC3421FB05DEAD90 /* expenses.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = expenses.json; sourceTree = "<group>"; };
+		D0FE6F6AC9459B7C37B31559 /* VehicleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailView.swift; sourceTree = "<group>"; };
+		D1C310F7E7E38126A5F8191D /* Maintenance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maintenance.swift; sourceTree = "<group>"; };
+		D2AFBF8D83D60E288D38E646 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		DA6166E6DEA1FDF03A016DF0 /* FleetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetRepository.swift; sourceTree = "<group>"; };
+		E20F526F7C79C60BA87BB738 /* live_routes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = live_routes.json; sourceTree = "<group>"; };
+		E2F50D412E82E4F801363C1B /* TestSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSupport.swift; sourceTree = "<group>"; };
+		E5634AEF00265EF76CC835A9 /* maintenance_records.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = maintenance_records.json; sourceTree = "<group>"; };
+		EC637A67559D73E84CDAB3C7 /* FinancialAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialAnalyzer.swift; sourceTree = "<group>"; };
+		EF4C3DEA7D20F87048858B57 /* MockAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIClient.swift; sourceTree = "<group>"; };
+		EF80C3C0C11D646BF4D4DA3E /* alerts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = alerts.json; sourceTree = "<group>"; };
+		F19A7239B0D901E8B1B75B0E /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
+		F4EB15A4C7EF0ADDA943CE2C /* FleetSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetSnapshot.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		134B4CF39D8F4DACE76D51CC /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				455E735EAFC54816F91087AE /* Alerts.swift */,
+				72010B8085B0E9162A684C0D /* Company.swift */,
+				C8BA69F13E1FD4647426FEFB /* DateRange.swift */,
+				6F86D92250E8C4B36CBEA036 /* Driver.swift */,
+				F4EB15A4C7EF0ADDA943CE2C /* FleetSnapshot.swift */,
+				6A7F2148108B227ECC0AEEEF /* Location.swift */,
+				D1C310F7E7E38126A5F8191D /* Maintenance.swift */,
+				B7E319F4C0C6D67BEC7E6EEE /* Telemetry.swift */,
+				2906B6EFDB05564AEB10A7DB /* Valuation.swift */,
+				6DBDF75E4D4B982476F93E32 /* Vehicle.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		194EA8B9CD80A8967D05DA3A /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				53862895FBDDEF5E57F30CE8 /* DashboardView.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		1E268FAACC0430919667A46B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				560C29F44E7A7BD21D382F47 /* Repositories */,
+				755DB26FA0D61AF404F30E98 /* Telemetry */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		2680EED668CA844A11EC57DB = {
+			isa = PBXGroup;
+			children = (
+				7436DF81262B49E92AC0E829 /* FleetCheck */,
+				D9A6CA163F8858BD8BC30EED /* FleetCheckTests */,
+				E485028835051D968334D026 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		35FB8AFBC3B42961173FEB70 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				4BF073D433F7318272A0AB72 /* DriverModeStore.swift */,
+				6C111D97822D382CD16D8C1D /* FleetStore.swift */,
+				3A103854316CCA78D8DA9D96 /* LiveTrackingStore.swift */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		39FF55F9FD797EA1B0061CD5 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				DA6166E6DEA1FDF03A016DF0 /* FleetRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		44CD60B4585B97C0CBC53007 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EC637A67559D73E84CDAB3C7 /* FinancialAnalyzer.swift */,
+				41A960E640E5517373F40C10 /* FleetAnalyzer.swift */,
+				1639363603090C2E6FCBAC78 /* InsightsEngine.swift */,
+				C2427674445B4AF101375349 /* LocationChangeFilter.swift */,
+				6A12484E1792D398C1C3AC9E /* MaintenancePlanner.swift */,
+				B25142518CAFBCC17BAF23C9 /* ValuationCalculator.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		467C9D9E4C1544C202D37DCF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2AD6F29BC1C2FEB8086A93BC /* Assets.xcassets */,
+				57E4562B4E809C1F3D7B07DA /* MockData */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4E3EE22A860D0899B6408406 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				134B4CF39D8F4DACE76D51CC /* Entities */,
+				39FF55F9FD797EA1B0061CD5 /* Repositories */,
+				44CD60B4585B97C0CBC53007 /* Services */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		560C29F44E7A7BD21D382F47 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				8AD50680D6EE796D331A4A50 /* DefaultFleetRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		5765113EC81982AB450AF07B /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				B2109702D593B616E974540F /* DeviceLocationTracker.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		57E4562B4E809C1F3D7B07DA /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				EF80C3C0C11D646BF4D4DA3E /* alerts.json */,
+				9C0F629B9B75ECBB01E324A7 /* company.json */,
+				5EB5255E1A3F6ACBBC383473 /* daily_metrics.json */,
+				8F9BD5C9E19EAA0AD31DE526 /* drivers.json */,
+				D053940CEC3421FB05DEAD90 /* expenses.json */,
+				9F908B2FF445F5EC3A581B18 /* geofences.json */,
+				E20F526F7C79C60BA87BB738 /* live_routes.json */,
+				1614111A03B3748F9C6AE43B /* location_event_ack.json */,
+				E5634AEF00265EF76CC835A9 /* maintenance_records.json */,
+				7D26C2ECF95F49BEA27BABE4 /* telemetry_latest.json */,
+				87A8897709B22C7A7E493BE0 /* trips.json */,
+				3F48570C79C4BF67420B0047 /* valuation_models.json */,
+				435D8D19EAB9583C4E817843 /* vehicles.json */,
+			);
+			path = MockData;
+			sourceTree = "<group>";
+		};
+		6263980D2C5FB6724BC0C534 /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				A73F6BCA9D21C8CFFB03B594 /* TutorialView.swift */,
+			);
+			path = Tutorial;
+			sourceTree = "<group>";
+		};
+		6583368C6DAC24B7FE981127 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				B56740B9E457B0BC27DDDEA1 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		7436DF81262B49E92AC0E829 /* FleetCheck */ = {
+			isa = PBXGroup;
+			children = (
+				B7D6A9E1C05A316167476980 /* App */,
+				D7EC5FC186A646DE6A5F45DD /* Core */,
+				1E268FAACC0430919667A46B /* Data */,
+				4E3EE22A860D0899B6408406 /* Domain */,
+				E7F0491B605B3138859B7514 /* Presentation */,
+				467C9D9E4C1544C202D37DCF /* Resources */,
+			);
+			path = FleetCheck;
+			sourceTree = "<group>";
+		};
+		755DB26FA0D61AF404F30E98 /* Telemetry */ = {
+			isa = PBXGroup;
+			children = (
+				6A4D3CA35D023242A5CE1D6A /* SimulatedPositionStream.swift */,
+			);
+			path = Telemetry;
+			sourceTree = "<group>";
+		};
+		AD3E3AEA936280295226A124 /* Vehicles */ = {
+			isa = PBXGroup;
+			children = (
+				D0FE6F6AC9459B7C37B31559 /* VehicleDetailView.swift */,
+				BBBB859F4994F4B8E40F6628 /* VehicleListView.swift */,
+			);
+			path = Vehicles;
+			sourceTree = "<group>";
+		};
+		B7D6A9E1C05A316167476980 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F19A7239B0D901E8B1B75B0E /* AppDependencies.swift */,
+				CA4CADD82F1874F49AAABE46 /* FleetCheckApp.swift */,
+				D2AFBF8D83D60E288D38E646 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		C040263E308A86371F9566AC /* Insights */ = {
+			isa = PBXGroup;
+			children = (
+				076DCF54C6B69554E00AEF51 /* InsightsView.swift */,
+			);
+			path = Insights;
+			sourceTree = "<group>";
+		};
+		C6FC270AD6E11DB57CEB8CF1 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				70F2219E2EB66AF9353A16D1 /* RootView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		D7EC5FC186A646DE6A5F45DD /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F346AA5313BFDDD40905F68E /* Formatting */,
+				5765113EC81982AB450AF07B /* Location */,
+				E7E5CF7BF6C0DCB60BA742BC /* Networking */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		D9A6CA163F8858BD8BC30EED /* FleetCheckTests */ = {
+			isa = PBXGroup;
+			children = (
+				78434831E9EE86D96420D8E6 /* AnalyticsTests.swift */,
+				5873542B1CDF8076F802E397 /* LocationChangeFilterTests.swift */,
+				7A1477A5B1028D200B4377D0 /* MockAPIClientTests.swift */,
+				E2F50D412E82E4F801363C1B /* TestSupport.swift */,
+				340A506DB5684C88D2818EB0 /* ValuationCalculatorTests.swift */,
+			);
+			path = FleetCheckTests;
+			sourceTree = "<group>";
+		};
+		E485028835051D968334D026 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				454C96AD61CB0C5E60B715AC /* FleetCheck.app */,
+				256C1A94BFFD5A1AF352581D /* FleetCheckTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E7E5CF7BF6C0DCB60BA742BC /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				2BBFFFE7B5C5120E6E844131 /* APIClient.swift */,
+				586D3036E4B749423D8F5B34 /* Endpoint.swift */,
+				EF4C3DEA7D20F87048858B57 /* MockAPIClient.swift */,
+				35AC3C925D1B02AF2DD89C67 /* URLSessionAPIClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		E7F0491B605B3138859B7514 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				194EA8B9CD80A8967D05DA3A /* Dashboard */,
+				F7C20C65F6AD54065289D8F5 /* DesignSystem */,
+				C040263E308A86371F9566AC /* Insights */,
+				F0AB2B3A284D1AAC95A9EAD4 /* LiveMap */,
+				C6FC270AD6E11DB57CEB8CF1 /* Root */,
+				6583368C6DAC24B7FE981127 /* Settings */,
+				35FB8AFBC3B42961173FEB70 /* Stores */,
+				6263980D2C5FB6724BC0C534 /* Tutorial */,
+				AD3E3AEA936280295226A124 /* Vehicles */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		F0AB2B3A284D1AAC95A9EAD4 /* LiveMap */ = {
+			isa = PBXGroup;
+			children = (
+				5C0D9446E0C70CEABB94741F /* LiveMapView.swift */,
+			);
+			path = LiveMap;
+			sourceTree = "<group>";
+		};
+		F346AA5313BFDDD40905F68E /* Formatting */ = {
+			isa = PBXGroup;
+			children = (
+				B92379B5B85207D5B384430A /* Formatters.swift */,
+			);
+			path = Formatting;
+			sourceTree = "<group>";
+		};
+		F7C20C65F6AD54065289D8F5 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				3AEC789942DF55E2D42DE10D /* Components.swift */,
+				A6E55D1093F3C4E7F259EE25 /* Theme.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		28C277AE98F32359E0F1C74F /* FleetCheckTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 356279A88A57F4797E27C4A1 /* Build configuration list for PBXNativeTarget "FleetCheckTests" */;
+			buildPhases = (
+				2CC452ADE4F61E26423ABD38 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9A67918C8EA3B1CA447C16E /* PBXTargetDependency */,
+			);
+			name = FleetCheckTests;
+			productName = FleetCheckTests;
+			productReference = 256C1A94BFFD5A1AF352581D /* FleetCheckTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D96A74119898092ED6A19FD4 /* FleetCheck */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6DB78ADEA1C41B2EBC7C1BC2 /* Build configuration list for PBXNativeTarget "FleetCheck" */;
+			buildPhases = (
+				01232F990AD10A4C0B21A401 /* Sources */,
+				3CEB11FE65703C60F53DBF11 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FleetCheck;
+			productName = FleetCheck;
+			productReference = 454C96AD61CB0C5E60B715AC /* FleetCheck.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		650149568308B48A487441B6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					28C277AE98F32359E0F1C74F = {
+						DevelopmentTeam = J5WZTVZJ44;
+						ProvisioningStyle = Automatic;
+					};
+					D96A74119898092ED6A19FD4 = {
+						DevelopmentTeam = J5WZTVZJ44;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 26154E3C6A8A8B5F5ED7AA2B /* Build configuration list for PBXProject "FleetCheck" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 2680EED668CA844A11EC57DB;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D96A74119898092ED6A19FD4 /* FleetCheck */,
+				28C277AE98F32359E0F1C74F /* FleetCheckTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3CEB11FE65703C60F53DBF11 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CCC394CBA2403D5DF22BC60 /* Assets.xcassets in Resources */,
+				AA8071B357A154DAE0009AE9 /* alerts.json in Resources */,
+				CCC18ABFA549C45D55C59DDE /* company.json in Resources */,
+				D792BD8C3054868749916275 /* daily_metrics.json in Resources */,
+				55BD9C245937DC0CABBA7CBA /* drivers.json in Resources */,
+				6120771FD9AACEE1CC81C695 /* expenses.json in Resources */,
+				F47E1527115F05278026E6E5 /* geofences.json in Resources */,
+				FF430334DEBC7DACD4B7A3B5 /* live_routes.json in Resources */,
+				9AE16C586C46F9446C5AF778 /* location_event_ack.json in Resources */,
+				76A81EE277AF456C43DA0A13 /* maintenance_records.json in Resources */,
+				523C5B12F1E4697529DBABF3 /* telemetry_latest.json in Resources */,
+				0780E2147491A69E72BB9E98 /* trips.json in Resources */,
+				DC5AFD0ED33A8B56C0D8A13B /* valuation_models.json in Resources */,
+				2F98C78A046828F1DEFF833D /* vehicles.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		01232F990AD10A4C0B21A401 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F2745A464F02EB3FDE35912 /* APIClient.swift in Sources */,
+				4F7A79DC6FB654F3D3894337 /* Alerts.swift in Sources */,
+				5BB94DFC99F6A26B5E253428 /* AppDependencies.swift in Sources */,
+				93264C113E5AFDB4AC54FABE /* Company.swift in Sources */,
+				0A17FE792DD83D90BF6DFD73 /* Components.swift in Sources */,
+				B1CAFE173BD34366CA15F2BA /* DashboardView.swift in Sources */,
+				62B5ED5A598BB31C158B00AC /* DateRange.swift in Sources */,
+				DAAC0FEC072FCE1A7ED3897D /* DefaultFleetRepository.swift in Sources */,
+				5E721ADB16B28DE5E662DAA5 /* DeviceLocationTracker.swift in Sources */,
+				2CF2DFE24B4E1560311C20D8 /* Driver.swift in Sources */,
+				F50DC847E05DE944B744ABC7 /* DriverModeStore.swift in Sources */,
+				767BDA581D3C3F346BA3E285 /* Endpoint.swift in Sources */,
+				D49966660F0076DFF9F2574A /* FinancialAnalyzer.swift in Sources */,
+				5053DCA29FE828B2FC413BC1 /* FleetAnalyzer.swift in Sources */,
+				3DFF32B79667512FFE2F5D55 /* FleetCheckApp.swift in Sources */,
+				F114268A69FBE62E7A14AF5B /* FleetRepository.swift in Sources */,
+				E18B4906A10EB95447201F9D /* FleetSnapshot.swift in Sources */,
+				71C7C7758CA5223991644386 /* FleetStore.swift in Sources */,
+				490DEF63A6949818C8F18260 /* Formatters.swift in Sources */,
+				1FE01CEC902CCB05BA37E6DA /* InsightsEngine.swift in Sources */,
+				811984FDE6D1DF5BE3804F7E /* InsightsView.swift in Sources */,
+				1C89B859A906F1B268033525 /* LiveMapView.swift in Sources */,
+				353ADABA9413196A9E9FAAF8 /* LiveTrackingStore.swift in Sources */,
+				FE127FD1D3CE14F9534834D5 /* Location.swift in Sources */,
+				BB8C7450D427606843E916D0 /* LocationChangeFilter.swift in Sources */,
+				3C646A52E04ADB8A5956E231 /* Maintenance.swift in Sources */,
+				9CF2DCBC127346670F16A49A /* MaintenancePlanner.swift in Sources */,
+				7AC8DBA293A834EDC22D77B0 /* MockAPIClient.swift in Sources */,
+				5434EF6B2ACAD5AC95700723 /* RootView.swift in Sources */,
+				0E1DFB52DAF41FD6F9300A23 /* SettingsView.swift in Sources */,
+				3C048D70DAFBF5A380DD446D /* SimulatedPositionStream.swift in Sources */,
+				F5F7D49C39E068C5D67B3387 /* Telemetry.swift in Sources */,
+				F6FF52898B5564519EECAB30 /* Theme.swift in Sources */,
+				CE63307864D5B3843C52D793 /* TutorialView.swift in Sources */,
+				1E88F16ACDB876E72CE6A984 /* URLSessionAPIClient.swift in Sources */,
+				FE1B9C442F25E51006EC47B4 /* Valuation.swift in Sources */,
+				016FCB02085BC86631A4E16B /* ValuationCalculator.swift in Sources */,
+				FE06A787D72033BCFCA881B1 /* Vehicle.swift in Sources */,
+				13E4481392C96D00473CDB0F /* VehicleDetailView.swift in Sources */,
+				06FE863143C7D4CB30538BD4 /* VehicleListView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CC452ADE4F61E26423ABD38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F8F1B3B47E04DF68D6CAF40 /* AnalyticsTests.swift in Sources */,
+				CF06B5F1337D5B5B93B71D5A /* LocationChangeFilterTests.swift in Sources */,
+				5D471348E38192A393E2D831 /* MockAPIClientTests.swift in Sources */,
+				95BB1A4A38021CE5CECD6989 /* TestSupport.swift in Sources */,
+				0F1DCDAD0C192001B9D1D2F3 /* ValuationCalculatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C9A67918C8EA3B1CA447C16E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D96A74119898092ED6A19FD4 /* FleetCheck */;
+			targetProxy = FE72C87F63FB50DC7AC646F6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0A53C135439D4E7BA3C39183 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.adaptiveservices.fleetcheck.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FleetCheck.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FleetCheck";
+			};
+			name = Release;
+		};
+		186D457AD9603651C306BE6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.adaptiveservices.fleetcheck.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FleetCheck.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FleetCheck";
+			};
+			name = Debug;
+		};
+		3F68E84FCDB89BBB84B9055E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = FleetCheck/App/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.adaptiveservices.fleetcheck;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		516E0246B38029410A7A2A86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = J5WZTVZJ44;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		8772211A413A6D2466467222 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = J5WZTVZJ44;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		EE7EA3D40E6D54F334068054 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = FleetCheck/App/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.adaptiveservices.fleetcheck;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		26154E3C6A8A8B5F5ED7AA2B /* Build configuration list for PBXProject "FleetCheck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8772211A413A6D2466467222 /* Debug */,
+				516E0246B38029410A7A2A86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		356279A88A57F4797E27C4A1 /* Build configuration list for PBXNativeTarget "FleetCheckTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				186D457AD9603651C306BE6D /* Debug */,
+				0A53C135439D4E7BA3C39183 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6DB78ADEA1C41B2EBC7C1BC2 /* Build configuration list for PBXNativeTarget "FleetCheck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE7EA3D40E6D54F334068054 /* Debug */,
+				3F68E84FCDB89BBB84B9055E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 650149568308B48A487441B6 /* Project object */;
+}

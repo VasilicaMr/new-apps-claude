@@ -323,7 +323,7 @@ private struct TorchButton: View {
                     }
                 Image(systemName: isOn ? "bolt.fill" : "bolt.slash.fill")
                     .font(.system(size: 15, weight: .medium))
-                    .foregroundStyle(isOn ? .black : .white)
+                    .foregroundStyle(isOn ? Theme.Palette.onAccent : .white)
             }
         }
         .buttonStyle(.plain)
@@ -407,7 +407,7 @@ private struct ZoomSelectorBar: View {
                 Button { onSelect(value) } label: {
                     Text(label)
                         .font(.system(size: 13, weight: .bold, design: .rounded))
-                        .foregroundStyle(active ? Color.black : Color.white)
+                        .foregroundStyle(active ? Theme.Palette.onAccent : Color.white)
                         .frame(width: 46, height: 30)
                         .background {
                             Capsule()
@@ -591,7 +591,7 @@ private struct DoneButton: View {
                     .font(.system(size: 12, weight: .bold))
                     .opacity(0.7)
             }
-            .foregroundStyle(.black)
+            .foregroundStyle(Theme.Palette.onAccent)
             .padding(.horizontal, 22)
             .padding(.vertical, 14)
             .background(Theme.Palette.accent, in: RoundedRectangle(cornerRadius: 16, style: .continuous))

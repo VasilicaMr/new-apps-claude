@@ -1,0 +1,1053 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		036A53B344CA3266FA6A54A6 /* ComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BD81ACB149C197AE8E541 /* ComposerView.swift */; };
+		0B0A4EA4A171410D82C05579 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA8B662BC7F4E019CEAAEEC /* AppContainer.swift */; };
+		0DD31FAB7C762E29BE086C5F /* ClaudeLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F403B51AE401D63D973EB78C /* ClaudeLocator.swift */; };
+		1780451989B54FF04E5981B3 /* WorkspaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EB5EF01F11231236BAE955 /* WorkspaceView.swift */; };
+		20CE4AEB537D3931929928C8 /* NetworkHostConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE82B976511833B75017D2E /* NetworkHostConnector.swift */; };
+		27D3EE53DB4D1B694AF97730 /* DemoHostConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524FBFF4F4C1389D3F9F0155 /* DemoHostConnector.swift */; };
+		2F6746DAC53828BD63D3C5A5 /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = E024E3EA0AA48C8424836AE4 /* Repositories.swift */; };
+		3DAB0E8FCA8C9FB8D69A7586 /* TranscriptReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5BAA88E276397A0822AAE /* TranscriptReducer.swift */; };
+		3DD3B35794AACE2CD8402922 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9E16D6F1F0EFFDB24D076E /* SettingsView.swift */; };
+		41893C616753FE555D12C4BB /* CodeRelayHostApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCEED8EB19B0DFA075BF8D0 /* CodeRelayHostApp.swift */; };
+		455E509264C53C80C255E398 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895BEF208403110D9BAB4D8A /* OnboardingView.swift */; };
+		48566FC9E020828E7919E5DD /* HostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC4102F4EB4119645C458F6 /* HostsViewModel.swift */; };
+		485FAD2EE80867BD852AE683 /* FoundationModelsAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591CB8A781C97B95DC6D0EC6 /* FoundationModelsAssistant.swift */; };
+		54A947C8EB62AB2A80343AA5 /* HostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FFB9D4EB0D033AAEB7F17D /* HostsView.swift */; };
+		588C19E788D636A312038BC8 /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AB00DD736F2CA1E6EF352B /* SessionView.swift */; };
+		58A37FCEC96BE004FB729760 /* TranscriptReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB000D4741DEBA8EE93C38 /* TranscriptReducerTests.swift */; };
+		5B8AD36B3A3AECD4B46B4752 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCFEE49B3B2030948A313AD0 /* Assets.xcassets */; };
+		5C095DA314895CC2CCA214D9 /* RelayKit in Frameworks */ = {isa = PBXBuildFile; productRef = 58DB1C70DCCD4DC69D828F63 /* RelayKit */; };
+		65C6E518414F43FF7D93262E /* HostPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CB3F0653B0FEB43695A4B7 /* HostPersistence.swift */; };
+		6832D215F2D0860815B4862C /* RelayKit in Frameworks */ = {isa = PBXBuildFile; productRef = 240CA311545DA0C78BAB7E77 /* RelayKit */; };
+		6C5D8171BED2215BDA39C06C /* RelayServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFBB61E96493F98D5D11558 /* RelayServer.swift */; };
+		7121765D456DD13249D72306 /* MenuBarContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877F661F03BA82B752B25173 /* MenuBarContentView.swift */; };
+		743F87422756409E1CF823C5 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9343DBCD875D0D12C14F22A6 /* Theme.swift */; };
+		91BBE3085BB7D40980A02C8B /* HostEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5664B2A26B6D9E2C284408E7 /* HostEntities.swift */; };
+		A0029F84509E5A94599831F4 /* ProjectAccessPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE2F272809DB1FCCA894023 /* ProjectAccessPolicy.swift */; };
+		B3EE614E50FB2162EB076F8C /* BonjourHostDiscovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2DF9ECFB8EEE52F1FE28E /* BonjourHostDiscovery.swift */; };
+		B9F5742505B132678487405A /* HostSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B790E96DA09D45622FADF117 /* HostSettingsView.swift */; };
+		BC05C992C4BBF201CE220B74 /* CodeRelayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279F284F0CFEA4827125D818 /* CodeRelayApp.swift */; };
+		C4648E8ED73093C61EB8DE56 /* ClaudeProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178780D700B3B17C663340F7 /* ClaudeProcess.swift */; };
+		C69F049E635C85200DC428CC /* WorkspaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FC0A16379365D98BD11BD8 /* WorkspaceViewModel.swift */; };
+		C7E3C2A6B603C416D0E69C81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 116D93083D53EBB05AF34851 /* Assets.xcassets */; };
+		D12D97AD0D53C28F0040933A /* HostEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD866172EA19F960D8D7CB /* HostEntities.swift */; };
+		D2DD77E0DC20D2C66CB7EC0E /* TranscriptItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460E04E444C1ABD34FB6E444 /* TranscriptItem.swift */; };
+		D5AC788E85A00F99A8ED03EF /* HostUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287FDC07C35D6883A2C76765 /* HostUseCases.swift */; };
+		D85A82E0B37C5AB307D1D7BD /* HostRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06A9C4B95935A92573BA744 /* HostRepositories.swift */; };
+		DF002B7B30A20243D621E50F /* HostStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D69937420A080FDE0CDA90 /* HostStore.swift */; };
+		DF4F8C5DEB981EBD1C043799 /* TranscriptRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC44B962CDB6DE7834EF4385 /* TranscriptRow.swift */; };
+		E80E1063415CF5414E4EA445 /* SessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24DD3982924E00F004BD98D /* SessionViewModel.swift */; };
+		EAFBA66B391FE7F1ECDD2836 /* HostEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5594533714956999716FDF /* HostEngine.swift */; };
+		F0339C525FB82333A8E506B7 /* SessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFD96BB63F24B6021678E37 /* SessionController.swift */; };
+		F999E58843758D54804E629D /* ProjectAccessPolicyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FA9E1E0E59CBB41C9EED82 /* ProjectAccessPolicyTests.swift */; };
+		FB22121E9995991443E31B0D /* PairingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB6CBDD7FB80A2E81818A5 /* PairingView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4745854E738808E2D0A98E1D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42136C24086B231CA7DC3694 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DAC438DAD8AC46C06E0A4B56;
+			remoteInfo = CodeRelayHost;
+		};
+		6FB82D576C64EBC2712F2B7D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42136C24086B231CA7DC3694 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B95A55EADDF8239B1E6DFC2;
+			remoteInfo = CodeRelay;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		04857FEFB1C6454D154E030C /* CodeRelay.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CodeRelay.entitlements; sourceTree = "<group>"; };
+		07EB6CBDD7FB80A2E81818A5 /* PairingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingView.swift; sourceTree = "<group>"; };
+		08EB5EF01F11231236BAE955 /* WorkspaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceView.swift; sourceTree = "<group>"; };
+		116D93083D53EBB05AF34851 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		14ECB6C57305A2923CA44943 /* CodeRelayTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = CodeRelayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		178780D700B3B17C663340F7 /* ClaudeProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaudeProcess.swift; sourceTree = "<group>"; };
+		22FC0A16379365D98BD11BD8 /* WorkspaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceViewModel.swift; sourceTree = "<group>"; };
+		279F284F0CFEA4827125D818 /* CodeRelayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeRelayApp.swift; sourceTree = "<group>"; };
+		287FDC07C35D6883A2C76765 /* HostUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostUseCases.swift; sourceTree = "<group>"; };
+		2D2BD81ACB149C197AE8E541 /* ComposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposerView.swift; sourceTree = "<group>"; };
+		3BC4102F4EB4119645C458F6 /* HostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostsViewModel.swift; sourceTree = "<group>"; };
+		40CB3F0653B0FEB43695A4B7 /* HostPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostPersistence.swift; sourceTree = "<group>"; };
+		43AB00DD736F2CA1E6EF352B /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
+		460E04E444C1ABD34FB6E444 /* TranscriptItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptItem.swift; sourceTree = "<group>"; };
+		4CBB000D4741DEBA8EE93C38 /* TranscriptReducerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptReducerTests.swift; sourceTree = "<group>"; };
+		51FA9E1E0E59CBB41C9EED82 /* ProjectAccessPolicyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectAccessPolicyTests.swift; sourceTree = "<group>"; };
+		524FBFF4F4C1389D3F9F0155 /* DemoHostConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoHostConnector.swift; sourceTree = "<group>"; };
+		5664B2A26B6D9E2C284408E7 /* HostEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostEntities.swift; sourceTree = "<group>"; };
+		591CB8A781C97B95DC6D0EC6 /* FoundationModelsAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationModelsAssistant.swift; sourceTree = "<group>"; };
+		5BCEED8EB19B0DFA075BF8D0 /* CodeRelayHostApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeRelayHostApp.swift; sourceTree = "<group>"; };
+		5DE82B976511833B75017D2E /* NetworkHostConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHostConnector.swift; sourceTree = "<group>"; };
+		62D69937420A080FDE0CDA90 /* HostStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostStore.swift; sourceTree = "<group>"; };
+		6AA8B662BC7F4E019CEAAEEC /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
+		7FFBB61E96493F98D5D11558 /* RelayServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelayServer.swift; sourceTree = "<group>"; };
+		877F661F03BA82B752B25173 /* MenuBarContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarContentView.swift; sourceTree = "<group>"; };
+		895BEF208403110D9BAB4D8A /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		89A2DF9ECFB8EEE52F1FE28E /* BonjourHostDiscovery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonjourHostDiscovery.swift; sourceTree = "<group>"; };
+		9343DBCD875D0D12C14F22A6 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		9B5594533714956999716FDF /* HostEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostEngine.swift; sourceTree = "<group>"; };
+		9BFD96BB63F24B6021678E37 /* SessionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionController.swift; sourceTree = "<group>"; };
+		A678248B875301657BD6BE11 /* RelayKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RelayKit; path = Packages/RelayKit; sourceTree = SOURCE_ROOT; };
+		A7CF329F307BF51000284664 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A7CF32A0307BF54100284664 /* 00-overview.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "00-overview.md"; sourceTree = "<group>"; };
+		AC44B962CDB6DE7834EF4385 /* TranscriptRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptRow.swift; sourceTree = "<group>"; };
+		AFE2F272809DB1FCCA894023 /* ProjectAccessPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectAccessPolicy.swift; sourceTree = "<group>"; };
+		B790E96DA09D45622FADF117 /* HostSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostSettingsView.swift; sourceTree = "<group>"; };
+		BC1D7D8387DB8021187C9190 /* CodeRelayHost.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CodeRelayHost.entitlements; sourceTree = "<group>"; };
+		C24DD3982924E00F004BD98D /* SessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewModel.swift; sourceTree = "<group>"; };
+		C7FFB9D4EB0D033AAEB7F17D /* HostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostsView.swift; sourceTree = "<group>"; };
+		CCFEE49B3B2030948A313AD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D4DD866172EA19F960D8D7CB /* HostEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostEntities.swift; sourceTree = "<group>"; };
+		D5F4C42D0A7597531EA6E249 /* CodeRelayHostTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeRelayHostTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7245ED0BC1D5B6C9F974389 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D95ECDFC5A9E931F67B920CD /* CodeRelay.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = CodeRelay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E024E3EA0AA48C8424836AE4 /* Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
+		E06A9C4B95935A92573BA744 /* HostRepositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostRepositories.swift; sourceTree = "<group>"; };
+		E90223F4E89FD5F17F12B07E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F403B51AE401D63D973EB78C /* ClaudeLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaudeLocator.swift; sourceTree = "<group>"; };
+		F79CD071AA6C5DC528D569DA /* CodeRelayHost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = CodeRelayHost.app; path = "CodeRelay Host.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAB5BAA88E276397A0822AAE /* TranscriptReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptReducer.swift; sourceTree = "<group>"; };
+		FB9E16D6F1F0EFFDB24D076E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6756BE5CCDE1DC11C6EAC928 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C095DA314895CC2CCA214D9 /* RelayKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96EA39ADB0748712D830C62A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6832D215F2D0860815B4862C /* RelayKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0025B170951AA6CDBE794BC3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				116D93083D53EBB05AF34851 /* Assets.xcassets */,
+				04857FEFB1C6454D154E030C /* CodeRelay.entitlements */,
+				D7245ED0BC1D5B6C9F974389 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		00CD800FBF57F87C34C10EF8 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				7FFBB61E96493F98D5D11558 /* RelayServer.swift */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
+		01C73930536C4572B65082D0 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				985C819D02D533B95F28F84A /* Claude */,
+				378F1CFBE61EF6C50118DEEB /* Persistence */,
+				00CD800FBF57F87C34C10EF8 /* Server */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		1E4A59CFFD30EB6695BA2E9B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				6AA8B662BC7F4E019CEAAEEC /* AppContainer.swift */,
+				279F284F0CFEA4827125D818 /* CodeRelayApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		243C734CF22AA11E0BE0C114 /* CodeRelayHost */ = {
+			isa = PBXGroup;
+			children = (
+				A4828F063C89E3436BB5CDD7 /* App */,
+				877911BFD11E90A900502BBD /* Application */,
+				01C73930536C4572B65082D0 /* Data */,
+				455B55591CD604570E77C7C3 /* Domain */,
+				2D0865B8596F3FEA12C32506 /* Presentation */,
+				3790676DBF1686C3AB25C4CB /* Resources */,
+			);
+			path = CodeRelayHost;
+			sourceTree = "<group>";
+		};
+		2D0865B8596F3FEA12C32506 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				B790E96DA09D45622FADF117 /* HostSettingsView.swift */,
+				877F661F03BA82B752B25173 /* MenuBarContentView.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		2FCD383FEB178458670634F2 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				89A2DF9ECFB8EEE52F1FE28E /* BonjourHostDiscovery.swift */,
+				5DE82B976511833B75017D2E /* NetworkHostConnector.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		378F1CFBE61EF6C50118DEEB /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				40CB3F0653B0FEB43695A4B7 /* HostPersistence.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		3790676DBF1686C3AB25C4CB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CCFEE49B3B2030948A313AD0 /* Assets.xcassets */,
+				BC1D7D8387DB8021187C9190 /* CodeRelayHost.entitlements */,
+				E90223F4E89FD5F17F12B07E /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		455B55591CD604570E77C7C3 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				EC19F58E4CE626DE9B03D7B7 /* Entities */,
+				E854578E2977DCC3C39F1443 /* Repositories */,
+				FB8FE5F5DC9D214900C22583 /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		61335D76C3951B75522ACAFF /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				ECCD7B680DBD9143F64305DC /* AI */,
+				6AE0C5438E937FF758F9CFE8 /* Demo */,
+				2FCD383FEB178458670634F2 /* Network */,
+				7DBA1AE65509F880EEB01A08 /* Persistence */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		67EDCBFDD935576D88A5E6E8 /* Hosts */ = {
+			isa = PBXGroup;
+			children = (
+				C7FFB9D4EB0D033AAEB7F17D /* HostsView.swift */,
+				3BC4102F4EB4119645C458F6 /* HostsViewModel.swift */,
+				07EB6CBDD7FB80A2E81818A5 /* PairingView.swift */,
+			);
+			path = Hosts;
+			sourceTree = "<group>";
+		};
+		6AE0C5438E937FF758F9CFE8 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				524FBFF4F4C1389D3F9F0155 /* DemoHostConnector.swift */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		738A5BAA07C39D4B3C3C05B5 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				67EDCBFDD935576D88A5E6E8 /* Hosts */,
+				955D6251759154C8B050B09D /* Onboarding */,
+				91507D18146D3FFFCAB2B8BA /* Session */,
+				F50CF6035936348D58CE5EB6 /* Settings */,
+				8B1B89DB73329BD352A212C7 /* Theme */,
+				EDC84AB1C5B6EB9C755F6B96 /* Workspace */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		748EA264D762612543CCC4F7 /* CodeRelayTests */ = {
+			isa = PBXGroup;
+			children = (
+				4CBB000D4741DEBA8EE93C38 /* TranscriptReducerTests.swift */,
+			);
+			path = CodeRelayTests;
+			sourceTree = "<group>";
+		};
+		7DBA1AE65509F880EEB01A08 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				62D69937420A080FDE0CDA90 /* HostStore.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		80AFF5938A3A7929BC7E4CA9 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				A678248B875301657BD6BE11 /* RelayKit */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		877911BFD11E90A900502BBD /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				9B5594533714956999716FDF /* HostEngine.swift */,
+				9BFD96BB63F24B6021678E37 /* SessionController.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		8B1B89DB73329BD352A212C7 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				9343DBCD875D0D12C14F22A6 /* Theme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		91507D18146D3FFFCAB2B8BA /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				2D2BD81ACB149C197AE8E541 /* ComposerView.swift */,
+				43AB00DD736F2CA1E6EF352B /* SessionView.swift */,
+				C24DD3982924E00F004BD98D /* SessionViewModel.swift */,
+				AC44B962CDB6DE7834EF4385 /* TranscriptRow.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		952A9EEDF9C4B0BD036A9045 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				5664B2A26B6D9E2C284408E7 /* HostEntities.swift */,
+				460E04E444C1ABD34FB6E444 /* TranscriptItem.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		955D6251759154C8B050B09D /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				895BEF208403110D9BAB4D8A /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		985C819D02D533B95F28F84A /* Claude */ = {
+			isa = PBXGroup;
+			children = (
+				F403B51AE401D63D973EB78C /* ClaudeLocator.swift */,
+				178780D700B3B17C663340F7 /* ClaudeProcess.swift */,
+			);
+			path = Claude;
+			sourceTree = "<group>";
+		};
+		A4828F063C89E3436BB5CDD7 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5BCEED8EB19B0DFA075BF8D0 /* CodeRelayHostApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		B8BD9AB8C3F997EC2B9A3B07 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				287FDC07C35D6883A2C76765 /* HostUseCases.swift */,
+				FAB5BAA88E276397A0822AAE /* TranscriptReducer.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		B922DEF8520F4FA2CB7F95B0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D95ECDFC5A9E931F67B920CD /* CodeRelay.app */,
+				F79CD071AA6C5DC528D569DA /* CodeRelayHost.app */,
+				D5F4C42D0A7597531EA6E249 /* CodeRelayHostTests.xctest */,
+				14ECB6C57305A2923CA44943 /* CodeRelayTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B99FCC4D2981ECBDDF9C5AC8 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				952A9EEDF9C4B0BD036A9045 /* Entities */,
+				E98D6F15FBA3D6AD142E495B /* Repositories */,
+				B8BD9AB8C3F997EC2B9A3B07 /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		CA2AC359BDFC5B203164FD11 /* CodeRelayHostTests */ = {
+			isa = PBXGroup;
+			children = (
+				51FA9E1E0E59CBB41C9EED82 /* ProjectAccessPolicyTests.swift */,
+			);
+			path = CodeRelayHostTests;
+			sourceTree = "<group>";
+		};
+		D4D00C1577C164222E1AB0FF /* CodeRelay */ = {
+			isa = PBXGroup;
+			children = (
+				1E4A59CFFD30EB6695BA2E9B /* App */,
+				61335D76C3951B75522ACAFF /* Data */,
+				B99FCC4D2981ECBDDF9C5AC8 /* Domain */,
+				738A5BAA07C39D4B3C3C05B5 /* Presentation */,
+				0025B170951AA6CDBE794BC3 /* Resources */,
+			);
+			path = CodeRelay;
+			sourceTree = "<group>";
+		};
+		E854578E2977DCC3C39F1443 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				E06A9C4B95935A92573BA744 /* HostRepositories.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		E98D6F15FBA3D6AD142E495B /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				E024E3EA0AA48C8424836AE4 /* Repositories.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		EC19F58E4CE626DE9B03D7B7 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				D4DD866172EA19F960D8D7CB /* HostEntities.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		ECCD7B680DBD9143F64305DC /* AI */ = {
+			isa = PBXGroup;
+			children = (
+				591CB8A781C97B95DC6D0EC6 /* FoundationModelsAssistant.swift */,
+			);
+			path = AI;
+			sourceTree = "<group>";
+		};
+		EDC84AB1C5B6EB9C755F6B96 /* Workspace */ = {
+			isa = PBXGroup;
+			children = (
+				08EB5EF01F11231236BAE955 /* WorkspaceView.swift */,
+				22FC0A16379365D98BD11BD8 /* WorkspaceViewModel.swift */,
+			);
+			path = Workspace;
+			sourceTree = "<group>";
+		};
+		F1DF8720A5988CC38FDF9C9C = {
+			isa = PBXGroup;
+			children = (
+				A7CF32A0307BF54100284664 /* 00-overview.md */,
+				A7CF329F307BF51000284664 /* README.md */,
+				D4D00C1577C164222E1AB0FF /* CodeRelay */,
+				243C734CF22AA11E0BE0C114 /* CodeRelayHost */,
+				CA2AC359BDFC5B203164FD11 /* CodeRelayHostTests */,
+				748EA264D762612543CCC4F7 /* CodeRelayTests */,
+				80AFF5938A3A7929BC7E4CA9 /* Packages */,
+				B922DEF8520F4FA2CB7F95B0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F50CF6035936348D58CE5EB6 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				FB9E16D6F1F0EFFDB24D076E /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		FB8FE5F5DC9D214900C22583 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				AFE2F272809DB1FCCA894023 /* ProjectAccessPolicy.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3B04A1A2E846148952B872A3 /* CodeRelayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3B76B6218031EF25881600D /* Build configuration list for PBXNativeTarget "CodeRelayTests" */;
+			buildPhases = (
+				D81351BF0DCAAB83D261587A /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AEA2667DD14DA3DDC663A938 /* PBXTargetDependency */,
+			);
+			name = CodeRelayTests;
+			productName = CodeRelayTests;
+			productReference = 14ECB6C57305A2923CA44943 /* CodeRelayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8B95A55EADDF8239B1E6DFC2 /* CodeRelay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C68F11A22741AFA54B15F34A /* Build configuration list for PBXNativeTarget "CodeRelay" */;
+			buildPhases = (
+				6795BE4AC12ABDE1B9DBC9EB /* Sources */,
+				0E36E4925D19DB77B1E83A03 /* Resources */,
+				6756BE5CCDE1DC11C6EAC928 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CodeRelay;
+			packageProductDependencies = (
+				58DB1C70DCCD4DC69D828F63 /* RelayKit */,
+			);
+			productName = CodeRelay;
+			productReference = D95ECDFC5A9E931F67B920CD /* CodeRelay.app */;
+			productType = "com.apple.product-type.application";
+		};
+		908EAB8DFCDBAA26BD2D0832 /* CodeRelayHostTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1163B3409D7D009D1E9D9A7B /* Build configuration list for PBXNativeTarget "CodeRelayHostTests" */;
+			buildPhases = (
+				F4B7CA737950A0FBF1129F0E /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				819D5D4BCDA59205BFF246AD /* PBXTargetDependency */,
+			);
+			name = CodeRelayHostTests;
+			productName = CodeRelayHostTests;
+			productReference = D5F4C42D0A7597531EA6E249 /* CodeRelayHostTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DAC438DAD8AC46C06E0A4B56 /* CodeRelayHost */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3E675BDED35DF377C3ECA50 /* Build configuration list for PBXNativeTarget "CodeRelayHost" */;
+			buildPhases = (
+				5027D1FDFF6368F40C84120F /* Sources */,
+				177B11F3B4EDA65A5D7BE10F /* Resources */,
+				96EA39ADB0748712D830C62A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CodeRelayHost;
+			packageProductDependencies = (
+				240CA311545DA0C78BAB7E77 /* RelayKit */,
+			);
+			productName = CodeRelayHost;
+			productReference = F79CD071AA6C5DC528D569DA /* CodeRelayHost.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		42136C24086B231CA7DC3694 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					3B04A1A2E846148952B872A3 = {
+						DevelopmentTeam = "";
+					};
+					8B95A55EADDF8239B1E6DFC2 = {
+						DevelopmentTeam = "";
+					};
+					908EAB8DFCDBAA26BD2D0832 = {
+						DevelopmentTeam = "";
+					};
+					DAC438DAD8AC46C06E0A4B56 = {
+						DevelopmentTeam = "";
+					};
+				};
+			};
+			buildConfigurationList = DBAC3DDEEE05C1859D9F320B /* Build configuration list for PBXProject "CodeRelay" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = F1DF8720A5988CC38FDF9C9C;
+			packageReferences = (
+				75951820483E5EDDFCB988B8 /* XCLocalSwiftPackageReference "Packages/RelayKit" */,
+			);
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8B95A55EADDF8239B1E6DFC2 /* CodeRelay */,
+				DAC438DAD8AC46C06E0A4B56 /* CodeRelayHost */,
+				908EAB8DFCDBAA26BD2D0832 /* CodeRelayHostTests */,
+				3B04A1A2E846148952B872A3 /* CodeRelayTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0E36E4925D19DB77B1E83A03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7E3C2A6B603C416D0E69C81 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		177B11F3B4EDA65A5D7BE10F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B8AD36B3A3AECD4B46B4752 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5027D1FDFF6368F40C84120F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DD31FAB7C762E29BE086C5F /* ClaudeLocator.swift in Sources */,
+				C4648E8ED73093C61EB8DE56 /* ClaudeProcess.swift in Sources */,
+				41893C616753FE555D12C4BB /* CodeRelayHostApp.swift in Sources */,
+				EAFBA66B391FE7F1ECDD2836 /* HostEngine.swift in Sources */,
+				D12D97AD0D53C28F0040933A /* HostEntities.swift in Sources */,
+				65C6E518414F43FF7D93262E /* HostPersistence.swift in Sources */,
+				D85A82E0B37C5AB307D1D7BD /* HostRepositories.swift in Sources */,
+				B9F5742505B132678487405A /* HostSettingsView.swift in Sources */,
+				7121765D456DD13249D72306 /* MenuBarContentView.swift in Sources */,
+				A0029F84509E5A94599831F4 /* ProjectAccessPolicy.swift in Sources */,
+				6C5D8171BED2215BDA39C06C /* RelayServer.swift in Sources */,
+				F0339C525FB82333A8E506B7 /* SessionController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6795BE4AC12ABDE1B9DBC9EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B0A4EA4A171410D82C05579 /* AppContainer.swift in Sources */,
+				B3EE614E50FB2162EB076F8C /* BonjourHostDiscovery.swift in Sources */,
+				BC05C992C4BBF201CE220B74 /* CodeRelayApp.swift in Sources */,
+				036A53B344CA3266FA6A54A6 /* ComposerView.swift in Sources */,
+				27D3EE53DB4D1B694AF97730 /* DemoHostConnector.swift in Sources */,
+				485FAD2EE80867BD852AE683 /* FoundationModelsAssistant.swift in Sources */,
+				91BBE3085BB7D40980A02C8B /* HostEntities.swift in Sources */,
+				DF002B7B30A20243D621E50F /* HostStore.swift in Sources */,
+				D5AC788E85A00F99A8ED03EF /* HostUseCases.swift in Sources */,
+				54A947C8EB62AB2A80343AA5 /* HostsView.swift in Sources */,
+				48566FC9E020828E7919E5DD /* HostsViewModel.swift in Sources */,
+				20CE4AEB537D3931929928C8 /* NetworkHostConnector.swift in Sources */,
+				455E509264C53C80C255E398 /* OnboardingView.swift in Sources */,
+				FB22121E9995991443E31B0D /* PairingView.swift in Sources */,
+				2F6746DAC53828BD63D3C5A5 /* Repositories.swift in Sources */,
+				588C19E788D636A312038BC8 /* SessionView.swift in Sources */,
+				E80E1063415CF5414E4EA445 /* SessionViewModel.swift in Sources */,
+				3DD3B35794AACE2CD8402922 /* SettingsView.swift in Sources */,
+				743F87422756409E1CF823C5 /* Theme.swift in Sources */,
+				D2DD77E0DC20D2C66CB7EC0E /* TranscriptItem.swift in Sources */,
+				3DAB0E8FCA8C9FB8D69A7586 /* TranscriptReducer.swift in Sources */,
+				DF4F8C5DEB981EBD1C043799 /* TranscriptRow.swift in Sources */,
+				1780451989B54FF04E5981B3 /* WorkspaceView.swift in Sources */,
+				C69F049E635C85200DC428CC /* WorkspaceViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D81351BF0DCAAB83D261587A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58A37FCEC96BE004FB729760 /* TranscriptReducerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4B7CA737950A0FBF1129F0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F999E58843758D54804E629D /* ProjectAccessPolicyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		819D5D4BCDA59205BFF246AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DAC438DAD8AC46C06E0A4B56 /* CodeRelayHost */;
+			targetProxy = 4745854E738808E2D0A98E1D /* PBXContainerItemProxy */;
+		};
+		AEA2667DD14DA3DDC663A938 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8B95A55EADDF8239B1E6DFC2 /* CodeRelay */;
+			targetProxy = 6FB82D576C64EBC2712F2B7D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1632CB77586D1DA449923176 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		292839A227505DF422C82CF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CodeRelayHost/Resources/CodeRelayHost.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = CodeRelayHost/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.adaptiveservices.coderelay.host;
+				PRODUCT_NAME = "CodeRelay Host";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		2A2BE6576169374713A7C6E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.adaptiveservices.coderelay.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodeRelay.app/CodeRelay";
+			};
+			name = Release;
+		};
+		360879F859E284350C935FBA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CodeRelay/Resources/CodeRelay.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = CodeRelay/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.adaptiveservices.coderelay;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		41DB9069AE3D243DDCC26E21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CodeRelay/Resources/CodeRelay.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = CodeRelay/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.adaptiveservices.coderelay;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6539D652BFC6024FC147191D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		6830DC878C41B41FC363B3C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.adaptiveservices.coderelay.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodeRelay.app/CodeRelay";
+			};
+			name = Debug;
+		};
+		832CB9E3E17D8809AFAE4A24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.adaptiveservices.coderelay.host.tests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodeRelay Host.app/Contents/MacOS/CodeRelay Host";
+			};
+			name = Release;
+		};
+		A7935794B75228199681B92D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.adaptiveservices.coderelay.host.tests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodeRelay Host.app/Contents/MacOS/CodeRelay Host";
+			};
+			name = Debug;
+		};
+		E7C0DDC11CE0D060D1027F1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CodeRelayHost/Resources/CodeRelayHost.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = CodeRelayHost/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.adaptiveservices.coderelay.host;
+				PRODUCT_NAME = "CodeRelay Host";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1163B3409D7D009D1E9D9A7B /* Build configuration list for PBXNativeTarget "CodeRelayHostTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7935794B75228199681B92D /* Debug */,
+				832CB9E3E17D8809AFAE4A24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C68F11A22741AFA54B15F34A /* Build configuration list for PBXNativeTarget "CodeRelay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41DB9069AE3D243DDCC26E21 /* Debug */,
+				360879F859E284350C935FBA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		DBAC3DDEEE05C1859D9F320B /* Build configuration list for PBXProject "CodeRelay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6539D652BFC6024FC147191D /* Debug */,
+				1632CB77586D1DA449923176 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F3B76B6218031EF25881600D /* Build configuration list for PBXNativeTarget "CodeRelayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6830DC878C41B41FC363B3C2 /* Debug */,
+				2A2BE6576169374713A7C6E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F3E675BDED35DF377C3ECA50 /* Build configuration list for PBXNativeTarget "CodeRelayHost" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				292839A227505DF422C82CF6 /* Debug */,
+				E7C0DDC11CE0D060D1027F1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		75951820483E5EDDFCB988B8 /* XCLocalSwiftPackageReference "Packages/RelayKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/RelayKit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		240CA311545DA0C78BAB7E77 /* RelayKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RelayKit;
+		};
+		58DB1C70DCCD4DC69D828F63 /* RelayKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RelayKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 42136C24086B231CA7DC3694 /* Project object */;
+}

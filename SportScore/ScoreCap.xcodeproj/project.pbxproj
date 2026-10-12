@@ -1,0 +1,1962 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		005681C650E707F3392D8328 /* PlayersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70AF2D016A7962FE1B3E009 /* PlayersCoordinator.swift */; };
+		0056A5C43C214844C94EFB82 /* TVNumberPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272168922D27E310120D5D41 /* TVNumberPadView.swift */; };
+		005EE26606058016AB10C0CC /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5056D3EF73DC3ABDDDEDCA48 /* AppContainer.swift */; };
+		03441FAD5C378F8884D7AA13 /* SnookerScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE7EFA2A78552F3467EA85A /* SnookerScoringEngine.swift */; };
+		049E011784FFA471EB6CCC63 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51392B4C11AC53872CBCC76 /* StatsView.swift */; };
+		04C1510CBD95A1E584F8179E /* BowlingScorer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5DD59B1866EB696923940D /* BowlingScorer.swift */; };
+		04CA75A301BB365A9DD704C0 /* CroquetScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E6A3F79DAB7BE4789AFCA7 /* CroquetScoringEngine.swift */; };
+		05F4644915ACFB513D36B047 /* TVAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CD25EEF7C1D1B8EC1C6EA3 /* TVAppCoordinator.swift */; };
+		06951CFA560F98A30FF145FD /* CheckersScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F5670AA91C416AB5334039 /* CheckersScoringEngine.swift */; };
+		06F6B9CAC803377CFB5C7BDF /* KubbScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37322CE6B4A9FBE698A43A0 /* KubbScoringEngine.swift */; };
+		0795B21DC506BBC6A9835646 /* GamePlansStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68E86A66DAFD4792F8751B0 /* GamePlansStore.swift */; };
+		0885E44ECE31D259461C1677 /* ScrabbleScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A5654F941E1640B5F91B01 /* ScrabbleScoringEngine.swift */; };
+		0918B651D882FE60E609757A /* HorseshoesScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E39A81DC882A7858267E3 /* HorseshoesScoringEngine.swift */; };
+		0994C28C1743D36D8B123BC4 /* TVPlansView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DD7EDFE0A4BADF9B937845 /* TVPlansView.swift */; };
+		0A93DC52CFFCD900D3BDE4D4 /* PersistenceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BC6E513CC5815FD64BA714 /* PersistenceContainer.swift */; };
+		0AAB0F829EBC034EB5CBDB7C /* BackgammonScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FAA30AA1CFA26C0EEB25F2 /* BackgammonScoringEngine.swift */; };
+		0B46C43A22B2AD2D05EE1FA1 /* DeletePlayerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D57D9A29FA1C02B26AB5D92 /* DeletePlayerUseCase.swift */; };
+		0C17D9908E4BA28F20270F83 /* TVSessionSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D03FD300D36C8516A1D6E0 /* TVSessionSetupView.swift */; };
+		0C64E46DBB01A5F23223352E /* KubbEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D5D1FB1C66B552AEA1B79C /* KubbEntryView.swift */; };
+		0CABA9B8D9FDF969940A6C72 /* DominoesScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5278690AC71F9E1D39B70B /* DominoesScoringEngine.swift */; };
+		103F49D94578FD2A72762EA5 /* SharedWidgetStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315DAD213FBBF44EE9A3FA0F /* SharedWidgetStore.swift */; };
+		10C729469FC53B9A302F608B /* RingTossScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD424B2F07CDDA2010E8D81 /* RingTossScoringEngine.swift */; };
+		11C18E3339BE7DE65532F077 /* ScoreEntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3E6DD208A0A2037FE9ED50 /* ScoreEntryModel.swift */; };
+		12C9B779AD35A1C2E76FCDBF /* FetchSessionsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D7F37B253301B0C1CB261B /* FetchSessionsUseCase.swift */; };
+		1509DFDFFF5ACC00448FDDDE /* ZoneBasedScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948854D8F97D98F342ACF0D /* ZoneBasedScoringEngine.swift */; };
+		1609308A6C0A1697505098F5 /* HouseGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FEE8BA0BAD287537738D6E /* HouseGame.swift */; };
+		178BBFBCB279EDBE467836E4 /* CheckersScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F5670AA91C416AB5334039 /* CheckersScoringEngine.swift */; };
+		18D2917B660750037DB6397E /* SelectSessionIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2060D2578AC820EBF1CE9981 /* SelectSessionIntent.swift */; };
+		191F7B7D6328EB143C84A6DF /* FetchCustomGamesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92045C8D17062043C8B2D3FC /* FetchCustomGamesUseCase.swift */; };
+		1CB195262B760FB686AFE4B6 /* SkittlesScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867B207A44F6020780341783 /* SkittlesScoringEngine.swift */; };
+		1CF63EC94B6C70F350A17723 /* RacquetballScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E82670EDE441BCBA018DD /* RacquetballScoringEngine.swift */; };
+		20535A99018BA9F5002E7A27 /* StartSessionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A47A1F86F264E38CFA29B8 /* StartSessionUseCase.swift */; };
+		21BE78EF8930129589E6FFC6 /* TennisScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5921F186C6684B8384757C4 /* TennisScoringEngine.swift */; };
+		237A24F4EFA77BAAFE99F78D /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36915D9107A16F61CDE4C96 /* HomeCoordinator.swift */; };
+		240E57633B3F01DA07B43F5E /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D8311A273F9EAD0D283EC0 /* GameSession.swift */; };
+		2496F421FCC5C2B8B824378D /* SessionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD09B0E53A645F8D7B525E5 /* SessionRepository.swift */; };
+		24E41A5C2AAF802A77361A3E /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FD9AE02D9D8508469D8427 /* HistoryViewModel.swift */; };
+		256041FF1F0B7901650A3622 /* PoolScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB8F0B06E8AAF3619B53118 /* PoolScoringEngine.swift */; };
+		25C3F5D064BF592DA57AA97F /* SessionRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862246FA648EB3AA5115DFC3 /* SessionRepositoryImpl.swift */; };
+		27FE7C2F9CCDFA0037B939DD /* ArcheryScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5642C19BE661C849B77EA2C /* ArcheryScoringEngine.swift */; };
+		29E249E12BB6CB11F11771AF /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A2E945C5F9D5225D7F4487 /* HistoryView.swift */; };
+		2B93AD37F15C368DA9E3B460 /* DominoesScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5278690AC71F9E1D39B70B /* DominoesScoringEngine.swift */; };
+		2BB728F05271FEE40B5C3E06 /* ScoreFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFF4B69107861DFC38BECFE /* ScoreFrame.swift */; };
+		2BEE69051179D91A1DF4BD80 /* PinballScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E19D1426C0C2FE3C33BF2B /* PinballScoringEngine.swift */; };
+		2C407BF29E80C66E4BB8BC05 /* SportListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623124B7AB50C1FFB9FE337 /* SportListViewModel.swift */; };
+		2C465F0E73FE81FD7F154F34 /* FetchPlayersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346BE41979E1D0155CD3A3CD /* FetchPlayersUseCase.swift */; };
+		2E2CA0737EBF94978E833017 /* CurlingScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B72383683E3D55BB81B624 /* CurlingScoringEngine.swift */; };
+		2E83CC018538D8953907772B /* CustomGameRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920609C67261D7B4715DD325 /* CustomGameRepository.swift */; };
+		2F5A28629D8782A1B0DE1981 /* FoosballScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81429E6B5E14CCCD81DB1091 /* FoosballScoringEngine.swift */; };
+		2FBC26CA730597B98CB81620 /* LawnBowlsScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DB17F07EE2929EAAA9EAD5 /* LawnBowlsScoringEngine.swift */; };
+		2FCEBB0FD2D0505E2243FBA9 /* BadmintonScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA85FD66AA6BA0A526B753B /* BadmintonScoringEngine.swift */; };
+		310D6EA7892E8D321295D650 /* CustomGameRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1019E90CE08A32AC48D288D8 /* CustomGameRepositoryImpl.swift */; };
+		31210DFC3DD614350FB7C8E6 /* SnookerScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE7EFA2A78552F3467EA85A /* SnookerScoringEngine.swift */; };
+		315BFB0244D3014A0E337960 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9FF9B7F3DB76B32113171D /* Player.swift */; };
+		31B42E66D9CC0896F432B47B /* DeletePlayerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D57D9A29FA1C02B26AB5D92 /* DeletePlayerUseCase.swift */; };
+		3316C5520E79CC323EFC6DB1 /* ScoreCapWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BFC060E5EA2DDE4DAE9B2F /* ScoreCapWidget.swift */; };
+		33B0E3228B40D37CE4BDAA0B /* ScoreEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CDDCCF983D323DDFCD270A /* ScoreEntry.swift */; };
+		35C29C51E04CF046A4054D24 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FD9AE02D9D8508469D8427 /* HistoryViewModel.swift */; };
+		36D84A73DA23890453F173E2 /* PlayerRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BEC1F950610ACD0CF12E59 /* PlayerRepositoryImpl.swift */; };
+		380BE1C034D14D5886E0FD11 /* ScoreFrameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A27298A7E28B8647055D6B /* ScoreFrameModel.swift */; };
+		38C803B69853366B5E7E1471 /* CustomGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F8497391EC12DD861BA20E /* CustomGameModel.swift */; };
+		39C2154C49F6CFB32D2A77EF /* ArmWrestlingScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8721DEE63B70117C94A347 /* ArmWrestlingScoringEngine.swift */; };
+		39CA146673FB46E5596BC3E7 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95805142F65547E6FFE2B4E /* AppCoordinator.swift */; };
+		3B04404B92F111BC56343BCD /* CurlingScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B72383683E3D55BB81B624 /* CurlingScoringEngine.swift */; };
+		3DE2C4EF88FA3F5EC04B8F99 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA59EDE252DD0B3615C469C2 /* Onboarding.swift */; };
+		3ECE560ED84326B61C0D3695 /* ScoreTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63519FEE06430153B2B28A26 /* ScoreTimelineProvider.swift */; };
+		3F648E22B88473AE4C767C63 /* FetchPlayersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346BE41979E1D0155CD3A3CD /* FetchPlayersUseCase.swift */; };
+		4073EB6D7A2997BD267C3134 /* ScoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32F82543D1B9A0A4BD960E1 /* ScoreRepository.swift */; };
+		412EB31D8B8C8597E526F00C /* ScoreEntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3E6DD208A0A2037FE9ED50 /* ScoreEntryModel.swift */; };
+		421FF637101010E8FFE33DE8 /* IncrementScoreIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6DF5511232938E3A8C9E8E /* IncrementScoreIntent.swift */; };
+		4248A50EA7F3CC3E3A231DBC /* BackgammonScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FAA30AA1CFA26C0EEB25F2 /* BackgammonScoringEngine.swift */; };
+		42AF3D4A28C6D2078497D68A /* ComputeScoreUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DED8EC4AE469F082BFC81A7 /* ComputeScoreUseCase.swift */; };
+		42C653F8F7E740E914F2E547 /* ScrabbleEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE2C7D6F5953FD1105866A9 /* ScrabbleEntryView.swift */; };
+		43FD9487F40DE7002A2D6014 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF7730801ED7F4C67E7C323 /* AppTheme.swift */; };
+		4495D0EC58E0F7D7F62343E0 /* PlayersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B464A7A9D40768DC1A16FD9 /* PlayersViewModel.swift */; };
+		4538CD8066210A78D3844E99 /* ComputeScoreUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DED8EC4AE469F082BFC81A7 /* ComputeScoreUseCase.swift */; };
+		4715F3382BAEA6C0251A2205 /* DiscGolfEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91692DE42CD9EA1956689A5B /* DiscGolfEntryView.swift */; };
+		4723BFEC3A0B3E11AD84046D /* MahjongScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FDFC79489B2CDF85D7C38A /* MahjongScoringEngine.swift */; };
+		486355FBD32EABCC26377FD1 /* BocceScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CBBDBF46C55E06C6C9D858 /* BocceScoringEngine.swift */; };
+		4BED854091A799DEAA7C76D0 /* AxeThrowingScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFBF15DBB86D588742923C7 /* AxeThrowingScoringEngine.swift */; };
+		4DE7DB93AC4CE6E03F9C4749 /* PlayerRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BEC1F950610ACD0CF12E59 /* PlayerRepositoryImpl.swift */; };
+		53654B00B4F1E5C7B14D8140 /* StartSessionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A47A1F86F264E38CFA29B8 /* StartSessionUseCase.swift */; };
+		545DFD314ABF53FE62905B3E /* ScoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32F82543D1B9A0A4BD960E1 /* ScoreRepository.swift */; };
+		54BF43FC7E1D6F966F1FD4E2 /* SportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E596EBB72B95AF8ADDC87A5 /* SportType.swift */; };
+		5676CB7DFFF7B87D0AB16734 /* TVTabsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D0953BD987B249957F46CD /* TVTabsTests.swift */; };
+		5894793E5A2EC350767B34E0 /* QuickScoreEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB567A9E6960D63685F0BE1F /* QuickScoreEntryView.swift */; };
+		58ECE6297A0739D4B6A0AE3D /* SportListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623124B7AB50C1FFB9FE337 /* SportListViewModel.swift */; };
+		5B594589AC0176642BA46296 /* CornholeScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199DE1FF88129EDEC9A248C /* CornholeScoringEngine.swift */; };
+		5C15785C0E9329F2AB017D3E /* SessionDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7178B736F839710DB0B23FB9 /* SessionDetailViewModel.swift */; };
+		5DAAC5D49014F3A628580B57 /* DartsScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C84AB381BC643EC606E455 /* DartsScoringEngine.swift */; };
+		5F201D921196D0D7D1C000E8 /* DartsEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD5054F3CAA2961A567B58A /* DartsEntryView.swift */; };
+		603A5BE4017D7AE3525494FB /* KubbScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37322CE6B4A9FBE698A43A0 /* KubbScoringEngine.swift */; };
+		61C13BF66D7E5A8F70BAEADE /* ScoreCapWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 7DFC67D31D1DB9FC4F4253AD /* ScoreCapWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		61DEA597D227835AC63E8F14 /* SessionSetupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE4AF684DDAB27E09500E1D /* SessionSetupViewModel.swift */; };
+		621D3314004753FE433F7A3D /* HistoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4CA2F0A141DA3C2038DDE0 /* HistoryCoordinator.swift */; };
+		627059549F4A89BD69961AAC /* TableTennisScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B3F5692FD8F39093EF501 /* TableTennisScoringEngine.swift */; };
+		6298A77EB91C4DD5FCD60D07 /* SessionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD09B0E53A645F8D7B525E5 /* SessionRepository.swift */; };
+		6412CED6D419628697CB370F /* NinePinScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2C59465BFA9964572E06A6 /* NinePinScoringEngine.swift */; };
+		64BC66AE4EB40E7CD114F181 /* TVLiveScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723B90CBE81758723BC4E413 /* TVLiveScoreView.swift */; };
+		65068184DB3785649E38F00D /* PlayersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B464A7A9D40768DC1A16FD9 /* PlayersViewModel.swift */; };
+		66A1FD9D1E40CD55FCB861CE /* CaromScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD11D6F0591A2626BDB7611 /* CaromScoringEngine.swift */; };
+		67033A251141120969CA9998 /* DartsScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C84AB381BC643EC606E455 /* DartsScoringEngine.swift */; };
+		680D3A7315F971AFE6DDC50D /* SaveCustomGameUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98D33472E0CF60C25E767E1 /* SaveCustomGameUseCase.swift */; };
+		696336F1247C8C67D8BF69ED /* UndoLastEntryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95094D15C3B654F6F77E2C8E /* UndoLastEntryUseCase.swift */; };
+		6967905A6060541C5FDF972B /* SportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E596EBB72B95AF8ADDC87A5 /* SportType.swift */; };
+		69B1A22657AF8F15E563CBF3 /* PadelScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F0FE60672A027F2C296FE9 /* PadelScoringEngine.swift */; };
+		6CE3E42F09FE02BA5F98EED4 /* ScoreCapTVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2912BA4807B124CE793F35 /* ScoreCapTVApp.swift */; };
+		6CFE3055CC77D57EFE397E8D /* CustomGameRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1019E90CE08A32AC48D288D8 /* CustomGameRepositoryImpl.swift */; };
+		6F389585A58C3F6707EDF5EE /* FoosballScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81429E6B5E14CCCD81DB1091 /* FoosballScoringEngine.swift */; };
+		6FC879B38EDDF7F82C3AC078 /* CustomGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F8497391EC12DD861BA20E /* CustomGameModel.swift */; };
+		70A7F27D68FE2B49C90A83EA /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF23A12C52112D4D399CEFC3 /* PlayerModel.swift */; };
+		719A96E1B5CB141253FA04C1 /* GoScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710BEDD8E5F714C78951C4DA /* GoScoringEngine.swift */; };
+		71D5B22726F45ADAFACC37A4 /* MahjongScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FDFC79489B2CDF85D7C38A /* MahjongScoringEngine.swift */; };
+		71D71AF802ACBFD49D31E6E5 /* PokerEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F9FD46A2A2092D4245C6C3 /* PokerEntryView.swift */; };
+		7201785F2BBF4110365F2AAF /* CustomGameRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920609C67261D7B4715DD325 /* CustomGameRepository.swift */; };
+		725FA72AD6206AD5FD3BEF6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A68111A23D8ECEAA4CDBE1D3 /* Assets.xcassets */; };
+		74E8675500338F060C98B628 /* SessionSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B24B03B1A9CEBC868CFC9C1 /* SessionSetupView.swift */; };
+		7563B7D743FE76D768187E4F /* PremiumManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6F995FA481532F39F9051 /* PremiumManager.swift */; };
+		75B9B2F2A2477D937EDCDEE8 /* GoEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEB1E2E653C62F4ECD5CC43 /* GoEntryView.swift */; };
+		764FF4BE93AABC59530A3E86 /* PersistenceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BC6E513CC5815FD64BA714 /* PersistenceContainer.swift */; };
+		76C96282D4E14720DE9C7F30 /* DuckpinScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51BA788BCB27C1E03C2617F /* DuckpinScoringEngine.swift */; };
+		77414349CC41D4C8632735E2 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF23A12C52112D4D399CEFC3 /* PlayerModel.swift */; };
+		78554A9B918E48EFE667181B /* PickleballScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D8600C1474AB020AA6990D /* PickleballScoringEngine.swift */; };
+		78DFDBC120D00CDD767ECF45 /* BowlingEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFD25C98CDC8D9AA5DDD958 /* BowlingEntryView.swift */; };
+		7B60F6A2F4EDCA4F95B872B5 /* ScoreEntryViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A21A224DBA3763C4C5A40B /* ScoreEntryViewFactory.swift */; };
+		7C4EF83098341D2E99FBDCF0 /* QuickScorePresets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005028AE30E61A1360A56507 /* QuickScorePresets.swift */; };
+		7D69503F1EC5F3F416844333 /* SessionDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7178B736F839710DB0B23FB9 /* SessionDetailViewModel.swift */; };
+		7DAD0106C697D4740D2E7567 /* TVHomeAndEditorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B00BCD669115361C9C80E2 /* TVHomeAndEditorTests.swift */; };
+		7F0700333AF56B8057B966B2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385543743A77C100F2373A96 /* HomeView.swift */; };
+		7F869E6D0962B9BCF553E000 /* PlayerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89526E91EE1B662423E627F3 /* PlayerRepository.swift */; };
+		80530F3B5F6476B1E63ECB45 /* LockScreenWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2094DDD9C6FE48041E19C1 /* LockScreenWidget.swift */; };
+		815ABDC980C74897AAF99070 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA59EDE252DD0B3615C469C2 /* Onboarding.swift */; };
+		83021DCFBC7D4EBF9067D814 /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFCA0664FFE8E4A233F545A /* StatsViewModel.swift */; };
+		83240178E7F6DD4B4319E43B /* TVCustomGameEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EC40DDA377D8CEA83F194D /* TVCustomGameEditorView.swift */; };
+		83D9D6D8832019E9C0B301A1 /* TVPlanEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14CF327335FC0DBA67643D5 /* TVPlanEditorView.swift */; };
+		84848BDB0F89DFAE99F2876E /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF7730801ED7F4C67E7C323 /* AppTheme.swift */; };
+		87BD0B1A1E0031F6810D0C6D /* HouseGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FEE8BA0BAD287537738D6E /* HouseGame.swift */; };
+		88661EBD05EF4AC8B5E39237 /* DuckpinScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51BA788BCB27C1E03C2617F /* DuckpinScoringEngine.swift */; };
+		88949E649523AC7D58F69F86 /* SessionRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862246FA648EB3AA5115DFC3 /* SessionRepositoryImpl.swift */; };
+		88A3C696FCAA643B2A3E9DB3 /* DeleteSessionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E325E2A8805F4BEAFF8814A0 /* DeleteSessionUseCase.swift */; };
+		8A369462EECE2804035EBD1A /* SaveCustomGameUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98D33472E0CF60C25E767E1 /* SaveCustomGameUseCase.swift */; };
+		8BD8EEEECEFD67F3A5AB39F8 /* ActionEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E52436D24EA6378D8F99797 /* ActionEntryView.swift */; };
+		8BFF9A96EFC7E0E04139AA67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F903A8305B4039AE9C3CB286 /* Assets.xcassets */; };
+		8E486E879CF382334D6FB953 /* PlayersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1AA6765DF8BADBDC54B8EF /* PlayersView.swift */; };
+		90E192EA4F0CD7A6271C870D /* CroquetScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E6A3F79DAB7BE4789AFCA7 /* CroquetScoringEngine.swift */; };
+		9219C3B0FEA7E4B5B7FECF20 /* WidgetDataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C169149FFB31832469042DF /* WidgetDataModels.swift */; };
+		935ED4632695EA9BB276F816 /* QuickScorePresets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005028AE30E61A1360A56507 /* QuickScorePresets.swift */; };
+		937FF4A80F301164EB57FD58 /* LiveScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284D981EEB9999DC516753DF /* LiveScoreViewModel.swift */; };
+		95536E4D756539EA10ED987A /* TenPinBowlingScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF993A4999854BB0302E0DB /* TenPinBowlingScoringEngine.swift */; };
+		95EE6052772BA5B861E5EDEA /* ZoneBasedScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948854D8F97D98F342ACF0D /* ZoneBasedScoringEngine.swift */; };
+		97612E23837C39F811A86EBD /* UndoLastEntryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95094D15C3B654F6F77E2C8E /* UndoLastEntryUseCase.swift */; };
+		976C5C2A9CD56B8B72255257 /* CandlepinScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08647A42F60182562CD47A25 /* CandlepinScoringEngine.swift */; };
+		99CDF874DB35215C36F02A5E /* ScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5F5981AC5A4CA3399169C7 /* ScoringEngine.swift */; };
+		99F93374C5E574E897091CFF /* SportShootingScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCFEF3CB816207547F71F30 /* SportShootingScoringEngine.swift */; };
+		9AD52FAC7EC3CD75560A6CC2 /* PokerTournamentEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3CAACA6D285B4CB6E8E40F /* PokerTournamentEngine.swift */; };
+		9BA5EC2F0EF2B7E71095DE6E /* LiveScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67B93BE5414B344B76D0365 /* LiveScoreView.swift */; };
+		9D7A0891F47225AC69B3E68A /* PlayerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89526E91EE1B662423E627F3 /* PlayerRepository.swift */; };
+		9E957D9EF6BAB0FDDD8F24B3 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681A4FE60E67AF59BA26E812 /* PaywallView.swift */; };
+		9F684F8AE3036B651045AE0B /* LiveScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284D981EEB9999DC516753DF /* LiveScoreViewModel.swift */; };
+		A0923BA2BEB11E2924A2E750 /* BadmintonScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA85FD66AA6BA0A526B753B /* BadmintonScoringEngine.swift */; };
+		A69DCFB8CA0B2FDC4FAA3088 /* RingTossScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD424B2F07CDDA2010E8D81 /* RingTossScoringEngine.swift */; };
+		A85EC877A7359AA25B09E7F2 /* FetchSessionsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D7F37B253301B0C1CB261B /* FetchSessionsUseCase.swift */; };
+		AA3938EFDAEFA56C2F0D5FDF /* DeleteSessionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E325E2A8805F4BEAFF8814A0 /* DeleteSessionUseCase.swift */; };
+		AC1B26BC8C2ED753516F1D08 /* ScoringEngineFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18975004E36025DD0CFAE21E /* ScoringEngineFactory.swift */; };
+		AD866FBD67392C4D8F52382D /* ArcheryScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5642C19BE661C849B77EA2C /* ArcheryScoringEngine.swift */; };
+		B0B25E867036F88C338404DA /* TVGameFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4B87AA3B7670CF0FA00CEA /* TVGameFlowTests.swift */; };
+		B1C9D4140333AB8A12B43845 /* CribbageScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD61D54B11BC6FA2576965D /* CribbageScoringEngine.swift */; };
+		B3A640A23358A44625E8641F /* ScoreFrameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A27298A7E28B8647055D6B /* ScoreFrameModel.swift */; };
+		B5A1E80621A6DF917CFCD8A0 /* ChessScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82BA7B2BA32EB2A9D56F3DB /* ChessScoringEngine.swift */; };
+		B62170996C5B566BA43D921F /* ScoringEngineFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18975004E36025DD0CFAE21E /* ScoringEngineFactory.swift */; };
+		B64FB71B6948F716A4564A2D /* SessionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065B47E4E88A8A779C5D8932 /* SessionDetailView.swift */; };
+		B75967EC1761EA387559F23E /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC26102DADF128442821445E /* HapticManager.swift */; };
+		B7AF5452144842C5809DE737 /* EndSessionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0918D5B9E7C32DE6DEC1CA5A /* EndSessionUseCase.swift */; };
+		B7CF24257961BDEAA05855F8 /* HouseGameScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A33922FD27D4E83007DD53 /* HouseGameScoringEngine.swift */; };
+		B81E79512EDF1D01B999B7D2 /* TVStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972DCADF9718FB26A8202E71 /* TVStatsView.swift */; };
+		B826EFC6FA2EFF30CB2017EF /* DiscGolfScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CC47890EC97B784C58F98D /* DiscGolfScoringEngine.swift */; };
+		B8F2485558465976BF8A44A7 /* TVTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186AE258B08000DABA54E42 /* TVTheme.swift */; };
+		B90D05CC507AA014618AB4D8 /* ChessScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82BA7B2BA32EB2A9D56F3DB /* ChessScoringEngine.swift */; };
+		B93B1AD6C9B39DA98798E21D /* HouseGameScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A33922FD27D4E83007DD53 /* HouseGameScoringEngine.swift */; };
+		B95EE97E699B2A18A4997E52 /* PokerTournamentEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3CAACA6D285B4CB6E8E40F /* PokerTournamentEngine.swift */; };
+		B97CB2C2DB29FF302BA38A20 /* RacquetballScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E82670EDE441BCBA018DD /* RacquetballScoringEngine.swift */; };
+		B9D795C782E93F5D04BC6689 /* LargeScoreWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13282FBF8A1B354EAD4615C7 /* LargeScoreWidget.swift */; };
+		BE0294EA3B81E68FA8C41033 /* CreatePlayerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7386CEC3D6C8BAF4B15BDA81 /* CreatePlayerUseCase.swift */; };
+		BE30A51B7131751E6197CA65 /* SessionSetupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE4AF684DDAB27E09500E1D /* SessionSetupViewModel.swift */; };
+		BF006BA170D46EEEC7871620 /* SmallScoreWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37BDB37464F60D55AF090EE /* SmallScoreWidget.swift */; };
+		BFC5B01EA1DBFC09CA4BC341 /* DeleteCustomGameUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4552BBC752B731A385176F /* DeleteCustomGameUseCase.swift */; };
+		C06A7EE558576A43A69BAEB5 /* GoScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710BEDD8E5F714C78951C4DA /* GoScoringEngine.swift */; };
+		C1ADB0F052607DE4C83408A6 /* TennisScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5921F186C6684B8384757C4 /* TennisScoringEngine.swift */; };
+		C3A75C1170E57B078DB4B457 /* GameSessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8590DF3ECF1F09C7498F718 /* GameSessionModel.swift */; };
+		C59862A9AB2ED119312B8298 /* ScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5F5981AC5A4CA3399169C7 /* ScoringEngine.swift */; };
+		C6DF90FC3241FC06CD6D6667 /* TVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4E3CD0C379F229DA42602D /* TVGrid.swift */; };
+		C754A5B929CF59B3385E0713 /* CribbageScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD61D54B11BC6FA2576965D /* CribbageScoringEngine.swift */; };
+		C764D8E8E1BCE81DC5FE5E36 /* BowlingScorer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5DD59B1866EB696923940D /* BowlingScorer.swift */; };
+		C84C5149CF34E1C53B3B7058 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC26102DADF128442821445E /* HapticManager.swift */; };
+		CA8950D3FB55F006C7D2C14C /* SportListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A426DE6F1B372DA98F8C4C1 /* SportListView.swift */; };
+		CBB78921B28ECEF9CD869CB8 /* TableTennisScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B3F5692FD8F39093EF501 /* TableTennisScoringEngine.swift */; };
+		CF1E59A2780E4B5726534655 /* EndSessionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0918D5B9E7C32DE6DEC1CA5A /* EndSessionUseCase.swift */; };
+		CF42A548631F7AB17E1C5AF4 /* CustomGamesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E571E4795724C8E7BEE713D0 /* CustomGamesViewModel.swift */; };
+		D072F7934975CC6FB94F0026 /* TVUITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1812A6D6A9F636BBAF493A95 /* TVUITestCase.swift */; };
+		D08D93BAAD6498E0A70E61AF /* AirHockeyScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4254D74A4AD453D5157C94 /* AirHockeyScoringEngine.swift */; };
+		D08DA576BB0331FC1A0999E7 /* TVHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5503A6593A22BF82254A2B27 /* TVHistoryView.swift */; };
+		D10EF85DD99970628C9E5BDE /* HouseGameCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887067BF53592648AD3A6A93 /* HouseGameCatalog.swift */; };
+		D21F15A427283CAD1827531E /* HeadToHeadEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C6566E0F691E8C37DB5668 /* HeadToHeadEntryView.swift */; };
+		D2A70A01F1994C8FAE0C1764 /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFCA0664FFE8E4A233F545A /* StatsViewModel.swift */; };
+		D4C7F76BD5F5BFECBE04ED03 /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D8311A273F9EAD0D283EC0 /* GameSession.swift */; };
+		D6C78172C894D3BF45F78B3C /* SquashScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0536769501AB37683129B6 /* SquashScoringEngine.swift */; };
+		D6DAD8D0F53DCD1C0D00E372 /* ScoreFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFF4B69107861DFC38BECFE /* ScoreFrame.swift */; };
+		D70364222B467FA0531C53EF /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5056D3EF73DC3ABDDDEDCA48 /* AppContainer.swift */; };
+		D86F11015C74838ED5FED8C1 /* TVHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82228CAE03B35C693AC4BCE /* TVHomeView.swift */; };
+		DA59B269F89565CB0570CF24 /* ScoreRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE9958BF41659DD6C6C143F /* ScoreRepositoryImpl.swift */; };
+		DB88F6DC9E5B318CDDB20002 /* HouseGameCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887067BF53592648AD3A6A93 /* HouseGameCatalog.swift */; };
+		DB98004D13C50C24821670D0 /* PinballScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E19D1426C0C2FE3C33BF2B /* PinballScoringEngine.swift */; };
+		DC6CC253330486F0EB32DAD0 /* FetchCustomGamesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92045C8D17062043C8B2D3FC /* FetchCustomGamesUseCase.swift */; };
+		DE5333228626FD0089A4657B /* CornholeScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199DE1FF88129EDEC9A248C /* CornholeScoringEngine.swift */; };
+		DE63D341A1A380DB4E4A0824 /* TVOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574DF07B6697001AE5C3312B /* TVOnboardingView.swift */; };
+		DEB3E7606A0BC241E741E163 /* PoolScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB8F0B06E8AAF3619B53118 /* PoolScoringEngine.swift */; };
+		DFCA711A0F7E60B2EC6E3303 /* TVSessionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D815D844EF383D0CD108544F /* TVSessionDetailView.swift */; };
+		E0377EA7353DF61C344FE985 /* RacketSportEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450914967D703C0E388008E0 /* RacketSportEntryView.swift */; };
+		E0511BAF8A04CDC5B6C7D66D /* ScoreEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CDDCCF983D323DDFCD270A /* ScoreEntry.swift */; };
+		E05532728EBD7D93DD4FE400 /* GameSessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8590DF3ECF1F09C7498F718 /* GameSessionModel.swift */; };
+		E41DA53E3DDDACA38A8C0D49 /* ScoreCapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BF2FB4C8722AA6F10B6770 /* ScoreCapApp.swift */; };
+		E59B1031D4A798F5EC3A6AB4 /* SnookerEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5ED6AD5EF2A702838DAD0C /* SnookerEntryView.swift */; };
+		E64E5A7F5E90FAA5C260C21F /* PickleballScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D8600C1474AB020AA6990D /* PickleballScoringEngine.swift */; };
+		E7ED9B02646260DD6061CC9E /* ArmWrestlingScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8721DEE63B70117C94A347 /* ArmWrestlingScoringEngine.swift */; };
+		E83FDB66C031BC56F1945CCE /* CreatePlayerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7386CEC3D6C8BAF4B15BDA81 /* CreatePlayerUseCase.swift */; };
+		E86BE1F075DDA48936A98A65 /* ScoreRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE9958BF41659DD6C6C143F /* ScoreRepositoryImpl.swift */; };
+		E8B017AA1CDA06DF8911E8EF /* MediumScoreWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4941B5DF93E077DB8F07200 /* MediumScoreWidget.swift */; };
+		E8EEC92610B1E31EC17F0731 /* ShuffleboardScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41AB3DD34DDD58A5A82AF4A /* ShuffleboardScoringEngine.swift */; };
+		EA496EBA1976308ADF4B8F29 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9FF9B7F3DB76B32113171D /* Player.swift */; };
+		EA796CAB5FD2F6E27BB3F1A6 /* TVPaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21406BFAD7A09D6CE5387B95 /* TVPaywallView.swift */; };
+		EBDADA8E3836332CBC871E80 /* TenPinBowlingScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF993A4999854BB0302E0DB /* TenPinBowlingScoringEngine.swift */; };
+		EE4F822DF53D5A9B4CB15D67 /* TVScreenshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268CBD7A313F378BE4E397D0 /* TVScreenshotTests.swift */; };
+		EEEEECF0205C064548242D59 /* SkittlesScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867B207A44F6020780341783 /* SkittlesScoringEngine.swift */; };
+		EEFD34AD7545CACF4B8D4E3B /* DeleteCustomGameUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4552BBC752B731A385176F /* DeleteCustomGameUseCase.swift */; };
+		F0D34FE87612EDE92771631A /* AddScoreEntryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C74BDCEEABBE0E3B2E1D303 /* AddScoreEntryUseCase.swift */; };
+		F0E9A82658C17A08C42BD69E /* NinePinScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2C59465BFA9964572E06A6 /* NinePinScoringEngine.swift */; };
+		F2E0558DD877FC1FD73DECF4 /* TVScoreEntryViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB63A5B02297F368B35D5B /* TVScoreEntryViews.swift */; };
+		F2E41660DEF39517C9DEB914 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0920DB78DC8AE4F6DF9D41 /* Color+Extensions.swift */; };
+		F3AFE9972E579693F2483330 /* AxeThrowingScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFBF15DBB86D588742923C7 /* AxeThrowingScoringEngine.swift */; };
+		F43E5ABFDB5BA91482858931 /* DiscGolfScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CC47890EC97B784C58F98D /* DiscGolfScoringEngine.swift */; };
+		F449DBF0219B4B0C0297B7E6 /* TVFlows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D518794F2F30A9F669F2831 /* TVFlows.swift */; };
+		F4629099BBA99821DD83235C /* ScrabbleScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A5654F941E1640B5F91B01 /* ScrabbleScoringEngine.swift */; };
+		F4E2A61BED36C238A427F367 /* ShuffleboardScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41AB3DD34DDD58A5A82AF4A /* ShuffleboardScoringEngine.swift */; };
+		F53043F1C1A7347FD3E697FE /* BackgammonEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D0B074D0E53F0565EFE1CF /* BackgammonEntryView.swift */; };
+		F5351E9DA96F3368A91494D3 /* SharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E093860B19E0077BE48775 /* SharedStore.swift */; };
+		F6408CE62256F8FA79F86534 /* PremiumManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6F995FA481532F39F9051 /* PremiumManager.swift */; };
+		F651ED29CE5F89B598A26985 /* ArcheryEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717C11F97DAEE6E50812CE86 /* ArcheryEntryView.swift */; };
+		F87129FB3124C0854961B0A6 /* SportShootingScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCFEF3CB816207547F71F30 /* SportShootingScoringEngine.swift */; };
+		F8E4142DC6F718993EB05BC6 /* PadelScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F0FE60672A027F2C296FE9 /* PadelScoringEngine.swift */; };
+		F9E38DF33A830004E2687B08 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0920DB78DC8AE4F6DF9D41 /* Color+Extensions.swift */; };
+		FA6BA00AF27CB2B3AD9EBE3A /* BocceScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CBBDBF46C55E06C6C9D858 /* BocceScoringEngine.swift */; };
+		FA99CE5A28715E20AFABE31C /* AirHockeyScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4254D74A4AD453D5157C94 /* AirHockeyScoringEngine.swift */; };
+		FAF84B7A398338F3F9B22CFA /* HorseshoesScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E39A81DC882A7858267E3 /* HorseshoesScoringEngine.swift */; };
+		FB8F379A3148ADDDC02A32C9 /* CandlepinScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08647A42F60182562CD47A25 /* CandlepinScoringEngine.swift */; };
+		FC261049944DD0CC57758C71 /* AddScoreEntryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C74BDCEEABBE0E3B2E1D303 /* AddScoreEntryUseCase.swift */; };
+		FC9BA9802626DBAF11FDE9C1 /* LawnBowlsScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DB17F07EE2929EAAA9EAD5 /* LawnBowlsScoringEngine.swift */; };
+		FCCBCFEC2EF8F08D693E0B38 /* TVPlayersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E3CF37FD03F773F018E467 /* TVPlayersView.swift */; };
+		FD36E75DF697098CF440F2D2 /* SquashScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0536769501AB37683129B6 /* SquashScoringEngine.swift */; };
+		FDA3592B520DD3AB4DC81BD7 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDB3BF3CF99809D60CF0361 /* OnboardingView.swift */; };
+		FF5E98237E7FEDB69429A913 /* CaromScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD11D6F0591A2626BDB7611 /* CaromScoringEngine.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1C2B49D5916D070BF8EF29F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0C3AB970A0838E341D3F109 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5E497F2C7373A0E6C0C51350;
+			remoteInfo = ScoreCapWidgetExtension;
+		};
+		DCACC1B44186E00FCE0BF2CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0C3AB970A0838E341D3F109 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4D2C92FA9076C5294A41A180;
+			remoteInfo = ScoreCapTV;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		100FEFE055210433725997F0 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				61C13BF66D7E5A8F70BAEADE /* ScoreCapWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		005028AE30E61A1360A56507 /* QuickScorePresets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickScorePresets.swift; sourceTree = "<group>"; };
+		008D4D15AD90DCB19DA6E294 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		02937A6891F3A7D552E98E44 /* ScoreCap.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ScoreCap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D03FD300D36C8516A1D6E0 /* TVSessionSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSessionSetupView.swift; sourceTree = "<group>"; };
+		04FEE8BA0BAD287537738D6E /* HouseGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseGame.swift; sourceTree = "<group>"; };
+		065B47E4E88A8A779C5D8932 /* SessionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetailView.swift; sourceTree = "<group>"; };
+		07EB63A5B02297F368B35D5B /* TVScoreEntryViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVScoreEntryViews.swift; sourceTree = "<group>"; };
+		08647A42F60182562CD47A25 /* CandlepinScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandlepinScoringEngine.swift; sourceTree = "<group>"; };
+		08CD25EEF7C1D1B8EC1C6EA3 /* TVAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVAppCoordinator.swift; sourceTree = "<group>"; };
+		0918D5B9E7C32DE6DEC1CA5A /* EndSessionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndSessionUseCase.swift; sourceTree = "<group>"; };
+		0A426DE6F1B372DA98F8C4C1 /* SportListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportListView.swift; sourceTree = "<group>"; };
+		0B24B03B1A9CEBC868CFC9C1 /* SessionSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionSetupView.swift; sourceTree = "<group>"; };
+		0C169149FFB31832469042DF /* WidgetDataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetDataModels.swift; sourceTree = "<group>"; };
+		0D518794F2F30A9F669F2831 /* TVFlows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVFlows.swift; sourceTree = "<group>"; };
+		0D57D9A29FA1C02B26AB5D92 /* DeletePlayerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePlayerUseCase.swift; sourceTree = "<group>"; };
+		0FF993A4999854BB0302E0DB /* TenPinBowlingScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenPinBowlingScoringEngine.swift; sourceTree = "<group>"; };
+		1019E90CE08A32AC48D288D8 /* CustomGameRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGameRepositoryImpl.swift; sourceTree = "<group>"; };
+		12A21A224DBA3763C4C5A40B /* ScoreEntryViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreEntryViewFactory.swift; sourceTree = "<group>"; };
+		13282FBF8A1B354EAD4615C7 /* LargeScoreWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeScoreWidget.swift; sourceTree = "<group>"; };
+		13C6566E0F691E8C37DB5668 /* HeadToHeadEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadToHeadEntryView.swift; sourceTree = "<group>"; };
+		16A2E945C5F9D5225D7F4487 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		1812A6D6A9F636BBAF493A95 /* TVUITestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVUITestCase.swift; sourceTree = "<group>"; };
+		18975004E36025DD0CFAE21E /* ScoringEngineFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoringEngineFactory.swift; sourceTree = "<group>"; };
+		18A47A1F86F264E38CFA29B8 /* StartSessionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSessionUseCase.swift; sourceTree = "<group>"; };
+		1DD424B2F07CDDA2010E8D81 /* RingTossScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingTossScoringEngine.swift; sourceTree = "<group>"; };
+		2060D2578AC820EBF1CE9981 /* SelectSessionIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSessionIntent.swift; sourceTree = "<group>"; };
+		207E82670EDE441BCBA018DD /* RacquetballScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacquetballScoringEngine.swift; sourceTree = "<group>"; };
+		21406BFAD7A09D6CE5387B95 /* TVPaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVPaywallView.swift; sourceTree = "<group>"; };
+		21DE3979C83C6B721F213D8E /* ScoreCap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoreCap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		268CBD7A313F378BE4E397D0 /* TVScreenshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVScreenshotTests.swift; sourceTree = "<group>"; };
+		272168922D27E310120D5D41 /* TVNumberPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVNumberPadView.swift; sourceTree = "<group>"; };
+		27C84AB381BC643EC606E455 /* DartsScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DartsScoringEngine.swift; sourceTree = "<group>"; };
+		284D981EEB9999DC516753DF /* LiveScoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreViewModel.swift; sourceTree = "<group>"; };
+		29DD7EDFE0A4BADF9B937845 /* TVPlansView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVPlansView.swift; sourceTree = "<group>"; };
+		2AE2C7D6F5953FD1105866A9 /* ScrabbleEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrabbleEntryView.swift; sourceTree = "<group>"; };
+		2B464A7A9D40768DC1A16FD9 /* PlayersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersViewModel.swift; sourceTree = "<group>"; };
+		2C5F5981AC5A4CA3399169C7 /* ScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoringEngine.swift; sourceTree = "<group>"; };
+		2CD11D6F0591A2626BDB7611 /* CaromScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaromScoringEngine.swift; sourceTree = "<group>"; };
+		2F1AA6765DF8BADBDC54B8EF /* PlayersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersView.swift; sourceTree = "<group>"; };
+		315DAD213FBBF44EE9A3FA0F /* SharedWidgetStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedWidgetStore.swift; sourceTree = "<group>"; };
+		3199DE1FF88129EDEC9A248C /* CornholeScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornholeScoringEngine.swift; sourceTree = "<group>"; };
+		33DB17F07EE2929EAAA9EAD5 /* LawnBowlsScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LawnBowlsScoringEngine.swift; sourceTree = "<group>"; };
+		346BE41979E1D0155CD3A3CD /* FetchPlayersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPlayersUseCase.swift; sourceTree = "<group>"; };
+		36B18C1DC024CF7955D1F811 /* ScoreCapTVUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = ScoreCapTVUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		37D0953BD987B249957F46CD /* TVTabsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVTabsTests.swift; sourceTree = "<group>"; };
+		385543743A77C100F2373A96 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		39A27298A7E28B8647055D6B /* ScoreFrameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreFrameModel.swift; sourceTree = "<group>"; };
+		39E093860B19E0077BE48775 /* SharedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedStore.swift; sourceTree = "<group>"; };
+		3C0536769501AB37683129B6 /* SquashScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquashScoringEngine.swift; sourceTree = "<group>"; };
+		3C74BDCEEABBE0E3B2E1D303 /* AddScoreEntryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScoreEntryUseCase.swift; sourceTree = "<group>"; };
+		4186AE258B08000DABA54E42 /* TVTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVTheme.swift; sourceTree = "<group>"; };
+		450914967D703C0E388008E0 /* RacketSportEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacketSportEntryView.swift; sourceTree = "<group>"; };
+		47A5654F941E1640B5F91B01 /* ScrabbleScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrabbleScoringEngine.swift; sourceTree = "<group>"; };
+		4948854D8F97D98F342ACF0D /* ZoneBasedScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneBasedScoringEngine.swift; sourceTree = "<group>"; };
+		49F8497391EC12DD861BA20E /* CustomGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGameModel.swift; sourceTree = "<group>"; };
+		4AA85FD66AA6BA0A526B753B /* BadmintonScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadmintonScoringEngine.swift; sourceTree = "<group>"; };
+		4DE7EFA2A78552F3467EA85A /* SnookerScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnookerScoringEngine.swift; sourceTree = "<group>"; };
+		4E6DF5511232938E3A8C9E8E /* IncrementScoreIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncrementScoreIntent.swift; sourceTree = "<group>"; };
+		5056D3EF73DC3ABDDDEDCA48 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
+		51FAA30AA1CFA26C0EEB25F2 /* BackgammonScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgammonScoringEngine.swift; sourceTree = "<group>"; };
+		54CC47890EC97B784C58F98D /* DiscGolfScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscGolfScoringEngine.swift; sourceTree = "<group>"; };
+		5503A6593A22BF82254A2B27 /* TVHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVHistoryView.swift; sourceTree = "<group>"; };
+		574DF07B6697001AE5C3312B /* TVOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVOnboardingView.swift; sourceTree = "<group>"; };
+		5B2094DDD9C6FE48041E19C1 /* LockScreenWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockScreenWidget.swift; sourceTree = "<group>"; };
+		5B5ED6AD5EF2A702838DAD0C /* SnookerEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnookerEntryView.swift; sourceTree = "<group>"; };
+		5E596EBB72B95AF8ADDC87A5 /* SportType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportType.swift; sourceTree = "<group>"; };
+		63519FEE06430153B2B28A26 /* ScoreTimelineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTimelineProvider.swift; sourceTree = "<group>"; };
+		681A4FE60E67AF59BA26E812 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
+		6BFCA0664FFE8E4A233F545A /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
+		6BFF4B69107861DFC38BECFE /* ScoreFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreFrame.swift; sourceTree = "<group>"; };
+		70E6A3F79DAB7BE4789AFCA7 /* CroquetScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CroquetScoringEngine.swift; sourceTree = "<group>"; };
+		710BEDD8E5F714C78951C4DA /* GoScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoScoringEngine.swift; sourceTree = "<group>"; };
+		7178B736F839710DB0B23FB9 /* SessionDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetailViewModel.swift; sourceTree = "<group>"; };
+		717C11F97DAEE6E50812CE86 /* ArcheryEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcheryEntryView.swift; sourceTree = "<group>"; };
+		723B90CBE81758723BC4E413 /* TVLiveScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVLiveScoreView.swift; sourceTree = "<group>"; };
+		72BC6E513CC5815FD64BA714 /* PersistenceContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceContainer.swift; sourceTree = "<group>"; };
+		7386CEC3D6C8BAF4B15BDA81 /* CreatePlayerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayerUseCase.swift; sourceTree = "<group>"; };
+		73F5670AA91C416AB5334039 /* CheckersScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckersScoringEngine.swift; sourceTree = "<group>"; };
+		7B4254D74A4AD453D5157C94 /* AirHockeyScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirHockeyScoringEngine.swift; sourceTree = "<group>"; };
+		7B9FF9B7F3DB76B32113171D /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		7C2912BA4807B124CE793F35 /* ScoreCapTVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCapTVApp.swift; sourceTree = "<group>"; };
+		7CD5054F3CAA2961A567B58A /* DartsEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DartsEntryView.swift; sourceTree = "<group>"; };
+		7D4B3F5692FD8F39093EF501 /* TableTennisScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableTennisScoringEngine.swift; sourceTree = "<group>"; };
+		7DFC67D31D1DB9FC4F4253AD /* ScoreCapWidgetExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = ScoreCapWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		81429E6B5E14CCCD81DB1091 /* FoosballScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoosballScoringEngine.swift; sourceTree = "<group>"; };
+		81B00BCD669115361C9C80E2 /* TVHomeAndEditorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVHomeAndEditorTests.swift; sourceTree = "<group>"; };
+		862246FA648EB3AA5115DFC3 /* SessionRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRepositoryImpl.swift; sourceTree = "<group>"; };
+		867B207A44F6020780341783 /* SkittlesScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkittlesScoringEngine.swift; sourceTree = "<group>"; };
+		87D0B074D0E53F0565EFE1CF /* BackgammonEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgammonEntryView.swift; sourceTree = "<group>"; };
+		887067BF53592648AD3A6A93 /* HouseGameCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseGameCatalog.swift; sourceTree = "<group>"; };
+		88A33922FD27D4E83007DD53 /* HouseGameScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseGameScoringEngine.swift; sourceTree = "<group>"; };
+		89526E91EE1B662423E627F3 /* PlayerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRepository.swift; sourceTree = "<group>"; };
+		8AD61D54B11BC6FA2576965D /* CribbageScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CribbageScoringEngine.swift; sourceTree = "<group>"; };
+		8B4552BBC752B731A385176F /* DeleteCustomGameUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCustomGameUseCase.swift; sourceTree = "<group>"; };
+		8DED8EC4AE469F082BFC81A7 /* ComputeScoreUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputeScoreUseCase.swift; sourceTree = "<group>"; };
+		8DF7730801ED7F4C67E7C323 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		90E3CF37FD03F773F018E467 /* TVPlayersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVPlayersView.swift; sourceTree = "<group>"; };
+		91692DE42CD9EA1956689A5B /* DiscGolfEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscGolfEntryView.swift; sourceTree = "<group>"; };
+		92045C8D17062043C8B2D3FC /* FetchCustomGamesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCustomGamesUseCase.swift; sourceTree = "<group>"; };
+		920609C67261D7B4715DD325 /* CustomGameRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGameRepository.swift; sourceTree = "<group>"; };
+		93D5D1FB1C66B552AEA1B79C /* KubbEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KubbEntryView.swift; sourceTree = "<group>"; };
+		95094D15C3B654F6F77E2C8E /* UndoLastEntryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UndoLastEntryUseCase.swift; sourceTree = "<group>"; };
+		972DCADF9718FB26A8202E71 /* TVStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVStatsView.swift; sourceTree = "<group>"; };
+		99D8600C1474AB020AA6990D /* PickleballScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickleballScoringEngine.swift; sourceTree = "<group>"; };
+		9A8721DEE63B70117C94A347 /* ArmWrestlingScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmWrestlingScoringEngine.swift; sourceTree = "<group>"; };
+		9BCFEF3CB816207547F71F30 /* SportShootingScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportShootingScoringEngine.swift; sourceTree = "<group>"; };
+		9E52436D24EA6378D8F99797 /* ActionEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionEntryView.swift; sourceTree = "<group>"; };
+		9EEB1E2E653C62F4ECD5CC43 /* GoEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoEntryView.swift; sourceTree = "<group>"; };
+		A0BF2FB4C8722AA6F10B6770 /* ScoreCapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCapApp.swift; sourceTree = "<group>"; };
+		A1B72383683E3D55BB81B624 /* CurlingScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurlingScoringEngine.swift; sourceTree = "<group>"; };
+		A2EC40DDA377D8CEA83F194D /* TVCustomGameEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCustomGameEditorView.swift; sourceTree = "<group>"; };
+		A2FD9AE02D9D8508469D8427 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		A3FDFC79489B2CDF85D7C38A /* MahjongScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MahjongScoringEngine.swift; sourceTree = "<group>"; };
+		A4CDDCCF983D323DDFCD270A /* ScoreEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreEntry.swift; sourceTree = "<group>"; };
+		A5921F186C6684B8384757C4 /* TennisScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisScoringEngine.swift; sourceTree = "<group>"; };
+		A68111A23D8ECEAA4CDBE1D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AA59EDE252DD0B3615C469C2 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		AD4E3CD0C379F229DA42602D /* TVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVGrid.swift; sourceTree = "<group>"; };
+		ADD09B0E53A645F8D7B525E5 /* SessionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRepository.swift; sourceTree = "<group>"; };
+		AE5278690AC71F9E1D39B70B /* DominoesScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DominoesScoringEngine.swift; sourceTree = "<group>"; };
+		AEFD25C98CDC8D9AA5DDD958 /* BowlingEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingEntryView.swift; sourceTree = "<group>"; };
+		AF4B87AA3B7670CF0FA00CEA /* TVGameFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVGameFlowTests.swift; sourceTree = "<group>"; };
+		B41AB3DD34DDD58A5A82AF4A /* ShuffleboardScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleboardScoringEngine.swift; sourceTree = "<group>"; };
+		B623124B7AB50C1FFB9FE337 /* SportListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportListViewModel.swift; sourceTree = "<group>"; };
+		BBE4AF684DDAB27E09500E1D /* SessionSetupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionSetupViewModel.swift; sourceTree = "<group>"; };
+		BC26102DADF128442821445E /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
+		BDDB3BF3CF99809D60CF0361 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		C37322CE6B4A9FBE698A43A0 /* KubbScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KubbScoringEngine.swift; sourceTree = "<group>"; };
+		C5F0FE60672A027F2C296FE9 /* PadelScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadelScoringEngine.swift; sourceTree = "<group>"; };
+		C6D8311A273F9EAD0D283EC0 /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
+		C70AF2D016A7962FE1B3E009 /* PlayersCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersCoordinator.swift; sourceTree = "<group>"; };
+		C8CBBDBF46C55E06C6C9D858 /* BocceScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BocceScoringEngine.swift; sourceTree = "<group>"; };
+		C95805142F65547E6FFE2B4E /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		CAB8F0B06E8AAF3619B53118 /* PoolScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolScoringEngine.swift; sourceTree = "<group>"; };
+		CB567A9E6960D63685F0BE1F /* QuickScoreEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickScoreEntryView.swift; sourceTree = "<group>"; };
+		CC2C59465BFA9964572E06A6 /* NinePinScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinePinScoringEngine.swift; sourceTree = "<group>"; };
+		CC5DD59B1866EB696923940D /* BowlingScorer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingScorer.swift; sourceTree = "<group>"; };
+		CD0920DB78DC8AE4F6DF9D41 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		D14CF327335FC0DBA67643D5 /* TVPlanEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVPlanEditorView.swift; sourceTree = "<group>"; };
+		D4F9FD46A2A2092D4245C6C3 /* PokerEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerEntryView.swift; sourceTree = "<group>"; };
+		D51392B4C11AC53872CBCC76 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		D51BA788BCB27C1E03C2617F /* DuckpinScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuckpinScoringEngine.swift; sourceTree = "<group>"; };
+		D5642C19BE661C849B77EA2C /* ArcheryScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcheryScoringEngine.swift; sourceTree = "<group>"; };
+		D68E86A66DAFD4792F8751B0 /* GamePlansStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlansStore.swift; sourceTree = "<group>"; };
+		D7E19D1426C0C2FE3C33BF2B /* PinballScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinballScoringEngine.swift; sourceTree = "<group>"; };
+		D815D844EF383D0CD108544F /* TVSessionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSessionDetailView.swift; sourceTree = "<group>"; };
+		DB3E6DD208A0A2037FE9ED50 /* ScoreEntryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreEntryModel.swift; sourceTree = "<group>"; };
+		DE3CAACA6D285B4CB6E8E40F /* PokerTournamentEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerTournamentEngine.swift; sourceTree = "<group>"; };
+		DEFBF15DBB86D588742923C7 /* AxeThrowingScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxeThrowingScoringEngine.swift; sourceTree = "<group>"; };
+		DF23A12C52112D4D399CEFC3 /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
+		E325E2A8805F4BEAFF8814A0 /* DeleteSessionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteSessionUseCase.swift; sourceTree = "<group>"; };
+		E4BFC060E5EA2DDE4DAE9B2F /* ScoreCapWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCapWidget.swift; sourceTree = "<group>"; };
+		E571E4795724C8E7BEE713D0 /* CustomGamesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGamesViewModel.swift; sourceTree = "<group>"; };
+		E82228CAE03B35C693AC4BCE /* TVHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVHomeView.swift; sourceTree = "<group>"; };
+		E8590DF3ECF1F09C7498F718 /* GameSessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSessionModel.swift; sourceTree = "<group>"; };
+		E8BEC1F950610ACD0CF12E59 /* PlayerRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRepositoryImpl.swift; sourceTree = "<group>"; };
+		E98D33472E0CF60C25E767E1 /* SaveCustomGameUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveCustomGameUseCase.swift; sourceTree = "<group>"; };
+		ED4CA2F0A141DA3C2038DDE0 /* HistoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCoordinator.swift; sourceTree = "<group>"; };
+		EEE9958BF41659DD6C6C143F /* ScoreRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreRepositoryImpl.swift; sourceTree = "<group>"; };
+		F12E39A81DC882A7858267E3 /* HorseshoesScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorseshoesScoringEngine.swift; sourceTree = "<group>"; };
+		F32F82543D1B9A0A4BD960E1 /* ScoreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreRepository.swift; sourceTree = "<group>"; };
+		F36915D9107A16F61CDE4C96 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		F37BDB37464F60D55AF090EE /* SmallScoreWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallScoreWidget.swift; sourceTree = "<group>"; };
+		F4941B5DF93E077DB8F07200 /* MediumScoreWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumScoreWidget.swift; sourceTree = "<group>"; };
+		F67B93BE5414B344B76D0365 /* LiveScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreView.swift; sourceTree = "<group>"; };
+		F6D7F37B253301B0C1CB261B /* FetchSessionsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchSessionsUseCase.swift; sourceTree = "<group>"; };
+		F82BA7B2BA32EB2A9D56F3DB /* ChessScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessScoringEngine.swift; sourceTree = "<group>"; };
+		F903A8305B4039AE9C3CB286 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FAE6F995FA481532F39F9051 /* PremiumManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		068A441F153D630EF1C38533 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				6810149B5DE925F6AE732321 /* Coordinators */,
+				66A031A159D7FFBC084BDA16 /* History */,
+				6AC57478DD012EAE9CC711B1 /* Home */,
+				32C0D4E78E16CF2B9DD7CE64 /* Onboarding */,
+				64CD850D2922B8BF419CACEA /* Players */,
+				D0857744879D40E344125FFD /* Premium */,
+				B7244BE9D68FBDFD307519A8 /* Session */,
+				AB5AD46724CE343208E60171 /* Sports */,
+				4BBEB7EAB7D6D29F71560D75 /* Stats */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		0A642AD7483FB015EDE60CA2 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				723B90CBE81758723BC4E413 /* TVLiveScoreView.swift */,
+				07EB63A5B02297F368B35D5B /* TVScoreEntryViews.swift */,
+				04D03FD300D36C8516A1D6E0 /* TVSessionSetupView.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		17ED0761B5FED65608FCA8C6 /* Bowling */ = {
+			isa = PBXGroup;
+			children = (
+				C8CBBDBF46C55E06C6C9D858 /* BocceScoringEngine.swift */,
+				CC5DD59B1866EB696923940D /* BowlingScorer.swift */,
+				08647A42F60182562CD47A25 /* CandlepinScoringEngine.swift */,
+				D51BA788BCB27C1E03C2617F /* DuckpinScoringEngine.swift */,
+				33DB17F07EE2929EAAA9EAD5 /* LawnBowlsScoringEngine.swift */,
+				CC2C59465BFA9964572E06A6 /* NinePinScoringEngine.swift */,
+				867B207A44F6020780341783 /* SkittlesScoringEngine.swift */,
+				0FF993A4999854BB0302E0DB /* TenPinBowlingScoringEngine.swift */,
+			);
+			path = Bowling;
+			sourceTree = "<group>";
+		};
+		18BFEB4D71BAE00FC68F8D7C /* Racket */ = {
+			isa = PBXGroup;
+			children = (
+				4AA85FD66AA6BA0A526B753B /* BadmintonScoringEngine.swift */,
+				C5F0FE60672A027F2C296FE9 /* PadelScoringEngine.swift */,
+				99D8600C1474AB020AA6990D /* PickleballScoringEngine.swift */,
+				207E82670EDE441BCBA018DD /* RacquetballScoringEngine.swift */,
+				3C0536769501AB37683129B6 /* SquashScoringEngine.swift */,
+				7D4B3F5692FD8F39093EF501 /* TableTennisScoringEngine.swift */,
+				A5921F186C6684B8384757C4 /* TennisScoringEngine.swift */,
+			);
+			path = Racket;
+			sourceTree = "<group>";
+		};
+		29F4F9878FC4EFFB3B992859 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				5503A6593A22BF82254A2B27 /* TVHistoryView.swift */,
+				D815D844EF383D0CD108544F /* TVSessionDetailView.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		2A949E8F9FD541AD0C958728 /* WidgetExtension */ = {
+			isa = PBXGroup;
+			children = (
+				008D4D15AD90DCB19DA6E294 /* Info.plist */,
+				E4BFC060E5EA2DDE4DAE9B2F /* ScoreCapWidget.swift */,
+				63519FEE06430153B2B28A26 /* ScoreTimelineProvider.swift */,
+				315DAD213FBBF44EE9A3FA0F /* SharedWidgetStore.swift */,
+				367D1A1A245EA74F7FDFD09D /* Intents */,
+				7ADE7D5CA55D7B621DB308B8 /* Models */,
+				48EF01B640386CBDC267789A /* WidgetViews */,
+			);
+			path = WidgetExtension;
+			sourceTree = "<group>";
+		};
+		2B46451A11746A69FDCC5D61 /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				972DCADF9718FB26A8202E71 /* TVStatsView.swift */,
+			);
+			path = Stats;
+			sourceTree = "<group>";
+		};
+		2E5F77E6904F1CE586DF1501 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				E325E2A8805F4BEAFF8814A0 /* DeleteSessionUseCase.swift */,
+				0918D5B9E7C32DE6DEC1CA5A /* EndSessionUseCase.swift */,
+				F6D7F37B253301B0C1CB261B /* FetchSessionsUseCase.swift */,
+				18A47A1F86F264E38CFA29B8 /* StartSessionUseCase.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		32C0D4E78E16CF2B9DD7CE64 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				BDDB3BF3CF99809D60CF0361 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		367D1A1A245EA74F7FDFD09D /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				4E6DF5511232938E3A8C9E8E /* IncrementScoreIntent.swift */,
+				2060D2578AC820EBF1CE9981 /* SelectSessionIntent.swift */,
+			);
+			path = Intents;
+			sourceTree = "<group>";
+		};
+		37A35AE05A0A74BE051E3B0B /* HomeGames */ = {
+			isa = PBXGroup;
+			children = (
+				E571E4795724C8E7BEE713D0 /* CustomGamesViewModel.swift */,
+				A2EC40DDA377D8CEA83F194D /* TVCustomGameEditorView.swift */,
+			);
+			path = HomeGames;
+			sourceTree = "<group>";
+		};
+		3C7DDAB54D50C2794A83C572 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				8DF7730801ED7F4C67E7C323 /* AppTheme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		3FD20BEF1C5EA5F4CF3F231C /* TVUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0D518794F2F30A9F669F2831 /* TVFlows.swift */,
+				AF4B87AA3B7670CF0FA00CEA /* TVGameFlowTests.swift */,
+				81B00BCD669115361C9C80E2 /* TVHomeAndEditorTests.swift */,
+				268CBD7A313F378BE4E397D0 /* TVScreenshotTests.swift */,
+				37D0953BD987B249957F46CD /* TVTabsTests.swift */,
+				1812A6D6A9F636BBAF493A95 /* TVUITestCase.swift */,
+			);
+			path = TVUITests;
+			sourceTree = "<group>";
+		};
+		447C127A7ECAAEDA20BAEEF0 /* ScoreEntryViews */ = {
+			isa = PBXGroup;
+			children = (
+				9E52436D24EA6378D8F99797 /* ActionEntryView.swift */,
+				717C11F97DAEE6E50812CE86 /* ArcheryEntryView.swift */,
+				87D0B074D0E53F0565EFE1CF /* BackgammonEntryView.swift */,
+				AEFD25C98CDC8D9AA5DDD958 /* BowlingEntryView.swift */,
+				7CD5054F3CAA2961A567B58A /* DartsEntryView.swift */,
+				91692DE42CD9EA1956689A5B /* DiscGolfEntryView.swift */,
+				9EEB1E2E653C62F4ECD5CC43 /* GoEntryView.swift */,
+				13C6566E0F691E8C37DB5668 /* HeadToHeadEntryView.swift */,
+				93D5D1FB1C66B552AEA1B79C /* KubbEntryView.swift */,
+				D4F9FD46A2A2092D4245C6C3 /* PokerEntryView.swift */,
+				CB567A9E6960D63685F0BE1F /* QuickScoreEntryView.swift */,
+				005028AE30E61A1360A56507 /* QuickScorePresets.swift */,
+				450914967D703C0E388008E0 /* RacketSportEntryView.swift */,
+				12A21A224DBA3763C4C5A40B /* ScoreEntryViewFactory.swift */,
+				2AE2C7D6F5953FD1105866A9 /* ScrabbleEntryView.swift */,
+				5B5ED6AD5EF2A702838DAD0C /* SnookerEntryView.swift */,
+			);
+			path = ScoreEntryViews;
+			sourceTree = "<group>";
+		};
+		4720AC25D9BD428477043E18 /* Plans */ = {
+			isa = PBXGroup;
+			children = (
+				D68E86A66DAFD4792F8751B0 /* GamePlansStore.swift */,
+				D14CF327335FC0DBA67643D5 /* TVPlanEditorView.swift */,
+				29DD7EDFE0A4BADF9B937845 /* TVPlansView.swift */,
+			);
+			path = Plans;
+			sourceTree = "<group>";
+		};
+		48EF01B640386CBDC267789A /* WidgetViews */ = {
+			isa = PBXGroup;
+			children = (
+				13282FBF8A1B354EAD4615C7 /* LargeScoreWidget.swift */,
+				5B2094DDD9C6FE48041E19C1 /* LockScreenWidget.swift */,
+				F4941B5DF93E077DB8F07200 /* MediumScoreWidget.swift */,
+				F37BDB37464F60D55AF090EE /* SmallScoreWidget.swift */,
+			);
+			path = WidgetViews;
+			sourceTree = "<group>";
+		};
+		4BBEB7EAB7D6D29F71560D75 /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				D51392B4C11AC53872CBCC76 /* StatsView.swift */,
+				6BFCA0664FFE8E4A233F545A /* StatsViewModel.swift */,
+			);
+			path = Stats;
+			sourceTree = "<group>";
+		};
+		4E156023E4CAB2B84330FD06 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				D7CA4A1B964FD4C04659B02D /* Engines */,
+				BE098DC9D2F21953671DB101 /* Entities */,
+				57766F0DA6C80C88CE6AB69F /* Repositories */,
+				D895B796A7D3B49FF45F42B3 /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		51BB45ADB06B69499E7839C0 /* CardTile */ = {
+			isa = PBXGroup;
+			children = (
+				8AD61D54B11BC6FA2576965D /* CribbageScoringEngine.swift */,
+				AE5278690AC71F9E1D39B70B /* DominoesScoringEngine.swift */,
+				A3FDFC79489B2CDF85D7C38A /* MahjongScoringEngine.swift */,
+				DE3CAACA6D285B4CB6E8E40F /* PokerTournamentEngine.swift */,
+			);
+			path = CardTile;
+			sourceTree = "<group>";
+		};
+		5274B4C3C7C5B313279D8759 /* CueSports */ = {
+			isa = PBXGroup;
+			children = (
+				2CD11D6F0591A2626BDB7611 /* CaromScoringEngine.swift */,
+				CAB8F0B06E8AAF3619B53118 /* PoolScoringEngine.swift */,
+				4DE7EFA2A78552F3467EA85A /* SnookerScoringEngine.swift */,
+			);
+			path = CueSports;
+			sourceTree = "<group>";
+		};
+		54BC70F851CAF47D7118BDB3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				02937A6891F3A7D552E98E44 /* ScoreCap.app */,
+				21DE3979C83C6B721F213D8E /* ScoreCap.app */,
+				36B18C1DC024CF7955D1F811 /* ScoreCapTVUITests.xctest */,
+				7DFC67D31D1DB9FC4F4253AD /* ScoreCapWidgetExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		57766F0DA6C80C88CE6AB69F /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				920609C67261D7B4715DD325 /* CustomGameRepository.swift */,
+				89526E91EE1B662423E627F3 /* PlayerRepository.swift */,
+				F32F82543D1B9A0A4BD960E1 /* ScoreRepository.swift */,
+				ADD09B0E53A645F8D7B525E5 /* SessionRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		5EDE6932286B6E9179A554EE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A68111A23D8ECEAA4CDBE1D3 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		64CD850D2922B8BF419CACEA /* Players */ = {
+			isa = PBXGroup;
+			children = (
+				2F1AA6765DF8BADBDC54B8EF /* PlayersView.swift */,
+				2B464A7A9D40768DC1A16FD9 /* PlayersViewModel.swift */,
+			);
+			path = Players;
+			sourceTree = "<group>";
+		};
+		66A031A159D7FFBC084BDA16 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				16A2E945C5F9D5225D7F4487 /* HistoryView.swift */,
+				A2FD9AE02D9D8508469D8427 /* HistoryViewModel.swift */,
+				065B47E4E88A8A779C5D8932 /* SessionDetailView.swift */,
+				7178B736F839710DB0B23FB9 /* SessionDetailViewModel.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		6810149B5DE925F6AE732321 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				C95805142F65547E6FFE2B4E /* AppCoordinator.swift */,
+				ED4CA2F0A141DA3C2038DDE0 /* HistoryCoordinator.swift */,
+				F36915D9107A16F61CDE4C96 /* HomeCoordinator.swift */,
+				C70AF2D016A7962FE1B3E009 /* PlayersCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		6AC57478DD012EAE9CC711B1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				385543743A77C100F2373A96 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		711D8192BFEE77AA8EDACA3A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E82228CAE03B35C693AC4BCE /* TVHomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		76A59B2F006B3D6A6302B045 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				DD27A25A4D854D85A4EB4D53 /* Models */,
+				D577E211984723A8A1083074 /* Persistence */,
+				C30538163CBAADBF752E1C2F /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		77A00ACF72D359FF6D0ACEB4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AA59EDE252DD0B3615C469C2 /* Onboarding.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		7ADE7D5CA55D7B621DB308B8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0C169149FFB31832469042DF /* WidgetDataModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7C98FE353F0E3E0FC3BBD671 /* MindSports */ = {
+			isa = PBXGroup;
+			children = (
+				51FAA30AA1CFA26C0EEB25F2 /* BackgammonScoringEngine.swift */,
+				73F5670AA91C416AB5334039 /* CheckersScoringEngine.swift */,
+				F82BA7B2BA32EB2A9D56F3DB /* ChessScoringEngine.swift */,
+				710BEDD8E5F714C78951C4DA /* GoScoringEngine.swift */,
+				47A5654F941E1640B5F91B01 /* ScrabbleScoringEngine.swift */,
+			);
+			path = MindSports;
+			sourceTree = "<group>";
+		};
+		845DD08E66F10631EE3711DA /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				8C8FD85A898BB6594E6B0E94 /* Components */,
+				29F4F9878FC4EFFB3B992859 /* History */,
+				711D8192BFEE77AA8EDACA3A /* Home */,
+				37A35AE05A0A74BE051E3B0B /* HomeGames */,
+				E05C70505B10A37C18B28517 /* Onboarding */,
+				4720AC25D9BD428477043E18 /* Plans */,
+				F4FEE72A352206F96FD0696B /* Players */,
+				CD43CAB38C2F1ACA49BAC6BB /* Premium */,
+				0A642AD7483FB015EDE60CA2 /* Session */,
+				2B46451A11746A69FDCC5D61 /* Stats */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		84E87731AA1A43715D784854 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				7386CEC3D6C8BAF4B15BDA81 /* CreatePlayerUseCase.swift */,
+				0D57D9A29FA1C02B26AB5D92 /* DeletePlayerUseCase.swift */,
+				346BE41979E1D0155CD3A3CD /* FetchPlayersUseCase.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		8C8FD85A898BB6594E6B0E94 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				AD4E3CD0C379F229DA42602D /* TVGrid.swift */,
+				272168922D27E310120D5D41 /* TVNumberPadView.swift */,
+				4186AE258B08000DABA54E42 /* TVTheme.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9AFA3219B9945BE76894DC0B /* CustomGame */ = {
+			isa = PBXGroup;
+			children = (
+				8B4552BBC752B731A385176F /* DeleteCustomGameUseCase.swift */,
+				92045C8D17062043C8B2D3FC /* FetchCustomGamesUseCase.swift */,
+				E98D33472E0CF60C25E767E1 /* SaveCustomGameUseCase.swift */,
+			);
+			path = CustomGame;
+			sourceTree = "<group>";
+		};
+		A3FF3F90AAE97D94BCF0C006 = {
+			isa = PBXGroup;
+			children = (
+				B7B27569557DF19E321503F0 /* App */,
+				BA04E08A60858D999456C923 /* Core */,
+				76A59B2F006B3D6A6302B045 /* Data */,
+				4E156023E4CAB2B84330FD06 /* Domain */,
+				068A441F153D630EF1C38533 /* Presentation */,
+				5EDE6932286B6E9179A554EE /* Resources */,
+				B0BA38216AD6EA62E7563D8B /* TV */,
+				3FD20BEF1C5EA5F4CF3F231C /* TVUITests */,
+				2A949E8F9FD541AD0C958728 /* WidgetExtension */,
+				54BC70F851CAF47D7118BDB3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AB5AD46724CE343208E60171 /* Sports */ = {
+			isa = PBXGroup;
+			children = (
+				0A426DE6F1B372DA98F8C4C1 /* SportListView.swift */,
+				B623124B7AB50C1FFB9FE337 /* SportListViewModel.swift */,
+			);
+			path = Sports;
+			sourceTree = "<group>";
+		};
+		B0301E527688BC27FCED0F91 /* Score */ = {
+			isa = PBXGroup;
+			children = (
+				3C74BDCEEABBE0E3B2E1D303 /* AddScoreEntryUseCase.swift */,
+				8DED8EC4AE469F082BFC81A7 /* ComputeScoreUseCase.swift */,
+				95094D15C3B654F6F77E2C8E /* UndoLastEntryUseCase.swift */,
+			);
+			path = Score;
+			sourceTree = "<group>";
+		};
+		B0BA38216AD6EA62E7563D8B /* TV */ = {
+			isa = PBXGroup;
+			children = (
+				D78220F92D5F464DFFAA5A9E /* App */,
+				845DD08E66F10631EE3711DA /* Presentation */,
+				E53182BAEF21CB48F1B4B905 /* Resources */,
+			);
+			path = TV;
+			sourceTree = "<group>";
+		};
+		B7244BE9D68FBDFD307519A8 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				F67B93BE5414B344B76D0365 /* LiveScoreView.swift */,
+				284D981EEB9999DC516753DF /* LiveScoreViewModel.swift */,
+				0B24B03B1A9CEBC868CFC9C1 /* SessionSetupView.swift */,
+				BBE4AF684DDAB27E09500E1D /* SessionSetupViewModel.swift */,
+				447C127A7ECAAEDA20BAEEF0 /* ScoreEntryViews */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		B7B27569557DF19E321503F0 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5056D3EF73DC3ABDDDEDCA48 /* AppContainer.swift */,
+				FAE6F995FA481532F39F9051 /* PremiumManager.swift */,
+				A0BF2FB4C8722AA6F10B6770 /* ScoreCapApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		B9160953F9DF18B420306F43 /* Precision */ = {
+			isa = PBXGroup;
+			children = (
+				D5642C19BE661C849B77EA2C /* ArcheryScoringEngine.swift */,
+				DEFBF15DBB86D588742923C7 /* AxeThrowingScoringEngine.swift */,
+				27C84AB381BC643EC606E455 /* DartsScoringEngine.swift */,
+				9BCFEF3CB816207547F71F30 /* SportShootingScoringEngine.swift */,
+				4948854D8F97D98F342ACF0D /* ZoneBasedScoringEngine.swift */,
+			);
+			path = Precision;
+			sourceTree = "<group>";
+		};
+		BA04E08A60858D999456C923 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E853184EA402BF51BE661E6F /* Extensions */,
+				F06B2A91357393F432005A7A /* Haptics */,
+				3C7DDAB54D50C2794A83C572 /* Theme */,
+				77A00ACF72D359FF6D0ACEB4 /* Utils */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		BE098DC9D2F21953671DB101 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				C6D8311A273F9EAD0D283EC0 /* GameSession.swift */,
+				04FEE8BA0BAD287537738D6E /* HouseGame.swift */,
+				887067BF53592648AD3A6A93 /* HouseGameCatalog.swift */,
+				7B9FF9B7F3DB76B32113171D /* Player.swift */,
+				A4CDDCCF983D323DDFCD270A /* ScoreEntry.swift */,
+				6BFF4B69107861DFC38BECFE /* ScoreFrame.swift */,
+				5E596EBB72B95AF8ADDC87A5 /* SportType.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		C30538163CBAADBF752E1C2F /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				1019E90CE08A32AC48D288D8 /* CustomGameRepositoryImpl.swift */,
+				E8BEC1F950610ACD0CF12E59 /* PlayerRepositoryImpl.swift */,
+				EEE9958BF41659DD6C6C143F /* ScoreRepositoryImpl.swift */,
+				862246FA648EB3AA5115DFC3 /* SessionRepositoryImpl.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		CCD652F4A1EBA0A4EA352ED4 /* IceOutdoor */ = {
+			isa = PBXGroup;
+			children = (
+				3199DE1FF88129EDEC9A248C /* CornholeScoringEngine.swift */,
+				70E6A3F79DAB7BE4789AFCA7 /* CroquetScoringEngine.swift */,
+				A1B72383683E3D55BB81B624 /* CurlingScoringEngine.swift */,
+				54CC47890EC97B784C58F98D /* DiscGolfScoringEngine.swift */,
+				F12E39A81DC882A7858267E3 /* HorseshoesScoringEngine.swift */,
+				C37322CE6B4A9FBE698A43A0 /* KubbScoringEngine.swift */,
+				1DD424B2F07CDDA2010E8D81 /* RingTossScoringEngine.swift */,
+				B41AB3DD34DDD58A5A82AF4A /* ShuffleboardScoringEngine.swift */,
+			);
+			path = IceOutdoor;
+			sourceTree = "<group>";
+		};
+		CD43CAB38C2F1ACA49BAC6BB /* Premium */ = {
+			isa = PBXGroup;
+			children = (
+				21406BFAD7A09D6CE5387B95 /* TVPaywallView.swift */,
+			);
+			path = Premium;
+			sourceTree = "<group>";
+		};
+		CEC431B1823323FB8927F540 /* PubParlour */ = {
+			isa = PBXGroup;
+			children = (
+				7B4254D74A4AD453D5157C94 /* AirHockeyScoringEngine.swift */,
+				9A8721DEE63B70117C94A347 /* ArmWrestlingScoringEngine.swift */,
+				81429E6B5E14CCCD81DB1091 /* FoosballScoringEngine.swift */,
+				D7E19D1426C0C2FE3C33BF2B /* PinballScoringEngine.swift */,
+			);
+			path = PubParlour;
+			sourceTree = "<group>";
+		};
+		D0857744879D40E344125FFD /* Premium */ = {
+			isa = PBXGroup;
+			children = (
+				681A4FE60E67AF59BA26E812 /* PaywallView.swift */,
+			);
+			path = Premium;
+			sourceTree = "<group>";
+		};
+		D577E211984723A8A1083074 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				72BC6E513CC5815FD64BA714 /* PersistenceContainer.swift */,
+				39E093860B19E0077BE48775 /* SharedStore.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		D78220F92D5F464DFFAA5A9E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				7C2912BA4807B124CE793F35 /* ScoreCapTVApp.swift */,
+				08CD25EEF7C1D1B8EC1C6EA3 /* TVAppCoordinator.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		D7CA4A1B964FD4C04659B02D /* Engines */ = {
+			isa = PBXGroup;
+			children = (
+				88A33922FD27D4E83007DD53 /* HouseGameScoringEngine.swift */,
+				2C5F5981AC5A4CA3399169C7 /* ScoringEngine.swift */,
+				18975004E36025DD0CFAE21E /* ScoringEngineFactory.swift */,
+				17ED0761B5FED65608FCA8C6 /* Bowling */,
+				51BB45ADB06B69499E7839C0 /* CardTile */,
+				5274B4C3C7C5B313279D8759 /* CueSports */,
+				CCD652F4A1EBA0A4EA352ED4 /* IceOutdoor */,
+				7C98FE353F0E3E0FC3BBD671 /* MindSports */,
+				B9160953F9DF18B420306F43 /* Precision */,
+				CEC431B1823323FB8927F540 /* PubParlour */,
+				18BFEB4D71BAE00FC68F8D7C /* Racket */,
+			);
+			path = Engines;
+			sourceTree = "<group>";
+		};
+		D895B796A7D3B49FF45F42B3 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				9AFA3219B9945BE76894DC0B /* CustomGame */,
+				84E87731AA1A43715D784854 /* Player */,
+				B0301E527688BC27FCED0F91 /* Score */,
+				2E5F77E6904F1CE586DF1501 /* Session */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		DD27A25A4D854D85A4EB4D53 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				49F8497391EC12DD861BA20E /* CustomGameModel.swift */,
+				E8590DF3ECF1F09C7498F718 /* GameSessionModel.swift */,
+				DF23A12C52112D4D399CEFC3 /* PlayerModel.swift */,
+				DB3E6DD208A0A2037FE9ED50 /* ScoreEntryModel.swift */,
+				39A27298A7E28B8647055D6B /* ScoreFrameModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E05C70505B10A37C18B28517 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				574DF07B6697001AE5C3312B /* TVOnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		E53182BAEF21CB48F1B4B905 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F903A8305B4039AE9C3CB286 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E853184EA402BF51BE661E6F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CD0920DB78DC8AE4F6DF9D41 /* Color+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F06B2A91357393F432005A7A /* Haptics */ = {
+			isa = PBXGroup;
+			children = (
+				BC26102DADF128442821445E /* HapticManager.swift */,
+			);
+			path = Haptics;
+			sourceTree = "<group>";
+		};
+		F4FEE72A352206F96FD0696B /* Players */ = {
+			isa = PBXGroup;
+			children = (
+				90E3CF37FD03F773F018E467 /* TVPlayersView.swift */,
+			);
+			path = Players;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		17B469787EEC25D852787BA5 /* ScoreCapTVUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3B7330D9F102ADFDDEEEFD4 /* Build configuration list for PBXNativeTarget "ScoreCapTVUITests" */;
+			buildPhases = (
+				505919D408F27531350858B8 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B81CFC9A1EBC83809FEB0490 /* PBXTargetDependency */,
+			);
+			name = ScoreCapTVUITests;
+			productName = ScoreCapTVUITests;
+			productReference = 36B18C1DC024CF7955D1F811 /* ScoreCapTVUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		4D2C92FA9076C5294A41A180 /* ScoreCapTV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D79B8C59732822ACFCD9008F /* Build configuration list for PBXNativeTarget "ScoreCapTV" */;
+			buildPhases = (
+				8AC4221EA804FCFB3029DDD7 /* Sources */,
+				1BAE0B806F33F296CB9266C0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScoreCapTV;
+			productName = ScoreCapTV;
+			productReference = 21DE3979C83C6B721F213D8E /* ScoreCap.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5DB0D25A6D2D37086682F73D /* ScoreCap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCE5085D09B1C6924C80AC20 /* Build configuration list for PBXNativeTarget "ScoreCap" */;
+			buildPhases = (
+				445B316F317F256E85498D3E /* Sources */,
+				6305993CC0B676E7DF2EE1BA /* Resources */,
+				100FEFE055210433725997F0 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A24A196EBE56B9FF449D1CB1 /* PBXTargetDependency */,
+			);
+			name = ScoreCap;
+			productName = ScoreCap;
+			productReference = 02937A6891F3A7D552E98E44 /* ScoreCap.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5E497F2C7373A0E6C0C51350 /* ScoreCapWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 744B19448CEA7DB89C1720A4 /* Build configuration list for PBXNativeTarget "ScoreCapWidgetExtension" */;
+			buildPhases = (
+				A0F763B1AF9672BA1EC7A24B /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScoreCapWidgetExtension;
+			productName = ScoreCapWidgetExtension;
+			productReference = 7DFC67D31D1DB9FC4F4253AD /* ScoreCapWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F0C3AB970A0838E341D3F109 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					17B469787EEC25D852787BA5 = {
+						DevelopmentTeam = J5WZTVZJ44;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4D2C92FA9076C5294A41A180;
+					};
+					4D2C92FA9076C5294A41A180 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Manual;
+					};
+					5DB0D25A6D2D37086682F73D = {
+						DevelopmentTeam = J5WZTVZJ44;
+						ProvisioningStyle = Automatic;
+					};
+					5E497F2C7373A0E6C0C51350 = {
+						DevelopmentTeam = J5WZTVZJ44;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 6700852E7B72AC44B9894408 /* Build configuration list for PBXProject "ScoreCap" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = A3FF3F90AAE97D94BCF0C006;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5DB0D25A6D2D37086682F73D /* ScoreCap */,
+				4D2C92FA9076C5294A41A180 /* ScoreCapTV */,
+				17B469787EEC25D852787BA5 /* ScoreCapTVUITests */,
+				5E497F2C7373A0E6C0C51350 /* ScoreCapWidgetExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1BAE0B806F33F296CB9266C0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BFF9A96EFC7E0E04139AA67 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6305993CC0B676E7DF2EE1BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				725FA72AD6206AD5FD3BEF6A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		445B316F317F256E85498D3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BD8EEEECEFD67F3A5AB39F8 /* ActionEntryView.swift in Sources */,
+				F0D34FE87612EDE92771631A /* AddScoreEntryUseCase.swift in Sources */,
+				FA99CE5A28715E20AFABE31C /* AirHockeyScoringEngine.swift in Sources */,
+				D70364222B467FA0531C53EF /* AppContainer.swift in Sources */,
+				39CA146673FB46E5596BC3E7 /* AppCoordinator.swift in Sources */,
+				43FD9487F40DE7002A2D6014 /* AppTheme.swift in Sources */,
+				F651ED29CE5F89B598A26985 /* ArcheryEntryView.swift in Sources */,
+				27FE7C2F9CCDFA0037B939DD /* ArcheryScoringEngine.swift in Sources */,
+				39C2154C49F6CFB32D2A77EF /* ArmWrestlingScoringEngine.swift in Sources */,
+				F3AFE9972E579693F2483330 /* AxeThrowingScoringEngine.swift in Sources */,
+				F53043F1C1A7347FD3E697FE /* BackgammonEntryView.swift in Sources */,
+				4248A50EA7F3CC3E3A231DBC /* BackgammonScoringEngine.swift in Sources */,
+				A0923BA2BEB11E2924A2E750 /* BadmintonScoringEngine.swift in Sources */,
+				486355FBD32EABCC26377FD1 /* BocceScoringEngine.swift in Sources */,
+				78DFDBC120D00CDD767ECF45 /* BowlingEntryView.swift in Sources */,
+				04C1510CBD95A1E584F8179E /* BowlingScorer.swift in Sources */,
+				976C5C2A9CD56B8B72255257 /* CandlepinScoringEngine.swift in Sources */,
+				FF5E98237E7FEDB69429A913 /* CaromScoringEngine.swift in Sources */,
+				178BBFBCB279EDBE467836E4 /* CheckersScoringEngine.swift in Sources */,
+				B90D05CC507AA014618AB4D8 /* ChessScoringEngine.swift in Sources */,
+				F9E38DF33A830004E2687B08 /* Color+Extensions.swift in Sources */,
+				4538CD8066210A78D3844E99 /* ComputeScoreUseCase.swift in Sources */,
+				DE5333228626FD0089A4657B /* CornholeScoringEngine.swift in Sources */,
+				BE0294EA3B81E68FA8C41033 /* CreatePlayerUseCase.swift in Sources */,
+				C754A5B929CF59B3385E0713 /* CribbageScoringEngine.swift in Sources */,
+				04CA75A301BB365A9DD704C0 /* CroquetScoringEngine.swift in Sources */,
+				2E2CA0737EBF94978E833017 /* CurlingScoringEngine.swift in Sources */,
+				6FC879B38EDDF7F82C3AC078 /* CustomGameModel.swift in Sources */,
+				2E83CC018538D8953907772B /* CustomGameRepository.swift in Sources */,
+				310D6EA7892E8D321295D650 /* CustomGameRepositoryImpl.swift in Sources */,
+				5F201D921196D0D7D1C000E8 /* DartsEntryView.swift in Sources */,
+				5DAAC5D49014F3A628580B57 /* DartsScoringEngine.swift in Sources */,
+				EEFD34AD7545CACF4B8D4E3B /* DeleteCustomGameUseCase.swift in Sources */,
+				31B42E66D9CC0896F432B47B /* DeletePlayerUseCase.swift in Sources */,
+				AA3938EFDAEFA56C2F0D5FDF /* DeleteSessionUseCase.swift in Sources */,
+				4715F3382BAEA6C0251A2205 /* DiscGolfEntryView.swift in Sources */,
+				B826EFC6FA2EFF30CB2017EF /* DiscGolfScoringEngine.swift in Sources */,
+				2B93AD37F15C368DA9E3B460 /* DominoesScoringEngine.swift in Sources */,
+				76C96282D4E14720DE9C7F30 /* DuckpinScoringEngine.swift in Sources */,
+				CF1E59A2780E4B5726534655 /* EndSessionUseCase.swift in Sources */,
+				191F7B7D6328EB143C84A6DF /* FetchCustomGamesUseCase.swift in Sources */,
+				2C465F0E73FE81FD7F154F34 /* FetchPlayersUseCase.swift in Sources */,
+				A85EC877A7359AA25B09E7F2 /* FetchSessionsUseCase.swift in Sources */,
+				6F389585A58C3F6707EDF5EE /* FoosballScoringEngine.swift in Sources */,
+				D4C7F76BD5F5BFECBE04ED03 /* GameSession.swift in Sources */,
+				E05532728EBD7D93DD4FE400 /* GameSessionModel.swift in Sources */,
+				75B9B2F2A2477D937EDCDEE8 /* GoEntryView.swift in Sources */,
+				C06A7EE558576A43A69BAEB5 /* GoScoringEngine.swift in Sources */,
+				B75967EC1761EA387559F23E /* HapticManager.swift in Sources */,
+				D21F15A427283CAD1827531E /* HeadToHeadEntryView.swift in Sources */,
+				621D3314004753FE433F7A3D /* HistoryCoordinator.swift in Sources */,
+				29E249E12BB6CB11F11771AF /* HistoryView.swift in Sources */,
+				24E41A5C2AAF802A77361A3E /* HistoryViewModel.swift in Sources */,
+				237A24F4EFA77BAAFE99F78D /* HomeCoordinator.swift in Sources */,
+				7F0700333AF56B8057B966B2 /* HomeView.swift in Sources */,
+				FAF84B7A398338F3F9B22CFA /* HorseshoesScoringEngine.swift in Sources */,
+				1609308A6C0A1697505098F5 /* HouseGame.swift in Sources */,
+				DB88F6DC9E5B318CDDB20002 /* HouseGameCatalog.swift in Sources */,
+				B93B1AD6C9B39DA98798E21D /* HouseGameScoringEngine.swift in Sources */,
+				0C64E46DBB01A5F23223352E /* KubbEntryView.swift in Sources */,
+				06F6B9CAC803377CFB5C7BDF /* KubbScoringEngine.swift in Sources */,
+				FC9BA9802626DBAF11FDE9C1 /* LawnBowlsScoringEngine.swift in Sources */,
+				9BA5EC2F0EF2B7E71095DE6E /* LiveScoreView.swift in Sources */,
+				937FF4A80F301164EB57FD58 /* LiveScoreViewModel.swift in Sources */,
+				71D5B22726F45ADAFACC37A4 /* MahjongScoringEngine.swift in Sources */,
+				6412CED6D419628697CB370F /* NinePinScoringEngine.swift in Sources */,
+				815ABDC980C74897AAF99070 /* Onboarding.swift in Sources */,
+				FDA3592B520DD3AB4DC81BD7 /* OnboardingView.swift in Sources */,
+				69B1A22657AF8F15E563CBF3 /* PadelScoringEngine.swift in Sources */,
+				9E957D9EF6BAB0FDDD8F24B3 /* PaywallView.swift in Sources */,
+				0A93DC52CFFCD900D3BDE4D4 /* PersistenceContainer.swift in Sources */,
+				78554A9B918E48EFE667181B /* PickleballScoringEngine.swift in Sources */,
+				2BEE69051179D91A1DF4BD80 /* PinballScoringEngine.swift in Sources */,
+				EA496EBA1976308ADF4B8F29 /* Player.swift in Sources */,
+				77414349CC41D4C8632735E2 /* PlayerModel.swift in Sources */,
+				7F869E6D0962B9BCF553E000 /* PlayerRepository.swift in Sources */,
+				4DE7DB93AC4CE6E03F9C4749 /* PlayerRepositoryImpl.swift in Sources */,
+				005681C650E707F3392D8328 /* PlayersCoordinator.swift in Sources */,
+				8E486E879CF382334D6FB953 /* PlayersView.swift in Sources */,
+				4495D0EC58E0F7D7F62343E0 /* PlayersViewModel.swift in Sources */,
+				71D71AF802ACBFD49D31E6E5 /* PokerEntryView.swift in Sources */,
+				B95EE97E699B2A18A4997E52 /* PokerTournamentEngine.swift in Sources */,
+				DEB3E7606A0BC241E741E163 /* PoolScoringEngine.swift in Sources */,
+				7563B7D743FE76D768187E4F /* PremiumManager.swift in Sources */,
+				5894793E5A2EC350767B34E0 /* QuickScoreEntryView.swift in Sources */,
+				7C4EF83098341D2E99FBDCF0 /* QuickScorePresets.swift in Sources */,
+				E0377EA7353DF61C344FE985 /* RacketSportEntryView.swift in Sources */,
+				B97CB2C2DB29FF302BA38A20 /* RacquetballScoringEngine.swift in Sources */,
+				10C729469FC53B9A302F608B /* RingTossScoringEngine.swift in Sources */,
+				680D3A7315F971AFE6DDC50D /* SaveCustomGameUseCase.swift in Sources */,
+				E41DA53E3DDDACA38A8C0D49 /* ScoreCapApp.swift in Sources */,
+				33B0E3228B40D37CE4BDAA0B /* ScoreEntry.swift in Sources */,
+				11C18E3339BE7DE65532F077 /* ScoreEntryModel.swift in Sources */,
+				7B60F6A2F4EDCA4F95B872B5 /* ScoreEntryViewFactory.swift in Sources */,
+				2BB728F05271FEE40B5C3E06 /* ScoreFrame.swift in Sources */,
+				B3A640A23358A44625E8641F /* ScoreFrameModel.swift in Sources */,
+				545DFD314ABF53FE62905B3E /* ScoreRepository.swift in Sources */,
+				E86BE1F075DDA48936A98A65 /* ScoreRepositoryImpl.swift in Sources */,
+				99CDF874DB35215C36F02A5E /* ScoringEngine.swift in Sources */,
+				B62170996C5B566BA43D921F /* ScoringEngineFactory.swift in Sources */,
+				42C653F8F7E740E914F2E547 /* ScrabbleEntryView.swift in Sources */,
+				0885E44ECE31D259461C1677 /* ScrabbleScoringEngine.swift in Sources */,
+				B64FB71B6948F716A4564A2D /* SessionDetailView.swift in Sources */,
+				7D69503F1EC5F3F416844333 /* SessionDetailViewModel.swift in Sources */,
+				6298A77EB91C4DD5FCD60D07 /* SessionRepository.swift in Sources */,
+				88949E649523AC7D58F69F86 /* SessionRepositoryImpl.swift in Sources */,
+				74E8675500338F060C98B628 /* SessionSetupView.swift in Sources */,
+				BE30A51B7131751E6197CA65 /* SessionSetupViewModel.swift in Sources */,
+				F5351E9DA96F3368A91494D3 /* SharedStore.swift in Sources */,
+				F4E2A61BED36C238A427F367 /* ShuffleboardScoringEngine.swift in Sources */,
+				EEEEECF0205C064548242D59 /* SkittlesScoringEngine.swift in Sources */,
+				E59B1031D4A798F5EC3A6AB4 /* SnookerEntryView.swift in Sources */,
+				03441FAD5C378F8884D7AA13 /* SnookerScoringEngine.swift in Sources */,
+				CA8950D3FB55F006C7D2C14C /* SportListView.swift in Sources */,
+				58ECE6297A0739D4B6A0AE3D /* SportListViewModel.swift in Sources */,
+				F87129FB3124C0854961B0A6 /* SportShootingScoringEngine.swift in Sources */,
+				6967905A6060541C5FDF972B /* SportType.swift in Sources */,
+				D6C78172C894D3BF45F78B3C /* SquashScoringEngine.swift in Sources */,
+				53654B00B4F1E5C7B14D8140 /* StartSessionUseCase.swift in Sources */,
+				049E011784FFA471EB6CCC63 /* StatsView.swift in Sources */,
+				83021DCFBC7D4EBF9067D814 /* StatsViewModel.swift in Sources */,
+				627059549F4A89BD69961AAC /* TableTennisScoringEngine.swift in Sources */,
+				95536E4D756539EA10ED987A /* TenPinBowlingScoringEngine.swift in Sources */,
+				21BE78EF8930129589E6FFC6 /* TennisScoringEngine.swift in Sources */,
+				696336F1247C8C67D8BF69ED /* UndoLastEntryUseCase.swift in Sources */,
+				95EE6052772BA5B861E5EDEA /* ZoneBasedScoringEngine.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		505919D408F27531350858B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F449DBF0219B4B0C0297B7E6 /* TVFlows.swift in Sources */,
+				B0B25E867036F88C338404DA /* TVGameFlowTests.swift in Sources */,
+				7DAD0106C697D4740D2E7567 /* TVHomeAndEditorTests.swift in Sources */,
+				EE4F822DF53D5A9B4CB15D67 /* TVScreenshotTests.swift in Sources */,
+				5676CB7DFFF7B87D0AB16734 /* TVTabsTests.swift in Sources */,
+				D072F7934975CC6FB94F0026 /* TVUITestCase.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8AC4221EA804FCFB3029DDD7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC261049944DD0CC57758C71 /* AddScoreEntryUseCase.swift in Sources */,
+				D08D93BAAD6498E0A70E61AF /* AirHockeyScoringEngine.swift in Sources */,
+				005EE26606058016AB10C0CC /* AppContainer.swift in Sources */,
+				84848BDB0F89DFAE99F2876E /* AppTheme.swift in Sources */,
+				AD866FBD67392C4D8F52382D /* ArcheryScoringEngine.swift in Sources */,
+				E7ED9B02646260DD6061CC9E /* ArmWrestlingScoringEngine.swift in Sources */,
+				4BED854091A799DEAA7C76D0 /* AxeThrowingScoringEngine.swift in Sources */,
+				0AAB0F829EBC034EB5CBDB7C /* BackgammonScoringEngine.swift in Sources */,
+				2FCEBB0FD2D0505E2243FBA9 /* BadmintonScoringEngine.swift in Sources */,
+				FA6BA00AF27CB2B3AD9EBE3A /* BocceScoringEngine.swift in Sources */,
+				C764D8E8E1BCE81DC5FE5E36 /* BowlingScorer.swift in Sources */,
+				FB8F379A3148ADDDC02A32C9 /* CandlepinScoringEngine.swift in Sources */,
+				66A1FD9D1E40CD55FCB861CE /* CaromScoringEngine.swift in Sources */,
+				06951CFA560F98A30FF145FD /* CheckersScoringEngine.swift in Sources */,
+				B5A1E80621A6DF917CFCD8A0 /* ChessScoringEngine.swift in Sources */,
+				F2E41660DEF39517C9DEB914 /* Color+Extensions.swift in Sources */,
+				42AF3D4A28C6D2078497D68A /* ComputeScoreUseCase.swift in Sources */,
+				5B594589AC0176642BA46296 /* CornholeScoringEngine.swift in Sources */,
+				E83FDB66C031BC56F1945CCE /* CreatePlayerUseCase.swift in Sources */,
+				B1C9D4140333AB8A12B43845 /* CribbageScoringEngine.swift in Sources */,
+				90E192EA4F0CD7A6271C870D /* CroquetScoringEngine.swift in Sources */,
+				3B04404B92F111BC56343BCD /* CurlingScoringEngine.swift in Sources */,
+				38C803B69853366B5E7E1471 /* CustomGameModel.swift in Sources */,
+				7201785F2BBF4110365F2AAF /* CustomGameRepository.swift in Sources */,
+				6CFE3055CC77D57EFE397E8D /* CustomGameRepositoryImpl.swift in Sources */,
+				CF42A548631F7AB17E1C5AF4 /* CustomGamesViewModel.swift in Sources */,
+				67033A251141120969CA9998 /* DartsScoringEngine.swift in Sources */,
+				BFC5B01EA1DBFC09CA4BC341 /* DeleteCustomGameUseCase.swift in Sources */,
+				0B46C43A22B2AD2D05EE1FA1 /* DeletePlayerUseCase.swift in Sources */,
+				88A3C696FCAA643B2A3E9DB3 /* DeleteSessionUseCase.swift in Sources */,
+				F43E5ABFDB5BA91482858931 /* DiscGolfScoringEngine.swift in Sources */,
+				0CABA9B8D9FDF969940A6C72 /* DominoesScoringEngine.swift in Sources */,
+				88661EBD05EF4AC8B5E39237 /* DuckpinScoringEngine.swift in Sources */,
+				B7AF5452144842C5809DE737 /* EndSessionUseCase.swift in Sources */,
+				DC6CC253330486F0EB32DAD0 /* FetchCustomGamesUseCase.swift in Sources */,
+				3F648E22B88473AE4C767C63 /* FetchPlayersUseCase.swift in Sources */,
+				12C9B779AD35A1C2E76FCDBF /* FetchSessionsUseCase.swift in Sources */,
+				2F5A28629D8782A1B0DE1981 /* FoosballScoringEngine.swift in Sources */,
+				0795B21DC506BBC6A9835646 /* GamePlansStore.swift in Sources */,
+				240E57633B3F01DA07B43F5E /* GameSession.swift in Sources */,
+				C3A75C1170E57B078DB4B457 /* GameSessionModel.swift in Sources */,
+				719A96E1B5CB141253FA04C1 /* GoScoringEngine.swift in Sources */,
+				C84C5149CF34E1C53B3B7058 /* HapticManager.swift in Sources */,
+				35C29C51E04CF046A4054D24 /* HistoryViewModel.swift in Sources */,
+				0918B651D882FE60E609757A /* HorseshoesScoringEngine.swift in Sources */,
+				87BD0B1A1E0031F6810D0C6D /* HouseGame.swift in Sources */,
+				D10EF85DD99970628C9E5BDE /* HouseGameCatalog.swift in Sources */,
+				B7CF24257961BDEAA05855F8 /* HouseGameScoringEngine.swift in Sources */,
+				603A5BE4017D7AE3525494FB /* KubbScoringEngine.swift in Sources */,
+				2FBC26CA730597B98CB81620 /* LawnBowlsScoringEngine.swift in Sources */,
+				9F684F8AE3036B651045AE0B /* LiveScoreViewModel.swift in Sources */,
+				4723BFEC3A0B3E11AD84046D /* MahjongScoringEngine.swift in Sources */,
+				F0E9A82658C17A08C42BD69E /* NinePinScoringEngine.swift in Sources */,
+				3DE2C4EF88FA3F5EC04B8F99 /* Onboarding.swift in Sources */,
+				F8E4142DC6F718993EB05BC6 /* PadelScoringEngine.swift in Sources */,
+				764FF4BE93AABC59530A3E86 /* PersistenceContainer.swift in Sources */,
+				E64E5A7F5E90FAA5C260C21F /* PickleballScoringEngine.swift in Sources */,
+				DB98004D13C50C24821670D0 /* PinballScoringEngine.swift in Sources */,
+				315BFB0244D3014A0E337960 /* Player.swift in Sources */,
+				70A7F27D68FE2B49C90A83EA /* PlayerModel.swift in Sources */,
+				9D7A0891F47225AC69B3E68A /* PlayerRepository.swift in Sources */,
+				36D84A73DA23890453F173E2 /* PlayerRepositoryImpl.swift in Sources */,
+				65068184DB3785649E38F00D /* PlayersViewModel.swift in Sources */,
+				9AD52FAC7EC3CD75560A6CC2 /* PokerTournamentEngine.swift in Sources */,
+				256041FF1F0B7901650A3622 /* PoolScoringEngine.swift in Sources */,
+				F6408CE62256F8FA79F86534 /* PremiumManager.swift in Sources */,
+				935ED4632695EA9BB276F816 /* QuickScorePresets.swift in Sources */,
+				1CF63EC94B6C70F350A17723 /* RacquetballScoringEngine.swift in Sources */,
+				A69DCFB8CA0B2FDC4FAA3088 /* RingTossScoringEngine.swift in Sources */,
+				8A369462EECE2804035EBD1A /* SaveCustomGameUseCase.swift in Sources */,
+				6CE3E42F09FE02BA5F98EED4 /* ScoreCapTVApp.swift in Sources */,
+				E0511BAF8A04CDC5B6C7D66D /* ScoreEntry.swift in Sources */,
+				412EB31D8B8C8597E526F00C /* ScoreEntryModel.swift in Sources */,
+				D6DAD8D0F53DCD1C0D00E372 /* ScoreFrame.swift in Sources */,
+				380BE1C034D14D5886E0FD11 /* ScoreFrameModel.swift in Sources */,
+				4073EB6D7A2997BD267C3134 /* ScoreRepository.swift in Sources */,
+				DA59B269F89565CB0570CF24 /* ScoreRepositoryImpl.swift in Sources */,
+				C59862A9AB2ED119312B8298 /* ScoringEngine.swift in Sources */,
+				AC1B26BC8C2ED753516F1D08 /* ScoringEngineFactory.swift in Sources */,
+				F4629099BBA99821DD83235C /* ScrabbleScoringEngine.swift in Sources */,
+				5C15785C0E9329F2AB017D3E /* SessionDetailViewModel.swift in Sources */,
+				2496F421FCC5C2B8B824378D /* SessionRepository.swift in Sources */,
+				25C3F5D064BF592DA57AA97F /* SessionRepositoryImpl.swift in Sources */,
+				61DEA597D227835AC63E8F14 /* SessionSetupViewModel.swift in Sources */,
+				E8EEC92610B1E31EC17F0731 /* ShuffleboardScoringEngine.swift in Sources */,
+				1CB195262B760FB686AFE4B6 /* SkittlesScoringEngine.swift in Sources */,
+				31210DFC3DD614350FB7C8E6 /* SnookerScoringEngine.swift in Sources */,
+				2C407BF29E80C66E4BB8BC05 /* SportListViewModel.swift in Sources */,
+				99F93374C5E574E897091CFF /* SportShootingScoringEngine.swift in Sources */,
+				54BF43FC7E1D6F966F1FD4E2 /* SportType.swift in Sources */,
+				FD36E75DF697098CF440F2D2 /* SquashScoringEngine.swift in Sources */,
+				20535A99018BA9F5002E7A27 /* StartSessionUseCase.swift in Sources */,
+				D2A70A01F1994C8FAE0C1764 /* StatsViewModel.swift in Sources */,
+				05F4644915ACFB513D36B047 /* TVAppCoordinator.swift in Sources */,
+				83240178E7F6DD4B4319E43B /* TVCustomGameEditorView.swift in Sources */,
+				C6DF90FC3241FC06CD6D6667 /* TVGrid.swift in Sources */,
+				D08DA576BB0331FC1A0999E7 /* TVHistoryView.swift in Sources */,
+				D86F11015C74838ED5FED8C1 /* TVHomeView.swift in Sources */,
+				64BC66AE4EB40E7CD114F181 /* TVLiveScoreView.swift in Sources */,
+				0056A5C43C214844C94EFB82 /* TVNumberPadView.swift in Sources */,
+				DE63D341A1A380DB4E4A0824 /* TVOnboardingView.swift in Sources */,
+				EA796CAB5FD2F6E27BB3F1A6 /* TVPaywallView.swift in Sources */,
+				83D9D6D8832019E9C0B301A1 /* TVPlanEditorView.swift in Sources */,
+				0994C28C1743D36D8B123BC4 /* TVPlansView.swift in Sources */,
+				FCCBCFEC2EF8F08D693E0B38 /* TVPlayersView.swift in Sources */,
+				F2E0558DD877FC1FD73DECF4 /* TVScoreEntryViews.swift in Sources */,
+				DFCA711A0F7E60B2EC6E3303 /* TVSessionDetailView.swift in Sources */,
+				0C17D9908E4BA28F20270F83 /* TVSessionSetupView.swift in Sources */,
+				B81E79512EDF1D01B999B7D2 /* TVStatsView.swift in Sources */,
+				B8F2485558465976BF8A44A7 /* TVTheme.swift in Sources */,
+				CBB78921B28ECEF9CD869CB8 /* TableTennisScoringEngine.swift in Sources */,
+				EBDADA8E3836332CBC871E80 /* TenPinBowlingScoringEngine.swift in Sources */,
+				C1ADB0F052607DE4C83408A6 /* TennisScoringEngine.swift in Sources */,
+				97612E23837C39F811A86EBD /* UndoLastEntryUseCase.swift in Sources */,
+				1509DFDFFF5ACC00448FDDDE /* ZoneBasedScoringEngine.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0F763B1AF9672BA1EC7A24B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				421FF637101010E8FFE33DE8 /* IncrementScoreIntent.swift in Sources */,
+				B9D795C782E93F5D04BC6689 /* LargeScoreWidget.swift in Sources */,
+				80530F3B5F6476B1E63ECB45 /* LockScreenWidget.swift in Sources */,
+				E8B017AA1CDA06DF8911E8EF /* MediumScoreWidget.swift in Sources */,
+				3316C5520E79CC323EFC6DB1 /* ScoreCapWidget.swift in Sources */,
+				3ECE560ED84326B61C0D3695 /* ScoreTimelineProvider.swift in Sources */,
+				18D2917B660750037DB6397E /* SelectSessionIntent.swift in Sources */,
+				103F49D94578FD2A72762EA5 /* SharedWidgetStore.swift in Sources */,
+				BF006BA170D46EEEC7871620 /* SmallScoreWidget.swift in Sources */,
+				9219C3B0FEA7E4B5B7FECF20 /* WidgetDataModels.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A24A196EBE56B9FF449D1CB1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5E497F2C7373A0E6C0C51350 /* ScoreCapWidgetExtension */;
+			targetProxy = 1C2B49D5916D070BF8EF29F5 /* PBXContainerItemProxy */;
+		};
+		B81CFC9A1EBC83809FEB0490 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4D2C92FA9076C5294A41A180 /* ScoreCapTV */;
+			targetProxy = DCACC1B44186E00FCE0BF2CC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		02F4DB5A8A80D90425886EBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Entitlements/ScoreCap.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_TEAM = J5WZTVZJ44;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ScoreCap;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourapp.sportscore;
+				PRODUCT_NAME = ScoreCap;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		04268354F3A99A5F2F6819D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J5WZTVZJ44;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourapp.sportscore.tvuitests;
+				SDKROOT = appletvos;
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_TARGET_NAME = ScoreCapTV;
+				TVOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		0CFC7EC9D180A4D231F2382D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Entitlements/ScoreCapTV.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=appletvos*]" = J5WZTVZJ44;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ScoreCap;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourapp.sportscore;
+				PRODUCT_NAME = ScoreCap;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=appletvos*]" = "prov-profile-scorecap-tvos";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 26.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1C2EF59F63280A014C5B168B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				TVOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Release;
+		};
+		3564FF938A4640D5A2733BAE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = Entitlements/ScoreCapWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J5WZTVZJ44;
+				INFOPLIST_FILE = WidgetExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourapp.sportscore.widget;
+				PRODUCT_NAME = ScoreCapWidgetExtension;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7D6390C56C8BD4E9DA5EB6C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Entitlements/ScoreCap.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_TEAM = J5WZTVZJ44;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ScoreCap;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourapp.sportscore;
+				PRODUCT_NAME = ScoreCap;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D4A869E1F7634E3E58907632 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_PREVIEWS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				TVOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		EDCE108CBF03F1AC065C49DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = Entitlements/ScoreCapWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J5WZTVZJ44;
+				INFOPLIST_FILE = WidgetExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourapp.sportscore.widget;
+				PRODUCT_NAME = ScoreCapWidgetExtension;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F12F16A5FFF17F5D379929BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J5WZTVZJ44;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourapp.sportscore.tvuitests;
+				SDKROOT = appletvos;
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_TARGET_NAME = ScoreCapTV;
+				TVOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Release;
+		};
+		F1FBFA8C5BE27E1B856B3F47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Entitlements/ScoreCapTV.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=appletvos*]" = J5WZTVZJ44;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ScoreCap;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourapp.sportscore;
+				PRODUCT_NAME = ScoreCap;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=appletvos*]" = "prov-profile-scorecap-tvos";
+				SDKROOT = appletvos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6700852E7B72AC44B9894408 /* Build configuration list for PBXProject "ScoreCap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4A869E1F7634E3E58907632 /* Debug */,
+				1C2EF59F63280A014C5B168B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		744B19448CEA7DB89C1720A4 /* Build configuration list for PBXNativeTarget "ScoreCapWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3564FF938A4640D5A2733BAE /* Debug */,
+				EDCE108CBF03F1AC065C49DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		BCE5085D09B1C6924C80AC20 /* Build configuration list for PBXNativeTarget "ScoreCap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D6390C56C8BD4E9DA5EB6C9 /* Debug */,
+				02F4DB5A8A80D90425886EBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D79B8C59732822ACFCD9008F /* Build configuration list for PBXNativeTarget "ScoreCapTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1FBFA8C5BE27E1B856B3F47 /* Debug */,
+				0CFC7EC9D180A4D231F2382D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E3B7330D9F102ADFDDEEEFD4 /* Build configuration list for PBXNativeTarget "ScoreCapTVUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04268354F3A99A5F2F6819D8 /* Debug */,
+				F12F16A5FFF17F5D379929BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F0C3AB970A0838E341D3F109 /* Project object */;
+}

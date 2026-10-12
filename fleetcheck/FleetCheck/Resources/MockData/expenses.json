@@ -1,0 +1,3834 @@
+[
+  {
+    "id": "exp-00195",
+    "vehicleId": "veh-005",
+    "date": "2025-10-20",
+    "category": "insurance",
+    "amount": 1072.0,
+    "note": "Annual RCA + CASCO"
+  },
+  {
+    "id": "exp-00139",
+    "vehicleId": "veh-003",
+    "date": "2025-11-05",
+    "category": "financing",
+    "amount": 460,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00191",
+    "vehicleId": "veh-004",
+    "date": "2025-11-05",
+    "category": "financing",
+    "amount": 390,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00332",
+    "vehicleId": "veh-007",
+    "date": "2025-11-05",
+    "category": "financing",
+    "amount": 390,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00388",
+    "vehicleId": "veh-008",
+    "date": "2025-11-05",
+    "category": "financing",
+    "amount": 390,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00390",
+    "vehicleId": "veh-008",
+    "date": "2025-11-06",
+    "category": "parking",
+    "amount": 61.19,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00283",
+    "vehicleId": "veh-006",
+    "date": "2025-11-07",
+    "category": "parking",
+    "amount": 34.14,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00194",
+    "vehicleId": "veh-004",
+    "date": "2025-11-08",
+    "category": "cleaning",
+    "amount": 18.23,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00087",
+    "vehicleId": "veh-002",
+    "date": "2025-11-09",
+    "category": "parking",
+    "amount": 48.03,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00088",
+    "vehicleId": "veh-002",
+    "date": "2025-11-09",
+    "category": "cleaning",
+    "amount": 25.84,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00478",
+    "vehicleId": "veh-010",
+    "date": "2025-11-09",
+    "category": "cleaning",
+    "amount": 23.55,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00042",
+    "vehicleId": "veh-001",
+    "date": "2025-11-10",
+    "category": "driverWages",
+    "amount": 1334.91,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00086",
+    "vehicleId": "veh-002",
+    "date": "2025-11-10",
+    "category": "driverWages",
+    "amount": 1125.62,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00089",
+    "vehicleId": "veh-002",
+    "date": "2025-11-10",
+    "category": "fines",
+    "amount": 116,
+    "note": "Speeding / parking fine"
+  },
+  {
+    "id": "exp-00140",
+    "vehicleId": "veh-003",
+    "date": "2025-11-10",
+    "category": "driverWages",
+    "amount": 1230.44,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00192",
+    "vehicleId": "veh-004",
+    "date": "2025-11-10",
+    "category": "driverWages",
+    "amount": 1331.44,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00237",
+    "vehicleId": "veh-005",
+    "date": "2025-11-10",
+    "category": "driverWages",
+    "amount": 1168.02,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00282",
+    "vehicleId": "veh-006",
+    "date": "2025-11-10",
+    "category": "driverWages",
+    "amount": 1132.28,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00333",
+    "vehicleId": "veh-007",
+    "date": "2025-11-10",
+    "category": "driverWages",
+    "amount": 1152.88,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00389",
+    "vehicleId": "veh-008",
+    "date": "2025-11-10",
+    "category": "driverWages",
+    "amount": 1176.58,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00432",
+    "vehicleId": "veh-009",
+    "date": "2025-11-10",
+    "category": "driverWages",
+    "amount": 1320.72,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00476",
+    "vehicleId": "veh-010",
+    "date": "2025-11-10",
+    "category": "driverWages",
+    "amount": 1170.26,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00284",
+    "vehicleId": "veh-006",
+    "date": "2025-11-12",
+    "category": "cleaning",
+    "amount": 30.99,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00193",
+    "vehicleId": "veh-004",
+    "date": "2025-11-13",
+    "category": "parking",
+    "amount": 60.43,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00239",
+    "vehicleId": "veh-005",
+    "date": "2025-11-14",
+    "category": "cleaning",
+    "amount": 19.51,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00391",
+    "vehicleId": "veh-008",
+    "date": "2025-11-14",
+    "category": "cleaning",
+    "amount": 24.96,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00044",
+    "vehicleId": "veh-001",
+    "date": "2025-11-16",
+    "category": "cleaning",
+    "amount": 20.23,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00043",
+    "vehicleId": "veh-001",
+    "date": "2025-11-17",
+    "category": "parking",
+    "amount": 31.3,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00045",
+    "vehicleId": "veh-001",
+    "date": "2025-11-18",
+    "category": "tolls",
+    "amount": 16.85,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00238",
+    "vehicleId": "veh-005",
+    "date": "2025-11-18",
+    "category": "parking",
+    "amount": 61.33,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00434",
+    "vehicleId": "veh-009",
+    "date": "2025-11-19",
+    "category": "cleaning",
+    "amount": 23.62,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00479",
+    "vehicleId": "veh-010",
+    "date": "2025-11-20",
+    "category": "fines",
+    "amount": 58,
+    "note": "Speeding / parking fine"
+  },
+  {
+    "id": "exp-00335",
+    "vehicleId": "veh-007",
+    "date": "2025-11-23",
+    "category": "cleaning",
+    "amount": 28.44,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00334",
+    "vehicleId": "veh-007",
+    "date": "2025-11-24",
+    "category": "parking",
+    "amount": 57.86,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00477",
+    "vehicleId": "veh-010",
+    "date": "2025-11-24",
+    "category": "parking",
+    "amount": 69.97,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00141",
+    "vehicleId": "veh-003",
+    "date": "2025-11-25",
+    "category": "parking",
+    "amount": 54.71,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00433",
+    "vehicleId": "veh-009",
+    "date": "2025-11-25",
+    "category": "parking",
+    "amount": 61.11,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00142",
+    "vehicleId": "veh-003",
+    "date": "2025-11-26",
+    "category": "cleaning",
+    "amount": 36.45,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00134",
+    "vehicleId": "veh-003",
+    "date": "2025-12-05",
+    "category": "financing",
+    "amount": 460,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00187",
+    "vehicleId": "veh-004",
+    "date": "2025-12-05",
+    "category": "financing",
+    "amount": 390,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00328",
+    "vehicleId": "veh-007",
+    "date": "2025-12-05",
+    "category": "financing",
+    "amount": 390,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00384",
+    "vehicleId": "veh-008",
+    "date": "2025-12-05",
+    "category": "financing",
+    "amount": 390,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00137",
+    "vehicleId": "veh-003",
+    "date": "2025-12-07",
+    "category": "cleaning",
+    "amount": 21.94,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00387",
+    "vehicleId": "veh-008",
+    "date": "2025-12-08",
+    "category": "cleaning",
+    "amount": 32.41,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00136",
+    "vehicleId": "veh-003",
+    "date": "2025-12-09",
+    "category": "parking",
+    "amount": 62.92,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00236",
+    "vehicleId": "veh-005",
+    "date": "2025-12-09",
+    "category": "tolls",
+    "amount": 15.96,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00280",
+    "vehicleId": "veh-006",
+    "date": "2025-12-09",
+    "category": "parking",
+    "amount": 60.5,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00038",
+    "vehicleId": "veh-001",
+    "date": "2025-12-10",
+    "category": "driverWages",
+    "amount": 1334.91,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00083",
+    "vehicleId": "veh-002",
+    "date": "2025-12-10",
+    "category": "driverWages",
+    "amount": 1125.62,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00135",
+    "vehicleId": "veh-003",
+    "date": "2025-12-10",
+    "category": "driverWages",
+    "amount": 1230.44,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00188",
+    "vehicleId": "veh-004",
+    "date": "2025-12-10",
+    "category": "driverWages",
+    "amount": 1331.44,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00233",
+    "vehicleId": "veh-005",
+    "date": "2025-12-10",
+    "category": "driverWages",
+    "amount": 1168.02,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00279",
+    "vehicleId": "veh-006",
+    "date": "2025-12-10",
+    "category": "driverWages",
+    "amount": 1132.28,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00329",
+    "vehicleId": "veh-007",
+    "date": "2025-12-10",
+    "category": "driverWages",
+    "amount": 1152.88,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00331",
+    "vehicleId": "veh-007",
+    "date": "2025-12-10",
+    "category": "cleaning",
+    "amount": 34.51,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00385",
+    "vehicleId": "veh-008",
+    "date": "2025-12-10",
+    "category": "driverWages",
+    "amount": 1176.58,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00429",
+    "vehicleId": "veh-009",
+    "date": "2025-12-10",
+    "category": "driverWages",
+    "amount": 1320.72,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00472",
+    "vehicleId": "veh-010",
+    "date": "2025-12-10",
+    "category": "driverWages",
+    "amount": 1170.26,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00430",
+    "vehicleId": "veh-009",
+    "date": "2025-12-11",
+    "category": "parking",
+    "amount": 61.24,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00084",
+    "vehicleId": "veh-002",
+    "date": "2025-12-12",
+    "category": "parking",
+    "amount": 66.7,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00085",
+    "vehicleId": "veh-002",
+    "date": "2025-12-13",
+    "category": "cleaning",
+    "amount": 28.62,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00040",
+    "vehicleId": "veh-001",
+    "date": "2025-12-16",
+    "category": "cleaning",
+    "amount": 30.19,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00189",
+    "vehicleId": "veh-004",
+    "date": "2025-12-16",
+    "category": "parking",
+    "amount": 33.78,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00190",
+    "vehicleId": "veh-004",
+    "date": "2025-12-18",
+    "category": "cleaning",
+    "amount": 18.44,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00281",
+    "vehicleId": "veh-006",
+    "date": "2025-12-18",
+    "category": "cleaning",
+    "amount": 36.46,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00473",
+    "vehicleId": "veh-010",
+    "date": "2025-12-18",
+    "category": "parking",
+    "amount": 45.4,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00475",
+    "vehicleId": "veh-010",
+    "date": "2025-12-18",
+    "category": "tolls",
+    "amount": 22.07,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00234",
+    "vehicleId": "veh-005",
+    "date": "2025-12-19",
+    "category": "parking",
+    "amount": 69.85,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00041",
+    "vehicleId": "veh-001",
+    "date": "2025-12-20",
+    "category": "tolls",
+    "amount": 26.05,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00001",
+    "vehicleId": "veh-001",
+    "date": "2025-12-22",
+    "category": "insurance",
+    "amount": 1105.77,
+    "note": "Annual RCA + CASCO"
+  },
+  {
+    "id": "exp-00386",
+    "vehicleId": "veh-008",
+    "date": "2025-12-22",
+    "category": "parking",
+    "amount": 46.27,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00039",
+    "vehicleId": "veh-001",
+    "date": "2025-12-23",
+    "category": "parking",
+    "amount": 39.44,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00431",
+    "vehicleId": "veh-009",
+    "date": "2025-12-23",
+    "category": "cleaning",
+    "amount": 37.38,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00474",
+    "vehicleId": "veh-010",
+    "date": "2025-12-24",
+    "category": "cleaning",
+    "amount": 20.45,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00138",
+    "vehicleId": "veh-003",
+    "date": "2025-12-25",
+    "category": "tolls",
+    "amount": 23.76,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00143",
+    "vehicleId": "veh-004",
+    "date": "2025-12-26",
+    "category": "insurance",
+    "amount": 906.44,
+    "note": "Annual RCA + CASCO"
+  },
+  {
+    "id": "exp-00235",
+    "vehicleId": "veh-005",
+    "date": "2025-12-26",
+    "category": "cleaning",
+    "amount": 26.32,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00330",
+    "vehicleId": "veh-007",
+    "date": "2025-12-26",
+    "category": "parking",
+    "amount": 66.56,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00336",
+    "vehicleId": "veh-008",
+    "date": "2025-12-26",
+    "category": "insurance",
+    "amount": 1078.74,
+    "note": "Annual RCA + CASCO"
+  },
+  {
+    "id": "exp-00337",
+    "vehicleId": "veh-008",
+    "date": "2025-12-26",
+    "category": "roadTax",
+    "amount": 58,
+    "note": "Rovinieta 12 months"
+  },
+  {
+    "id": "exp-00232",
+    "vehicleId": "veh-005",
+    "date": "2026-01-02",
+    "category": "tolls",
+    "amount": 31.09,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00130",
+    "vehicleId": "veh-003",
+    "date": "2026-01-05",
+    "category": "financing",
+    "amount": 460,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00183",
+    "vehicleId": "veh-004",
+    "date": "2026-01-05",
+    "category": "financing",
+    "amount": 390,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00324",
+    "vehicleId": "veh-007",
+    "date": "2026-01-05",
+    "category": "financing",
+    "amount": 390,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00379",
+    "vehicleId": "veh-008",
+    "date": "2026-01-05",
+    "category": "financing",
+    "amount": 390,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00186",
+    "vehicleId": "veh-004",
+    "date": "2026-01-06",
+    "category": "cleaning",
+    "amount": 34.6,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00470",
+    "vehicleId": "veh-010",
+    "date": "2026-01-06",
+    "category": "cleaning",
+    "amount": 19.34,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00381",
+    "vehicleId": "veh-008",
+    "date": "2026-01-07",
+    "category": "parking",
+    "amount": 54.45,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00081",
+    "vehicleId": "veh-002",
+    "date": "2026-01-08",
+    "category": "cleaning",
+    "amount": 24.9,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00035",
+    "vehicleId": "veh-001",
+    "date": "2026-01-10",
+    "category": "driverWages",
+    "amount": 1334.91,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00079",
+    "vehicleId": "veh-002",
+    "date": "2026-01-10",
+    "category": "driverWages",
+    "amount": 1125.62,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00131",
+    "vehicleId": "veh-003",
+    "date": "2026-01-10",
+    "category": "driverWages",
+    "amount": 1230.44,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00184",
+    "vehicleId": "veh-004",
+    "date": "2026-01-10",
+    "category": "driverWages",
+    "amount": 1331.44,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00229",
+    "vehicleId": "veh-005",
+    "date": "2026-01-10",
+    "category": "driverWages",
+    "amount": 1168.02,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00230",
+    "vehicleId": "veh-005",
+    "date": "2026-01-10",
+    "category": "parking",
+    "amount": 62.72,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00275",
+    "vehicleId": "veh-006",
+    "date": "2026-01-10",
+    "category": "driverWages",
+    "amount": 1132.28,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00325",
+    "vehicleId": "veh-007",
+    "date": "2026-01-10",
+    "category": "driverWages",
+    "amount": 1152.88,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00380",
+    "vehicleId": "veh-008",
+    "date": "2026-01-10",
+    "category": "driverWages",
+    "amount": 1176.58,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00425",
+    "vehicleId": "veh-009",
+    "date": "2026-01-10",
+    "category": "driverWages",
+    "amount": 1320.72,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00426",
+    "vehicleId": "veh-009",
+    "date": "2026-01-10",
+    "category": "parking",
+    "amount": 29.76,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00468",
+    "vehicleId": "veh-010",
+    "date": "2026-01-10",
+    "category": "driverWages",
+    "amount": 1170.26,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00382",
+    "vehicleId": "veh-008",
+    "date": "2026-01-11",
+    "category": "cleaning",
+    "amount": 21.53,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00469",
+    "vehicleId": "veh-010",
+    "date": "2026-01-12",
+    "category": "parking",
+    "amount": 59.26,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00231",
+    "vehicleId": "veh-005",
+    "date": "2026-01-13",
+    "category": "cleaning",
+    "amount": 28.37,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00277",
+    "vehicleId": "veh-006",
+    "date": "2026-01-14",
+    "category": "cleaning",
+    "amount": 37.54,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00278",
+    "vehicleId": "veh-006",
+    "date": "2026-01-15",
+    "category": "tolls",
+    "amount": 29.76,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00132",
+    "vehicleId": "veh-003",
+    "date": "2026-01-16",
+    "category": "parking",
+    "amount": 53.58,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00471",
+    "vehicleId": "veh-010",
+    "date": "2026-01-18",
+    "category": "tolls",
+    "amount": 18.18,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00036",
+    "vehicleId": "veh-001",
+    "date": "2026-01-19",
+    "category": "parking",
+    "amount": 59.76,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00080",
+    "vehicleId": "veh-002",
+    "date": "2026-01-19",
+    "category": "parking",
+    "amount": 33.28,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00383",
+    "vehicleId": "veh-008",
+    "date": "2026-01-19",
+    "category": "tolls",
+    "amount": 29.95,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00428",
+    "vehicleId": "veh-009",
+    "date": "2026-01-19",
+    "category": "tolls",
+    "amount": 23.7,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00276",
+    "vehicleId": "veh-006",
+    "date": "2026-01-21",
+    "category": "parking",
+    "amount": 30.55,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00185",
+    "vehicleId": "veh-004",
+    "date": "2026-01-22",
+    "category": "parking",
+    "amount": 49.23,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00037",
+    "vehicleId": "veh-001",
+    "date": "2026-01-23",
+    "category": "cleaning",
+    "amount": 32.14,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00082",
+    "vehicleId": "veh-002",
+    "date": "2026-01-24",
+    "category": "tolls",
+    "amount": 16.25,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00133",
+    "vehicleId": "veh-003",
+    "date": "2026-01-24",
+    "category": "cleaning",
+    "amount": 25.67,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00427",
+    "vehicleId": "veh-009",
+    "date": "2026-01-24",
+    "category": "cleaning",
+    "amount": 32.68,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00327",
+    "vehicleId": "veh-007",
+    "date": "2026-01-25",
+    "category": "cleaning",
+    "amount": 28.62,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00326",
+    "vehicleId": "veh-007",
+    "date": "2026-01-26",
+    "category": "parking",
+    "amount": 28.39,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00125",
+    "vehicleId": "veh-003",
+    "date": "2026-02-05",
+    "category": "financing",
+    "amount": 460,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00179",
+    "vehicleId": "veh-004",
+    "date": "2026-02-05",
+    "category": "financing",
+    "amount": 390,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00320",
+    "vehicleId": "veh-007",
+    "date": "2026-02-05",
+    "category": "financing",
+    "amount": 390,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00375",
+    "vehicleId": "veh-008",
+    "date": "2026-02-05",
+    "category": "financing",
+    "amount": 390,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00377",
+    "vehicleId": "veh-008",
+    "date": "2026-02-06",
+    "category": "parking",
+    "amount": 26.17,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00047",
+    "vehicleId": "veh-002",
+    "date": "2026-02-07",
+    "category": "roadTax",
+    "amount": 58,
+    "note": "Rovinieta 12 months"
+  },
+  {
+    "id": "exp-00196",
+    "vehicleId": "veh-005",
+    "date": "2026-02-09",
+    "category": "roadTax",
+    "amount": 96,
+    "note": "Rovinieta 12 months"
+  },
+  {
+    "id": "exp-00227",
+    "vehicleId": "veh-005",
+    "date": "2026-02-09",
+    "category": "parking",
+    "amount": 29.56,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00032",
+    "vehicleId": "veh-001",
+    "date": "2026-02-10",
+    "category": "driverWages",
+    "amount": 1334.91,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00075",
+    "vehicleId": "veh-002",
+    "date": "2026-02-10",
+    "category": "driverWages",
+    "amount": 1125.62,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00126",
+    "vehicleId": "veh-003",
+    "date": "2026-02-10",
+    "category": "driverWages",
+    "amount": 1230.44,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00180",
+    "vehicleId": "veh-004",
+    "date": "2026-02-10",
+    "category": "driverWages",
+    "amount": 1331.44,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00226",
+    "vehicleId": "veh-005",
+    "date": "2026-02-10",
+    "category": "driverWages",
+    "amount": 1168.02,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00272",
+    "vehicleId": "veh-006",
+    "date": "2026-02-10",
+    "category": "driverWages",
+    "amount": 1132.28,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00321",
+    "vehicleId": "veh-007",
+    "date": "2026-02-10",
+    "category": "driverWages",
+    "amount": 1152.88,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00376",
+    "vehicleId": "veh-008",
+    "date": "2026-02-10",
+    "category": "driverWages",
+    "amount": 1176.58,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00422",
+    "vehicleId": "veh-009",
+    "date": "2026-02-10",
+    "category": "driverWages",
+    "amount": 1320.72,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00465",
+    "vehicleId": "veh-010",
+    "date": "2026-02-10",
+    "category": "driverWages",
+    "amount": 1170.26,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00467",
+    "vehicleId": "veh-010",
+    "date": "2026-02-10",
+    "category": "cleaning",
+    "amount": 37.06,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00077",
+    "vehicleId": "veh-002",
+    "date": "2026-02-11",
+    "category": "cleaning",
+    "amount": 28.56,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00286",
+    "vehicleId": "veh-007",
+    "date": "2026-02-12",
+    "category": "roadTax",
+    "amount": 96,
+    "note": "Rovinieta 12 months"
+  },
+  {
+    "id": "exp-00436",
+    "vehicleId": "veh-010",
+    "date": "2026-02-12",
+    "category": "roadTax",
+    "amount": 58,
+    "note": "Rovinieta 12 months"
+  },
+  {
+    "id": "exp-00129",
+    "vehicleId": "veh-003",
+    "date": "2026-02-13",
+    "category": "tolls",
+    "amount": 30.24,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00181",
+    "vehicleId": "veh-004",
+    "date": "2026-02-13",
+    "category": "parking",
+    "amount": 62.04,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00273",
+    "vehicleId": "veh-006",
+    "date": "2026-02-13",
+    "category": "parking",
+    "amount": 62.4,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00323",
+    "vehicleId": "veh-007",
+    "date": "2026-02-14",
+    "category": "cleaning",
+    "amount": 26.17,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00228",
+    "vehicleId": "veh-005",
+    "date": "2026-02-15",
+    "category": "cleaning",
+    "amount": 23.41,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00274",
+    "vehicleId": "veh-006",
+    "date": "2026-02-16",
+    "category": "cleaning",
+    "amount": 29.83,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00182",
+    "vehicleId": "veh-004",
+    "date": "2026-02-17",
+    "category": "cleaning",
+    "amount": 19.97,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00423",
+    "vehicleId": "veh-009",
+    "date": "2026-02-17",
+    "category": "parking",
+    "amount": 62.22,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00424",
+    "vehicleId": "veh-009",
+    "date": "2026-02-17",
+    "category": "cleaning",
+    "amount": 30.86,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00378",
+    "vehicleId": "veh-008",
+    "date": "2026-02-20",
+    "category": "cleaning",
+    "amount": 22.76,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00033",
+    "vehicleId": "veh-001",
+    "date": "2026-02-21",
+    "category": "parking",
+    "amount": 35.66,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00466",
+    "vehicleId": "veh-010",
+    "date": "2026-02-21",
+    "category": "parking",
+    "amount": 55.88,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00076",
+    "vehicleId": "veh-002",
+    "date": "2026-02-23",
+    "category": "parking",
+    "amount": 28.07,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00128",
+    "vehicleId": "veh-003",
+    "date": "2026-02-24",
+    "category": "cleaning",
+    "amount": 26.16,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00322",
+    "vehicleId": "veh-007",
+    "date": "2026-02-24",
+    "category": "parking",
+    "amount": 34.68,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00127",
+    "vehicleId": "veh-003",
+    "date": "2026-02-25",
+    "category": "parking",
+    "amount": 57.59,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00034",
+    "vehicleId": "veh-001",
+    "date": "2026-02-26",
+    "category": "cleaning",
+    "amount": 21.15,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00078",
+    "vehicleId": "veh-002",
+    "date": "2026-02-28",
+    "category": "fines",
+    "amount": 290,
+    "note": "Speeding / parking fine"
+  },
+  {
+    "id": "exp-00031",
+    "vehicleId": "veh-001",
+    "date": "2026-03-04",
+    "category": "tolls",
+    "amount": 33.12,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00464",
+    "vehicleId": "veh-010",
+    "date": "2026-03-04",
+    "category": "tolls",
+    "amount": 34.94,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00121",
+    "vehicleId": "veh-003",
+    "date": "2026-03-05",
+    "category": "financing",
+    "amount": 460,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00175",
+    "vehicleId": "veh-004",
+    "date": "2026-03-05",
+    "category": "financing",
+    "amount": 390,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00316",
+    "vehicleId": "veh-007",
+    "date": "2026-03-05",
+    "category": "financing",
+    "amount": 390,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00370",
+    "vehicleId": "veh-008",
+    "date": "2026-03-05",
+    "category": "financing",
+    "amount": 390,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00029",
+    "vehicleId": "veh-001",
+    "date": "2026-03-06",
+    "category": "parking",
+    "amount": 58.35,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00421",
+    "vehicleId": "veh-009",
+    "date": "2026-03-06",
+    "category": "cleaning",
+    "amount": 39.35,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00074",
+    "vehicleId": "veh-002",
+    "date": "2026-03-07",
+    "category": "cleaning",
+    "amount": 29.29,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00318",
+    "vehicleId": "veh-007",
+    "date": "2026-03-07",
+    "category": "parking",
+    "amount": 56.83,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00373",
+    "vehicleId": "veh-008",
+    "date": "2026-03-07",
+    "category": "cleaning",
+    "amount": 20.11,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00028",
+    "vehicleId": "veh-001",
+    "date": "2026-03-10",
+    "category": "driverWages",
+    "amount": 1334.91,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00072",
+    "vehicleId": "veh-002",
+    "date": "2026-03-10",
+    "category": "driverWages",
+    "amount": 1125.62,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00122",
+    "vehicleId": "veh-003",
+    "date": "2026-03-10",
+    "category": "driverWages",
+    "amount": 1230.44,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00176",
+    "vehicleId": "veh-004",
+    "date": "2026-03-10",
+    "category": "driverWages",
+    "amount": 1331.44,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00222",
+    "vehicleId": "veh-005",
+    "date": "2026-03-10",
+    "category": "driverWages",
+    "amount": 1168.02,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00269",
+    "vehicleId": "veh-006",
+    "date": "2026-03-10",
+    "category": "driverWages",
+    "amount": 1132.28,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00317",
+    "vehicleId": "veh-007",
+    "date": "2026-03-10",
+    "category": "driverWages",
+    "amount": 1152.88,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00371",
+    "vehicleId": "veh-008",
+    "date": "2026-03-10",
+    "category": "driverWages",
+    "amount": 1176.58,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00419",
+    "vehicleId": "veh-009",
+    "date": "2026-03-10",
+    "category": "driverWages",
+    "amount": 1320.72,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00461",
+    "vehicleId": "veh-010",
+    "date": "2026-03-10",
+    "category": "driverWages",
+    "amount": 1170.26,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00463",
+    "vehicleId": "veh-010",
+    "date": "2026-03-10",
+    "category": "cleaning",
+    "amount": 33.72,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00073",
+    "vehicleId": "veh-002",
+    "date": "2026-03-11",
+    "category": "parking",
+    "amount": 44.22,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00374",
+    "vehicleId": "veh-008",
+    "date": "2026-03-12",
+    "category": "tolls",
+    "amount": 33.79,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00271",
+    "vehicleId": "veh-006",
+    "date": "2026-03-14",
+    "category": "cleaning",
+    "amount": 37.17,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00462",
+    "vehicleId": "veh-010",
+    "date": "2026-03-14",
+    "category": "parking",
+    "amount": 44.43,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00124",
+    "vehicleId": "veh-003",
+    "date": "2026-03-15",
+    "category": "cleaning",
+    "amount": 31.62,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00420",
+    "vehicleId": "veh-009",
+    "date": "2026-03-15",
+    "category": "parking",
+    "amount": 57.41,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00177",
+    "vehicleId": "veh-004",
+    "date": "2026-03-17",
+    "category": "parking",
+    "amount": 39.2,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00225",
+    "vehicleId": "veh-005",
+    "date": "2026-03-17",
+    "category": "tolls",
+    "amount": 23.34,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00030",
+    "vehicleId": "veh-001",
+    "date": "2026-03-18",
+    "category": "cleaning",
+    "amount": 20.81,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00224",
+    "vehicleId": "veh-005",
+    "date": "2026-03-18",
+    "category": "cleaning",
+    "amount": 36.05,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00091",
+    "vehicleId": "veh-003",
+    "date": "2026-03-19",
+    "category": "roadTax",
+    "amount": 58,
+    "note": "Rovinieta 12 months"
+  },
+  {
+    "id": "exp-00319",
+    "vehicleId": "veh-007",
+    "date": "2026-03-21",
+    "category": "cleaning",
+    "amount": 33.17,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00123",
+    "vehicleId": "veh-003",
+    "date": "2026-03-22",
+    "category": "parking",
+    "amount": 59.94,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00178",
+    "vehicleId": "veh-004",
+    "date": "2026-03-23",
+    "category": "cleaning",
+    "amount": 36.95,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00002",
+    "vehicleId": "veh-001",
+    "date": "2026-03-25",
+    "category": "roadTax",
+    "amount": 58,
+    "note": "Rovinieta 12 months"
+  },
+  {
+    "id": "exp-00270",
+    "vehicleId": "veh-006",
+    "date": "2026-03-25",
+    "category": "parking",
+    "amount": 47.91,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00372",
+    "vehicleId": "veh-008",
+    "date": "2026-03-25",
+    "category": "parking",
+    "amount": 39.08,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00223",
+    "vehicleId": "veh-005",
+    "date": "2026-03-26",
+    "category": "parking",
+    "amount": 40.04,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00393",
+    "vehicleId": "veh-009",
+    "date": "2026-03-27",
+    "category": "roadTax",
+    "amount": 58,
+    "note": "Rovinieta 12 months"
+  },
+  {
+    "id": "exp-00116",
+    "vehicleId": "veh-003",
+    "date": "2026-04-05",
+    "category": "financing",
+    "amount": 460,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00171",
+    "vehicleId": "veh-004",
+    "date": "2026-04-05",
+    "category": "financing",
+    "amount": 390,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00312",
+    "vehicleId": "veh-007",
+    "date": "2026-04-05",
+    "category": "financing",
+    "amount": 390,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00365",
+    "vehicleId": "veh-008",
+    "date": "2026-04-05",
+    "category": "financing",
+    "amount": 390,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00267",
+    "vehicleId": "veh-006",
+    "date": "2026-04-06",
+    "category": "cleaning",
+    "amount": 30.53,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00459",
+    "vehicleId": "veh-010",
+    "date": "2026-04-07",
+    "category": "parking",
+    "amount": 47.69,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00070",
+    "vehicleId": "veh-002",
+    "date": "2026-04-08",
+    "category": "parking",
+    "amount": 55.98,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00460",
+    "vehicleId": "veh-010",
+    "date": "2026-04-09",
+    "category": "cleaning",
+    "amount": 22.93,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00024",
+    "vehicleId": "veh-001",
+    "date": "2026-04-10",
+    "category": "driverWages",
+    "amount": 1334.91,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00069",
+    "vehicleId": "veh-002",
+    "date": "2026-04-10",
+    "category": "driverWages",
+    "amount": 1125.62,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00117",
+    "vehicleId": "veh-003",
+    "date": "2026-04-10",
+    "category": "driverWages",
+    "amount": 1230.44,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00172",
+    "vehicleId": "veh-004",
+    "date": "2026-04-10",
+    "category": "driverWages",
+    "amount": 1331.44,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00219",
+    "vehicleId": "veh-005",
+    "date": "2026-04-10",
+    "category": "driverWages",
+    "amount": 1168.02,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00265",
+    "vehicleId": "veh-006",
+    "date": "2026-04-10",
+    "category": "driverWages",
+    "amount": 1132.28,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00313",
+    "vehicleId": "veh-007",
+    "date": "2026-04-10",
+    "category": "driverWages",
+    "amount": 1152.88,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00315",
+    "vehicleId": "veh-007",
+    "date": "2026-04-10",
+    "category": "cleaning",
+    "amount": 18.16,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00366",
+    "vehicleId": "veh-008",
+    "date": "2026-04-10",
+    "category": "driverWages",
+    "amount": 1176.58,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00416",
+    "vehicleId": "veh-009",
+    "date": "2026-04-10",
+    "category": "driverWages",
+    "amount": 1320.72,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00458",
+    "vehicleId": "veh-010",
+    "date": "2026-04-10",
+    "category": "driverWages",
+    "amount": 1170.26,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00120",
+    "vehicleId": "veh-003",
+    "date": "2026-04-11",
+    "category": "tolls",
+    "amount": 18.53,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00174",
+    "vehicleId": "veh-004",
+    "date": "2026-04-11",
+    "category": "cleaning",
+    "amount": 36.33,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00071",
+    "vehicleId": "veh-002",
+    "date": "2026-04-13",
+    "category": "cleaning",
+    "amount": 36.16,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00417",
+    "vehicleId": "veh-009",
+    "date": "2026-04-13",
+    "category": "parking",
+    "amount": 66.53,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00025",
+    "vehicleId": "veh-001",
+    "date": "2026-04-15",
+    "category": "parking",
+    "amount": 39.99,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00119",
+    "vehicleId": "veh-003",
+    "date": "2026-04-15",
+    "category": "cleaning",
+    "amount": 37.9,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00369",
+    "vehicleId": "veh-008",
+    "date": "2026-04-16",
+    "category": "fines",
+    "amount": 116,
+    "note": "Speeding / parking fine"
+  },
+  {
+    "id": "exp-00026",
+    "vehicleId": "veh-001",
+    "date": "2026-04-17",
+    "category": "cleaning",
+    "amount": 22.8,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00314",
+    "vehicleId": "veh-007",
+    "date": "2026-04-17",
+    "category": "parking",
+    "amount": 45.26,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00118",
+    "vehicleId": "veh-003",
+    "date": "2026-04-19",
+    "category": "parking",
+    "amount": 54.86,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00220",
+    "vehicleId": "veh-005",
+    "date": "2026-04-19",
+    "category": "parking",
+    "amount": 29.07,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00268",
+    "vehicleId": "veh-006",
+    "date": "2026-04-19",
+    "category": "tolls",
+    "amount": 28.62,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00368",
+    "vehicleId": "veh-008",
+    "date": "2026-04-19",
+    "category": "cleaning",
+    "amount": 39.09,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00418",
+    "vehicleId": "veh-009",
+    "date": "2026-04-21",
+    "category": "cleaning",
+    "amount": 27.0,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00173",
+    "vehicleId": "veh-004",
+    "date": "2026-04-24",
+    "category": "parking",
+    "amount": 53.36,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00367",
+    "vehicleId": "veh-008",
+    "date": "2026-04-24",
+    "category": "parking",
+    "amount": 41.22,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00266",
+    "vehicleId": "veh-006",
+    "date": "2026-04-25",
+    "category": "parking",
+    "amount": 53.2,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00221",
+    "vehicleId": "veh-005",
+    "date": "2026-04-26",
+    "category": "cleaning",
+    "amount": 39.02,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00027",
+    "vehicleId": "veh-001",
+    "date": "2026-04-28",
+    "category": "tolls",
+    "amount": 31.27,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00112",
+    "vehicleId": "veh-003",
+    "date": "2026-05-05",
+    "category": "financing",
+    "amount": 460,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00166",
+    "vehicleId": "veh-004",
+    "date": "2026-05-05",
+    "category": "financing",
+    "amount": 390,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00308",
+    "vehicleId": "veh-007",
+    "date": "2026-05-05",
+    "category": "financing",
+    "amount": 390,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00360",
+    "vehicleId": "veh-008",
+    "date": "2026-05-05",
+    "category": "financing",
+    "amount": 390,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00067",
+    "vehicleId": "veh-002",
+    "date": "2026-05-06",
+    "category": "cleaning",
+    "amount": 22.89,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00414",
+    "vehicleId": "veh-009",
+    "date": "2026-05-06",
+    "category": "cleaning",
+    "amount": 22.58,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00090",
+    "vehicleId": "veh-003",
+    "date": "2026-05-07",
+    "category": "insurance",
+    "amount": 883.18,
+    "note": "Annual RCA + CASCO"
+  },
+  {
+    "id": "exp-00264",
+    "vehicleId": "veh-006",
+    "date": "2026-05-07",
+    "category": "cleaning",
+    "amount": 27.2,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00362",
+    "vehicleId": "veh-008",
+    "date": "2026-05-07",
+    "category": "parking",
+    "amount": 26.43,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00068",
+    "vehicleId": "veh-002",
+    "date": "2026-05-08",
+    "category": "tolls",
+    "amount": 19.37,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00021",
+    "vehicleId": "veh-001",
+    "date": "2026-05-10",
+    "category": "driverWages",
+    "amount": 1334.91,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00065",
+    "vehicleId": "veh-002",
+    "date": "2026-05-10",
+    "category": "driverWages",
+    "amount": 1125.62,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00113",
+    "vehicleId": "veh-003",
+    "date": "2026-05-10",
+    "category": "driverWages",
+    "amount": 1230.44,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00167",
+    "vehicleId": "veh-004",
+    "date": "2026-05-10",
+    "category": "driverWages",
+    "amount": 1331.44,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00215",
+    "vehicleId": "veh-005",
+    "date": "2026-05-10",
+    "category": "driverWages",
+    "amount": 1168.02,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00262",
+    "vehicleId": "veh-006",
+    "date": "2026-05-10",
+    "category": "driverWages",
+    "amount": 1132.28,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00309",
+    "vehicleId": "veh-007",
+    "date": "2026-05-10",
+    "category": "driverWages",
+    "amount": 1152.88,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00361",
+    "vehicleId": "veh-008",
+    "date": "2026-05-10",
+    "category": "driverWages",
+    "amount": 1176.58,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00412",
+    "vehicleId": "veh-009",
+    "date": "2026-05-10",
+    "category": "driverWages",
+    "amount": 1320.72,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00454",
+    "vehicleId": "veh-010",
+    "date": "2026-05-10",
+    "category": "driverWages",
+    "amount": 1170.26,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00240",
+    "vehicleId": "veh-006",
+    "date": "2026-05-11",
+    "category": "insurance",
+    "amount": 638.53,
+    "note": "Annual RCA + CASCO"
+  },
+  {
+    "id": "exp-00310",
+    "vehicleId": "veh-007",
+    "date": "2026-05-11",
+    "category": "parking",
+    "amount": 63.81,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00413",
+    "vehicleId": "veh-009",
+    "date": "2026-05-11",
+    "category": "parking",
+    "amount": 41.91,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00216",
+    "vehicleId": "veh-005",
+    "date": "2026-05-12",
+    "category": "parking",
+    "amount": 40.9,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00218",
+    "vehicleId": "veh-005",
+    "date": "2026-05-12",
+    "category": "tolls",
+    "amount": 22.7,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00455",
+    "vehicleId": "veh-010",
+    "date": "2026-05-12",
+    "category": "parking",
+    "amount": 60.34,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00022",
+    "vehicleId": "veh-001",
+    "date": "2026-05-13",
+    "category": "parking",
+    "amount": 49.05,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00311",
+    "vehicleId": "veh-007",
+    "date": "2026-05-13",
+    "category": "cleaning",
+    "amount": 37.68,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00456",
+    "vehicleId": "veh-010",
+    "date": "2026-05-13",
+    "category": "cleaning",
+    "amount": 24.13,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00457",
+    "vehicleId": "veh-010",
+    "date": "2026-05-15",
+    "category": "tolls",
+    "amount": 15.3,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00023",
+    "vehicleId": "veh-001",
+    "date": "2026-05-16",
+    "category": "cleaning",
+    "amount": 18.13,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00115",
+    "vehicleId": "veh-003",
+    "date": "2026-05-16",
+    "category": "cleaning",
+    "amount": 21.6,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00169",
+    "vehicleId": "veh-004",
+    "date": "2026-05-16",
+    "category": "cleaning",
+    "amount": 30.68,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00363",
+    "vehicleId": "veh-008",
+    "date": "2026-05-16",
+    "category": "cleaning",
+    "amount": 35.15,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00066",
+    "vehicleId": "veh-002",
+    "date": "2026-05-21",
+    "category": "parking",
+    "amount": 47.97,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00415",
+    "vehicleId": "veh-009",
+    "date": "2026-05-22",
+    "category": "tolls",
+    "amount": 24.89,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00114",
+    "vehicleId": "veh-003",
+    "date": "2026-05-23",
+    "category": "parking",
+    "amount": 65.77,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00168",
+    "vehicleId": "veh-004",
+    "date": "2026-05-23",
+    "category": "parking",
+    "amount": 28.59,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00263",
+    "vehicleId": "veh-006",
+    "date": "2026-05-24",
+    "category": "parking",
+    "amount": 43.53,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00217",
+    "vehicleId": "veh-005",
+    "date": "2026-05-25",
+    "category": "cleaning",
+    "amount": 19.33,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00170",
+    "vehicleId": "veh-004",
+    "date": "2026-05-27",
+    "category": "fines",
+    "amount": 290,
+    "note": "Speeding / parking fine"
+  },
+  {
+    "id": "exp-00364",
+    "vehicleId": "veh-008",
+    "date": "2026-05-27",
+    "category": "tolls",
+    "amount": 19.18,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00392",
+    "vehicleId": "veh-009",
+    "date": "2026-06-01",
+    "category": "insurance",
+    "amount": 1014.05,
+    "note": "Annual RCA + CASCO"
+  },
+  {
+    "id": "exp-00046",
+    "vehicleId": "veh-002",
+    "date": "2026-06-02",
+    "category": "insurance",
+    "amount": 664.54,
+    "note": "Annual RCA + CASCO"
+  },
+  {
+    "id": "exp-00307",
+    "vehicleId": "veh-007",
+    "date": "2026-06-03",
+    "category": "tolls",
+    "amount": 32.94,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00108",
+    "vehicleId": "veh-003",
+    "date": "2026-06-05",
+    "category": "financing",
+    "amount": 460,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00162",
+    "vehicleId": "veh-004",
+    "date": "2026-06-05",
+    "category": "financing",
+    "amount": 390,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00303",
+    "vehicleId": "veh-007",
+    "date": "2026-06-05",
+    "category": "financing",
+    "amount": 390,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00356",
+    "vehicleId": "veh-008",
+    "date": "2026-06-05",
+    "category": "financing",
+    "amount": 390,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00410",
+    "vehicleId": "veh-009",
+    "date": "2026-06-06",
+    "category": "cleaning",
+    "amount": 30.83,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00165",
+    "vehicleId": "veh-004",
+    "date": "2026-06-08",
+    "category": "cleaning",
+    "amount": 30.72,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00409",
+    "vehicleId": "veh-009",
+    "date": "2026-06-08",
+    "category": "parking",
+    "amount": 31.39,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00110",
+    "vehicleId": "veh-003",
+    "date": "2026-06-09",
+    "category": "parking",
+    "amount": 27.17,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00017",
+    "vehicleId": "veh-001",
+    "date": "2026-06-10",
+    "category": "driverWages",
+    "amount": 1334.91,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00061",
+    "vehicleId": "veh-002",
+    "date": "2026-06-10",
+    "category": "driverWages",
+    "amount": 1125.62,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00109",
+    "vehicleId": "veh-003",
+    "date": "2026-06-10",
+    "category": "driverWages",
+    "amount": 1230.44,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00163",
+    "vehicleId": "veh-004",
+    "date": "2026-06-10",
+    "category": "driverWages",
+    "amount": 1331.44,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00212",
+    "vehicleId": "veh-005",
+    "date": "2026-06-10",
+    "category": "driverWages",
+    "amount": 1168.02,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00259",
+    "vehicleId": "veh-006",
+    "date": "2026-06-10",
+    "category": "driverWages",
+    "amount": 1132.28,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00304",
+    "vehicleId": "veh-007",
+    "date": "2026-06-10",
+    "category": "driverWages",
+    "amount": 1152.88,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00305",
+    "vehicleId": "veh-007",
+    "date": "2026-06-10",
+    "category": "parking",
+    "amount": 42.82,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00357",
+    "vehicleId": "veh-008",
+    "date": "2026-06-10",
+    "category": "driverWages",
+    "amount": 1176.58,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00408",
+    "vehicleId": "veh-009",
+    "date": "2026-06-10",
+    "category": "driverWages",
+    "amount": 1320.72,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00451",
+    "vehicleId": "veh-010",
+    "date": "2026-06-10",
+    "category": "driverWages",
+    "amount": 1170.26,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00064",
+    "vehicleId": "veh-002",
+    "date": "2026-06-12",
+    "category": "fines",
+    "amount": 58,
+    "note": "Speeding / parking fine"
+  },
+  {
+    "id": "exp-00453",
+    "vehicleId": "veh-010",
+    "date": "2026-06-12",
+    "category": "cleaning",
+    "amount": 26.65,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00144",
+    "vehicleId": "veh-004",
+    "date": "2026-06-13",
+    "category": "roadTax",
+    "amount": 58,
+    "note": "Rovinieta 12 months"
+  },
+  {
+    "id": "exp-00261",
+    "vehicleId": "veh-006",
+    "date": "2026-06-13",
+    "category": "cleaning",
+    "amount": 31.02,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00063",
+    "vehicleId": "veh-002",
+    "date": "2026-06-14",
+    "category": "cleaning",
+    "amount": 24.37,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00018",
+    "vehicleId": "veh-001",
+    "date": "2026-06-15",
+    "category": "parking",
+    "amount": 49.35,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00020",
+    "vehicleId": "veh-001",
+    "date": "2026-06-15",
+    "category": "tolls",
+    "amount": 16.81,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00019",
+    "vehicleId": "veh-001",
+    "date": "2026-06-16",
+    "category": "cleaning",
+    "amount": 26.19,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00214",
+    "vehicleId": "veh-005",
+    "date": "2026-06-17",
+    "category": "cleaning",
+    "amount": 29.21,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00306",
+    "vehicleId": "veh-007",
+    "date": "2026-06-17",
+    "category": "cleaning",
+    "amount": 23.82,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00358",
+    "vehicleId": "veh-008",
+    "date": "2026-06-18",
+    "category": "parking",
+    "amount": 45.19,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00213",
+    "vehicleId": "veh-005",
+    "date": "2026-06-20",
+    "category": "parking",
+    "amount": 28.55,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00260",
+    "vehicleId": "veh-006",
+    "date": "2026-06-22",
+    "category": "parking",
+    "amount": 58.97,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00452",
+    "vehicleId": "veh-010",
+    "date": "2026-06-22",
+    "category": "parking",
+    "amount": 67.0,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00164",
+    "vehicleId": "veh-004",
+    "date": "2026-06-23",
+    "category": "parking",
+    "amount": 30.13,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00062",
+    "vehicleId": "veh-002",
+    "date": "2026-06-24",
+    "category": "parking",
+    "amount": 45.68,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00111",
+    "vehicleId": "veh-003",
+    "date": "2026-06-25",
+    "category": "cleaning",
+    "amount": 30.19,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00359",
+    "vehicleId": "veh-008",
+    "date": "2026-06-26",
+    "category": "cleaning",
+    "amount": 21.74,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00411",
+    "vehicleId": "veh-009",
+    "date": "2026-06-28",
+    "category": "tolls",
+    "amount": 20.04,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00435",
+    "vehicleId": "veh-010",
+    "date": "2026-07-03",
+    "category": "insurance",
+    "amount": 1101.4,
+    "note": "Annual RCA + CASCO"
+  },
+  {
+    "id": "exp-00104",
+    "vehicleId": "veh-003",
+    "date": "2026-07-05",
+    "category": "financing",
+    "amount": 460,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00157",
+    "vehicleId": "veh-004",
+    "date": "2026-07-05",
+    "category": "financing",
+    "amount": 390,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00299",
+    "vehicleId": "veh-007",
+    "date": "2026-07-05",
+    "category": "financing",
+    "amount": 390,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00352",
+    "vehicleId": "veh-008",
+    "date": "2026-07-05",
+    "category": "financing",
+    "amount": 390,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00407",
+    "vehicleId": "veh-009",
+    "date": "2026-07-07",
+    "category": "tolls",
+    "amount": 13.8,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00450",
+    "vehicleId": "veh-010",
+    "date": "2026-07-07",
+    "category": "cleaning",
+    "amount": 19.11,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00159",
+    "vehicleId": "veh-004",
+    "date": "2026-07-08",
+    "category": "parking",
+    "amount": 33.2,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00449",
+    "vehicleId": "veh-010",
+    "date": "2026-07-08",
+    "category": "parking",
+    "amount": 44.67,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00013",
+    "vehicleId": "veh-001",
+    "date": "2026-07-10",
+    "category": "driverWages",
+    "amount": 1334.91,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00058",
+    "vehicleId": "veh-002",
+    "date": "2026-07-10",
+    "category": "driverWages",
+    "amount": 1125.62,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00105",
+    "vehicleId": "veh-003",
+    "date": "2026-07-10",
+    "category": "driverWages",
+    "amount": 1230.44,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00158",
+    "vehicleId": "veh-004",
+    "date": "2026-07-10",
+    "category": "driverWages",
+    "amount": 1331.44,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00209",
+    "vehicleId": "veh-005",
+    "date": "2026-07-10",
+    "category": "driverWages",
+    "amount": 1168.02,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00255",
+    "vehicleId": "veh-006",
+    "date": "2026-07-10",
+    "category": "driverWages",
+    "amount": 1132.28,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00256",
+    "vehicleId": "veh-006",
+    "date": "2026-07-10",
+    "category": "parking",
+    "amount": 67.01,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00258",
+    "vehicleId": "veh-006",
+    "date": "2026-07-10",
+    "category": "tolls",
+    "amount": 26.26,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00300",
+    "vehicleId": "veh-007",
+    "date": "2026-07-10",
+    "category": "driverWages",
+    "amount": 1152.88,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00353",
+    "vehicleId": "veh-008",
+    "date": "2026-07-10",
+    "category": "driverWages",
+    "amount": 1176.58,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00404",
+    "vehicleId": "veh-009",
+    "date": "2026-07-10",
+    "category": "driverWages",
+    "amount": 1320.72,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00448",
+    "vehicleId": "veh-010",
+    "date": "2026-07-10",
+    "category": "driverWages",
+    "amount": 1170.26,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00160",
+    "vehicleId": "veh-004",
+    "date": "2026-07-12",
+    "category": "cleaning",
+    "amount": 32.04,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00015",
+    "vehicleId": "veh-001",
+    "date": "2026-07-15",
+    "category": "cleaning",
+    "amount": 27.67,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00059",
+    "vehicleId": "veh-002",
+    "date": "2026-07-15",
+    "category": "parking",
+    "amount": 30.05,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00106",
+    "vehicleId": "veh-003",
+    "date": "2026-07-16",
+    "category": "parking",
+    "amount": 27.37,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00210",
+    "vehicleId": "veh-005",
+    "date": "2026-07-16",
+    "category": "parking",
+    "amount": 66.97,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00016",
+    "vehicleId": "veh-001",
+    "date": "2026-07-17",
+    "category": "tolls",
+    "amount": 16.3,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00301",
+    "vehicleId": "veh-007",
+    "date": "2026-07-17",
+    "category": "parking",
+    "amount": 33.69,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00405",
+    "vehicleId": "veh-009",
+    "date": "2026-07-17",
+    "category": "parking",
+    "amount": 31.49,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00161",
+    "vehicleId": "veh-004",
+    "date": "2026-07-18",
+    "category": "tolls",
+    "amount": 17.23,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00355",
+    "vehicleId": "veh-008",
+    "date": "2026-07-18",
+    "category": "cleaning",
+    "amount": 22.73,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00060",
+    "vehicleId": "veh-002",
+    "date": "2026-07-20",
+    "category": "cleaning",
+    "amount": 20.62,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00211",
+    "vehicleId": "veh-005",
+    "date": "2026-07-22",
+    "category": "cleaning",
+    "amount": 28.92,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00257",
+    "vehicleId": "veh-006",
+    "date": "2026-07-22",
+    "category": "cleaning",
+    "amount": 37.19,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00354",
+    "vehicleId": "veh-008",
+    "date": "2026-07-22",
+    "category": "parking",
+    "amount": 44.42,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00107",
+    "vehicleId": "veh-003",
+    "date": "2026-07-24",
+    "category": "cleaning",
+    "amount": 30.65,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00014",
+    "vehicleId": "veh-001",
+    "date": "2026-07-26",
+    "category": "parking",
+    "amount": 54.14,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00302",
+    "vehicleId": "veh-007",
+    "date": "2026-07-26",
+    "category": "cleaning",
+    "amount": 37.21,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00406",
+    "vehicleId": "veh-009",
+    "date": "2026-07-26",
+    "category": "cleaning",
+    "amount": 26.74,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00100",
+    "vehicleId": "veh-003",
+    "date": "2026-08-05",
+    "category": "financing",
+    "amount": 460,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00153",
+    "vehicleId": "veh-004",
+    "date": "2026-08-05",
+    "category": "financing",
+    "amount": 390,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00295",
+    "vehicleId": "veh-007",
+    "date": "2026-08-05",
+    "category": "financing",
+    "amount": 390,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00347",
+    "vehicleId": "veh-008",
+    "date": "2026-08-05",
+    "category": "financing",
+    "amount": 390,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00241",
+    "vehicleId": "veh-006",
+    "date": "2026-08-06",
+    "category": "roadTax",
+    "amount": 96,
+    "note": "Rovinieta 12 months"
+  },
+  {
+    "id": "exp-00254",
+    "vehicleId": "veh-006",
+    "date": "2026-08-06",
+    "category": "tolls",
+    "amount": 21.14,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00298",
+    "vehicleId": "veh-007",
+    "date": "2026-08-06",
+    "category": "cleaning",
+    "amount": 31.31,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00206",
+    "vehicleId": "veh-005",
+    "date": "2026-08-07",
+    "category": "parking",
+    "amount": 37.75,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00207",
+    "vehicleId": "veh-005",
+    "date": "2026-08-07",
+    "category": "cleaning",
+    "amount": 37.35,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00297",
+    "vehicleId": "veh-007",
+    "date": "2026-08-09",
+    "category": "parking",
+    "amount": 35.46,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00350",
+    "vehicleId": "veh-008",
+    "date": "2026-08-09",
+    "category": "cleaning",
+    "amount": 29.74,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00009",
+    "vehicleId": "veh-001",
+    "date": "2026-08-10",
+    "category": "driverWages",
+    "amount": 1334.91,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00055",
+    "vehicleId": "veh-002",
+    "date": "2026-08-10",
+    "category": "driverWages",
+    "amount": 1125.62,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00101",
+    "vehicleId": "veh-003",
+    "date": "2026-08-10",
+    "category": "driverWages",
+    "amount": 1230.44,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00154",
+    "vehicleId": "veh-004",
+    "date": "2026-08-10",
+    "category": "driverWages",
+    "amount": 1331.44,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00205",
+    "vehicleId": "veh-005",
+    "date": "2026-08-10",
+    "category": "driverWages",
+    "amount": 1168.02,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00251",
+    "vehicleId": "veh-006",
+    "date": "2026-08-10",
+    "category": "driverWages",
+    "amount": 1132.28,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00285",
+    "vehicleId": "veh-007",
+    "date": "2026-08-10",
+    "category": "insurance",
+    "amount": 888.85,
+    "note": "Annual RCA + CASCO"
+  },
+  {
+    "id": "exp-00296",
+    "vehicleId": "veh-007",
+    "date": "2026-08-10",
+    "category": "driverWages",
+    "amount": 1152.88,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00348",
+    "vehicleId": "veh-008",
+    "date": "2026-08-10",
+    "category": "driverWages",
+    "amount": 1176.58,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00401",
+    "vehicleId": "veh-009",
+    "date": "2026-08-10",
+    "category": "driverWages",
+    "amount": 1320.72,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00444",
+    "vehicleId": "veh-010",
+    "date": "2026-08-10",
+    "category": "driverWages",
+    "amount": 1170.26,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00011",
+    "vehicleId": "veh-001",
+    "date": "2026-08-11",
+    "category": "cleaning",
+    "amount": 38.66,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00156",
+    "vehicleId": "veh-004",
+    "date": "2026-08-11",
+    "category": "cleaning",
+    "amount": 29.51,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00349",
+    "vehicleId": "veh-008",
+    "date": "2026-08-11",
+    "category": "parking",
+    "amount": 43.86,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00351",
+    "vehicleId": "veh-008",
+    "date": "2026-08-11",
+    "category": "fines",
+    "amount": 116,
+    "note": "Speeding / parking fine"
+  },
+  {
+    "id": "exp-00447",
+    "vehicleId": "veh-010",
+    "date": "2026-08-11",
+    "category": "tolls",
+    "amount": 24.73,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00155",
+    "vehicleId": "veh-004",
+    "date": "2026-08-12",
+    "category": "parking",
+    "amount": 44.15,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00402",
+    "vehicleId": "veh-009",
+    "date": "2026-08-13",
+    "category": "parking",
+    "amount": 59.18,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00057",
+    "vehicleId": "veh-002",
+    "date": "2026-08-15",
+    "category": "cleaning",
+    "amount": 27.64,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00403",
+    "vehicleId": "veh-009",
+    "date": "2026-08-15",
+    "category": "cleaning",
+    "amount": 36.85,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00056",
+    "vehicleId": "veh-002",
+    "date": "2026-08-17",
+    "category": "parking",
+    "amount": 59.76,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00103",
+    "vehicleId": "veh-003",
+    "date": "2026-08-18",
+    "category": "cleaning",
+    "amount": 31.84,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00010",
+    "vehicleId": "veh-001",
+    "date": "2026-08-19",
+    "category": "parking",
+    "amount": 59.57,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00012",
+    "vehicleId": "veh-001",
+    "date": "2026-08-21",
+    "category": "tolls",
+    "amount": 8.21,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00253",
+    "vehicleId": "veh-006",
+    "date": "2026-08-21",
+    "category": "cleaning",
+    "amount": 39.56,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00252",
+    "vehicleId": "veh-006",
+    "date": "2026-08-23",
+    "category": "parking",
+    "amount": 25.06,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00445",
+    "vehicleId": "veh-010",
+    "date": "2026-08-23",
+    "category": "parking",
+    "amount": 68.94,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00102",
+    "vehicleId": "veh-003",
+    "date": "2026-08-24",
+    "category": "parking",
+    "amount": 36.56,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00208",
+    "vehicleId": "veh-005",
+    "date": "2026-08-24",
+    "category": "tolls",
+    "amount": 20.45,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00446",
+    "vehicleId": "veh-010",
+    "date": "2026-08-24",
+    "category": "cleaning",
+    "amount": 20.41,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00096",
+    "vehicleId": "veh-003",
+    "date": "2026-09-05",
+    "category": "financing",
+    "amount": 460,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00149",
+    "vehicleId": "veh-004",
+    "date": "2026-09-05",
+    "category": "financing",
+    "amount": 390,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00291",
+    "vehicleId": "veh-007",
+    "date": "2026-09-05",
+    "category": "financing",
+    "amount": 390,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00343",
+    "vehicleId": "veh-008",
+    "date": "2026-09-05",
+    "category": "financing",
+    "amount": 390,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00399",
+    "vehicleId": "veh-009",
+    "date": "2026-09-06",
+    "category": "cleaning",
+    "amount": 28.01,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00441",
+    "vehicleId": "veh-010",
+    "date": "2026-09-06",
+    "category": "parking",
+    "amount": 47.51,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00098",
+    "vehicleId": "veh-003",
+    "date": "2026-09-08",
+    "category": "parking",
+    "amount": 69.41,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00398",
+    "vehicleId": "veh-009",
+    "date": "2026-09-08",
+    "category": "parking",
+    "amount": 46.33,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00054",
+    "vehicleId": "veh-002",
+    "date": "2026-09-09",
+    "category": "tolls",
+    "amount": 28.65,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00006",
+    "vehicleId": "veh-001",
+    "date": "2026-09-10",
+    "category": "driverWages",
+    "amount": 1334.91,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00051",
+    "vehicleId": "veh-002",
+    "date": "2026-09-10",
+    "category": "driverWages",
+    "amount": 1125.62,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00097",
+    "vehicleId": "veh-003",
+    "date": "2026-09-10",
+    "category": "driverWages",
+    "amount": 1230.44,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00150",
+    "vehicleId": "veh-004",
+    "date": "2026-09-10",
+    "category": "driverWages",
+    "amount": 1331.44,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00202",
+    "vehicleId": "veh-005",
+    "date": "2026-09-10",
+    "category": "driverWages",
+    "amount": 1168.02,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00246",
+    "vehicleId": "veh-006",
+    "date": "2026-09-10",
+    "category": "driverWages",
+    "amount": 1132.28,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00292",
+    "vehicleId": "veh-007",
+    "date": "2026-09-10",
+    "category": "driverWages",
+    "amount": 1152.88,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00344",
+    "vehicleId": "veh-008",
+    "date": "2026-09-10",
+    "category": "driverWages",
+    "amount": 1176.58,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00397",
+    "vehicleId": "veh-009",
+    "date": "2026-09-10",
+    "category": "driverWages",
+    "amount": 1320.72,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00440",
+    "vehicleId": "veh-010",
+    "date": "2026-09-10",
+    "category": "driverWages",
+    "amount": 1170.26,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00345",
+    "vehicleId": "veh-008",
+    "date": "2026-09-11",
+    "category": "parking",
+    "amount": 38.03,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00099",
+    "vehicleId": "veh-003",
+    "date": "2026-09-13",
+    "category": "cleaning",
+    "amount": 22.62,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00249",
+    "vehicleId": "veh-006",
+    "date": "2026-09-13",
+    "category": "tolls",
+    "amount": 34.01,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00293",
+    "vehicleId": "veh-007",
+    "date": "2026-09-13",
+    "category": "parking",
+    "amount": 34.65,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00152",
+    "vehicleId": "veh-004",
+    "date": "2026-09-14",
+    "category": "cleaning",
+    "amount": 38.36,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00346",
+    "vehicleId": "veh-008",
+    "date": "2026-09-14",
+    "category": "cleaning",
+    "amount": 36.31,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00442",
+    "vehicleId": "veh-010",
+    "date": "2026-09-14",
+    "category": "cleaning",
+    "amount": 24.86,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00294",
+    "vehicleId": "veh-007",
+    "date": "2026-09-15",
+    "category": "cleaning",
+    "amount": 34.74,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00400",
+    "vehicleId": "veh-009",
+    "date": "2026-09-15",
+    "category": "tolls",
+    "amount": 9.45,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00007",
+    "vehicleId": "veh-001",
+    "date": "2026-09-16",
+    "category": "parking",
+    "amount": 65.96,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00443",
+    "vehicleId": "veh-010",
+    "date": "2026-09-18",
+    "category": "tolls",
+    "amount": 28.23,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00248",
+    "vehicleId": "veh-006",
+    "date": "2026-09-19",
+    "category": "cleaning",
+    "amount": 36.22,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00053",
+    "vehicleId": "veh-002",
+    "date": "2026-09-20",
+    "category": "cleaning",
+    "amount": 27.99,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00203",
+    "vehicleId": "veh-005",
+    "date": "2026-09-22",
+    "category": "parking",
+    "amount": 39.76,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00204",
+    "vehicleId": "veh-005",
+    "date": "2026-09-23",
+    "category": "cleaning",
+    "amount": 35.55,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00250",
+    "vehicleId": "veh-006",
+    "date": "2026-09-23",
+    "category": "fines",
+    "amount": 290,
+    "note": "Speeding / parking fine"
+  },
+  {
+    "id": "exp-00151",
+    "vehicleId": "veh-004",
+    "date": "2026-09-24",
+    "category": "parking",
+    "amount": 48.81,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00008",
+    "vehicleId": "veh-001",
+    "date": "2026-09-25",
+    "category": "cleaning",
+    "amount": 31.14,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00052",
+    "vehicleId": "veh-002",
+    "date": "2026-09-25",
+    "category": "parking",
+    "amount": 29.17,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00247",
+    "vehicleId": "veh-006",
+    "date": "2026-09-26",
+    "category": "parking",
+    "amount": 66.36,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00201",
+    "vehicleId": "veh-005",
+    "date": "2026-10-03",
+    "category": "fines",
+    "amount": 290,
+    "note": "Speeding / parking fine"
+  },
+  {
+    "id": "exp-00092",
+    "vehicleId": "veh-003",
+    "date": "2026-10-05",
+    "category": "financing",
+    "amount": 460,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00145",
+    "vehicleId": "veh-004",
+    "date": "2026-10-05",
+    "category": "financing",
+    "amount": 390,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00287",
+    "vehicleId": "veh-007",
+    "date": "2026-10-05",
+    "category": "financing",
+    "amount": 390,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00338",
+    "vehicleId": "veh-008",
+    "date": "2026-10-05",
+    "category": "financing",
+    "amount": 390,
+    "note": "Leasing installment"
+  },
+  {
+    "id": "exp-00005",
+    "vehicleId": "veh-001",
+    "date": "2026-10-07",
+    "category": "cleaning",
+    "amount": 26.31,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00050",
+    "vehicleId": "veh-002",
+    "date": "2026-10-07",
+    "category": "cleaning",
+    "amount": 29.64,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00049",
+    "vehicleId": "veh-002",
+    "date": "2026-10-08",
+    "category": "parking",
+    "amount": 27.46,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00245",
+    "vehicleId": "veh-006",
+    "date": "2026-10-08",
+    "category": "tolls",
+    "amount": 17.04,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00200",
+    "vehicleId": "veh-005",
+    "date": "2026-10-09",
+    "category": "tolls",
+    "amount": 27.53,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00243",
+    "vehicleId": "veh-006",
+    "date": "2026-10-09",
+    "category": "parking",
+    "amount": 53.06,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00395",
+    "vehicleId": "veh-009",
+    "date": "2026-10-09",
+    "category": "parking",
+    "amount": 69.95,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00396",
+    "vehicleId": "veh-009",
+    "date": "2026-10-09",
+    "category": "cleaning",
+    "amount": 30.53,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00003",
+    "vehicleId": "veh-001",
+    "date": "2026-10-10",
+    "category": "driverWages",
+    "amount": 1334.91,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00048",
+    "vehicleId": "veh-002",
+    "date": "2026-10-10",
+    "category": "driverWages",
+    "amount": 1125.62,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00093",
+    "vehicleId": "veh-003",
+    "date": "2026-10-10",
+    "category": "driverWages",
+    "amount": 1230.44,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00146",
+    "vehicleId": "veh-004",
+    "date": "2026-10-10",
+    "category": "driverWages",
+    "amount": 1331.44,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00197",
+    "vehicleId": "veh-005",
+    "date": "2026-10-10",
+    "category": "driverWages",
+    "amount": 1168.02,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00242",
+    "vehicleId": "veh-006",
+    "date": "2026-10-10",
+    "category": "driverWages",
+    "amount": 1132.28,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00288",
+    "vehicleId": "veh-007",
+    "date": "2026-10-10",
+    "category": "driverWages",
+    "amount": 1152.88,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00339",
+    "vehicleId": "veh-008",
+    "date": "2026-10-10",
+    "category": "driverWages",
+    "amount": 1176.58,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00394",
+    "vehicleId": "veh-009",
+    "date": "2026-10-10",
+    "category": "driverWages",
+    "amount": 1320.72,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00437",
+    "vehicleId": "veh-010",
+    "date": "2026-10-10",
+    "category": "driverWages",
+    "amount": 1170.26,
+    "note": "Driver salary incl. taxes"
+  },
+  {
+    "id": "exp-00439",
+    "vehicleId": "veh-010",
+    "date": "2026-10-10",
+    "category": "cleaning",
+    "amount": 22.71,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00004",
+    "vehicleId": "veh-001",
+    "date": "2026-10-11",
+    "category": "parking",
+    "amount": 38.54,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00341",
+    "vehicleId": "veh-008",
+    "date": "2026-10-11",
+    "category": "cleaning",
+    "amount": 21.9,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00289",
+    "vehicleId": "veh-007",
+    "date": "2026-10-12",
+    "category": "parking",
+    "amount": 49.68,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00342",
+    "vehicleId": "veh-008",
+    "date": "2026-10-17",
+    "category": "tolls",
+    "amount": 30.73,
+    "note": "Bridge / highway toll"
+  },
+  {
+    "id": "exp-00095",
+    "vehicleId": "veh-003",
+    "date": "2026-10-18",
+    "category": "cleaning",
+    "amount": 38.54,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00148",
+    "vehicleId": "veh-004",
+    "date": "2026-10-20",
+    "category": "cleaning",
+    "amount": 37.77,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00244",
+    "vehicleId": "veh-006",
+    "date": "2026-10-20",
+    "category": "cleaning",
+    "amount": 39.1,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00290",
+    "vehicleId": "veh-007",
+    "date": "2026-10-20",
+    "category": "cleaning",
+    "amount": 32.34,
+    "note": "Car wash"
+  },
+  {
+    "id": "exp-00094",
+    "vehicleId": "veh-003",
+    "date": "2026-10-21",
+    "category": "parking",
+    "amount": 44.92,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00198",
+    "vehicleId": "veh-005",
+    "date": "2026-10-21",
+    "category": "parking",
+    "amount": 38.83,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00438",
+    "vehicleId": "veh-010",
+    "date": "2026-10-22",
+    "category": "parking",
+    "amount": 55.35,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00340",
+    "vehicleId": "veh-008",
+    "date": "2026-10-24",
+    "category": "parking",
+    "amount": 43.31,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00147",
+    "vehicleId": "veh-004",
+    "date": "2026-10-26",
+    "category": "parking",
+    "amount": 52.38,
+    "note": "Parking & city fees"
+  },
+  {
+    "id": "exp-00199",
+    "vehicleId": "veh-005",
+    "date": "2026-10-26",
+    "category": "cleaning",
+    "amount": 37.06,
+    "note": "Car wash"
+  }
+]

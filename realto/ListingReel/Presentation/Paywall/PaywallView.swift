@@ -50,13 +50,12 @@ struct PaywallView: View {
 
     private var header: some View {
         VStack(spacing: Theme.Spacing.m) {
-            Image(systemName: "house.badge.shield.checkmark.fill")
-                .font(.system(size: 52))
-                .foregroundStyle(Theme.Palette.accent)
+            GradientIconBadge(systemImage: "crown.fill", gradient: Theme.Gradients.premium, size: 88)
+                .shadow(color: Theme.Palette.accentAlt.opacity(0.3), radius: 16, y: 8)
                 .padding(.top, Theme.Spacing.xl)
 
             Text("Unlock Realto")
-                .font(.largeTitle.bold())
+                .font(.system(.largeTitle, design: .rounded).bold())
                 .foregroundStyle(Theme.Palette.textPrimary)
 
             Text("Professional listing videos with your branding — no watermark, no limits. One purchase, yours for good.")
@@ -74,17 +73,16 @@ struct PaywallView: View {
         VStack(alignment: .leading, spacing: Theme.Spacing.m) {
             ForEach(features, id: \.icon) { feature in
                 HStack(spacing: Theme.Spacing.m) {
-                    Image(systemName: feature.icon)
-                        .foregroundStyle(Theme.Palette.accent)
-                        .frame(width: 24)
+                    GradientIconBadge(systemImage: feature.icon, gradient: Theme.Gradients.primary, size: 34)
                     Text(feature.text)
+                        .font(.subheadline.weight(.medium))
                         .foregroundStyle(Theme.Palette.textPrimary)
                 }
             }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
         .padding(Theme.Spacing.l)
-        .background(Theme.Palette.surface)
-        .clipShape(RoundedRectangle(cornerRadius: Theme.Radius.card))
+        .cardSurface()
         .padding(.horizontal, Theme.Spacing.l)
         .padding(.bottom, Theme.Spacing.l)
     }
@@ -102,10 +100,9 @@ struct PaywallView: View {
         }
         .frame(maxWidth: .infinity)
         .padding(Theme.Spacing.l)
-        .background(Theme.Palette.surfaceElevated)
-        .overlay(RoundedRectangle(cornerRadius: Theme.Radius.control)
-            .strokeBorder(Theme.Palette.accent, lineWidth: 2))
-        .clipShape(RoundedRectangle(cornerRadius: Theme.Radius.control))
+        .cardSurface()
+        .overlay(RoundedRectangle(cornerRadius: Theme.Radius.card, style: .continuous)
+            .strokeBorder(Theme.Gradients.premium, lineWidth: 2))
         .padding(.horizontal, Theme.Spacing.l)
         .padding(.bottom, Theme.Spacing.l)
     }
@@ -141,9 +138,9 @@ struct PaywallView: View {
         VStack(spacing: Theme.Spacing.xs) {
             Button("Restore Purchases") { Task { await sub.restore() } }
             HStack(spacing: Theme.Spacing.s) {
-                Link("Privacy Policy", destination: URL(string: "https://example.com/privacy")!)
+                Link("Privacy Policy", destination: URL(string: "https://adaptivebyte.com/privacy-policy/")!)
                 Text("·").foregroundStyle(Theme.Palette.textSecondary)
-                Link("Terms of Use", destination: URL(string: "https://example.com/terms")!)
+                Link("Terms of Use", destination: URL(string: "https://adaptivebyte.com/privacy-policy/")!)
             }
         }
         .font(.caption)

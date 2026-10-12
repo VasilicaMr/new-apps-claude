@@ -57,8 +57,7 @@ struct BrandingStepView: View {
                 Spacer()
             }
             .padding(Theme.Spacing.m)
-            .background(Theme.Palette.surface)
-            .clipShape(RoundedRectangle(cornerRadius: Theme.Radius.control))
+            .cardSurface(radius: Theme.Radius.control)
         }
     }
 

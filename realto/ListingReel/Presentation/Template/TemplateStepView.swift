@@ -41,12 +41,11 @@ struct TemplateStepView: View {
                     .foregroundStyle(selected ? Theme.Palette.accent : Theme.Palette.textSecondary)
             }
             .padding(Theme.Spacing.m)
-            .background(Theme.Palette.surface)
+            .cardSurface()
             .overlay(
-                RoundedRectangle(cornerRadius: Theme.Radius.card)
+                RoundedRectangle(cornerRadius: Theme.Radius.card, style: .continuous)
                     .strokeBorder(selected ? Theme.Palette.accent : .clear, lineWidth: 2)
             )
-            .clipShape(RoundedRectangle(cornerRadius: Theme.Radius.card))
         }
     }
 

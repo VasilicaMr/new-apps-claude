@@ -2,13 +2,14 @@ import SwiftUI
 
 struct TVPaywallView: View {
     @Environment(\.dismiss) private var dismiss
+    /// Set when shown at the end of the tutorial: called instead of `dismiss`.
+    var onClose: (() -> Void)?
     private let premium = PremiumManager.shared
 
     private let features: [(String, String)] = [
         ("clock.badge.checkmark.fill", "Unlimited session history"),
         ("chart.bar.fill", "Full stats & player leaderboards"),
         ("iphone.and.arrow.forward", "Also unlocks ScoreCap on iPhone"),
-        ("icloud.fill", "Never lose your data"),
     ]
 
     var body: some View {
@@ -46,7 +47,7 @@ struct TVPaywallView: View {
                 Button {
                     Task {
                         await premium.purchase()
-                        if premium.isPremium { dismiss() }
+                        if premium.isPremium { close() }
                     }
                 } label: {
                     Group {
@@ -67,7 +68,7 @@ struct TVPaywallView: View {
                 Button {
                     Task {
                         await premium.restorePurchases()
-                        if premium.isPremium { dismiss() }
+                        if premium.isPremium { close() }
                     }
                 } label: {
                     Text("Restore purchase").frame(maxWidth: .infinity)
@@ -75,7 +76,7 @@ struct TVPaywallView: View {
                 .disabled(premium.isPurchasing)
 
                 Button {
-                    dismiss()
+                    close()
                 } label: {
                     Text("Not now").frame(maxWidth: .infinity)
                 }
@@ -96,5 +97,9 @@ struct TVPaywallView: View {
         } message: {
             Text(premium.purchaseError ?? "")
         }
+    }
+
+    private func close() {
+        if let onClose { onClose() } else { dismiss() }
     }
 }

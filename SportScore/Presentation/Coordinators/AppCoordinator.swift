@@ -25,8 +25,23 @@ enum AppTab: Hashable {
 struct AppRootView: View {
     @State var coordinator: AppCoordinator
     @State private var showPaywallForTesting = false
+    @AppStorage(Onboarding.completedKey) private var hasCompletedOnboarding = false
+    @State private var showsOnboarding = Onboarding.shouldShow(
+        completed: UserDefaults.standard.bool(forKey: Onboarding.completedKey)
+    )
 
     var body: some View {
+        if showsOnboarding {
+            OnboardingView {
+                hasCompletedOnboarding = true
+                withAnimation { showsOnboarding = false }
+            }
+        } else {
+            tabs
+        }
+    }
+
+    private var tabs: some View {
         TabView(selection: $coordinator.selectedTab) {
             HomeRootView(coordinator: coordinator.homeCoordinator)
                 .tabItem { Label("Play", systemImage: "play.circle.fill") }
