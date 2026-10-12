@@ -164,8 +164,37 @@ final class Car {
     }
 }
 
+/// "This was read wrong": the text read from a screenshot (never the image), what FleetCheck understood,
+/// and what the driver corrected it to. Kept on the phone; the driver can export and share it to improve reading.
+@Model
+final class ScanReport {
+    var date: Date
+    var method: String
+    var detected: String
+    var corrected: String?
+    var recognizedText: String
+
+    init(result: ScreenshotEarnings, date: Date = .now) {
+        self.date = date
+        self.method = result.source == .appleIntelligence ? "Apple Intelligence" : "Text matching"
+        self.detected = result.summary
+        self.recognizedText = result.recognizedLines.joined(separator: "\n")
+    }
+
+    var text: String {
+        """
+        FleetCheck screenshot report — \(date.formatted(.iso8601))
+        Method: \(method)
+        Detected: \(detected)
+        Corrected: \(corrected ?? "(not saved)")
+        --- Text read from the screenshot ---
+        \(recognizedText)
+        """
+    }
+}
+
 enum DataStore {
-    static let models: [any PersistentModel.Type] = [Shift.self, Earning.self, Expense.self, Reminder.self, Car.self]
+    static let models: [any PersistentModel.Type] = [Shift.self, Earning.self, Expense.self, Reminder.self, Car.self, ScanReport.self]
 
     @MainActor
     static func makeContainer(inMemory: Bool = false) -> ModelContainer {

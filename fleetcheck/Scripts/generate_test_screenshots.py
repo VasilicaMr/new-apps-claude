@@ -51,4 +51,31 @@ screen("bolt_week_ro.png", "Bolt", "Săptămâna 5 - 11 oct.", "1.874,30 lei", [
     ("Curse", "64"),
     ("Numerar încasat", "312,00 lei"),
 ])
+# One trip: the passenger paid more than the driver got. Must read "Your earnings", not the customer price.
+screen("uber_trip_en.png", "Trip details", "UberX · Oct 12 · Your earnings", "RON 34.20", [
+    ("Customer price", "RON 45.00"),
+    ("Uber service fee", "-RON 10.80"),
+    ("Fare", "RON 30.70"),
+    ("Tip", "RON 3.50"),
+    ("Distance", "9.4 km"),
+    ("Duration", "23 min"),
+])
+# Uber in Romanian, weekly, with points and online time that must be ignored.
+screen("uber_week_ro.png", "Câștiguri", "6 oct. - 12 oct.", "2.146,75 RON", [
+    ("Tarif", "1.948,25 RON"),
+    ("Promoții", "120,00 RON"),
+    ("Bacșișuri", "78,50 RON"),
+    ("Curse", "71"),
+    ("Timp online", "41 h 20 min"),
+    ("Puncte", "512"),
+], dark=True)
+# Bolt shows gross and commission: the driver's money is the NET line.
+screen("bolt_day_gross_net.png", "Bolt", "Today", "Net earnings 318,40 lei", [
+    ("Gross earnings", "398,00 lei"),
+    ("Bolt commission", "-79,60 lei"),
+    ("Tips", "12,00 lei"),
+    ("Cash collected", "145,00 lei"),
+    ("Rides", "14"),
+])
+
 print(f"Wrote fixtures to {OUT}")

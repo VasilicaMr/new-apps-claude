@@ -20,6 +20,7 @@ struct EarningForm: View {
     @State private var screenshotItem: PhotosPickerItem?
     @State private var showingPicker: Bool
     @State private var scan = ScanState.idle
+    @State private var report: ScanReport?
     @AppStorage(SettingsKeys.useAppleIntelligence) private var useAppleIntelligence = true
 
     private enum ScanState: Equatable {
@@ -159,6 +160,21 @@ struct EarningForm: View {
                     .font(.caption)
                     .foregroundStyle(.orange)
             }
+            if report == nil {
+                Button("Numbers wrong? Save a report", systemImage: "exclamationmark.bubble") {
+                    let report = ScanReport(result: result)
+                    context.insert(report)
+                    self.report = report
+                }
+                .font(.caption.weight(.medium))
+                .buttonStyle(.borderless)
+                .padding(.top, 2)
+                .accessibilityIdentifier("earnings.reportMisread")
+            } else {
+                Label("Report saved. Fix the numbers below and tap Save; your corrections are added to it.", systemImage: "checkmark.circle.fill")
+                    .font(.caption)
+                    .foregroundStyle(.green)
+            }
         }
         .padding(.vertical, 2)
     }
@@ -192,6 +208,8 @@ struct EarningForm: View {
     }
 
     private func save() {
+        report?.corrected = ScreenshotEarnings(platform: platform, total: fares + tips + bonus, fares: fares, tips: tips,
+                                               bonus: bonus, trips: trips).summary
         if let editing {
             editing.date = date
             editing.platform = platform

@@ -45,9 +45,18 @@ screenshot of the Uber/Bolt/FREENOW earnings screen. Everything runs on the iPho
    It handles English/Romanian labels, "1.234,56 lei" vs "RON 1,234.56", and ș/ş/s.
 5. `ScreenshotEarnings.normalized()` makes fares + tips + bonus add up to the headline total.
 
+The keyword fallback skips amounts that aren't the driver's (customer price, gross, commission, service fee, cash collected,
+balance, points, distance, online time) and prefers "net"/"your earnings". It recognises single-trip screens and date-range
+weekly summaries.
+
+**Misread reports:** "Numbers wrong? Save a report" in the form stores the recognised text (never the image), what was
+detected and, after Save, what the driver corrected. Settings → Apple Intelligence → Misread reports shows and shares them.
+This is how real Uber/Bolt layouts get collected to tune the parser.
+
 The form shows which method was used, warns when the screenshot is a weekly summary, and always asks the driver to check
 the numbers before saving. Settings → Apple Intelligence shows the status and can switch it off.
-Test fixtures come from `python3 Scripts/generate_test_screenshots.py`.
+Test fixtures (lookalike screens, not real Uber/Bolt screenshots) come from `python3 Scripts/generate_test_screenshots.py`:
+Uber day (EN, dark), Uber trip details (EN), Uber week (RO, dark), Bolt week (RO), Bolt gross/net day (EN).
 
 ## Architecture
 

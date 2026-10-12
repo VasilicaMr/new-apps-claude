@@ -59,6 +59,11 @@ struct EarningsTextParserTests {
         #expect(result.trips == 64)
     }
 
+    @Test func reportSummary() {
+        let result = ScreenshotEarnings(platform: .bolt, scope: .week, total: 1874.3, fares: 1702.8, tips: 41.5, trips: 64)
+        #expect(result.summary == "app=Bolt scope=week total=1874.30 fares=1702.80 tips=41.50 bonus=- trips=64")
+    }
+
     @Test("Parts are made to add up to the headline total")
     func normalizes() {
         let missingFares = ScreenshotEarnings(total: 300, tips: 20, bonus: 30).normalized()
@@ -103,6 +108,44 @@ struct EarningsScreenshotScannerTests {
         #expect(result.tips == 41.5)
         #expect(result.bonus == 130)
         #expect(result.trips == 64)
+    }
+
+    @Test("A trip screen gives the driver's earnings, not what the passenger paid")
+    func scansUberTripDetails() async throws {
+        let result = try await EarningsScreenshotScanner(useAppleIntelligence: false).scan(try fixture("uber_trip_en"))
+        #expect(result.platform == .uber)
+        #expect(result.scope == .trip)
+        #expect(result.total == 34.2)
+        #expect(result.fares == 30.7)
+        #expect(result.tips == 3.5)
+        #expect(result.trips == 1)
+    }
+
+    @Test("Romanian Uber week: points and online time are ignored, the date range means a week")
+    func scansRomanianUberWeek() async throws {
+        let result = try await EarningsScreenshotScanner(useAppleIntelligence: false).scan(try fixture("uber_week_ro"))
+        #expect(result.scope == .week)
+        #expect(result.total == 2146.75)
+        #expect(result.fares == 1948.25)
+        #expect(result.tips == 78.5)
+        #expect(result.bonus == 120)
+        #expect(result.trips == 71)
+    }
+
+    @Test("Net earnings win over gross; commission and cash are ignored")
+    func scansBoltGrossAndNet() async throws {
+        let result = try await EarningsScreenshotScanner(useAppleIntelligence: false).scan(try fixture("bolt_day_gross_net"))
+        #expect(result.platform == .bolt)
+        #expect(result.scope == .day)
+        #expect(result.total == 318.4)
+        #expect(result.tips == 12)
+        #expect(result.fares == 306.4)
+        #expect(result.trips == 14)
+    }
+
+    @Test func keepsTheTextItRead() async throws {
+        let result = try await EarningsScreenshotScanner(useAppleIntelligence: false).scan(try fixture("uber_day_en"))
+        #expect(result.recognizedLines.contains { $0.contains("Tips") })
     }
 }
 

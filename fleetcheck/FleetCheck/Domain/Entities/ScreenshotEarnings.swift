@@ -23,6 +23,15 @@ struct ScreenshotEarnings: Sendable, Equatable {
     var bonus: Double?
     var trips: Int?
     var source: Source = .textMatching
+    /// The rows of text read from the image, kept for "this was read wrong" reports.
+    var recognizedLines: [String] = []
+
+    /// One line for reports: "app=Bolt scope=week total=1874.30 fares=1702.80 tips=41.50 bonus=130.00 trips=64".
+    var summary: String {
+        let money = { (value: Double?) in value.map { String(format: "%.2f", locale: Locale(identifier: "en_US_POSIX"), $0) } ?? "-" }
+        return "app=\(platform?.title ?? "-") scope=\(scope.rawValue) total=\(money(total)) fares=\(money(fares)) "
+            + "tips=\(money(tips)) bonus=\(money(bonus)) trips=\(trips.map(String.init) ?? "-")"
+    }
 
     var isEmpty: Bool { total == nil && fares == nil && tips == nil && bonus == nil }
 

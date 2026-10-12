@@ -23,6 +23,7 @@ struct EarningsScreenshotScanner: Sendable {
             if result.platform == nil { result.platform = fallback.platform }
             if result.trips == nil { result.trips = fallback.trips }
             if result.isEmpty { return fallback }
+            result.recognizedLines = lines
             return result.normalized()
         } catch {
             return fallback

@@ -101,31 +101,49 @@ struct EarningsTextParser: Sendable {
         (.total, ["total", "earnings", "câștiguri", "castiguri", "you earned", "ai câștigat", "payout", "net"]),
     ]
 
+    /// Lines that show money that is not the driver's: what the passenger paid, the platform's cut,
+    /// cash already collected, balances, and non-money numbers (points, distance, time).
+    private static let ignoredWords: Set<String> = [
+        "gross", "brut", "brute", "customer", "client", "clientul", "price", "pret", "commission", "comision",
+        "fee", "fees", "taxa", "cash", "numerar", "balance", "sold", "points", "puncte", "distance", "distanta",
+        "duration", "durata", "online",
+    ]
+
+    /// Words marking the amount after the platform's commission; preferred over any other total.
+    private static let netWords: Set<String> = ["net", "nete", "neto", "your", "tale"]
+
     func parse(lines: [String], now: Date = .now) -> ScreenshotEarnings {
-        var result = ScreenshotEarnings(source: .textMatching)
+        var result = ScreenshotEarnings(source: .textMatching, recognizedLines: lines)
         let all = fold(lines.joined(separator: "\n"))
 
         if all.contains("uber") { result.platform = .uber }
         else if all.contains("bolt") { result.platform = .bolt }
         else if all.contains("freenow") || all.contains("free now") { result.platform = .freeNow }
+        result.scope = scope(of: all)
 
-        if all.contains("week") || all.contains("saptaman") { result.scope = .week }
-        else if all.contains("today") || all.contains("astazi") { result.scope = .day }
-
-        for (index, line) in lines.enumerated() {
-            guard let kind = field(for: fold(line)) else { continue }
+        let kept = lines.filter { words(in: fold($0)).isDisjoint(with: Self.ignoredWords) }
+        var totalIsNet = false
+        for (index, line) in kept.enumerated() {
+            let folded = fold(line)
+            guard let kind = field(for: folded) else { continue }
             if kind == .trips {
                 if result.trips == nil, let count = firstInteger(in: line) { result.trips = count }
                 continue
             }
             // The amount is on the same row, or alone on the next row (stacked layouts).
             var values = amounts(in: line)
-            if values.isEmpty, index + 1 < lines.count, field(for: fold(lines[index + 1])) == nil {
-                values = amounts(in: lines[index + 1])
+            if values.isEmpty, index + 1 < kept.count, field(for: fold(kept[index + 1])) == nil {
+                values = amounts(in: kept[index + 1])
             }
-            guard let value = values.last else { continue }
+            guard let value = values.last, value > 0 else { continue }
             switch kind {
-            case .total: result.total = max(result.total ?? 0, value)
+            case .total:
+                if !words(in: folded).isDisjoint(with: Self.netWords) {
+                    result.total = totalIsNet ? result.total : value
+                    totalIsNet = true
+                } else if !totalIsNet {
+                    result.total = max(result.total ?? 0, value)
+                }
             case .fares: if result.fares == nil { result.fares = value }
             case .tips: if result.tips == nil { result.tips = value }
             case .bonus: result.bonus = (result.bonus ?? 0) + value
@@ -133,11 +151,28 @@ struct EarningsTextParser: Sendable {
             }
         }
 
-        // Headline amount with no label (big number at the top): use the largest amount on screen.
+        // Headline amount with no label (big number at the top): the largest of the driver's amounts.
         if result.total == nil {
-            result.total = lines.flatMap { amounts(in: $0) }.max()
+            result.total = kept.flatMap { amounts(in: $0) }.filter { $0 > 0 }.max()
         }
+        if result.scope == .trip, result.trips == nil { result.trips = 1 }
         return result.normalized()
+    }
+
+    private func scope(of folded: String) -> ScreenshotEarnings.Scope {
+        if folded.contains("trip details") || folded.contains("detalii cursa") || folded.contains("ride details") { return .trip }
+        if folded.contains("week") || folded.contains("saptaman") { return .week }
+        // A date range such as "6 oct. - 12 oct." or "Oct 5 - Oct 11" is a weekly (or longer) summary.
+        if folded.contains(/\d{1,2}\s*[a-z]{3,4}\.?\s*[-–]\s*\d{1,2}\s*[a-z]{3,4}/)
+            || folded.contains(/[a-z]{3,4}\.?\s*\d{1,2}\s*[-–]\s*[a-z]{3,4}\.?\s*\d{1,2}/) {
+            return .week
+        }
+        if folded.contains("today") || folded.contains("astazi") || words(in: folded).contains("azi") { return .day }
+        return .unknown
+    }
+
+    private func words(in foldedLine: String) -> Set<String> {
+        Set(foldedLine.split { !$0.isLetter }.map(String.init))
     }
 
     /// Lowercased without diacritics: OCR returns Romanian "ș" either with a comma (U+0219) or a
@@ -147,7 +182,7 @@ struct EarningsTextParser: Sendable {
     }
 
     private func field(for foldedLine: String) -> Field? {
-        let words = Set(foldedLine.split { !$0.isLetter }.map(String.init))
+        let words = words(in: foldedLine)
         for (field, keys) in Self.keywords {
             for key in keys.map(fold) where key.contains(" ") ? foldedLine.contains(key) : words.contains(key) {
                 return field

@@ -9,6 +9,7 @@ struct SettingsView: View {
     @AppStorage(SettingsKeys.hasSeenTutorial) private var hasSeenTutorial = true
     @AppStorage(SettingsKeys.useAppleIntelligence) private var useAppleIntelligence = true
     @State private var confirmDelete = false
+    @Query private var scanReports: [ScanReport]
 
     private static let currencies = ["RON", "EUR", "USD", "GBP", "PLN", "HUF", "BGN", "MDL"]
 
@@ -35,10 +36,13 @@ struct SettingsView: View {
                     LabeledContent("Status", value: AppleIntelligence.status.description)
                     Toggle("Use for screenshots", isOn: $useAppleIntelligence)
                         .disabled(AppleIntelligence.status != .available)
+                    NavigationLink { ScanReportsView() } label: {
+                        LabeledContent("Misread reports", value: "\(scanReports.count)")
+                    }
                 } header: {
                     Text("Apple Intelligence")
                 } footer: {
-                    Text("Understands earnings screenshots from Uber, Bolt and FREENOW, on this iPhone. Without it, FleetCheck still reads the numbers by matching labels like Tips and Promotions.")
+                    Text("Understands earnings screenshots from Uber, Bolt and FREENOW, on this iPhone. Without it, FleetCheck still reads the numbers by matching labels like Tips and Promotions. When a screenshot is read wrong, tap \"Numbers wrong?\" in the form to keep a report.")
                 }
 
                 Section {
@@ -127,5 +131,67 @@ struct ExportView: View {
             let url = directory.appending(path: "fleetcheck-\(name)-\(stamp).csv")
             return (try? csv.write(to: url, atomically: true, encoding: .utf8)) != nil ? url : nil
         }
+    }
+}
+
+/// Reports saved with "Numbers wrong?" in the earnings form, to share so the reading can be improved.
+struct ScanReportsView: View {
+    @Environment(\.modelContext) private var context
+    @Query(sort: \ScanReport.date, order: .reverse) private var reports: [ScanReport]
+    @State private var confirmDelete = false
+
+    var body: some View {
+        List {
+            if !reports.isEmpty {
+                Section {
+                    ShareLink(item: exportText, preview: SharePreview("FleetCheck screenshot reports")) {
+                        Label("Share all reports", systemImage: "square.and.arrow.up")
+                    }
+                } footer: {
+                    Text("Reports contain the text read from your screenshots, not the images. Check them for names or other personal details before sharing.")
+                }
+            }
+            Section {
+                ForEach(reports) { report in
+                    NavigationLink {
+                        ScrollView {
+                            Text(report.text)
+                                .font(.footnote.monospaced())
+                                .textSelection(.enabled)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding()
+                        }
+                        .navigationTitle(report.date.formatted(date: .abbreviated, time: .shortened))
+                        .navigationBarTitleDisplayMode(.inline)
+                    } label: {
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(report.date.formatted(date: .abbreviated, time: .shortened)).font(.subheadline)
+                            Text("\(report.method) · \(report.corrected == nil ? "not corrected" : "corrected")")
+                                .font(.caption).foregroundStyle(.secondary)
+                        }
+                    }
+                }
+                .onDelete { offsets in offsets.map { reports[$0] }.forEach(context.delete) }
+            }
+            if !reports.isEmpty {
+                Section {
+                    Button("Delete all reports", role: .destructive) { confirmDelete = true }
+                }
+            }
+        }
+        .navigationTitle("Misread reports")
+        .overlay {
+            if reports.isEmpty {
+                ContentUnavailableView("No reports", systemImage: "text.viewfinder",
+                                       description: Text("When a screenshot is read wrong, tap \"Numbers wrong?\" in the earnings form. The report shows up here."))
+            }
+        }
+        .confirmationDialog("Delete all reports?", isPresented: $confirmDelete, titleVisibility: .visible) {
+            Button("Delete all", role: .destructive) { reports.forEach(context.delete) }
+        }
+    }
+
+    private var exportText: String {
+        reports.map(\.text).joined(separator: "\n\n==========\n\n")
     }
 }
