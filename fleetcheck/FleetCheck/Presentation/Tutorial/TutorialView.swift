@@ -6,18 +6,18 @@ struct TutorialView: View {
     @State private var page = 0
 
     private let pages: [TutorialPage] = [
-        TutorialPage(symbol: "car.2.fill", color: .blue, title: "Your whole fleet, one screen",
-                     body: "FleetCheck brings live location, money, repairs and paperwork for every vehicle into a single app — so you always know which cars earn and which ones cost you."),
-        TutorialPage(symbol: "gauge.with.dots.needle.67percent", color: .indigo, title: "Dashboard",
-                     body: "Revenue, costs, net profit and fleet value at a glance. Switch between 7, 30, 90 and 180 days. Costs include fuel, repairs, insurance, leasing and the value your cars lose every month."),
-        TutorialPage(symbol: "map.fill", color: .green, title: "Live map",
-                     body: "See where every vehicle is right now. A point is stored only when a car moves about 50 m — accurate enough to follow a route, light enough to save battery and data. Tap a car to see its trail."),
-        TutorialPage(symbol: "eurosign.arrow.trianglehead.counterclockwise.rotate.90", color: .orange, title: "Every vehicle's story",
-                     body: "Open a vehicle to see profit per km, its market value by mileage, fuel consumption against the baseline, driving score, full repair history and upcoming services."),
-        TutorialPage(symbol: "lightbulb.max.fill", color: .yellow, title: "Insights that save money",
-                     body: "FleetCheck flags cars to replace, vehicles that sit idle, suspicious fuel use, risky driving and expiring insurance or inspections — with an estimate of what each issue costs per month."),
-        TutorialPage(symbol: "iphone.radiowaves.left.and.right", color: .teal, title: "No tracker? Use a phone",
-                     body: "Turn on Driver mode in Settings and a driver's iPhone becomes the tracker. Pick \"Always\" for location so it keeps working in the background."),
+        TutorialPage(symbol: "steeringwheel", color: .blue, title: "Your driving, your numbers",
+                     body: "FleetCheck is a logbook for ride-sharing drivers: kilometers, hours, earnings and costs, so you know what you really make per hour."),
+        TutorialPage(symbol: "play.circle.fill", color: .green, title: "Start a shift",
+                     body: "Tap Start shift when you go online. GPS counts your kilometers and driving time, even with the phone locked. Allow location \"While Using the App\"."),
+        TutorialPage(symbol: "banknote.fill", color: .orange, title: "Add what you earned",
+                     body: "When you end the shift, copy your earnings from Uber, Bolt or any other app. Log fuel, washes and repairs as they happen; add a photo of the receipt."),
+        TutorialPage(symbol: "chart.bar.fill", color: .indigo, title: "See your real profit",
+                     body: "Stats show net per hour and per kilometer for any day, week, month or year, which app pays best and where your money goes."),
+        TutorialPage(symbol: "bell.badge.fill", color: .red, title: "Never miss a deadline",
+                     body: "Add your ITP, RCA, vignette and oil change. FleetCheck reminds you 30, 7 and 1 days before."),
+        TutorialPage(symbol: "lock.shield.fill", color: .teal, title: "Your data stays yours",
+                     body: "Everything is stored only on this iPhone. No account, no company sees it. Export it to a spreadsheet whenever you want."),
     ]
 
     var body: some View {

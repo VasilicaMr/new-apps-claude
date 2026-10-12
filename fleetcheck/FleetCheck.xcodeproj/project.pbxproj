@@ -7,68 +7,58 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		016FCB02085BC86631A4E16B /* ValuationCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25142518CAFBCC17BAF23C9 /* ValuationCalculator.swift */; };
-		06FE863143C7D4CB30538BD4 /* VehicleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB859F4994F4B8E40F6628 /* VehicleListView.swift */; };
-		0780E2147491A69E72BB9E98 /* trips.json in Resources */ = {isa = PBXBuildFile; fileRef = 87A8897709B22C7A7E493BE0 /* trips.json */; };
+		086DCAD8638EB9BAE8916CF9 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B84F386E585A013A4DB4611 /* StatsView.swift */; };
 		0A17FE792DD83D90BF6DFD73 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC789942DF55E2D42DE10D /* Components.swift */; };
 		0E1DFB52DAF41FD6F9300A23 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56740B9E457B0BC27DDDEA1 /* SettingsView.swift */; };
-		0F1DCDAD0C192001B9D1D2F3 /* ValuationCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340A506DB5684C88D2818EB0 /* ValuationCalculatorTests.swift */; };
-		13E4481392C96D00473CDB0F /* VehicleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FE6F6AC9459B7C37B31559 /* VehicleDetailView.swift */; };
-		1C89B859A906F1B268033525 /* LiveMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0D9446E0C70CEABB94741F /* LiveMapView.swift */; };
-		1E88F16ACDB876E72CE6A984 /* URLSessionAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AC3C925D1B02AF2DD89C67 /* URLSessionAPIClient.swift */; };
-		1FE01CEC902CCB05BA37E6DA /* InsightsEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1639363603090C2E6FCBAC78 /* InsightsEngine.swift */; };
-		2CF2DFE24B4E1560311C20D8 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F86D92250E8C4B36CBEA036 /* Driver.swift */; };
-		2F8F1B3B47E04DF68D6CAF40 /* AnalyticsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78434831E9EE86D96420D8E6 /* AnalyticsTests.swift */; };
-		2F98C78A046828F1DEFF833D /* vehicles.json in Resources */ = {isa = PBXBuildFile; fileRef = 435D8D19EAB9583C4E817843 /* vehicles.json */; };
-		353ADABA9413196A9E9FAAF8 /* LiveTrackingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A103854316CCA78D8DA9D96 /* LiveTrackingStore.swift */; };
-		3C048D70DAFBF5A380DD446D /* SimulatedPositionStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4D3CA35D023242A5CE1D6A /* SimulatedPositionStream.swift */; };
-		3C646A52E04ADB8A5956E231 /* Maintenance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C310F7E7E38126A5F8191D /* Maintenance.swift */; };
+		1CB74AD0CAB8D854F070EF37 /* FleetCheckWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D198C7214637B840AB1D334F /* FleetCheckWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1D8E4B88C360D01F40BD3F42 /* ScreenshotEarnings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434563287F137ED16733D27D /* ScreenshotEarnings.swift */; };
+		21AEAE6768CC49B955D6B00A /* ExpenseForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD1F5E548B171AD6C3C544D /* ExpenseForm.swift */; };
+		22CAB2CF60AD767286263B55 /* bolt_week_ro.png in Resources */ = {isa = PBXBuildFile; fileRef = 70C834A78B58C3B534D29A97 /* bolt_week_ro.png */; };
+		2E8D951F8E46058352873ED5 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE6A97F4847F799745DEE67 /* SampleData.swift */; };
+		2EE51324A59B6FA4D8842330 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A99DFBC208517BCA793D115 /* Categories.swift */; };
+		3D386F0F1FAADE628C3F2F11 /* CSVExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C03C85523153560292E1A8 /* CSVExporter.swift */; };
+		3D68E8B5548A8BE4F26BD825 /* DistanceAccumulatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7DD4809392F8957B433B20 /* DistanceAccumulatorTests.swift */; };
 		3DFF32B79667512FFE2F5D55 /* FleetCheckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4CADD82F1874F49AAABE46 /* FleetCheckApp.swift */; };
+		42AD93C97A97D611880235D6 /* StatsCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BF8B6C206000ACA199DA09 /* StatsCalculator.swift */; };
 		490DEF63A6949818C8F18260 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92379B5B85207D5B384430A /* Formatters.swift */; };
-		4F7A79DC6FB654F3D3894337 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455E735EAFC54816F91087AE /* Alerts.swift */; };
-		5053DCA29FE828B2FC413BC1 /* FleetAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A960E640E5517373F40C10 /* FleetAnalyzer.swift */; };
-		523C5B12F1E4697529DBABF3 /* telemetry_latest.json in Resources */ = {isa = PBXBuildFile; fileRef = 7D26C2ECF95F49BEA27BABE4 /* telemetry_latest.json */; };
+		4D5826B7EEBB89F271F6F19D /* ShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE696C3C35881EF8C485DA87 /* ShiftView.swift */; };
+		527E51D38A48FC92EEABD6D0 /* EarningForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCADD2A9EE288BC8542222BF /* EarningForm.swift */; };
 		5434EF6B2ACAD5AC95700723 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F2219E2EB66AF9353A16D1 /* RootView.swift */; };
-		55BD9C245937DC0CABBA7CBA /* drivers.json in Resources */ = {isa = PBXBuildFile; fileRef = 8F9BD5C9E19EAA0AD31DE526 /* drivers.json */; };
-		5BB94DFC99F6A26B5E253428 /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19A7239B0D901E8B1B75B0E /* AppDependencies.swift */; };
-		5D471348E38192A393E2D831 /* MockAPIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1477A5B1028D200B4377D0 /* MockAPIClientTests.swift */; };
-		5E721ADB16B28DE5E662DAA5 /* DeviceLocationTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2109702D593B616E974540F /* DeviceLocationTracker.swift */; };
-		5F2745A464F02EB3FDE35912 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBFFFE7B5C5120E6E844131 /* APIClient.swift */; };
-		6120771FD9AACEE1CC81C695 /* expenses.json in Resources */ = {isa = PBXBuildFile; fileRef = D053940CEC3421FB05DEAD90 /* expenses.json */; };
-		62B5ED5A598BB31C158B00AC /* DateRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BA69F13E1FD4647426FEFB /* DateRange.swift */; };
+		5E0F16863F34394C679C00DB /* EarningsTextParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1B771F443926A6E4F53AFF /* EarningsTextParser.swift */; };
+		5ECE3276F7E1B4C78D4B91D7 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5259BAFFF24371A0C6DC3DF9 /* Models.swift */; };
+		6A9556245861D5D73F109FD6 /* ShiftActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A40FF17A3F340487B3DF36B /* ShiftActivity.swift */; };
 		6CCC394CBA2403D5DF22BC60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AD6F29BC1C2FEB8086A93BC /* Assets.xcassets */; };
-		71C7C7758CA5223991644386 /* FleetStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C111D97822D382CD16D8C1D /* FleetStore.swift */; };
-		767BDA581D3C3F346BA3E285 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586D3036E4B749423D8F5B34 /* Endpoint.swift */; };
-		76A81EE277AF456C43DA0A13 /* maintenance_records.json in Resources */ = {isa = PBXBuildFile; fileRef = E5634AEF00265EF76CC835A9 /* maintenance_records.json */; };
-		7AC8DBA293A834EDC22D77B0 /* MockAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4C3DEA7D20F87048858B57 /* MockAPIClient.swift */; };
-		811984FDE6D1DF5BE3804F7E /* InsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076DCF54C6B69554E00AEF51 /* InsightsView.swift */; };
-		93264C113E5AFDB4AC54FABE /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72010B8085B0E9162A684C0D /* Company.swift */; };
-		95BB1A4A38021CE5CECD6989 /* TestSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F50D412E82E4F801363C1B /* TestSupport.swift */; };
-		9AE16C586C46F9446C5AF778 /* location_event_ack.json in Resources */ = {isa = PBXBuildFile; fileRef = 1614111A03B3748F9C6AE43B /* location_event_ack.json */; };
-		9CF2DCBC127346670F16A49A /* MaintenancePlanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A12484E1792D398C1C3AC9E /* MaintenancePlanner.swift */; };
-		AA8071B357A154DAE0009AE9 /* alerts.json in Resources */ = {isa = PBXBuildFile; fileRef = EF80C3C0C11D646BF4D4DA3E /* alerts.json */; };
-		B1CAFE173BD34366CA15F2BA /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53862895FBDDEF5E57F30CE8 /* DashboardView.swift */; };
-		BB8C7450D427606843E916D0 /* LocationChangeFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2427674445B4AF101375349 /* LocationChangeFilter.swift */; };
-		CCC18ABFA549C45D55C59DDE /* company.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C0F629B9B75ECBB01E324A7 /* company.json */; };
+		8DA5CF7890FAE04C8A3B9EF3 /* ReminderNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA73B1DF30B45C8778793D2 /* ReminderNotifier.swift */; };
+		8E08EF77960FF0C52F165103 /* ShiftStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C485FF6F10E4ADE2BD4DF2 /* ShiftStore.swift */; };
+		8FFEDD9D1597E4129188647E /* StatsCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2F6A8F486A0A48EC46C57 /* StatsCalculatorTests.swift */; };
+		917253146C6C148441C982BB /* ScreenshotTextReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6A23C67ED30D9A2E3FF9D2 /* ScreenshotTextReader.swift */; };
+		A4A8C03FB4AAC8915636804C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0402DA250F66269BBE0983B5 /* Assets.xcassets */; };
+		B21B6206ABEBEB51B1B90D47 /* ReminderAndExportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096F54E3A4663BB6378F9F8C /* ReminderAndExportTests.swift */; };
+		B40272909ECE3413D37C892B /* ShiftActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A40FF17A3F340487B3DF36B /* ShiftActivity.swift */; };
+		C082C4937F2FA8D6F83EBBB3 /* EarningsScreenshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351DCB00F88E7CFF638BEE40 /* EarningsScreenshotTests.swift */; };
+		CB8A805D93E34BCDED4D986B /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C1074712C7096D376C18E0 /* DiaryView.swift */; };
 		CE63307864D5B3843C52D793 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73F6BCA9D21C8CFFB03B594 /* TutorialView.swift */; };
-		CF06B5F1337D5B5B93B71D5A /* LocationChangeFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5873542B1CDF8076F802E397 /* LocationChangeFilterTests.swift */; };
-		D49966660F0076DFF9F2574A /* FinancialAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC637A67559D73E84CDAB3C7 /* FinancialAnalyzer.swift */; };
-		D792BD8C3054868749916275 /* daily_metrics.json in Resources */ = {isa = PBXBuildFile; fileRef = 5EB5255E1A3F6ACBBC383473 /* daily_metrics.json */; };
-		DAAC0FEC072FCE1A7ED3897D /* DefaultFleetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD50680D6EE796D331A4A50 /* DefaultFleetRepository.swift */; };
-		DC5AFD0ED33A8B56C0D8A13B /* valuation_models.json in Resources */ = {isa = PBXBuildFile; fileRef = 3F48570C79C4BF67420B0047 /* valuation_models.json */; };
-		E18B4906A10EB95447201F9D /* FleetSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EB15A4C7EF0ADDA943CE2C /* FleetSnapshot.swift */; };
-		F114268A69FBE62E7A14AF5B /* FleetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6166E6DEA1FDF03A016DF0 /* FleetRepository.swift */; };
-		F47E1527115F05278026E6E5 /* geofences.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F908B2FF445F5EC3A581B18 /* geofences.json */; };
-		F50DC847E05DE944B744ABC7 /* DriverModeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF073D433F7318272A0AB72 /* DriverModeStore.swift */; };
-		F5F7D49C39E068C5D67B3387 /* Telemetry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E319F4C0C6D67BEC7E6EEE /* Telemetry.swift */; };
+		D95638E52E376B61488FBE53 /* ReminderPlanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C22E3231648667C73BDE2 /* ReminderPlanner.swift */; };
+		DF8F95FC5F711C5FBD82C8D1 /* CarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141C4F4A943D0E74734DC976 /* CarView.swift */; };
+		DF91CA1D6D5BBABBCE9D6F02 /* EarningsScreenshotScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF25C09EA450CF504E20E673 /* EarningsScreenshotScanner.swift */; };
+		E36710AE134681FE4351C743 /* ShiftLocationTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC94754140DFCC3ED94547 /* ShiftLocationTracker.swift */; };
+		E44D4A01A21D059BE86830E0 /* uber_day_en.png in Resources */ = {isa = PBXBuildFile; fileRef = 69553ABA10C3A71A92803ABE /* uber_day_en.png */; };
+		E5F0E19C107F7F837761E8DB /* ShiftDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7931ED4925D6696B5B7A88C6 /* ShiftDetailView.swift */; };
+		E7023064CE7A234B1CA35017 /* DistanceAccumulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C46681006FCAB4932AA6FC /* DistanceAccumulator.swift */; };
+		ED7AFE9C90E55849106FB431 /* ShiftLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC71DA77D8321DCE3CC3874 /* ShiftLiveActivity.swift */; };
 		F6FF52898B5564519EECAB30 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E55D1093F3C4E7F259EE25 /* Theme.swift */; };
-		FE06A787D72033BCFCA881B1 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBDF75E4D4B982476F93E32 /* Vehicle.swift */; };
 		FE127FD1D3CE14F9534834D5 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7F2148108B227ECC0AEEEF /* Location.swift */; };
-		FE1B9C442F25E51006EC47B4 /* Valuation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2906B6EFDB05564AEB10A7DB /* Valuation.swift */; };
-		FF430334DEBC7DACD4B7A3B5 /* live_routes.json in Resources */ = {isa = PBXBuildFile; fileRef = E20F526F7C79C60BA87BB738 /* live_routes.json */; };
+		FFB21D5EA16E1DEDDCB07E48 /* ShiftIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521419048046B130BB48B431 /* ShiftIntents.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		EDD0E44C26409B32B0ADF31F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 650149568308B48A487441B6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A49DFEFACA82CE49A7A1E5F;
+			remoteInfo = FleetCheckWidgets;
+		};
 		FE72C87F63FB50DC7AC646F6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 650149568308B48A487441B6 /* Project object */;
@@ -78,102 +68,101 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5A18D95AB9CB215E9F1299CB /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1CB74AD0CAB8D854F070EF37 /* FleetCheckWidgets.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		076DCF54C6B69554E00AEF51 /* InsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsView.swift; sourceTree = "<group>"; };
-		1614111A03B3748F9C6AE43B /* location_event_ack.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = location_event_ack.json; sourceTree = "<group>"; };
-		1639363603090C2E6FCBAC78 /* InsightsEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsEngine.swift; sourceTree = "<group>"; };
+		0402DA250F66269BBE0983B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		096F54E3A4663BB6378F9F8C /* ReminderAndExportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderAndExportTests.swift; sourceTree = "<group>"; };
+		141C4F4A943D0E74734DC976 /* CarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarView.swift; sourceTree = "<group>"; };
+		1A40FF17A3F340487B3DF36B /* ShiftActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftActivity.swift; sourceTree = "<group>"; };
+		20C485FF6F10E4ADE2BD4DF2 /* ShiftStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftStore.swift; sourceTree = "<group>"; };
+		22C1074712C7096D376C18E0 /* DiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryView.swift; sourceTree = "<group>"; };
 		256C1A94BFFD5A1AF352581D /* FleetCheckTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = FleetCheckTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2906B6EFDB05564AEB10A7DB /* Valuation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Valuation.swift; sourceTree = "<group>"; };
+		2A99DFBC208517BCA793D115 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		2AD6F29BC1C2FEB8086A93BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2BBFFFE7B5C5120E6E844131 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		340A506DB5684C88D2818EB0 /* ValuationCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValuationCalculatorTests.swift; sourceTree = "<group>"; };
-		35AC3C925D1B02AF2DD89C67 /* URLSessionAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionAPIClient.swift; sourceTree = "<group>"; };
-		3A103854316CCA78D8DA9D96 /* LiveTrackingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTrackingStore.swift; sourceTree = "<group>"; };
+		2DC71DA77D8321DCE3CC3874 /* ShiftLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftLiveActivity.swift; sourceTree = "<group>"; };
+		351DCB00F88E7CFF638BEE40 /* EarningsScreenshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsScreenshotTests.swift; sourceTree = "<group>"; };
 		3AEC789942DF55E2D42DE10D /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
-		3F48570C79C4BF67420B0047 /* valuation_models.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = valuation_models.json; sourceTree = "<group>"; };
-		41A960E640E5517373F40C10 /* FleetAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetAnalyzer.swift; sourceTree = "<group>"; };
-		435D8D19EAB9583C4E817843 /* vehicles.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = vehicles.json; sourceTree = "<group>"; };
+		3DD1F5E548B171AD6C3C544D /* ExpenseForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseForm.swift; sourceTree = "<group>"; };
+		434563287F137ED16733D27D /* ScreenshotEarnings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotEarnings.swift; sourceTree = "<group>"; };
 		454C96AD61CB0C5E60B715AC /* FleetCheck.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = FleetCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		455E735EAFC54816F91087AE /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
-		4BF073D433F7318272A0AB72 /* DriverModeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverModeStore.swift; sourceTree = "<group>"; };
-		53862895FBDDEF5E57F30CE8 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
-		586D3036E4B749423D8F5B34 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		5873542B1CDF8076F802E397 /* LocationChangeFilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationChangeFilterTests.swift; sourceTree = "<group>"; };
-		5C0D9446E0C70CEABB94741F /* LiveMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveMapView.swift; sourceTree = "<group>"; };
-		5EB5255E1A3F6ACBBC383473 /* daily_metrics.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = daily_metrics.json; sourceTree = "<group>"; };
-		6A12484E1792D398C1C3AC9E /* MaintenancePlanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintenancePlanner.swift; sourceTree = "<group>"; };
-		6A4D3CA35D023242A5CE1D6A /* SimulatedPositionStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatedPositionStream.swift; sourceTree = "<group>"; };
+		4FE6A97F4847F799745DEE67 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		521419048046B130BB48B431 /* ShiftIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftIntents.swift; sourceTree = "<group>"; };
+		5259BAFFF24371A0C6DC3DF9 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		54C03C85523153560292E1A8 /* CSVExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVExporter.swift; sourceTree = "<group>"; };
+		69553ABA10C3A71A92803ABE /* uber_day_en.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uber_day_en.png; sourceTree = "<group>"; };
 		6A7F2148108B227ECC0AEEEF /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		6C111D97822D382CD16D8C1D /* FleetStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetStore.swift; sourceTree = "<group>"; };
-		6DBDF75E4D4B982476F93E32 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
-		6F86D92250E8C4B36CBEA036 /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
+		6B84F386E585A013A4DB4611 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		70C834A78B58C3B534D29A97 /* bolt_week_ro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bolt_week_ro.png; sourceTree = "<group>"; };
 		70F2219E2EB66AF9353A16D1 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
-		72010B8085B0E9162A684C0D /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
-		78434831E9EE86D96420D8E6 /* AnalyticsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsTests.swift; sourceTree = "<group>"; };
-		7A1477A5B1028D200B4377D0 /* MockAPIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIClientTests.swift; sourceTree = "<group>"; };
-		7D26C2ECF95F49BEA27BABE4 /* telemetry_latest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = telemetry_latest.json; sourceTree = "<group>"; };
-		87A8897709B22C7A7E493BE0 /* trips.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = trips.json; sourceTree = "<group>"; };
-		8AD50680D6EE796D331A4A50 /* DefaultFleetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFleetRepository.swift; sourceTree = "<group>"; };
-		8F9BD5C9E19EAA0AD31DE526 /* drivers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = drivers.json; sourceTree = "<group>"; };
-		9C0F629B9B75ECBB01E324A7 /* company.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = company.json; sourceTree = "<group>"; };
-		9F908B2FF445F5EC3A581B18 /* geofences.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = geofences.json; sourceTree = "<group>"; };
+		77E10DEE47BDEB8E1A7C0E43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7931ED4925D6696B5B7A88C6 /* ShiftDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftDetailView.swift; sourceTree = "<group>"; };
 		A6E55D1093F3C4E7F259EE25 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		A73F6BCA9D21C8CFFB03B594 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
-		B2109702D593B616E974540F /* DeviceLocationTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceLocationTracker.swift; sourceTree = "<group>"; };
-		B25142518CAFBCC17BAF23C9 /* ValuationCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValuationCalculator.swift; sourceTree = "<group>"; };
+		A8BF8B6C206000ACA199DA09 /* StatsCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCalculator.swift; sourceTree = "<group>"; };
+		ACB2F6A8F486A0A48EC46C57 /* StatsCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCalculatorTests.swift; sourceTree = "<group>"; };
+		AD6A23C67ED30D9A2E3FF9D2 /* ScreenshotTextReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotTextReader.swift; sourceTree = "<group>"; };
 		B56740B9E457B0BC27DDDEA1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		B7E319F4C0C6D67BEC7E6EEE /* Telemetry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Telemetry.swift; sourceTree = "<group>"; };
 		B92379B5B85207D5B384430A /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
-		BBBB859F4994F4B8E40F6628 /* VehicleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleListView.swift; sourceTree = "<group>"; };
-		C2427674445B4AF101375349 /* LocationChangeFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationChangeFilter.swift; sourceTree = "<group>"; };
-		C8BA69F13E1FD4647426FEFB /* DateRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRange.swift; sourceTree = "<group>"; };
+		BA1B771F443926A6E4F53AFF /* EarningsTextParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsTextParser.swift; sourceTree = "<group>"; };
+		BCADD2A9EE288BC8542222BF /* EarningForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningForm.swift; sourceTree = "<group>"; };
+		BD0C22E3231648667C73BDE2 /* ReminderPlanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderPlanner.swift; sourceTree = "<group>"; };
 		CA4CADD82F1874F49AAABE46 /* FleetCheckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetCheckApp.swift; sourceTree = "<group>"; };
-		D053940CEC3421FB05DEAD90 /* expenses.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = expenses.json; sourceTree = "<group>"; };
-		D0FE6F6AC9459B7C37B31559 /* VehicleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailView.swift; sourceTree = "<group>"; };
-		D1C310F7E7E38126A5F8191D /* Maintenance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maintenance.swift; sourceTree = "<group>"; };
+		CBA73B1DF30B45C8778793D2 /* ReminderNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderNotifier.swift; sourceTree = "<group>"; };
+		CE696C3C35881EF8C485DA87 /* ShiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftView.swift; sourceTree = "<group>"; };
+		D198C7214637B840AB1D334F /* FleetCheckWidgets.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = FleetCheckWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2AFBF8D83D60E288D38E646 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		DA6166E6DEA1FDF03A016DF0 /* FleetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetRepository.swift; sourceTree = "<group>"; };
-		E20F526F7C79C60BA87BB738 /* live_routes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = live_routes.json; sourceTree = "<group>"; };
-		E2F50D412E82E4F801363C1B /* TestSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSupport.swift; sourceTree = "<group>"; };
-		E5634AEF00265EF76CC835A9 /* maintenance_records.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = maintenance_records.json; sourceTree = "<group>"; };
-		EC637A67559D73E84CDAB3C7 /* FinancialAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialAnalyzer.swift; sourceTree = "<group>"; };
-		EF4C3DEA7D20F87048858B57 /* MockAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIClient.swift; sourceTree = "<group>"; };
-		EF80C3C0C11D646BF4D4DA3E /* alerts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = alerts.json; sourceTree = "<group>"; };
-		F19A7239B0D901E8B1B75B0E /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
-		F4EB15A4C7EF0ADDA943CE2C /* FleetSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetSnapshot.swift; sourceTree = "<group>"; };
+		D5C46681006FCAB4932AA6FC /* DistanceAccumulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceAccumulator.swift; sourceTree = "<group>"; };
+		E9AC94754140DFCC3ED94547 /* ShiftLocationTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftLocationTracker.swift; sourceTree = "<group>"; };
+		EE7DD4809392F8957B433B20 /* DistanceAccumulatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceAccumulatorTests.swift; sourceTree = "<group>"; };
+		FF25C09EA450CF504E20E673 /* EarningsScreenshotScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsScreenshotScanner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		0CA73BD28E9B8AF792F0D15A /* Intelligence */ = {
+			isa = PBXGroup;
+			children = (
+				FF25C09EA450CF504E20E673 /* EarningsScreenshotScanner.swift */,
+				AD6A23C67ED30D9A2E3FF9D2 /* ScreenshotTextReader.swift */,
+			);
+			path = Intelligence;
+			sourceTree = "<group>";
+		};
 		134B4CF39D8F4DACE76D51CC /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				455E735EAFC54816F91087AE /* Alerts.swift */,
-				72010B8085B0E9162A684C0D /* Company.swift */,
-				C8BA69F13E1FD4647426FEFB /* DateRange.swift */,
-				6F86D92250E8C4B36CBEA036 /* Driver.swift */,
-				F4EB15A4C7EF0ADDA943CE2C /* FleetSnapshot.swift */,
+				2A99DFBC208517BCA793D115 /* Categories.swift */,
 				6A7F2148108B227ECC0AEEEF /* Location.swift */,
-				D1C310F7E7E38126A5F8191D /* Maintenance.swift */,
-				B7E319F4C0C6D67BEC7E6EEE /* Telemetry.swift */,
-				2906B6EFDB05564AEB10A7DB /* Valuation.swift */,
-				6DBDF75E4D4B982476F93E32 /* Vehicle.swift */,
+				434563287F137ED16733D27D /* ScreenshotEarnings.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
 		};
-		194EA8B9CD80A8967D05DA3A /* Dashboard */ = {
+		1DD3B4F748F645281F68C2CD /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
-				53862895FBDDEF5E57F30CE8 /* DashboardView.swift */,
+				CBA73B1DF30B45C8778793D2 /* ReminderNotifier.swift */,
 			);
-			path = Dashboard;
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 		1E268FAACC0430919667A46B /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				560C29F44E7A7BD21D382F47 /* Repositories */,
-				755DB26FA0D61AF404F30E98 /* Telemetry */,
+				5259BAFFF24371A0C6DC3DF9 /* Models.swift */,
+				4FE6A97F4847F799745DEE67 /* SampleData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -183,6 +172,8 @@
 			children = (
 				7436DF81262B49E92AC0E829 /* FleetCheck */,
 				D9A6CA163F8858BD8BC30EED /* FleetCheckTests */,
+				DFEEF1BDE0CC002B3872C488 /* FleetCheckWidgets */,
+				70E1B36118A2A8458298A340 /* Shared */,
 				E485028835051D968334D026 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -190,30 +181,19 @@
 		35FB8AFBC3B42961173FEB70 /* Stores */ = {
 			isa = PBXGroup;
 			children = (
-				4BF073D433F7318272A0AB72 /* DriverModeStore.swift */,
-				6C111D97822D382CD16D8C1D /* FleetStore.swift */,
-				3A103854316CCA78D8DA9D96 /* LiveTrackingStore.swift */,
+				20C485FF6F10E4ADE2BD4DF2 /* ShiftStore.swift */,
 			);
 			path = Stores;
-			sourceTree = "<group>";
-		};
-		39FF55F9FD797EA1B0061CD5 /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-				DA6166E6DEA1FDF03A016DF0 /* FleetRepository.swift */,
-			);
-			path = Repositories;
 			sourceTree = "<group>";
 		};
 		44CD60B4585B97C0CBC53007 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				EC637A67559D73E84CDAB3C7 /* FinancialAnalyzer.swift */,
-				41A960E640E5517373F40C10 /* FleetAnalyzer.swift */,
-				1639363603090C2E6FCBAC78 /* InsightsEngine.swift */,
-				C2427674445B4AF101375349 /* LocationChangeFilter.swift */,
-				6A12484E1792D398C1C3AC9E /* MaintenancePlanner.swift */,
-				B25142518CAFBCC17BAF23C9 /* ValuationCalculator.swift */,
+				54C03C85523153560292E1A8 /* CSVExporter.swift */,
+				D5C46681006FCAB4932AA6FC /* DistanceAccumulator.swift */,
+				BA1B771F443926A6E4F53AFF /* EarningsTextParser.swift */,
+				BD0C22E3231648667C73BDE2 /* ReminderPlanner.swift */,
+				A8BF8B6C206000ACA199DA09 /* StatsCalculator.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -222,7 +202,6 @@
 			isa = PBXGroup;
 			children = (
 				2AD6F29BC1C2FEB8086A93BC /* Assets.xcassets */,
-				57E4562B4E809C1F3D7B07DA /* MockData */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -231,46 +210,25 @@
 			isa = PBXGroup;
 			children = (
 				134B4CF39D8F4DACE76D51CC /* Entities */,
-				39FF55F9FD797EA1B0061CD5 /* Repositories */,
 				44CD60B4585B97C0CBC53007 /* Services */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
 		};
-		560C29F44E7A7BD21D382F47 /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-				8AD50680D6EE796D331A4A50 /* DefaultFleetRepository.swift */,
-			);
-			path = Repositories;
-			sourceTree = "<group>";
-		};
 		5765113EC81982AB450AF07B /* Location */ = {
 			isa = PBXGroup;
 			children = (
-				B2109702D593B616E974540F /* DeviceLocationTracker.swift */,
+				E9AC94754140DFCC3ED94547 /* ShiftLocationTracker.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
 		};
-		57E4562B4E809C1F3D7B07DA /* MockData */ = {
+		5DE5DEB10D7DF8110E657CC5 /* Stats */ = {
 			isa = PBXGroup;
 			children = (
-				EF80C3C0C11D646BF4D4DA3E /* alerts.json */,
-				9C0F629B9B75ECBB01E324A7 /* company.json */,
-				5EB5255E1A3F6ACBBC383473 /* daily_metrics.json */,
-				8F9BD5C9E19EAA0AD31DE526 /* drivers.json */,
-				D053940CEC3421FB05DEAD90 /* expenses.json */,
-				9F908B2FF445F5EC3A581B18 /* geofences.json */,
-				E20F526F7C79C60BA87BB738 /* live_routes.json */,
-				1614111A03B3748F9C6AE43B /* location_event_ack.json */,
-				E5634AEF00265EF76CC835A9 /* maintenance_records.json */,
-				7D26C2ECF95F49BEA27BABE4 /* telemetry_latest.json */,
-				87A8897709B22C7A7E493BE0 /* trips.json */,
-				3F48570C79C4BF67420B0047 /* valuation_models.json */,
-				435D8D19EAB9583C4E817843 /* vehicles.json */,
+				6B84F386E585A013A4DB4611 /* StatsView.swift */,
 			);
-			path = MockData;
+			path = Stats;
 			sourceTree = "<group>";
 		};
 		6263980D2C5FB6724BC0C534 /* Tutorial */ = {
@@ -289,6 +247,22 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		6F5FF22301DBF26959FC751E /* Car */ = {
+			isa = PBXGroup;
+			children = (
+				141C4F4A943D0E74734DC976 /* CarView.swift */,
+			);
+			path = Car;
+			sourceTree = "<group>";
+		};
+		70E1B36118A2A8458298A340 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				1A40FF17A3F340487B3DF36B /* ShiftActivity.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		7436DF81262B49E92AC0E829 /* FleetCheck */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,45 +270,47 @@
 				D7EC5FC186A646DE6A5F45DD /* Core */,
 				1E268FAACC0430919667A46B /* Data */,
 				4E3EE22A860D0899B6408406 /* Domain */,
+				C0936FE997002F9467B907C4 /* Intents */,
 				E7F0491B605B3138859B7514 /* Presentation */,
 				467C9D9E4C1544C202D37DCF /* Resources */,
 			);
 			path = FleetCheck;
 			sourceTree = "<group>";
 		};
-		755DB26FA0D61AF404F30E98 /* Telemetry */ = {
+		8BD3533A49DB759FB5F347A9 /* Shift */ = {
 			isa = PBXGroup;
 			children = (
-				6A4D3CA35D023242A5CE1D6A /* SimulatedPositionStream.swift */,
+				7931ED4925D6696B5B7A88C6 /* ShiftDetailView.swift */,
+				CE696C3C35881EF8C485DA87 /* ShiftView.swift */,
 			);
-			path = Telemetry;
-			sourceTree = "<group>";
-		};
-		AD3E3AEA936280295226A124 /* Vehicles */ = {
-			isa = PBXGroup;
-			children = (
-				D0FE6F6AC9459B7C37B31559 /* VehicleDetailView.swift */,
-				BBBB859F4994F4B8E40F6628 /* VehicleListView.swift */,
-			);
-			path = Vehicles;
+			path = Shift;
 			sourceTree = "<group>";
 		};
 		B7D6A9E1C05A316167476980 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				F19A7239B0D901E8B1B75B0E /* AppDependencies.swift */,
 				CA4CADD82F1874F49AAABE46 /* FleetCheckApp.swift */,
 				D2AFBF8D83D60E288D38E646 /* Info.plist */,
 			);
 			path = App;
 			sourceTree = "<group>";
 		};
-		C040263E308A86371F9566AC /* Insights */ = {
+		BC1ACB7070281928BE787A94 /* Diary */ = {
 			isa = PBXGroup;
 			children = (
-				076DCF54C6B69554E00AEF51 /* InsightsView.swift */,
+				22C1074712C7096D376C18E0 /* DiaryView.swift */,
+				BCADD2A9EE288BC8542222BF /* EarningForm.swift */,
+				3DD1F5E548B171AD6C3C544D /* ExpenseForm.swift */,
 			);
-			path = Insights;
+			path = Diary;
+			sourceTree = "<group>";
+		};
+		C0936FE997002F9467B907C4 /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				521419048046B130BB48B431 /* ShiftIntents.swift */,
+			);
+			path = Intents;
 			sourceTree = "<group>";
 		};
 		C6FC270AD6E11DB57CEB8CF1 /* Root */ = {
@@ -349,8 +325,9 @@
 			isa = PBXGroup;
 			children = (
 				F346AA5313BFDDD40905F68E /* Formatting */,
+				0CA73BD28E9B8AF792F0D15A /* Intelligence */,
 				5765113EC81982AB450AF07B /* Location */,
-				E7E5CF7BF6C0DCB60BA742BC /* Networking */,
+				1DD3B4F748F645281F68C2CD /* Notifications */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -358,13 +335,23 @@
 		D9A6CA163F8858BD8BC30EED /* FleetCheckTests */ = {
 			isa = PBXGroup;
 			children = (
-				78434831E9EE86D96420D8E6 /* AnalyticsTests.swift */,
-				5873542B1CDF8076F802E397 /* LocationChangeFilterTests.swift */,
-				7A1477A5B1028D200B4377D0 /* MockAPIClientTests.swift */,
-				E2F50D412E82E4F801363C1B /* TestSupport.swift */,
-				340A506DB5684C88D2818EB0 /* ValuationCalculatorTests.swift */,
+				EE7DD4809392F8957B433B20 /* DistanceAccumulatorTests.swift */,
+				351DCB00F88E7CFF638BEE40 /* EarningsScreenshotTests.swift */,
+				096F54E3A4663BB6378F9F8C /* ReminderAndExportTests.swift */,
+				ACB2F6A8F486A0A48EC46C57 /* StatsCalculatorTests.swift */,
+				EB2B6C461CA87B50D1670114 /* Fixtures */,
 			);
 			path = FleetCheckTests;
+			sourceTree = "<group>";
+		};
+		DFEEF1BDE0CC002B3872C488 /* FleetCheckWidgets */ = {
+			isa = PBXGroup;
+			children = (
+				0402DA250F66269BBE0983B5 /* Assets.xcassets */,
+				77E10DEE47BDEB8E1A7C0E43 /* Info.plist */,
+				2DC71DA77D8321DCE3CC3874 /* ShiftLiveActivity.swift */,
+			);
+			path = FleetCheckWidgets;
 			sourceTree = "<group>";
 		};
 		E485028835051D968334D026 /* Products */ = {
@@ -372,43 +359,34 @@
 			children = (
 				454C96AD61CB0C5E60B715AC /* FleetCheck.app */,
 				256C1A94BFFD5A1AF352581D /* FleetCheckTests.xctest */,
+				D198C7214637B840AB1D334F /* FleetCheckWidgets.appex */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		E7E5CF7BF6C0DCB60BA742BC /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				2BBFFFE7B5C5120E6E844131 /* APIClient.swift */,
-				586D3036E4B749423D8F5B34 /* Endpoint.swift */,
-				EF4C3DEA7D20F87048858B57 /* MockAPIClient.swift */,
-				35AC3C925D1B02AF2DD89C67 /* URLSessionAPIClient.swift */,
-			);
-			path = Networking;
 			sourceTree = "<group>";
 		};
 		E7F0491B605B3138859B7514 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				194EA8B9CD80A8967D05DA3A /* Dashboard */,
+				6F5FF22301DBF26959FC751E /* Car */,
 				F7C20C65F6AD54065289D8F5 /* DesignSystem */,
-				C040263E308A86371F9566AC /* Insights */,
-				F0AB2B3A284D1AAC95A9EAD4 /* LiveMap */,
+				BC1ACB7070281928BE787A94 /* Diary */,
 				C6FC270AD6E11DB57CEB8CF1 /* Root */,
 				6583368C6DAC24B7FE981127 /* Settings */,
+				8BD3533A49DB759FB5F347A9 /* Shift */,
+				5DE5DEB10D7DF8110E657CC5 /* Stats */,
 				35FB8AFBC3B42961173FEB70 /* Stores */,
 				6263980D2C5FB6724BC0C534 /* Tutorial */,
-				AD3E3AEA936280295226A124 /* Vehicles */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
 		};
-		F0AB2B3A284D1AAC95A9EAD4 /* LiveMap */ = {
+		EB2B6C461CA87B50D1670114 /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
-				5C0D9446E0C70CEABB94741F /* LiveMapView.swift */,
+				70C834A78B58C3B534D29A97 /* bolt_week_ro.png */,
+				69553ABA10C3A71A92803ABE /* uber_day_en.png */,
 			);
-			path = LiveMap;
+			path = Fixtures;
 			sourceTree = "<group>";
 		};
 		F346AA5313BFDDD40905F68E /* Formatting */ = {
@@ -436,6 +414,7 @@
 			buildConfigurationList = 356279A88A57F4797E27C4A1 /* Build configuration list for PBXNativeTarget "FleetCheckTests" */;
 			buildPhases = (
 				2CC452ADE4F61E26423ABD38 /* Sources */,
+				C01BD107B3E6759DEFAC9BF3 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -447,16 +426,34 @@
 			productReference = 256C1A94BFFD5A1AF352581D /* FleetCheckTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		8A49DFEFACA82CE49A7A1E5F /* FleetCheckWidgets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7084F4F8324ECE3A47713F01 /* Build configuration list for PBXNativeTarget "FleetCheckWidgets" */;
+			buildPhases = (
+				DA425F68F25F2419EA0A7CAC /* Sources */,
+				6A7D0BA409BD600C8A3A7524 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FleetCheckWidgets;
+			productName = FleetCheckWidgets;
+			productReference = D198C7214637B840AB1D334F /* FleetCheckWidgets.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		D96A74119898092ED6A19FD4 /* FleetCheck */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6DB78ADEA1C41B2EBC7C1BC2 /* Build configuration list for PBXNativeTarget "FleetCheck" */;
 			buildPhases = (
 				01232F990AD10A4C0B21A401 /* Sources */,
 				3CEB11FE65703C60F53DBF11 /* Resources */,
+				5A18D95AB9CB215E9F1299CB /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				70EAA3DFC487F0F4011C99CF /* PBXTargetDependency */,
 			);
 			name = FleetCheck;
 			productName = FleetCheck;
@@ -473,6 +470,10 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					28C277AE98F32359E0F1C74F = {
+						DevelopmentTeam = J5WZTVZJ44;
+						ProvisioningStyle = Automatic;
+					};
+					8A49DFEFACA82CE49A7A1E5F = {
 						DevelopmentTeam = J5WZTVZJ44;
 						ProvisioningStyle = Automatic;
 					};
@@ -496,6 +497,7 @@
 			targets = (
 				D96A74119898092ED6A19FD4 /* FleetCheck */,
 				28C277AE98F32359E0F1C74F /* FleetCheckTests */,
+				8A49DFEFACA82CE49A7A1E5F /* FleetCheckWidgets */,
 			);
 		};
 /* End PBXProject section */
@@ -506,19 +508,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CCC394CBA2403D5DF22BC60 /* Assets.xcassets in Resources */,
-				AA8071B357A154DAE0009AE9 /* alerts.json in Resources */,
-				CCC18ABFA549C45D55C59DDE /* company.json in Resources */,
-				D792BD8C3054868749916275 /* daily_metrics.json in Resources */,
-				55BD9C245937DC0CABBA7CBA /* drivers.json in Resources */,
-				6120771FD9AACEE1CC81C695 /* expenses.json in Resources */,
-				F47E1527115F05278026E6E5 /* geofences.json in Resources */,
-				FF430334DEBC7DACD4B7A3B5 /* live_routes.json in Resources */,
-				9AE16C586C46F9446C5AF778 /* location_event_ack.json in Resources */,
-				76A81EE277AF456C43DA0A13 /* maintenance_records.json in Resources */,
-				523C5B12F1E4697529DBABF3 /* telemetry_latest.json in Resources */,
-				0780E2147491A69E72BB9E98 /* trips.json in Resources */,
-				DC5AFD0ED33A8B56C0D8A13B /* valuation_models.json in Resources */,
-				2F98C78A046828F1DEFF833D /* vehicles.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A7D0BA409BD600C8A3A7524 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4A8C03FB4AAC8915636804C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C01BD107B3E6759DEFAC9BF3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22CAB2CF60AD767286263B55 /* bolt_week_ro.png in Resources */,
+				E44D4A01A21D059BE86830E0 /* uber_day_en.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,46 +535,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F2745A464F02EB3FDE35912 /* APIClient.swift in Sources */,
-				4F7A79DC6FB654F3D3894337 /* Alerts.swift in Sources */,
-				5BB94DFC99F6A26B5E253428 /* AppDependencies.swift in Sources */,
-				93264C113E5AFDB4AC54FABE /* Company.swift in Sources */,
+				3D386F0F1FAADE628C3F2F11 /* CSVExporter.swift in Sources */,
+				DF8F95FC5F711C5FBD82C8D1 /* CarView.swift in Sources */,
+				2EE51324A59B6FA4D8842330 /* Categories.swift in Sources */,
 				0A17FE792DD83D90BF6DFD73 /* Components.swift in Sources */,
-				B1CAFE173BD34366CA15F2BA /* DashboardView.swift in Sources */,
-				62B5ED5A598BB31C158B00AC /* DateRange.swift in Sources */,
-				DAAC0FEC072FCE1A7ED3897D /* DefaultFleetRepository.swift in Sources */,
-				5E721ADB16B28DE5E662DAA5 /* DeviceLocationTracker.swift in Sources */,
-				2CF2DFE24B4E1560311C20D8 /* Driver.swift in Sources */,
-				F50DC847E05DE944B744ABC7 /* DriverModeStore.swift in Sources */,
-				767BDA581D3C3F346BA3E285 /* Endpoint.swift in Sources */,
-				D49966660F0076DFF9F2574A /* FinancialAnalyzer.swift in Sources */,
-				5053DCA29FE828B2FC413BC1 /* FleetAnalyzer.swift in Sources */,
+				CB8A805D93E34BCDED4D986B /* DiaryView.swift in Sources */,
+				E7023064CE7A234B1CA35017 /* DistanceAccumulator.swift in Sources */,
+				527E51D38A48FC92EEABD6D0 /* EarningForm.swift in Sources */,
+				DF91CA1D6D5BBABBCE9D6F02 /* EarningsScreenshotScanner.swift in Sources */,
+				5E0F16863F34394C679C00DB /* EarningsTextParser.swift in Sources */,
+				21AEAE6768CC49B955D6B00A /* ExpenseForm.swift in Sources */,
 				3DFF32B79667512FFE2F5D55 /* FleetCheckApp.swift in Sources */,
-				F114268A69FBE62E7A14AF5B /* FleetRepository.swift in Sources */,
-				E18B4906A10EB95447201F9D /* FleetSnapshot.swift in Sources */,
-				71C7C7758CA5223991644386 /* FleetStore.swift in Sources */,
 				490DEF63A6949818C8F18260 /* Formatters.swift in Sources */,
-				1FE01CEC902CCB05BA37E6DA /* InsightsEngine.swift in Sources */,
-				811984FDE6D1DF5BE3804F7E /* InsightsView.swift in Sources */,
-				1C89B859A906F1B268033525 /* LiveMapView.swift in Sources */,
-				353ADABA9413196A9E9FAAF8 /* LiveTrackingStore.swift in Sources */,
 				FE127FD1D3CE14F9534834D5 /* Location.swift in Sources */,
-				BB8C7450D427606843E916D0 /* LocationChangeFilter.swift in Sources */,
-				3C646A52E04ADB8A5956E231 /* Maintenance.swift in Sources */,
-				9CF2DCBC127346670F16A49A /* MaintenancePlanner.swift in Sources */,
-				7AC8DBA293A834EDC22D77B0 /* MockAPIClient.swift in Sources */,
+				5ECE3276F7E1B4C78D4B91D7 /* Models.swift in Sources */,
+				8DA5CF7890FAE04C8A3B9EF3 /* ReminderNotifier.swift in Sources */,
+				D95638E52E376B61488FBE53 /* ReminderPlanner.swift in Sources */,
 				5434EF6B2ACAD5AC95700723 /* RootView.swift in Sources */,
+				2E8D951F8E46058352873ED5 /* SampleData.swift in Sources */,
+				1D8E4B88C360D01F40BD3F42 /* ScreenshotEarnings.swift in Sources */,
+				917253146C6C148441C982BB /* ScreenshotTextReader.swift in Sources */,
 				0E1DFB52DAF41FD6F9300A23 /* SettingsView.swift in Sources */,
-				3C048D70DAFBF5A380DD446D /* SimulatedPositionStream.swift in Sources */,
-				F5F7D49C39E068C5D67B3387 /* Telemetry.swift in Sources */,
+				B40272909ECE3413D37C892B /* ShiftActivity.swift in Sources */,
+				E5F0E19C107F7F837761E8DB /* ShiftDetailView.swift in Sources */,
+				FFB21D5EA16E1DEDDCB07E48 /* ShiftIntents.swift in Sources */,
+				E36710AE134681FE4351C743 /* ShiftLocationTracker.swift in Sources */,
+				8E08EF77960FF0C52F165103 /* ShiftStore.swift in Sources */,
+				4D5826B7EEBB89F271F6F19D /* ShiftView.swift in Sources */,
+				42AD93C97A97D611880235D6 /* StatsCalculator.swift in Sources */,
+				086DCAD8638EB9BAE8916CF9 /* StatsView.swift in Sources */,
 				F6FF52898B5564519EECAB30 /* Theme.swift in Sources */,
 				CE63307864D5B3843C52D793 /* TutorialView.swift in Sources */,
-				1E88F16ACDB876E72CE6A984 /* URLSessionAPIClient.swift in Sources */,
-				FE1B9C442F25E51006EC47B4 /* Valuation.swift in Sources */,
-				016FCB02085BC86631A4E16B /* ValuationCalculator.swift in Sources */,
-				FE06A787D72033BCFCA881B1 /* Vehicle.swift in Sources */,
-				13E4481392C96D00473CDB0F /* VehicleDetailView.swift in Sources */,
-				06FE863143C7D4CB30538BD4 /* VehicleListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,17 +573,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F8F1B3B47E04DF68D6CAF40 /* AnalyticsTests.swift in Sources */,
-				CF06B5F1337D5B5B93B71D5A /* LocationChangeFilterTests.swift in Sources */,
-				5D471348E38192A393E2D831 /* MockAPIClientTests.swift in Sources */,
-				95BB1A4A38021CE5CECD6989 /* TestSupport.swift in Sources */,
-				0F1DCDAD0C192001B9D1D2F3 /* ValuationCalculatorTests.swift in Sources */,
+				3D68E8B5548A8BE4F26BD825 /* DistanceAccumulatorTests.swift in Sources */,
+				C082C4937F2FA8D6F83EBBB3 /* EarningsScreenshotTests.swift in Sources */,
+				B21B6206ABEBEB51B1B90D47 /* ReminderAndExportTests.swift in Sources */,
+				8FFEDD9D1597E4129188647E /* StatsCalculatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA425F68F25F2419EA0A7CAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A9556245861D5D73F109FD6 /* ShiftActivity.swift in Sources */,
+				ED7AFE9C90E55849106FB431 /* ShiftLiveActivity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		70EAA3DFC487F0F4011C99CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A49DFEFACA82CE49A7A1E5F /* FleetCheckWidgets */;
+			targetProxy = EDD0E44C26409B32B0ADF31F /* PBXContainerItemProxy */;
+		};
 		C9A67918C8EA3B1CA447C16E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D96A74119898092ED6A19FD4 /* FleetCheck */;
@@ -609,6 +619,23 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FleetCheck.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FleetCheck";
+			};
+			name = Release;
+		};
+		0AD6209A90D67EF153ADACD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				INFOPLIST_FILE = FleetCheckWidgets/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.adaptiveservices.fleetcheck.widgets;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -695,7 +722,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -763,7 +790,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -774,6 +801,23 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		C55DD8BED1602C2A19B881A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				INFOPLIST_FILE = FleetCheckWidgets/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.adaptiveservices.fleetcheck.widgets;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -820,6 +864,15 @@
 			buildConfigurations = (
 				EE7EA3D40E6D54F334068054 /* Debug */,
 				3F68E84FCDB89BBB84B9055E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		7084F4F8324ECE3A47713F01 /* Build configuration list for PBXNativeTarget "FleetCheckWidgets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C55DD8BED1602C2A19B881A2 /* Debug */,
+				0AD6209A90D67EF153ADACD0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

@@ -21,11 +21,11 @@
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSApplicationCategoryType</key>
-	<string>public.app-category.business</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Allow "Always" so FleetCheck can keep logging your vehicle's route while the app is in the background. Points are recorded only after about 50 meters of movement to save battery.</string>
+	<string>public.app-category.productivity</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>FleetCheck uses your location in Driver mode to record where your vehicle goes, about every 50 meters.</string>
+	<string>FleetCheck uses your location during a shift to count the kilometers and time you drive. Your route is stored only on this iPhone.</string>
+	<key>NSSupportsLiveActivities</key>
+	<true/>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

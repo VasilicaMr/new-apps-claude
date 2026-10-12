@@ -7,45 +7,23 @@ enum Theme {
     static let cardBackground = Color(.secondarySystemGroupedBackground)
     static let cornerRadius: CGFloat = 16
 
-    static func color(for severity: Severity) -> Color {
-        switch severity {
-        case .info: .blue
-        case .warning: .orange
-        case .critical: .red
+    static func color(for urgency: Urgency) -> Color {
+        switch urgency {
+        case .ok: .secondary
+        case .soon: .orange
+        case .overdue: .red
         }
     }
 
-    static func symbol(for severity: Severity) -> String {
-        switch severity {
-        case .info: "info.circle.fill"
-        case .warning: "exclamationmark.triangle.fill"
-        case .critical: "exclamationmark.octagon.fill"
-        }
-    }
-}
-
-/// What a vehicle is doing right now, combining the static status with the live feed.
-enum LiveStatus: String {
-    case moving = "Moving", stopped = "Stopped", inShop = "In service", offline = "Offline"
-
-    init(vehicle: Vehicle, position: VehiclePosition?) {
-        if vehicle.operationalStatus == .inMaintenance {
-            self = .inShop
-        } else if let position {
-            self = position.speedKmh > 3 ? .moving : .stopped
-        } else {
-            self = .offline
+    static func symbol(for urgency: Urgency) -> String {
+        switch urgency {
+        case .ok: "checkmark.circle"
+        case .soon: "exclamationmark.triangle.fill"
+        case .overdue: "exclamationmark.octagon.fill"
         }
     }
 
-    var color: Color {
-        switch self {
-        case .moving: .green
-        case .stopped: .orange
-        case .inShop: .purple
-        case .offline: .gray
-        }
-    }
+    static func color(forNet value: Double) -> Color { value < 0 ? negative : .primary }
 }
 
 struct CardModifier: ViewModifier {
@@ -59,4 +37,9 @@ struct CardModifier: ViewModifier {
 
 extension View {
     func card() -> some View { modifier(CardModifier()) }
+}
+
+extension EnvironmentValues {
+    /// Money formatter for the currency chosen in Settings.
+    @Entry var money = MoneyFormatter(currencyCode: MoneyFormatter.defaultCurrencyCode)
 }

@@ -1,10 +1,11 @@
+import MapKit
 import SwiftUI
 
 struct KPITile: View {
     let title: String
     let value: String
     let symbol: String
-    var tint: Color = Theme.accent
+    var tint: Color = .primary
     var footnote: String?
 
     var body: some View {
@@ -16,7 +17,7 @@ struct KPITile: View {
                 .font(.title3.weight(.semibold))
                 .foregroundStyle(tint)
                 .contentTransition(.numericText())
-                .minimumScaleFactor(0.7)
+                .minimumScaleFactor(0.6)
                 .lineLimit(1)
             if let footnote {
                 Text(footnote).font(.caption2).foregroundStyle(.secondary).lineLimit(1)
@@ -24,20 +25,6 @@ struct KPITile: View {
         }
         .card()
         .accessibilityElement(children: .combine)
-    }
-}
-
-struct StatusBadge: View {
-    let text: String
-    let color: Color
-
-    var body: some View {
-        Text(text)
-            .font(.caption2.weight(.semibold))
-            .padding(.horizontal, 8)
-            .padding(.vertical, 3)
-            .foregroundStyle(color)
-            .background(color.opacity(0.15), in: .capsule)
     }
 }
 
@@ -54,90 +41,92 @@ struct SectionHeader: View {
     }
 }
 
-struct InsightRow: View {
-    let insight: Insight
-    let money: MoneyFormatter
-
-    var body: some View {
-        HStack(alignment: .top, spacing: 12) {
-            Image(systemName: insight.category.symbol)
-                .font(.title3)
-                .foregroundStyle(Theme.color(for: insight.severity))
-                .frame(width: 28)
-            VStack(alignment: .leading, spacing: 4) {
-                HStack(alignment: .firstTextBaseline) {
-                    Text(insight.title).font(.subheadline.weight(.semibold))
-                    Spacer(minLength: 4)
-                    if let impact = insight.monthlyImpact, impact > 0 {
-                        Text("\(money.string(impact))/mo").font(.caption.weight(.semibold)).foregroundStyle(Theme.negative)
-                    }
-                }
-                Text(insight.detail).font(.caption).foregroundStyle(.secondary)
-            }
-        }
-        .padding(.vertical, 4)
-    }
-}
-
-struct DueItemRow: View {
-    let item: DueItem
-    let plate: String?
+struct ReminderRow: View {
+    let reminder: Reminder
+    let status: ReminderStatus
 
     var body: some View {
         HStack(spacing: 12) {
-            Image(systemName: item.kind.symbol)
-                .foregroundStyle(Theme.color(for: item.severity))
+            Image(systemName: reminder.kind.symbol)
+                .foregroundStyle(status.urgency == .ok ? Theme.accent : Theme.color(for: status.urgency))
                 .frame(width: 24)
             VStack(alignment: .leading, spacing: 2) {
-                Text(plate.map { "\($0) · \(item.kind.title)" } ?? item.kind.title).font(.subheadline)
+                Text(reminder.title).font(.subheadline)
                 Text(detail).font(.caption).foregroundStyle(.secondary)
             }
             Spacer()
-            if item.severity >= .warning {
-                Image(systemName: Theme.symbol(for: item.severity)).foregroundStyle(Theme.color(for: item.severity))
+            if status.urgency > .ok {
+                Label(status.urgency == .overdue ? "Overdue" : "Soon", systemImage: Theme.symbol(for: status.urgency))
+                    .labelStyle(.iconOnly)
+                    .foregroundStyle(Theme.color(for: status.urgency))
             }
         }
+        .accessibilityElement(children: .combine)
     }
 
     private var detail: String {
-        let date = item.dueDate.formatted(date: .abbreviated, time: .omitted)
-        if let km = item.kmRemaining {
-            return km <= 0 ? "Overdue by \(abs(km).kilometers)" : "In \(km.kilometers) · around \(date)"
-        }
-        return item.dueDate < .now ? "Expired \(date)" : "Due \(date) (\(item.dueDate.formatted(.relative(presentation: .named))))"
-    }
-}
-
-struct PeriodPicker: View {
-    @Binding var period: AnalysisPeriod
-
-    var body: some View {
-        Picker("Period", selection: $period) {
-            ForEach(AnalysisPeriod.allCases) { Text($0.label).tag($0) }
-        }
-        .pickerStyle(.segmented)
-    }
-}
-
-struct LoadingStateView<Content: View>: View {
-    let state: FleetStore.State
-    let retry: () async -> Void
-    @ViewBuilder let content: () -> Content
-
-    var body: some View {
-        switch state {
-        case .idle, .loading:
-            ProgressView("Loading fleet data…").frame(maxWidth: .infinity, maxHeight: .infinity)
-        case let .failed(message):
-            ContentUnavailableView {
-                Label("Couldn't load the fleet", systemImage: "exclamationmark.icloud")
-            } description: {
-                Text(message)
-            } actions: {
-                Button("Try again") { Task { await retry() } }.buttonStyle(.borderedProminent)
+        var parts: [String] = []
+        if let date = reminder.dueDate, let days = status.daysLeft {
+            let when = date.formatted(date: .abbreviated, time: .omitted)
+            let text = switch days {
+            case ..<0: "Expired \(when)"
+            case 0: "Due today"
+            case 1: "Due tomorrow"
+            default: "\(when) · in \(days) days"
             }
-        case .loaded:
-            content()
+            parts.append(text)
+        }
+        if let km = status.kmLeft {
+            parts.append(km <= 0 ? "Overdue by \(abs(km).kilometers)" : "In \(km.kilometers)")
+        }
+        return parts.isEmpty ? "No due date set" : parts.joined(separator: " · ")
+    }
+}
+
+/// A shift's route drawn on a map.
+struct RouteMap: View {
+    let route: [RoutePoint]
+
+    var body: some View {
+        Map(initialPosition: .automatic, interactionModes: [.zoom, .pan]) {
+            if route.count > 1 {
+                MapPolyline(coordinates: route.map(\.clLocation))
+                    .stroke(Theme.accent, style: StrokeStyle(lineWidth: 4, lineCap: .round, lineJoin: .round))
+            }
+            if let first = route.first {
+                Marker("Start", systemImage: "play.fill", coordinate: first.clLocation).tint(.green)
+            }
+            if let last = route.last, route.count > 1 {
+                Marker("Now", systemImage: "car.fill", coordinate: last.clLocation).tint(Theme.accent)
+            }
+        }
+        .mapStyle(.standard(pointsOfInterest: .excludingAll))
+    }
+}
+
+extension RoutePoint {
+    var clLocation: CLLocationCoordinate2D {
+        CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
+    }
+}
+
+/// A number field that edits an optional or plain Double, with the keyboard suited for money.
+struct AmountField: View {
+    let title: String
+    @Binding var value: Double
+    var currencyCode: String?
+
+    var body: some View {
+        LabeledContent(title) {
+            Group {
+                if let currencyCode {
+                    TextField(title, value: $value, format: .currency(code: currencyCode))
+                } else {
+                    TextField(title, value: $value, format: .number)
+                }
+            }
+            .keyboardType(.decimalPad)
+            .multilineTextAlignment(.trailing)
         }
     }
 }

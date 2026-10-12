@@ -3,7 +3,7 @@ name: FleetCheck
 options:
   bundleIdPrefix: com.adaptiveservices
   deploymentTarget:
-    iOS: "18.0"
+    iOS: "26.0"
   createIntermediateGroups: true
   generateEmptyDirectories: false
 
@@ -23,13 +23,16 @@ targets:
     platform: iOS
     sources:
       - path: FleetCheck
+      - path: Shared
+    dependencies:
+      - target: FleetCheckWidgets
     info:
       path: FleetCheck/App/Info.plist
       properties:
         CFBundleDisplayName: FleetCheck
         CFBundleShortVersionString: "$(MARKETING_VERSION)"
         CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
-        LSApplicationCategoryType: public.app-category.business
+        LSApplicationCategoryType: public.app-category.productivity
         UILaunchScreen: {}
         UIApplicationSceneManifest:
           UIApplicationSupportsMultipleScenes: false
@@ -42,8 +45,8 @@ targets:
           - UIInterfaceOrientationLandscapeRight
         UIBackgroundModes:
           - location
-        NSLocationWhenInUseUsageDescription: "FleetCheck uses your location in Driver mode to record where your vehicle goes, about every 50 meters."
-        NSLocationAlwaysAndWhenInUseUsageDescription: "Allow \"Always\" so FleetCheck can keep logging your vehicle's route while the app is in the background. Points are recorded only after about 50 meters of movement to save battery."
+        NSLocationWhenInUseUsageDescription: "FleetCheck uses your location during a shift to count the kilometers and time you drive. Your route is stored only on this iPhone."
+        NSSupportsLiveActivities: true
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.adaptiveservices.fleetcheck
@@ -53,6 +56,27 @@ targets:
     scheme:
       testTargets:
         - FleetCheckTests
+
+  FleetCheckWidgets:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: FleetCheckWidgets
+      - path: Shared
+    info:
+      path: FleetCheckWidgets/Info.plist
+      properties:
+        CFBundleDisplayName: FleetCheck
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.adaptiveservices.fleetcheck.widgets
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        TARGETED_DEVICE_FAMILY: "1,2"
+        SKIP_INSTALL: YES
 
   FleetCheckTests:
     type: bundle.unit-test

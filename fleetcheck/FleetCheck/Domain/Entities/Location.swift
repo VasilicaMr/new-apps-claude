@@ -18,39 +18,30 @@ struct GeoCoordinate: Codable, Sendable, Hashable {
     }
 }
 
-/// A live position sample, from a telematics box or a driver's phone.
-struct VehiclePosition: Sendable, Hashable {
-    let vehicleId: String
+/// A raw GPS fix from the phone.
+struct LocationSample: Sendable, Hashable {
     let coordinate: GeoCoordinate
-    let speedKmh: Double
     let timestamp: Date
+    /// Radius of uncertainty in meters; negative means invalid.
+    let horizontalAccuracy: Double
 }
 
-/// A position that passed the distance filter and is worth storing/sending to the backend.
-struct LocationEvent: Codable, Sendable, Identifiable, Hashable {
-    enum Reason: String, Codable, Sendable {
-        case firstFix, movedBeyondThreshold, heartbeat
+/// A point of a shift's route that passed the filter and is stored.
+struct RoutePoint: Codable, Sendable, Hashable {
+    let coordinate: GeoCoordinate
+    let timestamp: Date
+
+    /// Compact storage: `[lat, lon, unixTime]` triplets, ~3x smaller than keyed JSON.
+    static func encode(_ points: [RoutePoint]) -> Data {
+        let flat = points.flatMap { [$0.coordinate.latitude, $0.coordinate.longitude, $0.timestamp.timeIntervalSince1970] }
+        return (try? JSONEncoder().encode(flat)) ?? Data()
     }
 
-    let id: UUID
-    let vehicleId: String
-    let coordinate: GeoCoordinate
-    let timestamp: Date
-    /// Distance from the previously reported event; nil for the first fix.
-    let distanceFromPreviousMeters: Double?
-    let reason: Reason
-}
-
-struct LocationEventAck: Codable, Sendable {
-    let accepted: Bool
-    let serverTime: Date
-    let nextHeartbeatSeconds: Double
-}
-
-/// Pre-recorded path used by the simulated live feed (mock backend only).
-struct LiveRoute: Codable, Sendable {
-    let vehicleId: String
-    let tickSeconds: Double
-    /// `[latitude, longitude]` pairs.
-    let points: [[Double]]
+    static func decode(_ data: Data) -> [RoutePoint] {
+        guard let flat = try? JSONDecoder().decode([Double].self, from: data) else { return [] }
+        return stride(from: 0, to: flat.count - 2, by: 3).map {
+            RoutePoint(coordinate: GeoCoordinate(latitude: flat[$0], longitude: flat[$0 + 1]),
+                       timestamp: Date(timeIntervalSince1970: flat[$0 + 2]))
+        }
+    }
 }

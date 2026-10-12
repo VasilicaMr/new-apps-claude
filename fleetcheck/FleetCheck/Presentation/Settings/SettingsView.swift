@@ -1,66 +1,61 @@
+import AppIntents
+import SwiftData
 import SwiftUI
 
 struct SettingsView: View {
-    @Environment(FleetStore.self) private var store
-    @Environment(LiveTrackingStore.self) private var live
-    @Environment(DriverModeStore.self) private var driverMode
-    @AppStorage(SettingsKeys.thresholdMeters) private var thresholdMeters = 50.0
-    @AppStorage(SettingsKeys.lowPowerTracking) private var lowPowerTracking = false
+    @Environment(\.modelContext) private var context
+    @Environment(ShiftStore.self) private var shiftStore
+    @AppStorage(SettingsKeys.currencyCode) private var currencyCode = MoneyFormatter.defaultCurrencyCode
     @AppStorage(SettingsKeys.hasSeenTutorial) private var hasSeenTutorial = true
+    @AppStorage(SettingsKeys.useAppleIntelligence) private var useAppleIntelligence = true
+    @State private var confirmDelete = false
+
+    private static let currencies = ["RON", "EUR", "USD", "GBP", "PLN", "HUF", "BGN", "MDL"]
 
     var body: some View {
         NavigationStack {
             Form {
-                if let company = store.snapshot?.company {
-                    Section("Company") {
-                        LabeledContent("Name", value: company.name)
-                        LabeledContent("Currency", value: company.currencyCode)
-                        LabeledContent("Home base", value: company.homeBase.name)
-                        LabeledContent("Data as of", value: company.dataAsOf.formatted(date: .abbreviated, time: .omitted))
-                        LabeledContent("Data source", value: "Mock (local JSON)")
+                Section("Money") {
+                    Picker("Currency", selection: $currencyCode) {
+                        ForEach(Array(Set(Self.currencies + [currencyCode])).sorted(), id: \.self) { Text($0).tag($0) }
                     }
                 }
 
                 Section {
-                    VStack(alignment: .leading) {
-                        LabeledContent("Record a point every", value: thresholdMeters.meters)
-                        Slider(value: $thresholdMeters, in: 25...300, step: 25)
+                    NavigationLink { ExportView() } label: {
+                        Label("Export to spreadsheet (CSV)", systemImage: "tablecells")
                     }
-                    Toggle("Ultra low power", isOn: $lowPowerTracking)
                 } header: {
-                    Text("Location tracking")
+                    Text("Your data")
                 } footer: {
-                    Text("50 m is a good balance: precise enough to see where a car went, coarse enough that the phone mostly relies on Wi-Fi and cell towers instead of continuous GPS. Ultra low power uses iOS significant-change monitoring (~500 m) and costs almost no battery.")
+                    Text("Everything you log stays on this iPhone. FleetCheck has no account and sends your trips, earnings and location nowhere. Export a CSV for your accountant or a backup.")
                 }
 
                 Section {
-                    Toggle("Track this iPhone as a vehicle", isOn: Binding(
-                        get: { driverMode.isTracking },
-                        set: { $0 ? driverMode.start(thresholdMeters: thresholdMeters, lowPower: lowPowerTracking) : driverMode.stop() }))
-                    LabeledContent("Permission", value: driverMode.authorizationDescription)
-                    if driverMode.isTracking {
-                        LabeledContent("GPS fixes received", value: "\(driverMode.rawFixes)")
-                        LabeledContent("Points stored", value: "\(driverMode.events.count)")
-                        if let location = driverMode.lastLocation {
-                            LabeledContent("Last fix", value: String(format: "%.5f, %.5f (±%.0f m)",
-                                                                     location.coordinate.latitude, location.coordinate.longitude, location.horizontalAccuracy))
-                        }
-                    }
+                    LabeledContent("Status", value: AppleIntelligence.status.description)
+                    Toggle("Use for screenshots", isOn: $useAppleIntelligence)
+                        .disabled(AppleIntelligence.status != .available)
                 } header: {
-                    Text("Driver mode")
+                    Text("Apple Intelligence")
                 } footer: {
-                    Text("For drivers without a telematics box: the phone reports its position whenever it moves more than the distance above. Choose \"Always\" when iOS asks so tracking continues in the background.")
+                    Text("Understands earnings screenshots from Uber, Bolt and FREENOW, on this iPhone. Without it, FleetCheck still reads the numbers by matching labels like Tips and Promotions.")
                 }
 
-                Section("Live feed (simulated)") {
-                    LabeledContent("Status", value: live.isRunning ? "Running" : "Paused")
-                    LabeledContent("Samples / stored", value: "\(live.samplesReceived) / \(live.eventsReported)")
-                    if let error = live.lastError { Text(error).foregroundStyle(.red).font(.caption) }
+                Section {
+                    ShortcutsLink()
+                        .shortcutsLinkStyle(.automaticOutline)
+                        .frame(maxWidth: .infinity)
+                        .listRowBackground(Color.clear)
+                } header: {
+                    Text("Siri")
+                } footer: {
+                    Text("Say \"Start my shift in FleetCheck\", \"End my shift in FleetCheck\" or \"How much did I make today in FleetCheck\" — hands-free while driving.")
                 }
 
                 Section {
                     Button("Show tutorial again", systemImage: "graduationcap") { hasSeenTutorial = false }
-                    Button("Reload data", systemImage: "arrow.clockwise") { Task { await store.reload() } }
+                    Button("Delete all data", systemImage: "trash", role: .destructive) { confirmDelete = true }
+                        .disabled(shiftStore.isOnShift)
                 }
 
                 Section {
@@ -68,13 +63,69 @@ struct SettingsView: View {
                 }
             }
             .navigationTitle("Settings")
-            .onChange(of: thresholdMeters) { _, _ in restartDriverModeIfNeeded() }
-            .onChange(of: lowPowerTracking) { _, _ in restartDriverModeIfNeeded() }
+            .confirmationDialog("Delete all shifts, earnings, expenses and reminders?", isPresented: $confirmDelete, titleVisibility: .visible) {
+                Button("Delete everything", role: .destructive) {
+                    for model in DataStore.models { try? context.delete(model: model) }
+                    try? context.save()
+                    context.rescheduleReminderNotifications()
+                }
+            } message: {
+                Text("This can't be undone. Export a CSV first if you want a copy.")
+            }
         }
     }
+}
 
-    private func restartDriverModeIfNeeded() {
-        guard driverMode.isTracking else { return }
-        driverMode.start(thresholdMeters: thresholdMeters, lowPower: lowPowerTracking)
+/// Writes three CSV files and offers them to the share sheet (Files, Mail, WhatsApp…).
+struct ExportView: View {
+    @Environment(\.modelContext) private var context
+    @State private var files: [URL] = []
+
+    var body: some View {
+        List {
+            Section {
+                ForEach(files, id: \.self) { url in
+                    ShareLink(item: url) {
+                        Label(url.lastPathComponent, systemImage: "doc.text")
+                    }
+                }
+                if files.count > 1 {
+                    ShareLink(items: files) {
+                        Label("Share all", systemImage: "square.and.arrow.up.on.square")
+                    }
+                }
+            } footer: {
+                Text("Opens in Numbers, Excel or Google Sheets. Amounts use a dot as decimal separator.")
+            }
+        }
+        .navigationTitle("Export")
+        .task { files = makeFiles() }
+    }
+
+    private func makeFiles() -> [URL] {
+        let exporter = CSVExporter()
+        let shifts = (try? context.fetch(FetchDescriptor<Shift>(sortBy: [SortDescriptor(\.start)]))) ?? []
+        let earnings = (try? context.fetch(FetchDescriptor<Earning>(sortBy: [SortDescriptor(\.date)]))) ?? []
+        let expenses = (try? context.fetch(FetchDescriptor<Expense>(sortBy: [SortDescriptor(\.date)]))) ?? []
+
+        let documents: [(String, String)] = [
+            ("shifts", exporter.shifts(shifts.map {
+                .init(start: $0.start, end: $0.end, distanceKm: $0.distanceKm, movingHours: $0.movingSeconds / 3600,
+                      earnings: $0.earningsTotal, note: $0.note)
+            })),
+            ("earnings", exporter.earnings(earnings.map {
+                .init(date: $0.date, platform: $0.platform, fares: $0.fares, tips: $0.tips, bonus: $0.bonus, trips: $0.trips, note: $0.note)
+            })),
+            ("expenses", exporter.expenses(expenses.map {
+                .init(date: $0.date, category: $0.category, amount: $0.amount, liters: $0.liters, odometerKm: $0.odometerKm, note: $0.note)
+            })),
+        ]
+        let stamp = Date.now.formatted(.iso8601.year().month().day())
+        let directory = FileManager.default.temporaryDirectory.appending(path: "export", directoryHint: .isDirectory)
+        try? FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+        return documents.compactMap { name, csv in
+            let url = directory.appending(path: "fleetcheck-\(name)-\(stamp).csv")
+            return (try? csv.write(to: url, atomically: true, encoding: .utf8)) != nil ? url : nil
+        }
     }
 }

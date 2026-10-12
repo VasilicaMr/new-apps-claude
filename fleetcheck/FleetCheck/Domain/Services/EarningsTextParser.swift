@@ -1,0 +1,162 @@
+import Foundation
+
+/// A piece of text found on a screenshot with its position (normalized 0–1, origin top-left).
+struct TextFragment: Sendable, Hashable {
+    let text: String
+    let minX: Double
+    let midY: Double
+    let height: Double
+}
+
+/// Turns OCR fragments into readable lines and pulls earnings out of them with keyword matching.
+///
+/// This is the fallback when Apple Intelligence isn't available, and it also builds the clean text
+/// the language model reads. It understands English and Romanian labels and both number styles
+/// ("1.234,56 lei" and "RON 1,234.56").
+struct EarningsTextParser: Sendable {
+
+    // MARK: - Lines
+
+    /// Earnings screens are two columns ("Tips ........ 12,50 lei"). OCR returns the label and the
+    /// amount as separate fragments, so fragments on the same row are joined left to right.
+    func lines(from fragments: [TextFragment]) -> [String] {
+        let sorted = fragments.sorted { $0.midY < $1.midY }
+        var rows: [[TextFragment]] = []
+        for fragment in sorted {
+            if let last = rows.last?.last,
+               abs(fragment.midY - last.midY) < max(fragment.height, last.height) * 0.6 {
+                rows[rows.count - 1].append(fragment)
+            } else {
+                rows.append([fragment])
+            }
+        }
+        return rows.map { row in
+            row.sorted { $0.minX < $1.minX }.map(\.text).joined(separator: "  ")
+        }
+    }
+
+    // MARK: - Amounts
+
+    /// Parses "1.234,56", "1,234.56", "12,50", "€ 45", "-3.20 lei" to a number.
+    func amount(in token: String) -> Double? {
+        let cleaned = token.filter { $0.isNumber || $0 == "." || $0 == "," || $0 == "-" }
+        guard cleaned.contains(where: \.isNumber) else { return nil }
+        let negative = cleaned.hasPrefix("-")
+        var digits = cleaned.replacingOccurrences(of: "-", with: "")
+
+        let lastDot = digits.lastIndex(of: ".")
+        let lastComma = digits.lastIndex(of: ",")
+        let decimalSeparator: Character?
+        switch (lastDot, lastComma) {
+        case let (dot?, comma?): decimalSeparator = dot > comma ? "." : ","
+        case let (dot?, nil): decimalSeparator = isDecimal(digits, at: dot) ? "." : nil
+        case let (nil, comma?): decimalSeparator = isDecimal(digits, at: comma) ? "," : nil
+        case (nil, nil): decimalSeparator = nil
+        }
+        if let decimalSeparator {
+            let thousands: Character = decimalSeparator == "." ? "," : "."
+            digits.removeAll { $0 == thousands }
+            digits = digits.replacingOccurrences(of: String(decimalSeparator), with: ".")
+        } else {
+            digits.removeAll { $0 == "." || $0 == "," }
+        }
+        guard let value = Double(digits) else { return nil }
+        return negative ? -value : value
+    }
+
+    /// With only one kind of separator: repeated ("1.234.567") or followed by exactly 3 digits ("1.234")
+    /// means thousands; otherwise ("12,50", "3.5") it is the decimal separator.
+    private func isDecimal(_ digits: String, at index: String.Index) -> Bool {
+        let separator = digits[index]
+        guard digits.filter({ $0 == separator }).count == 1 else { return false }
+        return digits[digits.index(after: index)...].count != 3
+    }
+
+    /// Optional currency, digits with thousands groups (dot, comma, no-break space), optional 1–2 decimals.
+    private static let moneyPattern = #"(?:[€$£]|RON|lei|EUR)?\s?-?\d+(?:[.,\x{00A0}]\d{3})*(?:[.,]\d{1,2})?\s?(?:RON|lei|EUR|€)?"#
+
+    /// Money amounts in a line, in reading order. Plain small integers without decimals or currency
+    /// (like "15" trips or "7 h") are skipped.
+    func amounts(in line: String) -> [Double] {
+        guard let regex = try? Regex(Self.moneyPattern).ignoresCase() else { return [] }
+        return line.matches(of: regex).compactMap { match in
+            let token = String(line[match.range])
+            let hasCurrency = token.range(of: #"[€$£]|RON|lei|EUR"#, options: [.regularExpression, .caseInsensitive]) != nil
+            let hasDecimals = token.range(of: #"[.,]\d{2}\s*\D*$"#, options: .regularExpression) != nil
+            guard hasCurrency || hasDecimals else { return nil }
+            return amount(in: token.replacingOccurrences(of: "\u{00A0}", with: "").replacingOccurrences(of: " ", with: ""))
+        }
+    }
+
+    // MARK: - Keyword extraction
+
+    private enum Field { case total, fares, tips, bonus, trips }
+
+    /// Checked in order, so "Trip earnings" is fares (not trips) and "Tips" never counts as the total.
+    private static let keywords: [(Field, [String])] = [
+        (.fares, ["trip earnings", "câștiguri din curse", "castiguri din curse", "fare", "fares", "tarif", "tarife"]),
+        (.tips, ["tip", "tips", "bacsis", "bacșiș", "bacșișuri", "bacsisuri"]),
+        (.bonus, ["promotion", "promotions", "promoții", "promotii", "bonus", "boost", "quest", "incentive", "stimulent"]),
+        (.trips, ["trips", "trip", "curse", "cursă", "cursa", "călătorii", "calatorii", "rides"]),
+        (.total, ["total", "earnings", "câștiguri", "castiguri", "you earned", "ai câștigat", "payout", "net"]),
+    ]
+
+    func parse(lines: [String], now: Date = .now) -> ScreenshotEarnings {
+        var result = ScreenshotEarnings(source: .textMatching)
+        let all = fold(lines.joined(separator: "\n"))
+
+        if all.contains("uber") { result.platform = .uber }
+        else if all.contains("bolt") { result.platform = .bolt }
+        else if all.contains("freenow") || all.contains("free now") { result.platform = .freeNow }
+
+        if all.contains("week") || all.contains("saptaman") { result.scope = .week }
+        else if all.contains("today") || all.contains("astazi") { result.scope = .day }
+
+        for (index, line) in lines.enumerated() {
+            guard let kind = field(for: fold(line)) else { continue }
+            if kind == .trips {
+                if result.trips == nil, let count = firstInteger(in: line) { result.trips = count }
+                continue
+            }
+            // The amount is on the same row, or alone on the next row (stacked layouts).
+            var values = amounts(in: line)
+            if values.isEmpty, index + 1 < lines.count, field(for: fold(lines[index + 1])) == nil {
+                values = amounts(in: lines[index + 1])
+            }
+            guard let value = values.last else { continue }
+            switch kind {
+            case .total: result.total = max(result.total ?? 0, value)
+            case .fares: if result.fares == nil { result.fares = value }
+            case .tips: if result.tips == nil { result.tips = value }
+            case .bonus: result.bonus = (result.bonus ?? 0) + value
+            case .trips: break
+            }
+        }
+
+        // Headline amount with no label (big number at the top): use the largest amount on screen.
+        if result.total == nil {
+            result.total = lines.flatMap { amounts(in: $0) }.max()
+        }
+        return result.normalized()
+    }
+
+    /// Lowercased without diacritics: OCR returns Romanian "ș" either with a comma (U+0219) or a
+    /// cedilla (U+015F), and sometimes drops it entirely.
+    private func fold(_ text: String) -> String {
+        text.folding(options: [.caseInsensitive, .diacriticInsensitive], locale: nil)
+    }
+
+    private func field(for foldedLine: String) -> Field? {
+        let words = Set(foldedLine.split { !$0.isLetter }.map(String.init))
+        for (field, keys) in Self.keywords {
+            for key in keys.map(fold) where key.contains(" ") ? foldedLine.contains(key) : words.contains(key) {
+                return field
+            }
+        }
+        return nil
+    }
+
+    private func firstInteger(in line: String) -> Int? {
+        line.firstMatch(of: /\b(\d{1,3})\b/).flatMap { Int($0.1) }
+    }
+}

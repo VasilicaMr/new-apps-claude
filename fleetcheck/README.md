@@ -1,93 +1,84 @@
-# FleetCheck
+# FleetCheck — driver logbook
 
-Fleet management for small businesses (~10 vehicles): live location, money per vehicle,
-repairs, market value by mileage, paperwork deadlines and plain-language recommendations.
-Runs entirely on mock data (local JSON) until a real backend is plugged in.
+A personal app for ride-sharing drivers (Uber, Bolt, FREENOW…): track shifts with GPS, log earnings
+and expenses, see your real net per hour and per km, and get reminders for ITP, RCA, vignette and oil changes.
+All data stays on the iPhone (SwiftData), with no account and no backend.
 
 ## Run it
 
 ```bash
 xcodegen generate            # project.yml → FleetCheck.xcodeproj
-open FleetCheck.xcodeproj    # run the FleetCheck scheme (iOS 18+); ⌘U runs the tests
+open FleetCheck.xcodeproj    # run the FleetCheck scheme (iOS 26+); ⌘U runs the tests
 ```
 
-Regenerate mock data / icon (deterministic, seeded):
+Debug launch arguments:
+- `-hasSeenTutorial YES` skips onboarding
+- `-initialTab shift|stats|diary|car|settings`
+- `-seedSampleData` replaces the local database with 6 weeks of sample data (Bucharest)
+- `-startShift` starts a shift at launch. Combine it with `xcrun simctl location <device> start …` to simulate driving.
+- `-debugScanImage /path/to/screenshot.png` opens the earnings form and scans that image (no photo picker needed)
 
-```bash
-python3 Scripts/generate_mock_data.py --as-of 2026-10-11   # dates are relative to --as-of
-python3 Scripts/generate_icon.py
-```
+## Phase 1 features
 
-Debug launch arguments: `-hasSeenTutorial YES` skips onboarding, `-initialTab live|vehicles|insights|settings`.
+| Feature | Where |
+|---|---|
+| Start/End shift, GPS km, driving vs waiting time, route map | `ShiftView`, `ShiftStore`, `ShiftLocationTracker`, `DistanceAccumulator` |
+| Earnings per app after each shift (fares, tips, bonus, trips) | `EarningForm` (opens automatically when a shift ends) |
+| Expense diary with receipt photo, liters, odometer | `ExpenseForm`, `DiaryView` |
+| Stats by day/week/month/year: net, net/h, net/km, cost/km, by app, by category | `StatsView`, `StatsCalculator` |
+| Reminders by date and/or km, with notifications 30/7/1 days before | `CarView`, `ReminderPlanner`, `ReminderNotifier` |
+| CSV export (shifts, earnings, expenses) | `ExportView`, `CSVExporter` |
+| Siri: "Start my shift / End my shift / How much did I make today in FleetCheck" | `Intents/ShiftIntents.swift` |
+| Live Activity (Lock Screen + Dynamic Island) with an End button | `FleetCheckWidgets`, `Shared/ShiftActivity.swift` |
+
+## Phase 2: earnings from screenshots (Apple Intelligence)
+
+In the earnings form, tap **Read from screenshot** (or use Diary → + → *Earnings from screenshot*) and pick a
+screenshot of the Uber/Bolt/FREENOW earnings screen. Everything runs on the iPhone:
+
+1. **Vision** (`ScreenshotTextReader`) reads the text with its position. Romanian and English are supported.
+2. `EarningsTextParser.lines` joins each label with the amount on the same row ("Tips … 25,50 lei").
+3. **Foundation Models** (`AppleIntelligenceEarningsExtractor`) fills a `@Generable` struct:
+   app, scope (trip/day/week), date, total, fares, tips, bonus, trips. Greedy sampling makes the output repeatable.
+4. **Fallback:** if Apple Intelligence isn't available (iPhone 15 Pro or newer required, must be turned on, model must be downloaded)
+   or fails, keyword matching (`EarningsTextParser.parse`) reads the same fields.
+   It handles English/Romanian labels, "1.234,56 lei" vs "RON 1,234.56", and ș/ş/s.
+5. `ScreenshotEarnings.normalized()` makes fares + tips + bonus add up to the headline total.
+
+The form shows which method was used, warns when the screenshot is a weekly summary, and always asks the driver to check
+the numbers before saving. Settings → Apple Intelligence shows the status and can switch it off.
+Test fixtures come from `python3 Scripts/generate_test_screenshots.py`.
 
 ## Architecture
 
 ```
 FleetCheck/
-  App/            FleetCheckApp, AppDependencies (composition root: mock vs real)
-  Core/
-    Networking/   Endpoint (every API call), APIClient, MockAPIClient, URLSessionAPIClient
-    Location/     DeviceLocationTracker (battery-friendly CoreLocation wrapper)
-  Domain/         Framework-free, unit-tested
-    Entities/     Vehicle, Driver, Telemetry, DailyMetric, Trip, Maintenance, Expense, ...
-    Repositories/ FleetRepository, LivePositionStreaming (protocols)
-    Services/     ValuationCalculator, FinancialAnalyzer, MaintenancePlanner,
-                  FleetAnalyzer, InsightsEngine, LocationChangeFilter
-  Data/           DefaultFleetRepository, SimulatedPositionStream
-  Presentation/   SwiftUI + @Observable stores (Dashboard, Live, Vehicles, Insights, Settings, Tutorial)
-  Resources/MockData/   one JSON file per endpoint
+  App/            FleetCheckApp (ModelContainer, ShiftStore, App Intents wiring)
+  Core/           ShiftLocationTracker (CLLocationUpdate + CLBackgroundActivitySession),
+                  ReminderNotifier, Formatters
+  Domain/         Framework-free, unit-tested: DistanceAccumulator, StatsCalculator,
+                  ReminderPlanner, CSVExporter, categories
+  Data/           SwiftData models (Shift, Earning, Expense, Reminder, Car), SampleData (DEBUG)
+  Intents/        Siri / Shortcuts
+  Presentation/   SwiftUI: Shift, Stats, Diary, Car, Settings, Tutorial
+Shared/           Live Activity attributes + EndShiftIntent (app + widget)
+FleetCheckWidgets/  Live Activity UI
 ```
 
-Views never touch JSON or the network: View → Store → Repository → APIClient.
-Going live = change one line in `AppDependencies` (`MockAPIClient()` → `URLSessionAPIClient(baseURL:)`).
+## How the numbers work
 
-## API surface (mock files)
+- **Kilometers.** A GPS fix counts only if it's accurate to 50 m or better and at least 25 m from the last *stored* point.
+  Jumps faster than 200 km/h are dropped, so jitter while parked adds 0 km.
+  Segments slower than 5 km/h count as *waiting* time.
+- **Background tracking** needs only "While Using" permission, thanks to `CLBackgroundActivitySession`
+  (the blue location pill shows while tracking). The route is saved every 10 points.
+  If iOS kills the app mid-shift, the shift resumes on the next launch.
+- **A shift belongs to the day it started.** A Friday-night shift that ends at 3 AM counts as Friday.
+- **Costs that cover several months** (insurance, vignette) are spread evenly per day,
+  and stats stop at today so future days aren't charged.
+- **Net** = earnings (fares + tips + bonus, after the platform's commission) − expenses.
 
-| Endpoint | Mock file | What it feeds |
-|---|---|---|
-| `GET /v1/company` | `company.json` | currency, depot, tracking policy, `dataAsOf` |
-| `GET /v1/vehicles` | `vehicles.json` | 10 vehicles, purchase price, odometer, service interval, document expiries |
-| `GET /v1/drivers` | `drivers.json` | drivers, license expiry, assignment |
-| `GET /v1/telemetry/latest` | `telemetry_latest.json` | position, speed, fuel %, 12 V battery, engine temp, OBD-II fault codes |
-| `GET /v1/metrics/daily?from&to` | `daily_metrics.json` | per vehicle per day: km, revenue, fuel, idle, harsh events (180 days) |
-| `GET /v1/trips?from&to` | `trips.json` | last 7 days of trips with revenue |
-| `GET /v1/maintenance/records` | `maintenance_records.json` | full service & repair history with costs |
-| `GET /v1/expenses?from&to` | `expenses.json` | wages, insurance, road tax, leasing, parking, tolls, fines |
-| `GET /v1/valuation/models` | `valuation_models.json` | depreciation parameters per segment |
-| `GET /v1/alerts` | `alerts.json` | telematics alerts |
-| `GET /v1/geofences` | `geofences.json` | depot, client hubs, restricted zone |
-| `GET /v1/simulation/routes` | `live_routes.json` | mock-only: replayed routes for the live map |
-| `POST /v1/location-events` | `location_event_ack.json` | batched filtered positions upload |
+## Next (Phase 2+)
 
-The mock data has stories built in so the insights have something to find: an old Transit eating
-76% of its value in repairs, an underused leased Kangoo, an Octavia burning 22% too much diesel
-(fuel theft?), a harsh driver, a Caddy idling a lot, expiring insurance/ITP/license, a car in the shop.
-
-## How the analysis works
-
-- **Profit per vehicle** = revenue − (fuel/energy + repairs + wages + insurance + leasing + fees + **depreciation**).
-  Recurring payments are amortized over the days they cover, so a 7-day report isn't distorted by a salary or insurance payment.
-- **Market value** = declining-balance by age (segment rates) × mileage factor (±% per 10k km vs. normal), with a residual floor.
-  The chart projects value against odometer at the car's current km/year pace — use it to pick the moment to sell.
-- **Insights** (`InsightsEngine`, thresholds in one place): replace (repairs > 25% of value/yr), losing money,
-  underused (< 55% of days), fuel over baseline (> 12%), harsh driving, idling (> 20%), fault codes, due services/paperwork.
-- **50 m tracking** (`LocationChangeFilter`): a point is stored only after ≥ 50 m of movement from the last *stored*
-  point, plus a heartbeat every 5 min while parked. On the phone, `DeviceLocationTracker` combines that with
-  `distanceFilter = 50`, 100 m accuracy (Wi-Fi/cell instead of constant GPS), auto-pause, and batched uploads.
-  "Ultra low power" switches to significant-change monitoring (~500 m).
-
-## Tutorial — using the app
-
-1. **First launch** shows a 6-page walkthrough (replay it from *Settings → Show tutorial again*).
-2. **Dashboard** — pick 7D/30D/90D/180D. Revenue, costs, net profit, fleet value, vehicles on the road,
-   utilization; revenue-vs-costs per month; the top items needing attention; profit per vehicle; upcoming deadlines.
-3. **Live** — every vehicle on the map (green moving, orange stopped, purple in service), geofences as circles.
-   The panel shows how many GPS samples arrived vs. how many points were actually stored. Tap a car to see its
-   50 m breadcrumb trail; the list icon opens the raw location event log. Pause/resume the feed top-left.
-4. **Vehicles** — search by plate/model/driver, sort by profit/value/distance. A vehicle page shows live
-   readings and fault codes, recommendations, P&L with cost per km, market value curve, usage & driving score,
-   due items and full repair history, recent trips.
-5. **Insights** — all recommendations ranked by severity with the money at stake per month, a cost
-   breakdown, cost-vs-revenue per km per vehicle, and driver ranking.
-6. **Settings** — tracking distance (25–300 m), ultra low power, and **Driver mode**, which turns this iPhone
-   into the tracker for a vehicle (allow "Always" location for background tracking).
+Share-sheet extension (send a screenshot straight from Photos), Uber data-export import, car wear and depreciation per km,
+driving score, weather and traffic per shift, best hours/areas heatmap, weekly AI coach.
