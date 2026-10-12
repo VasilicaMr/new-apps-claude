@@ -1,44 +1,17 @@
 import SwiftData
 import SwiftUI
 
-/// Home screen: start/end a shift and see today at a glance.
-struct ShiftView: View {
+/// Start button, or the running shift's map, timers and End button. Lives at the top of Home.
+struct ShiftCard: View {
     @Environment(ShiftStore.self) private var store
-    @Environment(\.money) private var money
-    @Query(sort: \Shift.start, order: .reverse) private var shifts: [Shift]
-    @Query private var earnings: [Earning]
-    @Query private var expenses: [Expense]
+    @Binding var addingExpense: Bool
     @State private var confirmEnd = false
-    @State private var addingExpense = false
-    @State private var addingManualShift = false
 
     var body: some View {
-        NavigationStack {
-            ScrollView {
-                VStack(spacing: 16) {
-                    if let shift = store.activeShift {
-                        activeShiftSection(shift)
-                    } else {
-                        startButton
-                    }
-                    todaySection
-                    recentShiftsSection
-                }
-                .padding()
-            }
-            .background(Color(.systemGroupedBackground))
-            .navigationTitle(store.isOnShift ? "On shift" : "Shift")
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Menu("Add", systemImage: "plus") {
-                        Button("Expense", systemImage: "fuelpump") { addingExpense = true }
-                        Button("Past shift", systemImage: "clock.arrow.circlepath") { addingManualShift = true }
-                    }
-                }
-            }
-            .sheet(isPresented: $addingExpense) { ExpenseForm() }
-            .sheet(isPresented: $addingManualShift) { ManualShiftForm() }
-            .navigationDestination(for: Shift.self) { ShiftDetailView(shift: $0) }
+        if let shift = store.activeShift {
+            activeShiftSection(shift)
+        } else {
+            startButton
         }
     }
 
@@ -48,15 +21,21 @@ struct ShiftView: View {
         Button {
             store.startShift()
         } label: {
-            VStack(spacing: 8) {
-                Image(systemName: "play.fill").font(.system(size: 40, weight: .bold))
-                Text("Start shift").font(.title2.bold())
-                Text("Tracks kilometers and time while you drive").font(.footnote).opacity(0.85)
+            HStack(spacing: 16) {
+                Image(systemName: "play.fill")
+                    .font(.title2.weight(.bold))
+                    .frame(width: 56, height: 56)
+                    .background(.white.opacity(0.2), in: .circle)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Start shift").font(.title3.bold())
+                    Text("Kilometers and time are tracked automatically").font(.footnote).opacity(0.85)
+                }
+                Spacer()
             }
             .foregroundStyle(.white)
+            .padding(18)
             .frame(maxWidth: .infinity)
-            .padding(.vertical, 32)
-            .background(Theme.accent.gradient, in: .rect(cornerRadius: 24))
+            .background(Theme.accent.gradient, in: .rect(cornerRadius: 22))
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier("shift.start")
@@ -137,45 +116,6 @@ struct ShiftView: View {
         .card()
     }
 
-    // MARK: - Today
-
-    private var todaySection: some View {
-        let stats = StatsCalculator().stats(
-            in: StatsPeriod.day.interval(containing: .now),
-            shifts: shifts.filter { !$0.isActive }.map(\.figures),
-            earnings: earnings.map(\.figures), expenses: expenses.map(\.figures))
-        return VStack(spacing: 12) {
-            SectionHeader(title: "Today", subtitle: store.isOnShift ? "Finished shifts only" : nil)
-            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
-                KPITile(title: "Earned", value: money.string(stats.earnings), symbol: "banknote")
-                KPITile(title: "Net after costs", value: money.string(stats.net), symbol: "equal.circle",
-                        tint: Theme.color(forNet: stats.net))
-                KPITile(title: "Kilometers", value: stats.km.kilometers, symbol: "road.lanes")
-                KPITile(title: "Per hour", value: stats.earningsPerHour.map { money.string($0) } ?? "—", symbol: "clock",
-                        footnote: stats.hours > 0 ? "over \(Formatters.hours(stats.hours))" : nil)
-            }
-        }
-    }
-
-    // MARK: - Recent
-
-    @ViewBuilder
-    private var recentShiftsSection: some View {
-        let finished = shifts.filter { !$0.isActive }.prefix(7)
-        if !finished.isEmpty {
-            VStack(spacing: 0) {
-                SectionHeader(title: "Recent shifts").padding(.bottom, 8)
-                ForEach(Array(finished)) { shift in
-                    NavigationLink(value: shift) {
-                        ShiftRow(shift: shift)
-                    }
-                    .buttonStyle(.plain)
-                    if shift.id != finished.last?.id { Divider() }
-                }
-            }
-            .card()
-        }
-    }
 }
 
 struct ShiftRow: View {

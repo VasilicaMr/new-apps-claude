@@ -17,9 +17,24 @@ struct ExpenseForm: View {
     @State private var note: String
     @State private var receipt: Data?
     @State private var photoItem: PhotosPickerItem?
+    @State private var receiptPhotoItem: PhotosPickerItem?
+    @State private var showingReceiptPicker = false
+    @State private var showingCamera = false
+    @State private var scanStatus: ScanStatus = .idle
+    @AppStorage(SettingsKeys.useAppleIntelligence) private var useAppleIntelligence = true
 
-    init(editing: Expense? = nil) {
+    private enum ScanStatus: Equatable {
+        case idle, reading
+        case done(appleIntelligence: Bool)
+        case failed(String)
+    }
+
+    /// - Parameter scanReceipt: opens the camera (or photo picker) right away.
+    init(editing: Expense? = nil, scanReceipt: Bool = false) {
         self.editing = editing
+        let cameraAvailable = UIImagePickerController.isSourceTypeAvailable(.camera)
+        _showingCamera = State(initialValue: scanReceipt && cameraAvailable)
+        _showingReceiptPicker = State(initialValue: scanReceipt && !cameraAvailable)
         _date = State(initialValue: editing?.date ?? .now)
         _category = State(initialValue: editing?.category ?? .fuel)
         _amount = State(initialValue: editing?.amount ?? 0)
@@ -35,6 +50,9 @@ struct ExpenseForm: View {
     var body: some View {
         NavigationStack {
             Form {
+                if editing == nil {
+                    receiptScanSection
+                }
                 Section {
                     Picker("Category", selection: $category) {
                         ForEach(ExpenseCategory.allCases) { Label($0.title, systemImage: $0.symbol).tag($0) }
@@ -93,12 +111,81 @@ struct ExpenseForm: View {
             .onChange(of: category) { _, new in
                 if editing == nil { coverageMonths = new.defaultCoverageMonths }
             }
+            .fullScreenCover(isPresented: $showingCamera) {
+                CameraPicker { data in Task { await readReceipt(data) } }
+                    .ignoresSafeArea()
+            }
+            .photosPicker(isPresented: $showingReceiptPicker, selection: $receiptPhotoItem, matching: .images)
+            .onChange(of: receiptPhotoItem) { _, item in
+                guard let item else { return }
+                Task {
+                    if let data = try? await item.loadTransferable(type: Data.self) { await readReceipt(data) }
+                    receiptPhotoItem = nil
+                }
+            }
             .onChange(of: photoItem) { _, item in
                 Task {
                     guard let data = try? await item?.loadTransferable(type: Data.self) else { return }
                     receipt = ReceiptImage.compress(data)
                 }
             }
+        }
+    }
+
+    // MARK: - Receipt scanning
+
+    private var receiptScanSection: some View {
+        Section {
+            HStack(spacing: 12) {
+                if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                    Button { showingCamera = true } label: {
+                        Label("Scan receipt", systemImage: "camera.viewfinder").frame(maxWidth: .infinity)
+                    }
+                    .buttonStyle(.borderedProminent)
+                }
+                Button { showingReceiptPicker = true } label: {
+                    Label("From photos", systemImage: "photo").frame(maxWidth: .infinity)
+                }
+                .buttonStyle(.bordered)
+            }
+            .disabled(scanStatus == .reading)
+            switch scanStatus {
+            case .idle:
+                EmptyView()
+            case .reading:
+                Label("Reading receipt…", systemImage: "doc.text.viewfinder").font(.footnote).foregroundStyle(.secondary)
+            case let .done(appleIntelligence):
+                Label(appleIntelligence ? "Filled in with Apple Intelligence. Check before saving." : "Filled in from the receipt text. Check before saving.",
+                      systemImage: appleIntelligence ? "apple.intelligence" : "text.magnifyingglass")
+                    .font(.footnote)
+                    .foregroundStyle(Theme.accent)
+            case let .failed(message):
+                Label(message, systemImage: "exclamationmark.triangle.fill").font(.footnote).foregroundStyle(.orange)
+            }
+        } footer: {
+            Text("FleetCheck reads the total, liters, station and date. The photo is kept as the receipt.")
+        }
+    }
+
+    private func readReceipt(_ data: Data) async {
+        scanStatus = .reading
+        receipt = ReceiptImage.compress(data)
+        do {
+            let result = try await ReceiptScanner(useAppleIntelligence: useAppleIntelligence).scan(data)
+            guard let total = result.amount else {
+                scanStatus = .failed("Couldn't find the total. Type the amount below.")
+                return
+            }
+            if let found = result.category { category = found }
+            amount = total
+            if let found = result.liters { liters = found }
+            if let vendor = result.vendor, note.isEmpty { note = vendor }
+            if let found = result.date, found <= .now, found > Calendar.current.date(byAdding: .month, value: -6, to: .now) ?? .distantPast {
+                date = found
+            }
+            scanStatus = .done(appleIntelligence: result.source == .appleIntelligence)
+        } catch {
+            scanStatus = .failed(error.localizedDescription)
         }
     }
 
@@ -142,5 +229,38 @@ enum ReceiptImage {
         format.scale = 1
         let resized = UIGraphicsImageRenderer(size: size, format: format).image { _ in image.draw(in: CGRect(origin: .zero, size: size)) }
         return resized.jpegData(compressionQuality: 0.7)
+    }
+}
+
+/// The system camera, for photographing a receipt.
+struct CameraPicker: UIViewControllerRepresentable {
+    let onCapture: (Data) -> Void
+    @Environment(\.dismiss) private var dismiss
+
+    func makeUIViewController(context: Context) -> UIImagePickerController {
+        let picker = UIImagePickerController()
+        picker.sourceType = .camera
+        picker.delegate = context.coordinator
+        return picker
+    }
+
+    func updateUIViewController(_ controller: UIImagePickerController, context: Context) {}
+
+    func makeCoordinator() -> Coordinator { Coordinator(self) }
+
+    final class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+        let parent: CameraPicker
+        init(_ parent: CameraPicker) { self.parent = parent }
+
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+            if let image = info[.originalImage] as? UIImage, let data = image.jpegData(compressionQuality: 0.9) {
+                parent.onCapture(data)
+            }
+            parent.dismiss()
+        }
+
+        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+            parent.dismiss()
+        }
     }
 }

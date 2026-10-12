@@ -22,8 +22,12 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.productivity</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Take a photo of a receipt and FleetCheck fills in the expense for you.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>FleetCheck uses your location during a shift to count the kilometers and time you drive. Your route is stored only on this iPhone.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>FleetCheck finds the earnings screenshots you take in Uber or Bolt and reads them on this iPhone, so you don't have to type the numbers. Images are never stored or sent.</string>
 	<key>NSSupportsLiveActivities</key>
 	<true/>
 	<key>UIApplicationSceneManifest</key>

@@ -13,10 +13,43 @@ open FleetCheck.xcodeproj    # run the FleetCheck scheme (iOS 26+); ⌘U runs th
 
 Debug launch arguments:
 - `-hasSeenTutorial YES` skips onboarding
-- `-initialTab shift|stats|diary|car|settings`
+- `-initialTab home|stats|diary|car|ask`
 - `-seedSampleData` replaces the local database with 6 weeks of sample data (Bucharest)
 - `-startShift` starts a shift at launch. Combine it with `xcrun simctl location <device> start …` to simulate driving.
 - `-debugScanImage /path/to/screenshot.png` opens the earnings form and scans that image (no photo picker needed)
+- `-askQuestion "how much did I make this week?"` opens Ask and sends the question
+- `-inboxImages "/a.png,/b.png"` puts images in the Home inbox as if found in Photos (the simulator can't grant Photos access from the command line)
+
+## The main flow (AI-first)
+
+Tabs: **Home · Stats · Diary · Car · Ask** (Ask is the sparkles button). Settings is the gear on Home.
+
+**Home** puts everything in one place:
+- An **Ask or add anything** bar
+- The **shift** card: start, or the live map and timers
+- **Needs you:** earnings screenshots found in Photos (one-tap **Add** or **Review**), shifts without earnings, papers that are due, and the Photos permission prompt
+- **Your brief:** facts from `InsightComposer`, written up by Apple Intelligence
+- **Quick actions:** scan earnings, scan receipt, say it, my week
+- Today's numbers and recent shifts
+
+**Ask** (`Assistant`, `AssistantView`):
+- Free text goes to Apple Intelligence with tools over the driver's data, streamed as it's written:
+  `getStats`, `getInsights`, `getReminders`, `getRecentEntries`, `addExpense`, `addEarnings`.
+  The model never invents numbers; `DriverData` computes them.
+- Things added from chat show as cards with **Undo**.
+- Chips ("This week vs last week", "What's due?"…) answer instantly from the data, with no model call.
+- Without Apple Intelligence, `AssistantCommandParser` and `QuickEntryParser` understand the common questions
+  and shorthand ("fuel 250 lei 34 L", "uber 420 tips 30") in English and Romanian.
+- "What can I ask?" lists examples. Siri: "Ask FleetCheck" (`AskFleetCheckIntent`).
+
+**Automatic:**
+- Ending a shift opens the screenshot picker directly.
+- `ScreenshotInbox` reads up to 8 screenshots from the last 3 days when the app opens.
+  It keeps only earnings screens and links each one to its shift (`ShiftMatcher`).
+- Receipts: photograph one and `ReceiptScanner` fills category, total, liters, station and date
+  (Apple Intelligence, falling back to `ReceiptTextParser`).
+
+**Tutorial** (6 pages) explains the flow and switches on screenshots, location and notifications as it goes. Replay it from Settings.
 
 ## Phase 1 features
 
@@ -87,7 +120,13 @@ FleetCheckWidgets/  Live Activity UI
   and stats stop at today so future days aren't charged.
 - **Net** = earnings (fares + tips + bonus, after the platform's commission) − expenses.
 
-## Next (Phase 2+)
+## Not verifiable in the simulator
+
+- **Apple Intelligence:** the build Mac has no Apple Intelligence, so every AI path ran its fallback in testing.
+- **Finding screenshots in Photos:** reading and filing them is unit-tested (`ScreenshotInbox.ingest`); the Photos query itself needs a device.
+- **Camera receipts, Siri, Live Activity:** these need a device too.
+
+## Next
 
 Share-sheet extension (send a screenshot straight from Photos), Uber data-export import, car wear and depreciation per km,
 driving score, weather and traffic per shift, best hours/areas heatmap, weekly AI coach.

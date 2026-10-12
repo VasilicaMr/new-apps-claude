@@ -3,19 +3,24 @@ import SwiftUI
 
 struct RootView: View {
     @Environment(ShiftStore.self) private var shiftStore
+    @Environment(AppNavigation.self) private var navigation
+    @Environment(ScreenshotInbox.self) private var inbox
     @Environment(\.scenePhase) private var scenePhase
     @AppStorage(SettingsKeys.hasSeenTutorial) private var hasSeenTutorial = false
     @AppStorage(SettingsKeys.currencyCode) private var currencyCode = MoneyFormatter.defaultCurrencyCode
-    @State private var selectedTab = AppTab.launchDefault
     @Query private var reminders: [Reminder]
     @Query private var cars: [Car]
 
+    let data: DriverData
+
     var body: some View {
         @Bindable var shiftStore = shiftStore
-        TabView(selection: $selectedTab) {
-            Tab("Shift", systemImage: "steeringwheel", value: .shift) {
-                ShiftView()
+        @Bindable var navigation = navigation
+        TabView(selection: $navigation.selectedTab) {
+            Tab("Home", systemImage: "house.fill", value: .home) {
+                HomeView(data: data)
             }
+            .badge(inbox.items.count)
             Tab("Stats", systemImage: "chart.bar.xaxis", value: .stats) {
                 StatsView()
             }
@@ -26,13 +31,14 @@ struct RootView: View {
                 CarView()
             }
             .badge(dueCount)
-            Tab("Settings", systemImage: "gearshape", value: .settings) {
-                SettingsView()
+            Tab("Ask", systemImage: "sparkles", value: .ask, role: .search) {
+                AssistantView()
             }
         }
         .environment(\.money, MoneyFormatter(currencyCode: currencyCode))
         .sheet(item: $shiftStore.shiftAwaitingEarnings) { shift in
-            EarningForm(shift: shift)
+            // Ending a shift goes straight to reading the earnings screenshot.
+            EarningForm(shift: shift, scanScreenshot: true)
                 .environment(\.money, MoneyFormatter(currencyCode: currencyCode))
         }
         .fullScreenCover(isPresented: Binding(get: { !hasSeenTutorial }, set: { hasSeenTutorial = !$0 })) {
@@ -52,17 +58,5 @@ struct RootView: View {
         let odometer = cars.first?.odometerKm ?? 0
         let planner = ReminderPlanner()
         return reminders.filter { planner.status(of: $0.rule, today: .now, odometerKm: odometer).urgency > .ok }.count
-    }
-}
-
-enum AppTab: String, Hashable {
-    case shift, stats, diary, car, settings
-
-    /// Debug builds accept `-initialTab <name>` so screenshots and UI tests can open any tab directly.
-    static var launchDefault: AppTab {
-        #if DEBUG
-        if let raw = UserDefaults.standard.string(forKey: "initialTab"), let tab = AppTab(rawValue: raw) { return tab }
-        #endif
-        return .shift
     }
 }

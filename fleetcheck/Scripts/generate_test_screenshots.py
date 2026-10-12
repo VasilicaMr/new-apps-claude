@@ -78,4 +78,32 @@ screen("bolt_day_gross_net.png", "Bolt", "Today", "Net earnings 318,40 lei", [
     ("Rides", "14"),
 ])
 
+
+
+def receipt(path, lines):
+    """A narrow thermal-printer style fuel receipt."""
+    img = Image.new("RGB", (900, 120 + 70 * len(lines)), (250, 250, 247))
+    d = ImageDraw.Draw(img)
+    y = 60
+    for left, right in lines:
+        d.text((50, y), left, font=font(40), fill=(20, 20, 20))
+        if right:
+            width = d.textlength(right, font=font(40))
+            d.text((850 - width, y), right, font=font(40), fill=(20, 20, 20))
+        y += 70
+    img.save(OUT / path)
+
+
+receipt("receipt_fuel_ro.png", [
+    ("OMV PETROM MARKETING SRL", ""),
+    ("Statia Bucuresti Unirii", ""),
+    ("Data: 11.10.2026  Ora 18:42", ""),
+    ("MOTORINA MAXXMOTION", ""),
+    ("34,12 L x 7,33", "250,10"),
+    ("SUBTOTAL", "250,10"),
+    ("TVA 21%", "43,41"),
+    ("TOTAL LEI", "250,10"),
+    ("CARD", "250,10"),
+])
+
 print(f"Wrote fixtures to {OUT}")

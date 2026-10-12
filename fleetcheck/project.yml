@@ -47,6 +47,8 @@ targets:
           - location
         NSLocationWhenInUseUsageDescription: "FleetCheck uses your location during a shift to count the kilometers and time you drive. Your route is stored only on this iPhone."
         NSSupportsLiveActivities: true
+        NSPhotoLibraryUsageDescription: "FleetCheck finds the earnings screenshots you take in Uber or Bolt and reads them on this iPhone, so you don't have to type the numbers. Images are never stored or sent."
+        NSCameraUsageDescription: "Take a photo of a receipt and FleetCheck fills in the expense for you."
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.adaptiveservices.fleetcheck

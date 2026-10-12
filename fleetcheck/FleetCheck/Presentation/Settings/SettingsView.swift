@@ -5,6 +5,9 @@ import SwiftUI
 struct SettingsView: View {
     @Environment(\.modelContext) private var context
     @Environment(ShiftStore.self) private var shiftStore
+    @Environment(ScreenshotInbox.self) private var inbox
+    @Environment(\.dismiss) private var dismiss
+    @AppStorage(SettingsKeys.autoImportScreenshots) private var autoImportScreenshots = true
     @AppStorage(SettingsKeys.currencyCode) private var currencyCode = MoneyFormatter.defaultCurrencyCode
     @AppStorage(SettingsKeys.hasSeenTutorial) private var hasSeenTutorial = true
     @AppStorage(SettingsKeys.useAppleIntelligence) private var useAppleIntelligence = true
@@ -33,8 +36,27 @@ struct SettingsView: View {
                 }
 
                 Section {
+                    Toggle("Find earnings screenshots", isOn: $autoImportScreenshots)
+                    if autoImportScreenshots && !inbox.hasAccess {
+                        Button("Allow access to screenshots", systemImage: "photo.on.rectangle.angled") {
+                            Task {
+                                if inbox.authorization == .notDetermined {
+                                    await inbox.requestAccess()
+                                } else if let url = URL(string: UIApplication.openSettingsURLString) {
+                                    await UIApplication.shared.open(url)
+                                }
+                            }
+                        }
+                    }
+                } header: {
+                    Text("Automatic")
+                } footer: {
+                    Text("When you open FleetCheck, it looks at screenshots from the last 3 days and offers the ones that show earnings on Home, ready to add with one tap. After a shift, it goes straight to reading your earnings screenshot.")
+                }
+
+                Section {
                     LabeledContent("Status", value: AppleIntelligence.status.description)
-                    Toggle("Use for screenshots", isOn: $useAppleIntelligence)
+                    Toggle("Use Apple Intelligence", isOn: $useAppleIntelligence)
                         .disabled(AppleIntelligence.status != .available)
                     NavigationLink { ScanReportsView() } label: {
                         LabeledContent("Misread reports", value: "\(scanReports.count)")
@@ -42,7 +64,7 @@ struct SettingsView: View {
                 } header: {
                     Text("Apple Intelligence")
                 } footer: {
-                    Text("Understands earnings screenshots from Uber, Bolt and FREENOW, on this iPhone. Without it, FleetCheck still reads the numbers by matching labels like Tips and Promotions. When a screenshot is read wrong, tap \"Numbers wrong?\" in the form to keep a report.")
+                    Text("Powers the Ask assistant, your daily brief, and reading screenshots and receipts, all on this iPhone. Without it, FleetCheck still answers the common questions and reads numbers by matching labels like Tips and TOTAL. When a screenshot is read wrong, tap \"Numbers wrong?\" in the form to keep a report.")
                 }
 
                 Section {
@@ -67,6 +89,9 @@ struct SettingsView: View {
                 }
             }
             .navigationTitle("Settings")
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) { Button("Done") { dismiss() } }
+            }
             .confirmationDialog("Delete all shifts, earnings, expenses and reminders?", isPresented: $confirmDelete, titleVisibility: .visible) {
                 Button("Delete everything", role: .destructive) {
                     for model in DataStore.models { try? context.delete(model: model) }

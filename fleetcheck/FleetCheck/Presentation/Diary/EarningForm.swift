@@ -29,17 +29,25 @@ struct EarningForm: View {
         case failed(String)
     }
 
-    /// - Parameter scanScreenshot: opens the photo picker right away (Diary → "From screenshot").
-    init(shift: Shift?, editing: Earning? = nil, scanScreenshot: Bool = false) {
+    private let onSave: (() -> Void)?
+
+    /// - Parameters:
+    ///   - scanScreenshot: opens the photo picker right away.
+    ///   - prefilled: a screenshot already read (Home → Needs you → Review).
+    ///   - onSave: called after saving.
+    init(shift: Shift?, editing: Earning? = nil, scanScreenshot: Bool = false,
+         prefilled: ScreenshotEarnings? = nil, onSave: (() -> Void)? = nil) {
         self.shift = shift
         self.editing = editing
+        self.onSave = onSave
         _showingPicker = State(initialValue: scanScreenshot)
-        _date = State(initialValue: editing?.date ?? shift?.start ?? .now)
-        _platform = State(initialValue: editing?.platform ?? .uber)
-        _fares = State(initialValue: editing?.fares ?? 0)
-        _tips = State(initialValue: editing?.tips ?? 0)
-        _bonus = State(initialValue: editing?.bonus ?? 0)
-        _trips = State(initialValue: editing?.trips ?? 0)
+        _scan = State(initialValue: prefilled.map { .done($0) } ?? .idle)
+        _date = State(initialValue: editing?.date ?? shift?.start ?? prefilled?.date ?? .now)
+        _platform = State(initialValue: editing?.platform ?? prefilled?.platform ?? .uber)
+        _fares = State(initialValue: editing?.fares ?? prefilled.map { $0.fares ?? $0.total ?? 0 } ?? 0)
+        _tips = State(initialValue: editing?.tips ?? prefilled?.tips ?? 0)
+        _bonus = State(initialValue: editing?.bonus ?? prefilled?.bonus ?? 0)
+        _trips = State(initialValue: editing?.trips ?? prefilled?.trips ?? 0)
         _note = State(initialValue: editing?.note ?? "")
     }
 
@@ -223,6 +231,7 @@ struct EarningForm: View {
                                    trips: trips, note: note, shift: shift))
         }
         try? context.save()
+        onSave?()
         dismiss()
     }
 }

@@ -42,6 +42,23 @@ struct TodayEarningsIntent: AppIntent {
     }
 }
 
+/// "Hey Siri, ask FleetCheck" → Siri asks for the question, the assistant answers (Apple Intelligence when available).
+struct AskFleetCheckIntent: AppIntent {
+    static let title: LocalizedStringResource = "Ask FleetCheck"
+    static let description = IntentDescription("Ask about your earnings, costs and car papers, or add an expense or earnings by voice.")
+
+    @Parameter(title: "Question", requestValueDialog: "What do you want to know or add?")
+    var question: String
+
+    @Dependency private var assistant: Assistant
+
+    @MainActor
+    func perform() async throws -> some IntentResult & ProvidesDialog {
+        let answer = await assistant.answer(question)
+        return .result(dialog: IntentDialog(stringLiteral: answer))
+    }
+}
+
 struct FleetCheckShortcuts: AppShortcutsProvider {
     static var appShortcuts: [AppShortcut] {
         AppShortcut(intent: StartShiftIntent(),
@@ -50,6 +67,9 @@ struct FleetCheckShortcuts: AppShortcutsProvider {
         AppShortcut(intent: EndShiftIntent(),
                     phrases: ["End my shift in \(.applicationName)", "Stop shift in \(.applicationName)"],
                     shortTitle: "End Shift", systemImageName: "stop.circle.fill")
+        AppShortcut(intent: AskFleetCheckIntent(),
+                    phrases: ["Ask \(.applicationName)", "Ask \(.applicationName) a question", "Add to \(.applicationName)"],
+                    shortTitle: "Ask FleetCheck", systemImageName: "sparkles")
         AppShortcut(intent: TodayEarningsIntent(),
                     phrases: ["How much did I make today in \(.applicationName)", "Today's earnings in \(.applicationName)"],
                     shortTitle: "Today's Earnings", systemImageName: "banknote.fill")
