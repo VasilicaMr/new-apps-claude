@@ -11,7 +11,7 @@ enum Platform: String, Codable, Sendable, CaseIterable, Identifiable {
         case .uber: "Uber"
         case .bolt: "Bolt"
         case .freeNow: "FREENOW"
-        case .other: "Other"
+        case .other: String(localized: "Other")
         }
     }
 }
@@ -23,20 +23,20 @@ enum ExpenseCategory: String, Codable, Sendable, CaseIterable, Identifiable {
 
     var title: String {
         switch self {
-        case .fuel: "Fuel"
-        case .charging: "Charging"
-        case .carWash: "Car wash"
-        case .maintenance: "Service"
-        case .repair: "Repair"
-        case .tyres: "Tyres"
-        case .insurance: "Insurance"
-        case .roadTax: "Road tax / vignette"
-        case .leasing: "Leasing / rent"
-        case .parking: "Parking"
-        case .tolls: "Tolls"
-        case .fines: "Fines"
-        case .phone: "Phone & data"
-        case .other: "Other"
+        case .fuel: String(localized: "Fuel")
+        case .charging: String(localized: "Charging")
+        case .carWash: String(localized: "Car wash")
+        case .maintenance: String(localized: "Service")
+        case .repair: String(localized: "Repair")
+        case .tyres: String(localized: "Tyres")
+        case .insurance: String(localized: "Insurance")
+        case .roadTax: String(localized: "Road tax / vignette")
+        case .leasing: String(localized: "Leasing / rent")
+        case .parking: String(localized: "Parking")
+        case .tolls: String(localized: "Tolls")
+        case .fines: String(localized: "Fines")
+        case .phone: String(localized: "Phone & data")
+        case .other: String(localized: "Other")
         }
     }
 
@@ -77,17 +77,17 @@ enum ReminderKind: String, Codable, Sendable, CaseIterable, Identifiable {
 
     var title: String {
         switch self {
-        case .inspection: "Inspection (ITP)"
-        case .liabilityInsurance: "Liability insurance (RCA)"
-        case .comprehensiveInsurance: "Comprehensive insurance (CASCO)"
-        case .vignette: "Road vignette (rovinietă)"
-        case .carTax: "Car tax"
-        case .oilChange: "Oil change"
-        case .tyreChange: "Tyre change"
-        case .driverLicence: "Driving licence"
-        case .rideSharePermit: "Ride-sharing permit"
-        case .safetyKit: "First aid kit / extinguisher"
-        case .other: "Other"
+        case .inspection: String(localized: "Inspection (ITP)")
+        case .liabilityInsurance: String(localized: "Liability insurance (RCA)")
+        case .comprehensiveInsurance: String(localized: "Comprehensive insurance (CASCO)")
+        case .vignette: String(localized: "Road vignette (rovinietă)")
+        case .carTax: String(localized: "Car tax")
+        case .oilChange: String(localized: "Oil change")
+        case .tyreChange: String(localized: "Tyre change")
+        case .driverLicence: String(localized: "Driving licence")
+        case .rideSharePermit: String(localized: "Ride-sharing permit")
+        case .safetyKit: String(localized: "First aid kit / extinguisher")
+        case .other: String(localized: "Other")
         }
     }
 

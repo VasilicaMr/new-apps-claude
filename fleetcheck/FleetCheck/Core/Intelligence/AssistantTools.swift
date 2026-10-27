@@ -165,7 +165,7 @@ struct AddExpenseTool: Tool {
                                      liters: arguments.liters > 0 ? arguments.liters : nil, note: arguments.note, daysAgo: arguments.daysAgo)
             let expense = data.add(draft)
             let title = data.describe(.expense(draft))
-            log.record("Added expense: \(title)", expense)
+            log.record(String(localized: "Added expense: \(title)"), expense)
             return "Saved expense: \(title)."
         }
     }
@@ -213,7 +213,7 @@ struct AddEarningsTool: Tool {
                                      bonus: arguments.bonus, trips: arguments.trips, daysAgo: arguments.daysAgo)
             let earning = data.add(draft)
             let title = data.describe(.earning(draft))
-            log.record("Added earnings: \(title)", earning)
+            log.record(String(localized: "Added earnings: \(title)"), earning)
             return "Saved earnings: \(title)" + (earning.shift == nil ? "." : ", linked to the shift on \(earning.date.formatted(date: .abbreviated, time: .omitted)).")
         }
     }

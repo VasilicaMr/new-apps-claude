@@ -10,6 +10,7 @@ struct FleetCheckApp: App {
     @State private var navigation = AppNavigation()
     @State private var brief = BriefStore()
     @State private var inbox = ScreenshotInbox()
+    @State private var pro = ProStore()
     private let data: DriverData
 
     init() {
@@ -31,8 +32,9 @@ struct FleetCheckApp: App {
         AppDependencyManager.shared.add { store }
         AppDependencyManager.shared.add { container }
         AppDependencyManager.shared.add { assistant }
-        ShiftControl.endShift = { store.endShiftSummary() }
+        ShiftControl.endShift = { await store.endShiftSummary() }
         store.resumeIfNeeded()
+        Theme.applyAppearance()
         #if DEBUG
         if ProcessInfo.processInfo.arguments.contains("-startShift") { store.startShift() }
         // `-askQuestion "…"` opens Ask and sends the question, for testing the assistant.
@@ -59,7 +61,10 @@ struct FleetCheckApp: App {
                 .environment(navigation)
                 .environment(brief)
                 .environment(inbox)
+                .environment(pro)
+                .task { await pro.load() }
                 .tint(Theme.accent)
+                .fontDesign(.rounded)
         }
         .modelContainer(container)
     }
@@ -70,6 +75,11 @@ enum SettingsKeys {
     static let currencyCode = "currencyCode"
     static let useAppleIntelligence = "useAppleIntelligence"
     static let autoImportScreenshots = "autoImportScreenshots"
+    /// The "How to upload" steps open by themselves the first time only.
+    static let hasSeenUploadGuide = "hasSeenUploadGuide"
+    static let hideGettingStarted = "hideGettingStarted"
+    /// Net amount the driver wants to keep each week; 0 = no goal.
+    static let weeklyGoal = "weeklyGoal"
 }
 
 extension ModelContext {

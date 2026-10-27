@@ -22,6 +22,9 @@ struct EarningsScreenshotScanner: Sendable {
             // Keep keyword results for anything the model left out.
             if result.platform == nil { result.platform = fallback.platform }
             if result.trips == nil { result.trips = fallback.trips }
+            if result.distanceKm == nil { result.distanceKm = fallback.distanceKm }
+            if result.destination == nil { result.destination = fallback.destination }
+            if result.cashCollected == nil { result.cashCollected = fallback.cashCollected }
             if result.isEmpty { return fallback }
             result.recognizedLines = lines
             return result.normalized()
@@ -38,10 +41,10 @@ enum AppleIntelligence {
 
         var description: String {
             switch self {
-            case .available: "On"
-            case .deviceNotEligible: "Not supported on this iPhone"
-            case .notEnabled: "Turned off in Settings"
-            case .downloading: "Downloading, try again later"
+            case .available: String(localized: "On")
+            case .deviceNotEligible: String(localized: "Not supported on this iPhone")
+            case .notEnabled: String(localized: "Turned off in Settings")
+            case .downloading: String(localized: "Downloading, try again later")
             }
         }
     }
@@ -89,6 +92,15 @@ struct GeneratedEarnings {
 
     @Guide(description: "Number of trips completed. 0 if not shown.")
     var trips: Int
+
+    @Guide(description: "Distance driven in kilometers, as a plain number (\"9,4 km\" is 9.4). 0 if not shown.")
+    var distanceKm: Double
+
+    @Guide(description: "For a single trip, the drop-off / destination address as shown. Empty if not shown or not a single trip.")
+    var destination: String
+
+    @Guide(description: "Cash collected from passengers (\"Cash collected\", \"Numerar încasat\"), as a positive number. 0 if not shown.")
+    var cashCollected: Double
 }
 
 struct AppleIntelligenceEarningsExtractor: Sendable {
@@ -102,8 +114,11 @@ struct AppleIntelligenceEarningsExtractor: Sendable {
             the screen; a label and its amount are on the same line. Numbers may use a comma as the decimal \
             separator ("12,50" means 12.50) and a dot for thousands ("1.234,56" means 1234.56). \
             Return amounts as plain numbers without currency. Do not invent values: use 0 or empty when a value \
-            is not on the screen. Ignore cash collected, balance, and payouts to the bank account; \
-            "Trip earnings"/"Câștiguri din curse" are fares, "Tips"/"Bacșiș" are tips, "Promotions"/"Promoții" are bonus.
+            is not on the screen. Cash collected is already part of the earnings: never add it to the total or fares, \
+            report it only as cashCollected. Ignore balance and payouts to the bank account; \
+            "Trip earnings"/"Câștiguri din curse" are fares, "Tips"/"Bacșiș" are tips, "Promotions"/"Promoții" are bonus. \
+            Also read the distance in km ("Distance"/"Distanță") and, on a single trip, the drop-off address \
+            (the second address; the first is the pickup).
             """)
         let today = now.formatted(.iso8601.year().month().day())
         let text = String(lines.joined(separator: "\n").prefix(maxCharacters))
@@ -138,6 +153,9 @@ struct AppleIntelligenceEarningsExtractor: Sendable {
             tips: positive(generated.tips),
             bonus: positive(generated.bonus),
             trips: generated.trips > 0 ? generated.trips : nil,
+            distanceKm: positive(generated.distanceKm),
+            destination: generated.destination.isEmpty ? nil : generated.destination,
+            cashCollected: positive(abs(generated.cashCollected)),
             source: .appleIntelligence)
     }
 }

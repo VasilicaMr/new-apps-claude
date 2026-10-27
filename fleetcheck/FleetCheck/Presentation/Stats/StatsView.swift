@@ -40,19 +40,19 @@ struct StatsView: View {
                     headline(stats)
                     LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
                         KPITile(title: "Earned", value: money.string(stats.earnings), symbol: "banknote",
-                                footnote: stats.tips > 0 ? "incl. \(money.string(stats.tips)) tips" : nil)
+                                footnote: stats.tips > 0 ? String(localized: "incl. \(money.string(stats.tips)) tips") : nil, iconTint: Theme.warning)
                         KPITile(title: "Costs", value: money.string(stats.expenses), symbol: "cart",
-                                footnote: stats.costPerKm.map { "\(money.string($0, decimals: true)) / km" })
+                                footnote: stats.costPerKm.map { "\(money.string($0, decimals: true)) / km" }, iconTint: Theme.negative)
                         KPITile(title: "Hours", value: Formatters.hours(stats.hours), symbol: "clock",
-                                footnote: stats.movingShare.map { "\($0.percentString) driving" })
+                                iconTint: Color(red: 0.55, green: 0.40, blue: 0.95))
                         KPITile(title: "Kilometers", value: stats.km.kilometers, symbol: "road.lanes",
-                                footnote: stats.shiftCount > 0 ? "\(stats.shiftCount) shift\(stats.shiftCount == 1 ? "" : "s")" : nil)
+                                footnote: stats.shiftCount > 0 ? String(localized: "\(stats.shiftCount) shifts") : nil)
                         KPITile(title: "Net per hour", value: stats.netPerHour.map { money.string($0) } ?? "—", symbol: "gauge.with.needle",
                                 tint: Theme.color(forNet: stats.netPerHour ?? 0),
-                                footnote: stats.earningsPerHour.map { "\(money.string($0)) before costs" })
+                                footnote: stats.earningsPerHour.map { String(localized: "\(money.string($0)) before costs") }, iconTint: Theme.positive)
                         KPITile(title: "Net per km", value: stats.netPerKm.map { money.string($0, decimals: true) } ?? "—", symbol: "speedometer",
                                 tint: Theme.color(forNet: stats.netPerKm ?? 0),
-                                footnote: stats.trips > 0 ? "\(stats.trips) trips" : nil)
+                                footnote: stats.trips > 0 ? String(localized: "\(stats.trips) trips") : nil, iconTint: Theme.positive)
                     }
 
                     if period != .day { chart(stats) }
@@ -60,7 +60,7 @@ struct StatsView: View {
                 }
                 .padding()
             }
-            .background(Color(.systemGroupedBackground))
+            .fleetBackground()
             .navigationTitle("Stats")
             .onChange(of: period) { _, _ in
                 offset = 0
@@ -71,41 +71,69 @@ struct StatsView: View {
 
     private var periodStepper: some View {
         HStack {
-            Button("Previous", systemImage: "chevron.left") { offset -= 1; selectedBar = nil }
-                .labelStyle(.iconOnly)
+            stepButton("Previous", symbol: "chevron.left") { offset -= 1; selectedBar = nil }
             Spacer()
-            Text(title).font(.headline).contentTransition(.numericText())
+            Text(title)
+                .font(.system(.headline, design: .rounded, weight: .heavy))
+                .foregroundStyle(Theme.ink)
+                .contentTransition(.numericText())
             Spacer()
-            Button("Next", systemImage: "chevron.right") { offset += 1; selectedBar = nil }
-                .labelStyle(.iconOnly)
+            stepButton("Next", symbol: "chevron.right") { offset += 1; selectedBar = nil }
                 .disabled(offset >= 0)
         }
-        .padding(.horizontal, 4)
+    }
+
+    private func stepButton(_ title: LocalizedStringKey, symbol: String, action: @escaping () -> Void) -> some View {
+        Button(title, systemImage: symbol, action: action)
+            .labelStyle(.iconOnly)
+            .font(.system(size: 15, weight: .bold))
+            .foregroundStyle(Theme.blue)
+            .frame(width: 40, height: 40)
+            .background(Theme.cardBackground, in: .circle)
+            .overlay(Circle().strokeBorder(Theme.cardStroke, lineWidth: 1))
+            .shadow(color: Theme.cardShadow, radius: 6, y: 2)
+            .buttonStyle(PressableStyle())
     }
 
     private var title: String {
         let start = interval.start
         switch period {
-        case .day: return offset == 0 ? "Today" : start.formatted(.dateTime.weekday(.wide).day().month())
+        case .day: return offset == 0 ? String(localized: "Today") : start.formatted(.dateTime.weekday(.wide).day().month())
         case .week:
             let end = interval.end.addingTimeInterval(-1)
-            return offset == 0 ? "This week" : "\(start.formatted(.dateTime.day().month())) – \(end.formatted(.dateTime.day().month()))"
+            return offset == 0 ? String(localized: "This week") : "\(start.formatted(.dateTime.day().month())) – \(end.formatted(.dateTime.day().month()))"
         case .month: return start.formatted(.dateTime.month(.wide).year())
         case .year: return start.formatted(.dateTime.year())
         }
     }
 
     private func headline(_ stats: PeriodStats) -> some View {
-        VStack(alignment: .leading, spacing: 4) {
-            Text("Net after costs").font(.subheadline).foregroundStyle(.secondary)
-            Text(money.string(stats.net))
-                .font(.system(size: 40, weight: .bold, design: .rounded))
-                .foregroundStyle(Theme.color(forNet: stats.net))
-                .contentTransition(.numericText())
-            Text("\(money.string(stats.earnings)) earned − \(money.string(stats.expenses)) costs")
-                .font(.caption).foregroundStyle(.secondary)
+        HStack(alignment: .center, spacing: 16) {
+            VStack(alignment: .leading, spacing: 4) {
+                Text("Net after costs")
+                    .font(.system(size: 15, weight: .semibold, design: .rounded))
+                    .opacity(0.88)
+                Text(money.string(stats.net))
+                    .font(.system(size: 44, weight: .heavy, design: .rounded))
+                    .minimumScaleFactor(0.5)
+                    .lineLimit(1)
+                    .contentTransition(.numericText())
+                Text("\(money.string(stats.earnings)) earned − \(money.string(stats.expenses)) costs")
+                    .font(.system(size: 13, weight: .semibold, design: .rounded))
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 4)
+                    .background(.white.opacity(0.22), in: .capsule)
+            }
+            Spacer(minLength: 0)
+            Image(systemName: stats.net < 0 ? "arrow.down.right" : "arrow.up.right")
+                .font(.system(size: 26, weight: .heavy))
+                .frame(width: 56, height: 56)
+                .background(.white.opacity(0.20), in: .rect(cornerRadius: 16, style: .continuous))
         }
-        .card()
+        .padding(22)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .gradientCard(stats.net < 0 ? Theme.lossGradient : Theme.profitGradient, cornerRadius: 28,
+                      shadow: (stats.net < 0 ? Theme.negative : Theme.positive).opacity(0.30))
         .accessibilityElement(children: .combine)
     }
 
@@ -136,20 +164,25 @@ struct StatsView: View {
 
         return VStack(alignment: .leading, spacing: 12) {
             SectionHeader(title: period == .year ? "Net per month" : "Net per day",
-                          subtitle: selected.map { "\($0.date.formatted(period == .year ? .dateTime.month(.wide) : .dateTime.weekday().day().month())): \(money.string($0.net)) net, \(money.string($0.earnings)) earned" }
+                          subtitle: selected.map { bar -> LocalizedStringKey in
+                              "\(bar.date.formatted(period == .year ? .dateTime.month(.wide) : .dateTime.weekday().day().month())): \(money.string(bar.net)) net, \(money.string(bar.earnings)) earned"
+                          }
                               ?? "Tap a bar for details")
             Chart(bars) { bar in
                 BarMark(x: .value("Date", bar.date, unit: unit), y: .value("Net", bar.net))
-                    .foregroundStyle(Theme.accent.opacity(selected == nil || selected?.id == bar.id ? 1 : 0.35))
-                    .clipShape(UnevenRoundedRectangle(topLeadingRadius: bar.net >= 0 ? 4 : 0, bottomLeadingRadius: bar.net < 0 ? 4 : 0,
-                                                      bottomTrailingRadius: bar.net < 0 ? 4 : 0, topTrailingRadius: bar.net >= 0 ? 4 : 0))
-                RuleMark(y: .value("Zero", 0)).foregroundStyle(.secondary.opacity(0.5)).lineStyle(StrokeStyle(lineWidth: 1))
+                    .foregroundStyle(LinearGradient(colors: bar.net < 0 ? [Theme.negative.opacity(0.8), Theme.negative]
+                                                                         : [Color(red: 0.55, green: 0.40, blue: 0.95), Theme.blue],
+                                                    startPoint: .top, endPoint: .bottom))
+                    .opacity(selected == nil || selected?.id == bar.id ? 1 : 0.35)
+                    .clipShape(UnevenRoundedRectangle(topLeadingRadius: bar.net >= 0 ? 6 : 0, bottomLeadingRadius: bar.net < 0 ? 6 : 0,
+                                                      bottomTrailingRadius: bar.net < 0 ? 6 : 0, topTrailingRadius: bar.net >= 0 ? 6 : 0))
+                RuleMark(y: .value("Zero", 0)).foregroundStyle(Theme.ink.opacity(0.25)).lineStyle(StrokeStyle(lineWidth: 1))
             }
             .chartXSelection(value: $selectedBar)
             .chartXScale(domain: interval.start...interval.end)
             .chartYAxis {
                 AxisMarks(position: .leading) { value in
-                    AxisGridLine().foregroundStyle(.quaternary)
+                    AxisGridLine().foregroundStyle(Theme.ink.opacity(0.08))
                     AxisValueLabel { if let amount = value.as(Double.self) { Text(money.string(amount)) } }
                 }
             }
@@ -186,7 +219,7 @@ struct StatsView: View {
 
 /// A ranked list with a proportional bar per row.
 private struct BreakdownCard: View {
-    let title: String
+    let title: LocalizedStringKey
     let rows: [(label: String, symbol: String, value: Double)]
     @Environment(\.money) private var money
 
@@ -197,17 +230,24 @@ private struct BreakdownCard: View {
             ForEach(rows, id: \.label) { row in
                 VStack(alignment: .leading, spacing: 4) {
                     HStack {
-                        Label(row.label, systemImage: row.symbol).font(.subheadline)
+                        IconBadge(symbol: row.symbol, size: 28)
+                        Text(row.label).font(.subheadline.weight(.semibold)).foregroundStyle(Theme.ink)
                         Spacer()
-                        Text(money.string(row.value)).font(.subheadline.weight(.semibold))
+                        Text(money.string(row.value))
+                            .font(.system(.subheadline, design: .rounded, weight: .heavy))
+                            .foregroundStyle(Theme.ink)
                         Text((total > 0 ? row.value / total : 0).percentString)
-                            .font(.caption).foregroundStyle(.secondary).frame(width: 40, alignment: .trailing)
+                            .font(.caption.weight(.semibold)).foregroundStyle(Theme.inkSecondary).frame(width: 40, alignment: .trailing)
                     }
                     GeometryReader { proxy in
-                        Capsule().fill(Theme.accent)
-                            .frame(width: max(4, proxy.size.width * (total > 0 ? row.value / total : 0)))
+                        ZStack(alignment: .leading) {
+                            Capsule().fill(Theme.wash)
+                            Capsule().fill(LinearGradient(colors: [Theme.blue, Color(red: 0.55, green: 0.40, blue: 0.95)],
+                                                          startPoint: .leading, endPoint: .trailing))
+                                .frame(width: max(8, proxy.size.width * (total > 0 ? row.value / total : 0)))
+                        }
                     }
-                    .frame(height: 6)
+                    .frame(height: 8)
                 }
                 .accessibilityElement(children: .combine)
             }

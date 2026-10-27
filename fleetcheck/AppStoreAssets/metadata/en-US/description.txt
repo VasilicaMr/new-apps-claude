@@ -1,0 +1,48 @@
+How much do you really keep after fuel, the car and the app's cut? DriveCap is a logbook for ride-hailing and taxi drivers that turns your earnings screenshots into clear numbers: what you made, what it cost, and what you keep per hour and per km.
+
+READ EARNINGS FROM A SCREENSHOT
+• Take a screenshot of a trip, a day or a week in your driving app
+• DriveCap reads the fares, tips, bonus, trips, kilometers and destination for you
+• When you end a shift, it goes straight to reading your earnings screenshot
+• With Pro, it finds new earnings screenshots by itself and shows them on Home, ready to add with one tap
+
+TIME YOUR SHIFTS
+• Start and end a shift with one tap
+• See the shift timer on the Lock Screen and in the Dynamic Island
+• Hands-free with Siri: "Start my shift in DriveCap"
+
+COSTS WITHOUT TYPING
+• Photograph a fuel or service receipt and DriveCap fills in the category, total, liters, station and date
+• Keep every expense in one diary, with the receipt photo
+
+YOUR REAL NUMBERS
+• Net after costs for the day, week, month or year
+• Earnings and profit per hour and per km
+• Compare apps and see where your money goes, by category
+
+EARN SMARTER (PRO)
+• Your minimum fare: the true cost of your car per km, so you know which trips lose money
+• Weekly goal: the hours you still need to reach what you want to keep
+• Best times: the days and hours that pay best for you
+
+JUST ASK
+Ask "How much did I make this week?" or type "fuel $40 38 L" and DriveCap answers or adds it for you. Uses Apple Intelligence on supported iPhones and still understands the common questions without it.
+
+CAR PAPERS ON TIME
+Reminders for the technical inspection, insurance, road vignette and oil change, by date or by kilometers, with a notice 30, 7 and 1 day before.
+
+PRIVATE BY DESIGN
+• No account and no sign-up
+• Everything you log stays on your iPhone
+• Screenshots and receipts are read on the iPhone and never sent anywhere
+• Export a CSV for your accountant or a backup (Pro)
+
+FREE AND PRO
+DriveCap is free to use for shifts, manual entries, stats, receipts, reminders and the assistant, with 10 screenshot reads a month.
+DriveCap Pro adds unlimited screenshot reading, screenshots found for you, Earn smarter and CSV export. Choose a monthly or yearly subscription, both with a 7-day free trial, or a one-time lifetime purchase.
+
+Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period. Manage or cancel them in your Apple Account settings.
+Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Privacy Policy: https://adaptivebyte.com/privacy-policy/
+
+DriveCap is an independent app and is not affiliated with Uber, Bolt or any other ride-hailing company.

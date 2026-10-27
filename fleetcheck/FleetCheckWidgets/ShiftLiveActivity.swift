@@ -10,7 +10,7 @@ struct FleetCheckWidgets: WidgetBundle {
     }
 }
 
-/// Lock Screen and Dynamic Island while on shift: elapsed time, kilometers and an End button.
+/// Lock Screen and Dynamic Island while on shift: elapsed time and an End button.
 struct ShiftLiveActivity: Widget {
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: ShiftActivityAttributes.self) { context in
@@ -21,40 +21,49 @@ struct ShiftLiveActivity: Widget {
                     .frame(width: 44, height: 44)
                     .background(Color.accentColor.gradient, in: .circle)
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(context.state.isWaitingForGPS ? "On shift · waiting for GPS" : "On shift")
+                    Text(status(context.state))
                         .font(.caption).foregroundStyle(.secondary)
-                    Text(timerInterval: context.attributes.startDate...Date.distantFuture, countsDown: false)
+                    elapsed(context)
                         .font(.title2.weight(.semibold).monospacedDigit())
-                    Text(kilometers(context.state.distanceKm)).font(.subheadline).foregroundStyle(.secondary)
                 }
                 Spacer()
-                Button(intent: EndShiftIntent()) {
-                    Label("End", systemImage: "stop.fill")
+                if context.state.endDate == nil {
+                    Button(intent: EndShiftIntent()) {
+                        Label("End", systemImage: "stop.fill")
+                    }
+                    .tint(.red)
+                } else {
+                    Image(systemName: "checkmark.circle.fill")
+                        .font(.title)
+                        .foregroundStyle(.green)
                 }
-                .tint(.red)
             }
             .padding()
             .activityBackgroundTint(nil)
         } dynamicIsland: { context in
             DynamicIsland {
                 DynamicIslandExpandedRegion(.leading) {
-                    Label(kilometers(context.state.distanceKm), systemImage: "road.lanes").font(.headline)
+                    Label("On shift", systemImage: "steeringwheel").font(.headline)
                 }
                 DynamicIslandExpandedRegion(.trailing) {
-                    Text(timerInterval: context.attributes.startDate...Date.distantFuture, countsDown: false)
+                    elapsed(context)
                         .font(.headline.monospacedDigit())
                         .multilineTextAlignment(.trailing)
                 }
                 DynamicIslandExpandedRegion(.bottom) {
-                    Button(intent: EndShiftIntent()) {
-                        Label("End shift", systemImage: "stop.fill").frame(maxWidth: .infinity)
+                    if context.state.endDate == nil {
+                        Button(intent: EndShiftIntent()) {
+                            Label("End shift", systemImage: "stop.fill").frame(maxWidth: .infinity)
+                        }
+                        .tint(.red)
+                    } else {
+                        Label("Shift ended", systemImage: "checkmark.circle.fill").foregroundStyle(.green)
                     }
-                    .tint(.red)
                 }
             } compactLeading: {
                 Image(systemName: "steeringwheel").foregroundStyle(Color.accentColor)
             } compactTrailing: {
-                Text(timerInterval: context.attributes.startDate...Date.distantFuture, countsDown: false)
+                elapsed(context)
                     .monospacedDigit()
                     .frame(maxWidth: 56)
             } minimal: {
@@ -63,7 +72,17 @@ struct ShiftLiveActivity: Widget {
         }
     }
 
-    private func kilometers(_ km: Double) -> String {
-        "\(km.formatted(.number.precision(.fractionLength(1)))) km"
+    /// A running timer while on shift; the final duration once it has ended.
+    @ViewBuilder
+    private func elapsed(_ context: ActivityViewContext<ShiftActivityAttributes>) -> some View {
+        if let end = context.state.endDate {
+            Text(Duration.seconds(end.timeIntervalSince(context.attributes.startDate)).formatted(.time(pattern: .hourMinute)))
+        } else {
+            Text(timerInterval: context.attributes.startDate...Date.distantFuture, countsDown: false)
+        }
+    }
+
+    private func status(_ state: ShiftActivityAttributes.ContentState) -> LocalizedStringKey {
+        state.endDate != nil ? "Shift ended" : "On shift"
     }
 }

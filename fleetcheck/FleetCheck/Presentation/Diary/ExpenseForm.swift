@@ -67,7 +67,8 @@ struct ExpenseForm: View {
                         AmountField(title: "Odometer (km)", value: $odometerKm)
                     } footer: {
                         if liters > 0, amount > 0 {
-                            Text("\(money.string(amount / liters, decimals: true)) per \(category == .charging ? "kWh" : "liter")")
+                            let price = money.string(amount / liters, decimals: true)
+                            Text(category == .charging ? "\(price) per kWh" : "\(price) per liter")
                         }
                     }
                 }
@@ -93,13 +94,14 @@ struct ExpenseForm: View {
                             .frame(maxWidth: .infinity)
                         Button("Remove photo", role: .destructive) { self.receipt = nil }
                     }
-                    let photoTitle = receipt == nil ? "Add photo" : "Replace photo"
+                    let photoTitle = receipt == nil ? String(localized: "Add photo") : String(localized: "Replace photo")
                     PhotosPicker(selection: $photoItem, matching: .images) {
                         Label(photoTitle, systemImage: "photo.badge.plus")
                     }
                     TextField("Note (station, garage…)", text: $note, axis: .vertical)
                 }
             }
+            .fleetBackground()
             .navigationTitle(editing == nil ? "New expense" : "Edit expense")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -141,12 +143,12 @@ struct ExpenseForm: View {
                     Button { showingCamera = true } label: {
                         Label("Scan receipt", systemImage: "camera.viewfinder").frame(maxWidth: .infinity)
                     }
-                    .buttonStyle(.borderedProminent)
+                    .buttonStyle(CapsuleButtonStyle(tint: Theme.positive))
                 }
                 Button { showingReceiptPicker = true } label: {
                     Label("From photos", systemImage: "photo").frame(maxWidth: .infinity)
                 }
-                .buttonStyle(.bordered)
+                .buttonStyle(CapsuleButtonStyle(tint: Theme.positive, filled: false))
             }
             .disabled(scanStatus == .reading)
             switch scanStatus {
@@ -163,7 +165,7 @@ struct ExpenseForm: View {
                 Label(message, systemImage: "exclamationmark.triangle.fill").font(.footnote).foregroundStyle(.orange)
             }
         } footer: {
-            Text("FleetCheck reads the total, liters, station and date. The photo is kept as the receipt.")
+            Text("DriveCap reads the total, liters, station and date. The photo is kept as the receipt.")
         }
     }
 
@@ -173,7 +175,7 @@ struct ExpenseForm: View {
         do {
             let result = try await ReceiptScanner(useAppleIntelligence: useAppleIntelligence).scan(data)
             guard let total = result.amount else {
-                scanStatus = .failed("Couldn't find the total. Type the amount below.")
+                scanStatus = .failed(String(localized: "Couldn't find the total. Type the amount below."))
                 return
             }
             if let found = result.category { category = found }
@@ -205,7 +207,7 @@ struct ExpenseForm: View {
             context.insert(Expense(date: date, category: category, amount: amount, coverageMonths: coverageMonths,
                                    liters: liters, odometerKm: odometer, note: note, receipt: receipt))
         }
-        // A pump receipt's odometer reading is more accurate than GPS, so it corrects the car.
+        // A pump receipt's odometer reading is the real number, so it corrects the car.
         if let odometer {
             let car = context.car()
             if odometer > car.odometerKm {

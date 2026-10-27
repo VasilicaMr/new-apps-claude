@@ -6,7 +6,6 @@ struct ShiftFigures: Sendable, Hashable {
     let start: Date
     let end: Date
     let distanceKm: Double
-    let movingHours: Double
 
     var hours: Double { max(0, end.timeIntervalSince(start)) / 3600 }
 }
@@ -18,6 +17,10 @@ struct EarningFigures: Sendable, Hashable {
     let tips: Double
     let bonus: Double
     let trips: Int
+    /// Part of `total` received in cash.
+    var cash: Double = 0
+    /// Kilometers read from the screenshot, 0 if unknown.
+    var distanceKm: Double = 0
 
     var total: Double { fares + tips + bonus }
 }
@@ -45,13 +48,14 @@ struct PeriodStats: Sendable, Hashable {
     let interval: DateInterval
     let earnings: Double
     let tips: Double
+    /// Part of `earnings` already in the driver's pocket; the apps pay out the rest.
+    let cash: Double
     let trips: Int
     let earningsByPlatform: [Platform: Double]
     let expenses: Double
     let expensesByCategory: [ExpenseCategory: Double]
     let km: Double
     let hours: Double
-    let movingHours: Double
     let shiftCount: Int
     let days: [DayStats]
 
@@ -60,15 +64,20 @@ struct PeriodStats: Sendable, Hashable {
     var netPerHour: Double? { hours > 0 ? net / hours : nil }
     var netPerKm: Double? { km > 0 ? net / km : nil }
     var costPerKm: Double? { km > 0 ? expenses / km : nil }
-    /// Share of shift time spent actually driving (the rest is waiting or in traffic jams).
-    var movingShare: Double? { hours > 0 ? min(1, movingHours / hours) : nil }
 }
 
 enum StatsPeriod: String, CaseIterable, Identifiable, Sendable {
     case day, week, month, year
 
     var id: String { rawValue }
-    var title: String { rawValue.capitalized }
+    var title: String {
+        switch self {
+        case .day: String(localized: "Day")
+        case .week: String(localized: "Week")
+        case .month: String(localized: "Month")
+        case .year: String(localized: "Year")
+        }
+    }
 
     var component: Calendar.Component {
         switch self {
@@ -116,13 +125,13 @@ struct StatsCalculator: Sendable {
             interval: interval,
             earnings: earningsIn.reduce(0) { $0 + $1.total },
             tips: earningsIn.reduce(0) { $0 + $1.tips },
+            cash: earningsIn.reduce(0) { $0 + $1.cash },
             trips: earningsIn.reduce(0) { $0 + $1.trips },
             earningsByPlatform: byPlatform,
             expenses: byCategory.values.reduce(0, +),
             expensesByCategory: byCategory,
             km: shiftsIn.reduce(0) { $0 + $1.distanceKm },
             hours: shiftsIn.reduce(0) { $0 + $1.hours },
-            movingHours: shiftsIn.reduce(0) { $0 + $1.movingHours },
             shiftCount: shiftsIn.count,
             days: days(in: interval, shifts: shiftsIn, earnings: earningsIn, expenses: expenses))
     }

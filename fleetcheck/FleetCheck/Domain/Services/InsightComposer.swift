@@ -29,46 +29,62 @@ struct InsightComposer: Sendable {
         let week = input.thisWeek
 
         if week.shiftCount == 0 && week.earnings == 0 {
-            result.append(Insight(kind: .start, text: "No shifts logged this week yet. Start a shift when you go online and FleetCheck counts the kilometers for you."))
+            result.append(Insight(kind: .start, text: String(localized: "No shifts logged this week yet. Start a shift when you go online, then add your trip screenshots for the kilometers.")))
         } else {
-            var summary = "This week: \(money.string(week.net)) net from \(money.string(week.earnings)) earned"
-            if week.hours > 0 { summary += " over \(Formatters.hours(week.hours))" }
-            if let perHour = week.netPerHour { summary += " (\(money.string(perHour)) net per hour)" }
-            result.append(Insight(kind: .summary, text: summary + "."))
+            let net = money.string(week.net), earned = money.string(week.earnings)
+            let summary = switch (week.hours > 0 ? Formatters.hours(week.hours) : nil, week.netPerHour.map { money.string($0) }) {
+            case let (hours?, perHour?):
+                String(localized: "This week: \(net) net from \(earned) earned over \(hours) (\(perHour) net per hour).")
+            case let (hours?, nil):
+                String(localized: "This week: \(net) net from \(earned) earned over \(hours).")
+            default:
+                String(localized: "This week: \(net) net from \(earned) earned.")
+            }
+            result.append(Insight(kind: .summary, text: summary))
         }
 
         if let now = input.thisWeek.netPerHour, let before = input.lastWeek.netPerHour, before > 0, input.thisWeek.hours >= 4 {
             let change = (now - before) / before
             if abs(change) >= 0.05 {
-                result.append(Insight(kind: .trend, text: "Net per hour is \(change > 0 ? "up" : "down") \(abs(change).percentString) compared with last week (\(money.string(before)) → \(money.string(now)))."))
+                let percent = abs(change).percentString, from = money.string(before), to = money.string(now)
+                result.append(Insight(kind: .trend, text: change > 0
+                    ? String(localized: "Net per hour is up \(percent) compared with last week (\(from) → \(to)).")
+                    : String(localized: "Net per hour is down \(percent) compared with last week (\(from) → \(to)).")))
             }
         }
 
         if let best = bestWeekday(input.recentDays) {
-            result.append(Insight(kind: .bestDay, text: "Your best day is usually \(best.name): about \(money.string(best.perHour)) per hour before costs."))
+            result.append(Insight(kind: .bestDay, text: String(localized: "Your best day is usually \(best.name): about \(money.string(best.perHour)) per hour before costs.")))
         }
 
         if let top = input.thisMonth.expensesByCategory.max(by: { $0.value < $1.value }), input.thisMonth.expenses > 0 {
-            var text = "Biggest cost this month: \(top.key.title.lowercased()), \(money.string(top.value)) (\((top.value / input.thisMonth.expenses).percentString) of costs)"
-            if let perKm = input.thisMonth.costPerKm { text += "; all costs come to \(money.string(perKm, decimals: true)) per km" }
-            result.append(Insight(kind: .cost, text: text + "."))
+            let category = top.key.title.lowercased(), amount = money.string(top.value)
+            let share = (top.value / input.thisMonth.expenses).percentString
+            let text = if let perKm = input.thisMonth.costPerKm.map({ money.string($0, decimals: true) }) {
+                String(localized: "Biggest cost this month: \(category), \(amount) (\(share) of costs); all costs come to \(perKm) per km.")
+            } else {
+                String(localized: "Biggest cost this month: \(category), \(amount) (\(share) of costs).")
+            }
+            result.append(Insight(kind: .cost, text: text))
         }
 
         if input.shiftsWithoutEarnings > 0 {
             let count = input.shiftsWithoutEarnings
-            result.append(Insight(kind: .missingEarnings, text: "\(count) recent shift\(count == 1 ? " has" : "s have") no earnings yet. Add a screenshot so your per-hour numbers are right."))
+            result.append(Insight(kind: .missingEarnings, text: String(localized: "\(count) recent shifts have no earnings yet. Add a screenshot so your per-hour numbers are right.")))
         }
 
         for (title, status) in input.dueReminders.sorted(by: { $0.status.urgency > $1.status.urgency }).prefix(2) {
-            let when: String
+            let text: String
             if let days = status.daysLeft {
-                when = days < 0 ? "expired \(abs(days)) day\(abs(days) == 1 ? "" : "s") ago" : days == 0 ? "is due today" : "is due in \(days) day\(days == 1 ? "" : "s")"
+                text = days < 0 ? String(localized: "\(title) expired \(abs(days)) days ago.")
+                    : days == 0 ? String(localized: "\(title) is due today.")
+                    : String(localized: "\(title) is due in \(days) days.")
             } else if let km = status.kmLeft {
-                when = km <= 0 ? "is overdue" : "is due in \(km.kilometers)"
+                text = km <= 0 ? String(localized: "\(title) is overdue.") : String(localized: "\(title) is due in \(km.kilometers).")
             } else {
                 continue
             }
-            result.append(Insight(kind: .reminder, text: "\(title) \(when)."))
+            result.append(Insight(kind: .reminder, text: text))
         }
         return result
     }

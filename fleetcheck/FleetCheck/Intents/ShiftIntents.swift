@@ -2,11 +2,10 @@ import AppIntents
 import Foundation
 import SwiftData
 
-/// Starting GPS needs the app in the foreground (we only ask for "While Using" permission),
-/// so this intent opens FleetCheck.
+/// Opens DriveCap so the driver sees the running shift.
 struct StartShiftIntent: AppIntent {
     static let title: LocalizedStringResource = "Start Shift"
-    static let description = IntentDescription("Starts tracking kilometers and time for a new shift.")
+    static let description = IntentDescription("Starts the clock for a new shift.")
     static let openAppWhenRun = true
 
     @Dependency private var shiftStore: ShiftStore
@@ -36,15 +35,15 @@ struct TodayEarningsIntent: AppIntent {
             expenses: ((try? context.fetch(FetchDescriptor<Expense>())) ?? []).map(\.figures))
         let money = MoneyFormatter(currencyCode: UserDefaults.standard.string(forKey: SettingsKeys.currencyCode) ?? MoneyFormatter.defaultCurrencyCode)
         let text = stats.shiftCount == 0 && stats.earnings == 0
-            ? "Nothing logged today yet."
-            : "Today you earned \(money.string(stats.earnings)), spent \(money.string(stats.expenses)) and drove \(stats.km.kilometers). Net \(money.string(stats.net))."
+            ? String(localized: "Nothing logged today yet.")
+            : String(localized: "Today you earned \(money.string(stats.earnings)), spent \(money.string(stats.expenses)) and drove \(stats.km.kilometers). Net \(money.string(stats.net)).")
         return .result(dialog: IntentDialog(stringLiteral: text))
     }
 }
 
-/// "Hey Siri, ask FleetCheck" → Siri asks for the question, the assistant answers (Apple Intelligence when available).
+/// "Hey Siri, ask DriveCap" → Siri asks for the question, the assistant answers (Apple Intelligence when available).
 struct AskFleetCheckIntent: AppIntent {
-    static let title: LocalizedStringResource = "Ask FleetCheck"
+    static let title: LocalizedStringResource = "Ask DriveCap"
     static let description = IntentDescription("Ask about your earnings, costs and car papers, or add an expense or earnings by voice.")
 
     @Parameter(title: "Question", requestValueDialog: "What do you want to know or add?")
@@ -69,7 +68,7 @@ struct FleetCheckShortcuts: AppShortcutsProvider {
                     shortTitle: "End Shift", systemImageName: "stop.circle.fill")
         AppShortcut(intent: AskFleetCheckIntent(),
                     phrases: ["Ask \(.applicationName)", "Ask \(.applicationName) a question", "Add to \(.applicationName)"],
-                    shortTitle: "Ask FleetCheck", systemImageName: "sparkles")
+                    shortTitle: "Ask DriveCap", systemImageName: "sparkles")
         AppShortcut(intent: TodayEarningsIntent(),
                     phrases: ["How much did I make today in \(.applicationName)", "Today's earnings in \(.applicationName)"],
                     shortTitle: "Today's Earnings", systemImageName: "banknote.fill")

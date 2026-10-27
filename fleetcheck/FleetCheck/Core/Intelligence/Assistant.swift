@@ -75,7 +75,7 @@ final class Assistant {
     /// One-shot answer for Siri.
     func answer(_ text: String) async -> String {
         await send(text)
-        return messages.last { $0.role == .assistant }?.text ?? "Sorry, I couldn't answer that."
+        return messages.last { $0.role == .assistant }?.text ?? String(localized: "Sorry, I couldn't answer that.")
     }
 
     func undo(_ action: Message.Action, in message: Message) {
@@ -107,7 +107,7 @@ final class Assistant {
                 return await respondWithModel(to: text, retry: false)
             }
             if case .guardrailViolation = error {
-                messages.append(Message(role: .assistant, text: "I can only help with your driving, earnings, costs and car."))
+                messages.append(Message(role: .assistant, text: String(localized: "I can only help with your driving, earnings, costs and car.")))
                 return true
             }
             return false
@@ -135,13 +135,13 @@ final class Assistant {
             GetRecentEntriesTool(data: data), AddExpenseTool(data: data, log: log), AddEarningsTool(data: data, log: log),
         ]
         let session = LanguageModelSession(tools: tools, instructions: """
-            You are FleetCheck, the assistant inside a logbook app for a ride-sharing driver (Uber, Bolt). \
+            You are DriveCap, the assistant inside a logbook app for a ride-sharing driver (Uber, Bolt). \
             Today is \(today). Money is in \(data.money.currencyCode). \
             Always use the tools for any number, date or total; never guess or invent figures. \
             When the driver says they paid for something or earned money, save it with addExpense or addEarnings \
             immediately without asking for confirmation, then confirm in one short sentence. \
             Answer in one to three short sentences, plain text, no markdown tables. \
-            Reply in the same language the driver writes in (English or Romanian). \
+            Reply in the same language the driver writes in (English, Romanian or French). \
             If a question is not about driving, earnings, costs, the car or its paperwork, say what you can help with.
             """)
         self.session = session
@@ -161,8 +161,8 @@ final class Assistant {
             }
             let id = UUID()
             undoModels[id] = model
-            message.text = "Saved."
-            message.actions = [Message.Action(id: id, title: "Added \(data.describe(entry))")]
+            message.text = String(localized: "Saved.")
+            message.actions = [Message.Action(id: id, title: String(localized: "Added \(data.describe(entry))"))]
         default:
             message.text = data.answer(command)
         }
@@ -182,12 +182,12 @@ struct SuggestedQuestion: Identifiable, Hashable {
     func hash(into hasher: inout Hasher) { hasher.combine(title) }
 
     static let all: [SuggestedQuestion] = [
-        SuggestedQuestion(title: "How did I do today?", symbol: "sun.max", command: .stats(.day, offset: 0)),
-        SuggestedQuestion(title: "This week vs last week", symbol: "arrow.left.arrow.right", command: .compare(.week)),
-        SuggestedQuestion(title: "This month so far", symbol: "calendar", command: .stats(.month, offset: 0)),
-        SuggestedQuestion(title: "Which day pays best?", symbol: "star", command: .bestDay),
-        SuggestedQuestion(title: "What did I spend this month?", symbol: "cart", command: .spending(nil, .month, offset: 0)),
-        SuggestedQuestion(title: "What's due?", symbol: "bell", command: .reminders),
-        SuggestedQuestion(title: "Shifts missing earnings", symbol: "exclamationmark.circle", command: .missingEarnings),
+        SuggestedQuestion(title: String(localized: "How did I do today?"), symbol: "sun.max", command: .stats(.day, offset: 0)),
+        SuggestedQuestion(title: String(localized: "This week vs last week"), symbol: "arrow.left.arrow.right", command: .compare(.week)),
+        SuggestedQuestion(title: String(localized: "This month so far"), symbol: "calendar", command: .stats(.month, offset: 0)),
+        SuggestedQuestion(title: String(localized: "Which day pays best?"), symbol: "star", command: .bestDay),
+        SuggestedQuestion(title: String(localized: "What did I spend this month?"), symbol: "cart", command: .spending(nil, .month, offset: 0)),
+        SuggestedQuestion(title: String(localized: "What's due?"), symbol: "bell", command: .reminders),
+        SuggestedQuestion(title: String(localized: "Shifts missing earnings"), symbol: "exclamationmark.circle", command: .missingEarnings),
     ]
 }

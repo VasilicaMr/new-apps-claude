@@ -33,7 +33,8 @@ final class BriefStore {
             let session = LanguageModelSession(instructions: """
                 You write a short daily brief for a ride-sharing driver, shown on the home screen of their logbook app. \
                 Use only the facts given; keep every number exactly as written. Two or three short sentences, \
-                second person, warm and practical, no greeting, no emojis, no lists. End with one concrete tip based on the facts.
+                second person, warm and practical, no greeting, no emojis, no lists. End with one concrete tip based on the facts. \
+                Write in the same language as the facts.
                 """)
             let response = try await session.respond(to: "Facts:\n" + facts.map { "- \($0)" }.joined(separator: "\n"))
             text = response.content.trimmingCharacters(in: .whitespacesAndNewlines)

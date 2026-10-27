@@ -5,6 +5,7 @@ options:
   deploymentTarget:
     iOS: "26.0"
   createIntermediateGroups: true
+  developmentLanguage: en
   generateEmptyDirectories: false
 
 settings:
@@ -16,6 +17,8 @@ settings:
     MARKETING_VERSION: "1.0"
     CURRENT_PROJECT_VERSION: "1"
     ENABLE_PREVIEWS: YES
+    LOCALIZATION_PREFERS_STRING_CATALOGS: YES
+    SWIFT_EMIT_LOC_STRINGS: YES
 
 targets:
   FleetCheck:
@@ -29,10 +32,10 @@ targets:
     info:
       path: FleetCheck/App/Info.plist
       properties:
-        CFBundleDisplayName: FleetCheck
+        CFBundleDisplayName: DriveCap
         CFBundleShortVersionString: "$(MARKETING_VERSION)"
         CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
-        LSApplicationCategoryType: public.app-category.productivity
+        LSApplicationCategoryType: public.app-category.finance
         UILaunchScreen: {}
         UIApplicationSceneManifest:
           UIApplicationSupportsMultipleScenes: false
@@ -43,21 +46,20 @@ targets:
           - UIInterfaceOrientationPortraitUpsideDown
           - UIInterfaceOrientationLandscapeLeft
           - UIInterfaceOrientationLandscapeRight
-        UIBackgroundModes:
-          - location
-        NSLocationWhenInUseUsageDescription: "FleetCheck uses your location during a shift to count the kilometers and time you drive. Your route is stored only on this iPhone."
         NSSupportsLiveActivities: true
-        NSPhotoLibraryUsageDescription: "FleetCheck finds the earnings screenshots you take in Uber or Bolt and reads them on this iPhone, so you don't have to type the numbers. Images are never stored or sent."
-        NSCameraUsageDescription: "Take a photo of a receipt and FleetCheck fills in the expense for you."
+        NSPhotoLibraryUsageDescription: "DriveCap finds the earnings screenshots you take in Uber or Bolt and reads them on this iPhone, so you don't have to type the numbers. Images are never stored or sent."
+        NSCameraUsageDescription: "Take a photo of a receipt and DriveCap fills in the expense for you."
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.adaptiveservices.fleetcheck
+        PRODUCT_BUNDLE_IDENTIFIER: com.adaptiveservices.drivo
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
         TARGETED_DEVICE_FAMILY: "1,2"
     scheme:
       testTargets:
         - FleetCheckTests
+      # Local products for the simulator; the real ones live in App Store Connect.
+      storeKitConfiguration: FleetCheck.storekit
 
   FleetCheckWidgets:
     type: app-extension
@@ -68,14 +70,14 @@ targets:
     info:
       path: FleetCheckWidgets/Info.plist
       properties:
-        CFBundleDisplayName: FleetCheck
+        CFBundleDisplayName: DriveCap
         CFBundleShortVersionString: "$(MARKETING_VERSION)"
         CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
         NSExtension:
           NSExtensionPointIdentifier: com.apple.widgetkit-extension
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.adaptiveservices.fleetcheck.widgets
+        PRODUCT_BUNDLE_IDENTIFIER: com.adaptiveservices.drivo.widgets
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
         TARGETED_DEVICE_FAMILY: "1,2"
         SKIP_INSTALL: YES
@@ -85,11 +87,13 @@ targets:
     platform: iOS
     sources:
       - path: FleetCheckTests
+      - path: FleetCheck.storekit
+        buildPhase: resources
     dependencies:
       - target: FleetCheck
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.adaptiveservices.fleetcheck.tests
+        PRODUCT_BUNDLE_IDENTIFIER: com.adaptiveservices.drivo.tests
         GENERATE_INFOPLIST_FILE: YES
         TEST_HOST: "$(BUILT_PRODUCTS_DIR)/FleetCheck.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FleetCheck"
         BUNDLE_LOADER: "$(TEST_HOST)"

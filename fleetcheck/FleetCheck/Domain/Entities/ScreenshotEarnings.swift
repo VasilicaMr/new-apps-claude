@@ -22,15 +22,23 @@ struct ScreenshotEarnings: Sendable, Equatable {
     var tips: Double?
     var bonus: Double?
     var trips: Int?
+    /// Kilometers driven: the trip's distance, or the day's/week's total.
+    var distanceKm: Double?
+    /// Drop-off address of a single trip.
+    var destination: String?
+    /// Cash the passengers paid in the car. Part of the earnings (not extra); the app pays out the rest.
+    var cashCollected: Double?
     var source: Source = .textMatching
     /// The rows of text read from the image, kept for "this was read wrong" reports.
     var recognizedLines: [String] = []
 
-    /// One line for reports: "app=Bolt scope=week total=1874.30 fares=1702.80 tips=41.50 bonus=130.00 trips=64".
+    /// One line for reports: "app=Bolt scope=week total=1874.30 fares=1702.80 tips=41.50 bonus=130.00 trips=64 km=412.5".
     var summary: String {
         let money = { (value: Double?) in value.map { String(format: "%.2f", locale: Locale(identifier: "en_US_POSIX"), $0) } ?? "-" }
         return "app=\(platform?.title ?? "-") scope=\(scope.rawValue) total=\(money(total)) fares=\(money(fares)) "
             + "tips=\(money(tips)) bonus=\(money(bonus)) trips=\(trips.map(String.init) ?? "-")"
+            + (distanceKm.map { " km=\(money($0))" } ?? "") + (cashCollected.map { " cash=\(money($0))" } ?? "")
+            + (destination.map { " to=\($0)" } ?? "")
     }
 
     var isEmpty: Bool { total == nil && fares == nil && tips == nil && bonus == nil }
@@ -63,6 +71,14 @@ struct ScreenshotEarnings: Sendable, Equatable {
             result.total = fares + tips + bonus
         }
         if let trips = result.trips, trips < 0 || trips > 500 { result.trips = nil }
+        if let km = result.distanceKm, km <= 0 || km > 10_000 { result.distanceKm = nil }
+        if let cash = result.cashCollected {
+            // Shown as "-145,00" on some screens because it's deducted from the payout.
+            result.cashCollected = abs(cash) > 0 ? abs(cash) : nil
+        }
+        if let destination = result.destination?.trimmingCharacters(in: .whitespaces) {
+            result.destination = destination.isEmpty ? nil : destination
+        }
         return result
     }
 }

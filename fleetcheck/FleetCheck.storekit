@@ -1,0 +1,129 @@
+{
+  "identifier": "6F1D2C3B-8A4E-4F5D-9C21-DC0A7E5B1F42",
+  "nonRenewingSubscriptions": [],
+  "products": [
+    {
+      "displayPrice": "399.99",
+      "familyShareable": false,
+      "internalID": "6745000003",
+      "localizations": [
+        {
+          "description": "All Pro features, paid once.",
+          "displayName": "DriveCap Pro Lifetime",
+          "locale": "en_US"
+        },
+        {
+          "description": "Toate funcțiile Pro, plătite o singură dată.",
+          "displayName": "DriveCap Pro pe viață",
+          "locale": "ro"
+        },
+        {
+          "description": "Toutes les fonctions Pro, payées une fois.",
+          "displayName": "DriveCap Pro à vie",
+          "locale": "fr"
+        }
+      ],
+      "productID": "com.adaptiveservices.drivecap.pro.lifetime",
+      "referenceName": "Pro Lifetime",
+      "type": "NonConsumable"
+    }
+  ],
+  "settings": {
+    "_applicationInternalID": "",
+    "_askToBuyEnabled": false,
+    "_billingGraceEnabled": false,
+    "_billingIssuesEnabled": false,
+    "_disableDialogs": false,
+    "_failTransactionsEnabled": false,
+    "_locale": "ro_RO",
+    "_renewalBillingIssuesEnabled": false,
+    "_storefront": "ROU",
+    "_storeKitErrors": [],
+    "_timeRate": 0
+  },
+  "subscriptionGroups": [
+    {
+      "id": "21500001",
+      "localizations": [],
+      "name": "DriveCap Pro",
+      "subscriptions": [
+        {
+          "adHocOffers": [],
+          "codeOffers": [],
+          "displayPrice": "149.99",
+          "familyShareable": false,
+          "groupNumber": 1,
+          "internalID": "6745000001",
+          "introductoryOffer": {
+            "internalID": "67450000011",
+            "paymentMode": "free",
+            "subscriptionPeriod": "P1W"
+          },
+          "localizations": [
+            {
+              "description": "Unlimited screenshots, Earn smarter, export",
+              "displayName": "DriveCap Pro Yearly",
+              "locale": "en_US"
+            },
+            {
+              "description": "Capturi nelimitate, tarif minim, export CSV",
+              "displayName": "DriveCap Pro anual",
+              "locale": "ro"
+            },
+            {
+              "description": "Captures illimitées, Gagnez mieux, export",
+              "displayName": "DriveCap Pro annuel",
+              "locale": "fr"
+            }
+          ],
+          "productID": "com.adaptiveservices.drivecap.pro.yearly",
+          "recurringSubscriptionPeriod": "P1Y",
+          "referenceName": "Pro Yearly",
+          "subscriptionGroupID": "21500001",
+          "type": "RecurringSubscription",
+          "winbackOffers": []
+        },
+        {
+          "adHocOffers": [],
+          "codeOffers": [],
+          "displayPrice": "24.99",
+          "familyShareable": false,
+          "groupNumber": 2,
+          "internalID": "6745000002",
+          "introductoryOffer": {
+            "internalID": "67450000021",
+            "paymentMode": "free",
+            "subscriptionPeriod": "P1W"
+          },
+          "localizations": [
+            {
+              "description": "Unlimited screenshots, Earn smarter, export",
+              "displayName": "DriveCap Pro Monthly",
+              "locale": "en_US"
+            },
+            {
+              "description": "Capturi nelimitate, tarif minim, export CSV",
+              "displayName": "DriveCap Pro lunar",
+              "locale": "ro"
+            },
+            {
+              "description": "Captures illimitées, Gagnez mieux, export",
+              "displayName": "DriveCap Pro mensuel",
+              "locale": "fr"
+            }
+          ],
+          "productID": "com.adaptiveservices.drivecap.pro.monthly",
+          "recurringSubscriptionPeriod": "P1M",
+          "referenceName": "Pro Monthly",
+          "subscriptionGroupID": "21500001",
+          "type": "RecurringSubscription",
+          "winbackOffers": []
+        }
+      ]
+    }
+  ],
+  "version": {
+    "major": 4,
+    "minor": 0
+  }
+}

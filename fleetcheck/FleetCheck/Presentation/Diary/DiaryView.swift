@@ -4,8 +4,24 @@ import SwiftUI
 /// Everything logged: shifts, earnings and expenses, grouped by month.
 struct DiaryView: View {
     enum Kind: String, CaseIterable, Identifiable {
-        case shifts = "Shifts", earnings = "Earnings", expenses = "Expenses"
-        var id: String { rawValue }
+        case shifts, earnings, expenses
+        var id: Self { self }
+
+        var title: LocalizedStringKey {
+            switch self {
+            case .shifts: "Shifts"
+            case .earnings: "Earnings"
+            case .expenses: "Expenses"
+            }
+        }
+
+        var emptyTitle: LocalizedStringKey {
+            switch self {
+            case .shifts: "No shifts yet"
+            case .earnings: "No earnings yet"
+            case .expenses: "No expenses yet"
+            }
+        }
     }
 
     @Environment(\.modelContext) private var context
@@ -24,7 +40,7 @@ struct DiaryView: View {
         NavigationStack {
             List {
                 Picker("Show", selection: $kind) {
-                    ForEach(Kind.allCases) { Text($0.rawValue).tag($0) }
+                    ForEach(Kind.allCases) { Text($0.title).tag($0) }
                 }
                 .pickerStyle(.segmented)
                 .listRowBackground(Color.clear)
@@ -36,6 +52,7 @@ struct DiaryView: View {
                 case .expenses: expenseList
                 }
             }
+            .fleetBackground()
             .navigationTitle("Diary")
             .navigationDestination(for: Shift.self) { ShiftDetailView(shift: $0) }
             .toolbar {
@@ -64,8 +81,8 @@ struct DiaryView: View {
         case .expenses: expenses.isEmpty
         }
         if isEmpty {
-            ContentUnavailableView("No \(kind.rawValue.lowercased()) yet", systemImage: "tray",
-                                   description: Text(kind == .shifts ? "Start a shift from the Shift tab." : "Tap + to add one."))
+            ContentUnavailableView(kind.emptyTitle, systemImage: "tray",
+                                   description: Text(kind == .shifts ? "Start a shift from Home." : "Tap + to add one."))
         }
     }
 
@@ -92,7 +109,12 @@ struct DiaryView: View {
                     Button { editingEarning = earning } label: { EarningRow(earning: earning) }
                         .buttonStyle(.plain)
                 }
-                .onDelete { offsets in offsets.map { group.items[$0] }.forEach(context.delete) }
+                .onDelete { offsets in
+                    for earning in offsets.map({ group.items[$0] }) {
+                        context.addKilometers(-earning.distanceKm, to: earning.shift)
+                        context.delete(earning)
+                    }
+                }
             }
         }
     }
@@ -115,6 +137,9 @@ struct DiaryView: View {
             Spacer()
             Text(money.string(total))
         }
+        .font(.system(.subheadline, design: .rounded, weight: .heavy))
+        .foregroundStyle(Theme.ink)
+        .textCase(nil)
     }
 
     private func grouped<T>(_ items: [T], by date: KeyPath<T, Date>) -> [(month: Date, items: [T])] {
@@ -130,18 +155,18 @@ struct ExpenseRow: View {
 
     var body: some View {
         HStack(spacing: 12) {
-            Image(systemName: expense.category.symbol)
-                .foregroundStyle(Theme.accent)
-                .frame(width: 24)
+            IconBadge(symbol: expense.category.symbol, tint: Theme.positive)
             VStack(alignment: .leading, spacing: 2) {
-                Text(expense.category.title).font(.subheadline.weight(.medium))
-                Text(detail).font(.caption).foregroundStyle(.secondary).lineLimit(1)
+                Text(expense.category.title).font(.subheadline.weight(.semibold)).foregroundStyle(Theme.ink)
+                Text(detail).font(.caption).foregroundStyle(Theme.inkSecondary).lineLimit(1)
             }
             Spacer()
             if expense.receipt != nil {
-                Image(systemName: "paperclip").font(.caption).foregroundStyle(.secondary)
+                Image(systemName: "paperclip").font(.caption.weight(.bold)).foregroundStyle(Theme.inkSecondary)
             }
-            Text(money.string(expense.amount)).font(.subheadline.weight(.semibold))
+            Text(money.string(expense.amount))
+                .font(.system(.subheadline, design: .rounded, weight: .heavy))
+                .foregroundStyle(Theme.ink)
         }
         .contentShape(.rect)
     }
@@ -149,7 +174,7 @@ struct ExpenseRow: View {
     private var detail: String {
         var parts = [expense.date.formatted(date: .abbreviated, time: .omitted)]
         if let liters = expense.liters { parts.append("\(liters.formatted()) \(expense.category == .charging ? "kWh" : "L")") }
-        if expense.coverageMonths > 0 { parts.append("covers \(expense.coverageMonths) mo") }
+        if expense.coverageMonths > 0 { parts.append(String(localized: "covers \(expense.coverageMonths) months")) }
         if !expense.note.isEmpty { parts.append(expense.note) }
         return parts.joined(separator: " · ")
     }

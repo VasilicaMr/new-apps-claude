@@ -21,7 +21,7 @@ struct StatsCalculatorTests {
         let week = DateInterval(start: date(5), end: date(12))
         let stats = calculator.stats(
             in: week,
-            shifts: [ShiftFigures(start: date(6, 8), end: date(6, 18), distanceKm: 200, movingHours: 6)],
+            shifts: [ShiftFigures(start: date(6, 8), end: date(6, 18), distanceKm: 200)],
             earnings: [EarningFigures(date: date(6, 8), platform: .uber, fares: 400, tips: 20, bonus: 0, trips: 15),
                        EarningFigures(date: date(6, 8), platform: .bolt, fares: 100, tips: 0, bonus: 30, trips: 4)],
             expenses: [ExpenseFigures(date: date(6, 12), category: .fuel, amount: 150, coverageMonths: 0)])
@@ -34,14 +34,13 @@ struct StatsCalculatorTests {
         #expect(stats.netPerKm == 2)
         #expect(stats.earningsByPlatform[.uber] == 420)
         #expect(stats.trips == 19)
-        #expect(stats.movingShare == 0.6)
         #expect(stats.days.count == 7)
         #expect(stats.days[1].net == 400)
     }
 
     @Test("A night shift belongs to the day it started")
     func nightShiftBelongsToStartDay() {
-        let shift = ShiftFigures(start: date(9, 20), end: date(10, 4), distanceKm: 120, movingHours: 5)
+        let shift = ShiftFigures(start: date(9, 20), end: date(10, 4), distanceKm: 120)
         let friday = calculator.stats(in: DateInterval(start: date(9), end: date(10)), shifts: [shift], earnings: [], expenses: [])
         let saturday = calculator.stats(in: DateInterval(start: date(10), end: date(11)), shifts: [shift], earnings: [], expenses: [])
         #expect(friday.km == 120)

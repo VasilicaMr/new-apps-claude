@@ -78,7 +78,9 @@ final class ScreenshotInbox {
     func accept(_ item: Item, data: DriverData) {
         let result = item.result
         let draft = EarningDraft(platform: result.platform ?? .uber, fares: result.fares ?? result.total ?? 0,
-                                 tips: result.tips ?? 0, bonus: result.bonus ?? 0, trips: result.trips ?? 0)
+                                 tips: result.tips ?? 0, bonus: result.bonus ?? 0, trips: result.trips ?? 0,
+                                 distanceKm: result.distanceKm ?? 0, destination: result.destination ?? "",
+                                 cashCollected: result.cashCollected ?? 0)
         data.add(draft, date: result.date ?? item.takenAt, shift: item.shift)
         items.removeAll { $0.id == item.id }
     }
@@ -106,7 +108,8 @@ extension EarningsTextParser {
         let folded = lines.joined(separator: " ").folding(options: [.caseInsensitive, .diacriticInsensitive], locale: nil)
         let words = Set(folded.split { !$0.isLetter }.map(String.init))
         let vocabulary: Set<String> = ["earnings", "fare", "fares", "tips", "tip", "trips", "promotions", "castiguri", "tarif",
-                                       "bacsis", "bacsisuri", "curse", "promotii", "rides", "uber", "bolt", "freenow"]
+                                       "bacsis", "bacsisuri", "curse", "cursa", "promotii", "rides", "uber", "bolt", "freenow",
+                                       "distance", "distanta", "gains", "pourboires", "courses", "revenus"]
         return words.intersection(vocabulary).count >= 2
     }
 }

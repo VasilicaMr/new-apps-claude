@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>FleetCheck</string>
+	<string>DriveCap</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -21,13 +21,11 @@
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSApplicationCategoryType</key>
-	<string>public.app-category.productivity</string>
+	<string>public.app-category.finance</string>
 	<key>NSCameraUsageDescription</key>
-	<string>Take a photo of a receipt and FleetCheck fills in the expense for you.</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>FleetCheck uses your location during a shift to count the kilometers and time you drive. Your route is stored only on this iPhone.</string>
+	<string>Take a photo of a receipt and DriveCap fills in the expense for you.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>FleetCheck finds the earnings screenshots you take in Uber or Bolt and reads them on this iPhone, so you don't have to type the numbers. Images are never stored or sent.</string>
+	<string>DriveCap finds the earnings screenshots you take in Uber or Bolt and reads them on this iPhone, so you don't have to type the numbers. Images are never stored or sent.</string>
 	<key>NSSupportsLiveActivities</key>
 	<true/>
 	<key>UIApplicationSceneManifest</key>
@@ -35,10 +33,6 @@
 		<key>UIApplicationSupportsMultipleScenes</key>
 		<false/>
 	</dict>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>location</string>
-	</array>
 	<key>UILaunchScreen</key>
 	<dict/>
 	<key>UISupportedInterfaceOrientations</key>

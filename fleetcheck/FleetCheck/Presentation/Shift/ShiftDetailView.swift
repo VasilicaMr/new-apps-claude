@@ -11,31 +11,23 @@ struct ShiftDetailView: View {
     @State private var confirmDelete = false
 
     var body: some View {
-        let route = shift.route
         Form {
-            if route.count > 1 {
-                Section {
-                    RouteMap(route: route)
-                        .frame(height: 220)
-                        .listRowInsets(EdgeInsets())
-                }
-            }
-
-            Section("Summary") {
+            Section {
                 LabeledContent("Started", value: shift.start.formatted(date: .abbreviated, time: .shortened))
                 if let end = shift.end {
                     LabeledContent("Ended", value: end.formatted(date: .abbreviated, time: .shortened))
                 }
                 LabeledContent("Time on shift", value: Formatters.duration(shift.duration))
-                if !shift.isManual {
-                    LabeledContent("Driving", value: Formatters.duration(shift.movingSeconds))
-                }
                 LabeledContent("Kilometers") {
                     TextField("km", value: Binding(get: { shift.distanceKm }, set: { shift.distanceMeters = max(0, $0) * 1000 }),
                               format: .number.precision(.fractionLength(1)))
                         .keyboardType(.decimalPad)
                         .multilineTextAlignment(.trailing)
                 }
+            } header: {
+                Text("Summary")
+            } footer: {
+                Text("Added up from the trips you read from Uber or Bolt screenshots. You can correct it here.")
             }
 
             Section {
@@ -47,7 +39,10 @@ struct ShiftDetailView: View {
                 }
                 .onDelete { offsets in
                     let sorted = shift.earnings.sorted { $0.total > $1.total }
-                    offsets.map { sorted[$0] }.forEach(context.delete)
+                    for earning in offsets.map({ sorted[$0] }) {
+                        context.addKilometers(-earning.distanceKm, to: shift)
+                        context.delete(earning)
+                    }
                 }
                 Button("Add earnings", systemImage: "plus.circle.fill") { addingEarning = true }
             } header: {
@@ -67,6 +62,7 @@ struct ShiftDetailView: View {
                 Button("Delete shift", role: .destructive) { confirmDelete = true }
             }
         }
+        .fleetBackground()
         .navigationTitle(shift.start.formatted(.dateTime.weekday(.wide).day().month()))
         .navigationBarTitleDisplayMode(.inline)
         .sheet(isPresented: $addingEarning) { EarningForm(shift: shift) }
@@ -86,22 +82,28 @@ struct EarningRow: View {
     @Environment(\.money) private var money
 
     var body: some View {
-        HStack {
+        HStack(spacing: 12) {
+            IconBadge(symbol: "banknote", tint: Theme.warning)
             VStack(alignment: .leading, spacing: 2) {
-                Text(earning.platform.title).font(.subheadline.weight(.medium))
-                Text(detail).font(.caption).foregroundStyle(.secondary)
+                Text(earning.platform.title).font(.subheadline.weight(.semibold)).foregroundStyle(Theme.ink)
+                Text(detail).font(.caption).foregroundStyle(Theme.inkSecondary)
             }
             Spacer()
-            Text(money.string(earning.total)).font(.subheadline.weight(.semibold))
+            Text(money.string(earning.total))
+                .font(.system(.subheadline, design: .rounded, weight: .heavy))
+                .foregroundStyle(Theme.ink)
         }
         .contentShape(.rect)
     }
 
     private var detail: String {
         var parts = [earning.date.formatted(date: .abbreviated, time: .omitted)]
-        if earning.trips > 0 { parts.append("\(earning.trips) trips") }
-        if earning.tips > 0 { parts.append("tips \(money.string(earning.tips))") }
-        if earning.bonus > 0 { parts.append("bonus \(money.string(earning.bonus))") }
+        if !earning.destination.isEmpty { parts.append(String(localized: "to \(earning.destination)")) }
+        if earning.trips > 1 { parts.append(String(localized: "\(earning.trips) trips")) }
+        if earning.distanceKm > 0 { parts.append(earning.distanceKm.kilometers) }
+        if earning.tips > 0 { parts.append(String(localized: "tips \(money.string(earning.tips))")) }
+        if earning.bonus > 0 { parts.append(String(localized: "bonus \(money.string(earning.bonus))")) }
+        if earning.cashCollected > 0 { parts.append(String(localized: "cash \(money.string(earning.cashCollected))")) }
         return parts.joined(separator: " · ")
     }
 }
@@ -142,6 +144,7 @@ struct ManualShiftForm: View {
                     Text("Worked for more than one app? Add the others from the shift page afterwards.")
                 }
             }
+            .fleetBackground()
             .navigationTitle("Past shift")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

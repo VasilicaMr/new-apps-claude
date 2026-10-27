@@ -73,8 +73,9 @@ final class DriverData {
 
     /// The shift a screenshot or entry taken at `date` belongs to.
     func shift(at date: Date) -> Shift? {
-        let candidates = shifts().filter { !$0.isActive }
-        let index = ShiftMatcher().index(for: date, in: candidates.map { ($0.start, $0.end ?? $0.start) })
+        // The running shift counts too: trip screenshots are taken while driving.
+        let candidates = shifts()
+        let index = ShiftMatcher().index(for: date, in: candidates.map { ($0.start, $0.end ?? .now) })
         return index.map { candidates[$0] }
     }
 
@@ -98,8 +99,10 @@ final class DriverData {
     func add(_ draft: EarningDraft, date: Date? = nil, shift: Shift? = nil) -> Earning {
         let date = date ?? Calendar.current.date(byAdding: .day, value: -draft.daysAgo, to: .now) ?? .now
         let earning = Earning(date: shift?.start ?? date, platform: draft.platform, fares: draft.fares, tips: draft.tips,
-                              bonus: draft.bonus, trips: draft.trips, shift: shift ?? self.shift(at: date))
+                              bonus: draft.bonus, trips: draft.trips, distanceKm: draft.distanceKm,
+                              destination: draft.destination, cashCollected: draft.cashCollected, shift: shift ?? self.shift(at: date))
         context.insert(earning)
+        context.addKilometers(draft.distanceKm, to: earning.shift)
         try? context.save()
         return earning
     }
@@ -120,43 +123,47 @@ final class DriverData {
         case let .spending(category, period, offset):
             let stats = stats(period, offset: offset)
             let label = label(period, offset)
+            let spent = money.string(stats.expenses)
             guard let category else {
                 let top = stats.expensesByCategory.sorted { $0.value > $1.value }.prefix(3)
                     .map { "\($0.key.title.lowercased()) \(money.string($0.value))" }.joined(separator: ", ")
-                return "You spent \(money.string(stats.expenses)) \(label)" + (top.isEmpty ? "." : ": \(top).")
+                return top.isEmpty ? String(localized: "You spent \(spent) \(label).") : String(localized: "You spent \(spent) \(label): \(top).")
             }
-            let amount = stats.expensesByCategory[category] ?? 0
-            return "You spent \(money.string(amount)) on \(category.title.lowercased()) \(label)."
+            let amount = money.string(stats.expensesByCategory[category] ?? 0)
+            return String(localized: "You spent \(amount) on \(category.title.lowercased()) \(label).")
         case .bestDay:
             let calendar = Calendar.current
             let since = calendar.date(byAdding: .day, value: -56, to: .now) ?? .now
             guard let best = InsightComposer(money: money).bestWeekday(stats(in: DateInterval(start: since, end: .now)).days) else {
-                return "I need a few more weeks of shifts to tell which day pays best."
+                return String(localized: "I need a few more weeks of shifts to tell which day pays best.")
             }
-            return "Over the last 8 weeks, \(best.name) pays best: about \(money.string(best.perHour)) per hour before costs."
+            return String(localized: "Over the last 8 weeks, \(best.name) pays best: about \(money.string(best.perHour)) per hour before costs.")
         case .reminders:
             let items = reminderStatuses()
-            guard !items.isEmpty else { return "You have no reminders yet. Add your ITP, RCA and vignette dates in the Car tab." }
+            guard !items.isEmpty else { return String(localized: "You have no reminders yet. Add your ITP, RCA and vignette dates in the Car tab.") }
             return items.prefix(4).map { "• \($0.reminder.title): \(dueText($0.reminder, $0.status))" }.joined(separator: "\n")
         case .missingEarnings:
             let missing = shiftsMissingEarnings()
-            guard !missing.isEmpty else { return "All your shifts from the last week have earnings. Nice." }
-            return "These shifts have no earnings yet:\n" + missing.prefix(5).map {
+            guard !missing.isEmpty else { return String(localized: "All your shifts from the last week have earnings. Nice.") }
+            return String(localized: "These shifts have no earnings yet:") + "\n" + missing.prefix(5).map {
                 "• \($0.start.formatted(.dateTime.weekday(.wide).day().month())), \(Formatters.duration($0.duration)), \($0.distanceKm.kilometers)"
             }.joined(separator: "\n")
         case let .add(entry):
             return describe(entry)
         case .unknown:
-            return "I can answer questions like \"How much did I make this week?\", \"What's due?\" or \"Which day pays best?\", and add entries like \"fuel 250 lei 34 L\" or \"uber 420 tips 30\"."
+            return String(localized: "I can answer questions like \"How much did I make this week?\", \"What's due?\" or \"Which day pays best?\", and add entries like \"fuel $40 38 L\" or \"uber 420 tips 30\".")
         }
     }
 
     func describe(_ stats: PeriodStats, label: String) -> String {
-        guard stats.shiftCount > 0 || stats.earnings > 0 || stats.expenses > 0 else { return "Nothing logged \(label)." }
-        var text = "\(label.prefix(1).uppercased() + label.dropFirst()): \(money.string(stats.net)) net (\(money.string(stats.earnings)) earned − \(money.string(stats.expenses)) costs)"
-        if stats.shiftCount > 0 { text += ", \(stats.shiftCount) shift\(stats.shiftCount == 1 ? "" : "s"), \(Formatters.hours(stats.hours)), \(stats.km.kilometers)" }
-        if let perHour = stats.netPerHour { text += ". \(money.string(perHour)) net per hour" }
-        if let perKm = stats.netPerKm { text += ", \(money.string(perKm, decimals: true)) per km" }
+        guard stats.shiftCount > 0 || stats.earnings > 0 || stats.expenses > 0 else { return String(localized: "Nothing logged \(label).") }
+        let title = label.prefix(1).uppercased() + label.dropFirst()
+        var text = String(localized: "\(title): \(money.string(stats.net)) net (\(money.string(stats.earnings)) earned − \(money.string(stats.expenses)) costs)")
+        if stats.shiftCount > 0 {
+            text += String(localized: ", \(stats.shiftCount) shifts, \(Formatters.hours(stats.hours)), \(stats.km.kilometers)")
+        }
+        if let perHour = stats.netPerHour { text += String(localized: ". \(money.string(perHour)) net per hour") }
+        if let perKm = stats.netPerKm { text += String(localized: ", \(money.string(perKm, decimals: true)) per km") }
         return text + "."
     }
 
@@ -165,48 +172,72 @@ final class DriverData {
         case let .expense(draft):
             var text = "\(draft.category.title) \(money.string(draft.amount, decimals: true))"
             if let liters = draft.liters { text += ", \(liters.formatted()) \(draft.category == .charging ? "kWh" : "L")" }
-            if !draft.note.isEmpty { text += " at \(draft.note)" }
-            return text + (draft.daysAgo == 1 ? ", yesterday" : "")
+            if !draft.note.isEmpty { text += String(localized: " at \(draft.note)") }
+            return text + (draft.daysAgo == 1 ? String(localized: ", yesterday") : "")
         case let .earning(draft):
             var text = "\(draft.platform.title) \(money.string(draft.total, decimals: true))"
-            if draft.tips > 0 { text += " incl. \(money.string(draft.tips)) tips" }
-            if draft.trips > 0 { text += ", \(draft.trips) trips" }
-            return text + (draft.daysAgo == 1 ? ", yesterday" : "")
+            if draft.tips > 0 { text += String(localized: " incl. \(money.string(draft.tips)) tips") }
+            if draft.trips > 0 { text += String(localized: ", \(draft.trips) trips") }
+            return text + (draft.daysAgo == 1 ? String(localized: ", yesterday") : "")
         }
     }
 
     func dueText(_ reminder: Reminder, _ status: ReminderStatus) -> String {
         var parts: [String] = []
         if let date = reminder.dueDate, let days = status.daysLeft {
-            parts.append(days < 0 ? "expired on \(date.formatted(date: .abbreviated, time: .omitted))"
-                         : days == 0 ? "due today" : "\(date.formatted(date: .abbreviated, time: .omitted)) (in \(days) days)")
+            let when = date.formatted(date: .abbreviated, time: .omitted)
+            parts.append(days < 0 ? String(localized: "expired on \(when)")
+                         : days == 0 ? String(localized: "due today") : String(localized: "\(when) (in \(days) days)"))
         }
-        if let km = status.kmLeft { parts.append(km <= 0 ? "overdue by \(abs(km).kilometers)" : "in \(km.kilometers)") }
-        return parts.isEmpty ? "no date set" : parts.joined(separator: ", ")
+        if let km = status.kmLeft {
+            parts.append(km <= 0 ? String(localized: "overdue by \(abs(km).kilometers)") : String(localized: "in \(km.kilometers)"))
+        }
+        return parts.isEmpty ? String(localized: "no date set") : parts.joined(separator: ", ")
     }
 
     private func compare(_ period: StatsPeriod) -> String {
         let now = stats(period), before = stats(period, offset: -1)
-        let name = period == .day ? "today vs yesterday" : "this \(period.rawValue) vs last \(period.rawValue)"
+        let name = switch period {
+        case .day: String(localized: "Today vs yesterday")
+        case .week: String(localized: "This week vs last week")
+        case .month: String(localized: "This month vs last month")
+        case .year: String(localized: "This year vs last year")
+        }
         func change(_ a: Double, _ b: Double) -> String {
             guard b != 0 else { return "" }
             let pct = (a - b) / abs(b)
             return " (\(pct >= 0 ? "+" : "−")\(abs(pct).percentString))"
         }
-        var text = "\(name.prefix(1).uppercased() + name.dropFirst()): net \(money.string(now.net)) vs \(money.string(before.net))\(change(now.net, before.net))"
-        text += ", earned \(money.string(now.earnings)) vs \(money.string(before.earnings))"
-        if let a = now.netPerHour, let b = before.netPerHour { text += ", per hour \(money.string(a)) vs \(money.string(b))\(change(a, b))" }
-        if period != .day { text += ". Note: this \(period.rawValue) isn't over yet" }
+        var text = String(localized: "\(name): net \(money.string(now.net)) vs \(money.string(before.net))") + change(now.net, before.net)
+        text += String(localized: ", earned \(money.string(now.earnings)) vs \(money.string(before.earnings))")
+        if let a = now.netPerHour, let b = before.netPerHour {
+            text += String(localized: ", per hour \(money.string(a)) vs \(money.string(b))") + change(a, b)
+        }
+        switch period {
+        case .day: break
+        case .week: text += String(localized: ". Note: this week isn't over yet")
+        case .month: text += String(localized: ". Note: this month isn't over yet")
+        case .year: text += String(localized: ". Note: this year isn't over yet")
+        }
         return text + "."
     }
 
+    /// Fits into a sentence: "You spent 120 lei *last week*."
     func label(_ period: StatsPeriod, _ offset: Int) -> String {
-        switch (period, offset) {
-        case (.day, 0): "today"
-        case (.day, -1): "yesterday"
-        case (_, 0): "this \(period.rawValue)"
-        case (_, -1): "last \(period.rawValue)"
-        default: "\(abs(offset)) \(period.rawValue)s ago"
+        let ago = abs(offset)
+        return switch (period, offset) {
+        case (.day, 0): String(localized: "today")
+        case (.day, -1): String(localized: "yesterday")
+        case (.week, 0): String(localized: "this week")
+        case (.week, -1): String(localized: "last week")
+        case (.month, 0): String(localized: "this month")
+        case (.month, -1): String(localized: "last month")
+        case (.year, 0): String(localized: "this year")
+        case (.year, -1): String(localized: "last year")
+        case (.day, _): String(localized: "\(ago) days ago")
+        case (.week, _): String(localized: "\(ago) weeks ago")
+        case (.month, _): String(localized: "\(ago) months ago")
+        case (.year, _): String(localized: "\(ago) years ago")
         }
     }
 }

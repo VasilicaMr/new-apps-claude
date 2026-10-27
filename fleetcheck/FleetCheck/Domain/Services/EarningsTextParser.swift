@@ -94,11 +94,12 @@ struct EarningsTextParser: Sendable {
 
     /// Checked in order, so "Trip earnings" is fares (not trips) and "Tips" never counts as the total.
     private static let keywords: [(Field, [String])] = [
-        (.fares, ["trip earnings", "câștiguri din curse", "castiguri din curse", "fare", "fares", "tarif", "tarife"]),
-        (.tips, ["tip", "tips", "bacsis", "bacșiș", "bacșișuri", "bacsisuri"]),
-        (.bonus, ["promotion", "promotions", "promoții", "promotii", "bonus", "boost", "quest", "incentive", "stimulent"]),
-        (.trips, ["trips", "trip", "curse", "cursă", "cursa", "călătorii", "calatorii", "rides"]),
-        (.total, ["total", "earnings", "câștiguri", "castiguri", "you earned", "ai câștigat", "payout", "net"]),
+        (.fares, ["trip earnings", "câștiguri din curse", "castiguri din curse", "gains des courses", "montant des courses",
+                    "fare", "fares", "tarif", "tarife"]),
+        (.tips, ["tip", "tips", "bacsis", "bacșiș", "bacșișuri", "bacsisuri", "pourboire", "pourboires"]),
+        (.bonus, ["promotion", "promotions", "promoții", "promotii", "bonus", "boost", "quest", "incentive", "stimulent", "prime", "primes"]),
+        (.trips, ["trips", "trip", "curse", "cursă", "cursa", "călătorii", "calatorii", "rides", "courses", "course"]),
+        (.total, ["total", "earnings", "câștiguri", "castiguri", "you earned", "ai câștigat", "payout", "net", "gains", "revenus"]),
     ]
 
     /// Lines that show money that is not the driver's: what the passenger paid, the platform's cut,
@@ -106,7 +107,7 @@ struct EarningsTextParser: Sendable {
     private static let ignoredWords: Set<String> = [
         "gross", "brut", "brute", "customer", "client", "clientul", "price", "pret", "commission", "comision",
         "fee", "fees", "taxa", "cash", "numerar", "balance", "sold", "points", "puncte", "distance", "distanta",
-        "duration", "durata", "online",
+        "duration", "durata", "online", "especes", "espèces", "frais", "solde", "prix", "duree", "durée", "ligne",
     ]
 
     /// Words marking the amount after the platform's commission; preferred over any other total.
@@ -156,7 +157,79 @@ struct EarningsTextParser: Sendable {
             result.total = kept.flatMap { amounts(in: $0) }.filter { $0 > 0 }.max()
         }
         if result.scope == .trip, result.trips == nil { result.trips = 1 }
+        result.distanceKm = distance(in: lines)
+        result.cashCollected = cash(in: lines)
+        if result.scope == .trip { result.destination = destination(in: lines) }
         return result.normalized()
+    }
+
+    // MARK: - Cash
+
+    private static let cashWords: Set<String> = ["cash", "numerar"]
+    /// "Cash out" is Uber's instant payout and "balance"/"sold" is what's owed, not cash from passengers.
+    private static let notCashWords: Set<String> = ["out", "balance", "sold", "payout", "withdraw", "retragere", "retras"]
+
+    /// "Cash collected  145,00 lei" or "Numerar încasat  -145,00 lei": money already in the driver's pocket.
+    func cash(in lines: [String]) -> Double? {
+        for (index, line) in lines.enumerated() {
+            let words = words(in: fold(line))
+            guard !words.isDisjoint(with: Self.cashWords), words.isDisjoint(with: Self.notCashWords) else { continue }
+            var values = amounts(in: line)
+            if values.isEmpty, index + 1 < lines.count, field(for: fold(lines[index + 1])) == nil {
+                values = amounts(in: lines[index + 1])
+            }
+            if let value = values.last, value != 0 { return abs(value) }
+        }
+        return nil
+    }
+
+    // MARK: - Distance and destination
+
+    /// Already folded (lowercase, no diacritics).
+    private static let distanceWords: Set<String> = ["distance", "distanta", "parcursa", "parcurs"]
+
+    /// "Distance  9.4 km" or "Distanță parcursă  412,5 km". A labelled row wins over a stray "km"
+    /// elsewhere (like "3 km away" in a promotion).
+    func distance(in lines: [String]) -> Double? {
+        let values = lines.compactMap { line -> (Double, Bool)? in
+            guard let match = line.firstMatch(of: /(\d+(?:[.,]\d{1,2})?)\s?km\b/.ignoresCase()), let km = amount(in: String(match.1)) else { return nil }
+            return (km, !words(in: fold(line)).isDisjoint(with: Self.distanceWords))
+        }
+        return (values.first { $0.1 } ?? values.first)?.0
+    }
+
+    /// Labels before the drop-off address on Uber and Bolt trip screens.
+    private static let dropOffLabels = ["drop-off", "dropoff", "drop off", "destination", "destinatie", "destinatia", "to:"]
+    private static let pickUpLabels = ["pick-up", "pickup", "pick up", "preluare", "from:"]
+    /// Words that make a line look like a street address.
+    private static let streetWords: Set<String> = [
+        "str", "strada", "bd", "bdul", "bulevardul", "calea", "sos", "soseaua", "piata", "aleea", "splaiul", "intrarea",
+        "street", "st", "avenue", "ave", "road", "rd", "boulevard", "blvd", "square", "airport", "aeroportul",
+    ]
+
+    /// The drop-off address: the row after a "Drop-off"/"Destinație" label (or the text after it), otherwise
+    /// the last address-looking row, since trip screens list pickup first and drop-off second.
+    func destination(in lines: [String]) -> String? {
+        for (index, line) in lines.enumerated() {
+            let folded = fold(line)
+            guard let label = Self.dropOffLabels.first(where: { folded.hasPrefix($0) }) else { continue }
+            let rest = cleanAddress(String(line.dropFirst(label.count)))
+            if !rest.isEmpty { return rest }
+            if index + 1 < lines.count { return cleanAddress(lines[index + 1]) }
+        }
+        let addresses = lines.filter { line in
+            let folded = fold(line)
+            return Self.pickUpLabels.allSatisfy { !folded.hasPrefix($0) }
+                && !words(in: folded).isDisjoint(with: Self.streetWords)
+                && amounts(in: line).isEmpty
+        }
+        return addresses.last.map(cleanAddress)
+    }
+
+    /// Drops a leading time ("10:58 AM", "22:14") and separators left by the label.
+    private func cleanAddress(_ text: String) -> String {
+        text.replacing(/^\s*\d{1,2}:\d{2}\s*(?:AM|PM|am|pm)?/, with: "")
+            .trimmingCharacters(in: CharacterSet(charactersIn: " :·-–\t"))
     }
 
     private func scope(of folded: String) -> ScreenshotEarnings.Scope {

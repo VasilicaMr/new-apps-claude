@@ -8,22 +8,18 @@ import SwiftData
 final class Shift {
     var start: Date
     var end: Date?
+    /// Kilometers driven, added up from the trips read off Uber/Bolt screenshots or typed in.
     var distanceMeters: Double
-    var movingSeconds: Double
     var isManual: Bool
     var note: String
-    @Attribute(.externalStorage) var routeData: Data
     @Relationship(deleteRule: .nullify, inverse: \Earning.shift) var earnings: [Earning] = []
 
-    init(start: Date, end: Date? = nil, distanceMeters: Double = 0, movingSeconds: Double = 0,
-         isManual: Bool = false, note: String = "", route: [RoutePoint] = []) {
+    init(start: Date, end: Date? = nil, distanceMeters: Double = 0, isManual: Bool = false, note: String = "") {
         self.start = start
         self.end = end
         self.distanceMeters = distanceMeters
-        self.movingSeconds = movingSeconds
         self.isManual = isManual
         self.note = note
-        self.routeData = RoutePoint.encode(route)
     }
 
     var isActive: Bool { end == nil }
@@ -31,13 +27,8 @@ final class Shift {
     var duration: TimeInterval { (end ?? .now).timeIntervalSince(start) }
     var earningsTotal: Double { earnings.reduce(0) { $0 + $1.total } }
 
-    var route: [RoutePoint] {
-        get { RoutePoint.decode(routeData) }
-        set { routeData = RoutePoint.encode(newValue) }
-    }
-
     var figures: ShiftFigures {
-        ShiftFigures(start: start, end: end ?? .now, distanceKm: distanceKm, movingHours: movingSeconds / 3600)
+        ShiftFigures(start: start, end: end ?? .now, distanceKm: distanceKm)
     }
 }
 
@@ -49,17 +40,27 @@ final class Earning {
     var tips: Double
     var bonus: Double
     var trips: Int
+    /// Kilometers shown on the screenshot (trip distance, or the day's/week's total). 0 if unknown.
+    var distanceKm: Double = 0
+    /// Drop-off address of a single trip, when the screenshot shows one.
+    var destination: String = ""
+    /// Part of the total paid in cash by passengers; the app pays out `total - cashCollected`.
+    var cashCollected: Double = 0
     var note: String
     var shift: Shift?
 
     init(date: Date, platform: Platform, fares: Double, tips: Double = 0, bonus: Double = 0,
-         trips: Int = 0, note: String = "", shift: Shift? = nil) {
+         trips: Int = 0, distanceKm: Double = 0, destination: String = "", cashCollected: Double = 0,
+         note: String = "", shift: Shift? = nil) {
         self.date = date
         self.platformRaw = platform.rawValue
         self.fares = fares
         self.tips = tips
         self.bonus = bonus
         self.trips = trips
+        self.distanceKm = distanceKm
+        self.destination = destination
+        self.cashCollected = cashCollected
         self.note = note
         self.shift = shift
     }
@@ -72,7 +73,8 @@ final class Earning {
     var total: Double { fares + tips + bonus }
 
     var figures: EarningFigures {
-        EarningFigures(date: date, platform: platform, fares: fares, tips: tips, bonus: bonus, trips: trips)
+        EarningFigures(date: date, platform: platform, fares: fares, tips: tips, bonus: bonus, trips: trips, cash: cashCollected,
+                       distanceKm: distanceKm)
     }
 }
 
@@ -148,7 +150,7 @@ final class Reminder {
     }
 }
 
-/// The driver's car. Phase 1 supports one car; the odometer grows with every tracked shift.
+/// The driver's car. Phase 1 supports one car; the odometer grows with the kilometers logged.
 @Model
 final class Car {
     var name: String
@@ -156,15 +158,38 @@ final class Car {
     var odometerKm: Double
     var odometerUpdatedAt: Date
 
+    // True cost of the car (Home → Earn smarter → Car cost). Zero means not set.
+    var rentAmount: Double = 0
+    var rentPerMonth: Bool = false
+    var otherMonthlyCosts: Double = 0
+    var carValue: Double = 0
+    var resaleValue: Double = 0
+    var kmUntilSale: Double = 0
+    var tyreSetCost: Double = 0
+    var tyreLifeKm: Double = 40_000
+    var serviceCost: Double = 0
+    var serviceIntervalKm: Double = 15_000
+    var litersPer100Km: Double = 0
+    var fuelPrice: Double = 0
+    var expectedWeeklyKm: Double = 0
+
     init(name: String = "", plate: String = "", odometerKm: Double = 0) {
         self.name = name
         self.plate = plate
         self.odometerKm = odometerKm
         self.odometerUpdatedAt = .now
     }
+
+    var costSettings: CarCostSettings {
+        CarCostSettings(rentAmount: rentAmount, rentPerMonth: rentPerMonth, otherPerMonth: otherMonthlyCosts,
+                        carValue: carValue, resaleValue: resaleValue, kmUntilSale: kmUntilSale,
+                        tyreSetCost: tyreSetCost, tyreLifeKm: tyreLifeKm, serviceCost: serviceCost,
+                        serviceIntervalKm: serviceIntervalKm, litersPer100Km: litersPer100Km, fuelPrice: fuelPrice,
+                        expectedWeeklyKm: expectedWeeklyKm)
+    }
 }
 
-/// "This was read wrong": the text read from a screenshot (never the image), what FleetCheck understood,
+/// "This was read wrong": the text read from a screenshot (never the image), what DriveCap understood,
 /// and what the driver corrected it to. Kept on the phone; the driver can export and share it to improve reading.
 @Model
 final class ScanReport {
@@ -183,7 +208,7 @@ final class ScanReport {
 
     var text: String {
         """
-        FleetCheck screenshot report — \(date.formatted(.iso8601))
+        DriveCap screenshot report — \(date.formatted(.iso8601))
         Method: \(method)
         Detected: \(detected)
         Corrected: \(corrected ?? "(not saved)")
@@ -215,5 +240,15 @@ extension ModelContext {
         let car = Car()
         insert(car)
         return car
+    }
+
+    /// Adds kilometers read from a trip to its shift and to the car's odometer.
+    /// Negative takes them back (an edited or deleted entry).
+    func addKilometers(_ km: Double, to shift: Shift?) {
+        guard km != 0 else { return }
+        if let shift { shift.distanceMeters = max(0, shift.distanceMeters + km * 1000) }
+        let car = car()
+        car.odometerKm = max(0, car.odometerKm + km)
+        car.odometerUpdatedAt = .now
     }
 }

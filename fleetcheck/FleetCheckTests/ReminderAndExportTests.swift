@@ -60,7 +60,7 @@ struct CSVExporterTests {
 
     @Test func shiftHoursAreComputed() {
         let start = Date(timeIntervalSince1970: 0)
-        let csv = exporter.shifts([.init(start: start, end: start.addingTimeInterval(9000), distanceKm: 80, movingHours: 1.5, earnings: 300, note: "")])
-        #expect(csv.contains(",2.50,80.00,1.50,300.00,"))
+        let csv = exporter.shifts([.init(start: start, end: start.addingTimeInterval(9000), distanceKm: 80, earnings: 300, note: "")])
+        #expect(csv.contains(",2.50,80.00,300.00,"))
     }
 }

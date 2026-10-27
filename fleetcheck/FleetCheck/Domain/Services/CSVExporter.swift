@@ -7,7 +7,6 @@ struct CSVExporter: Sendable {
         let start: Date
         let end: Date?
         let distanceKm: Double
-        let movingHours: Double
         let earnings: Double
         let note: String
     }
@@ -19,6 +18,9 @@ struct CSVExporter: Sendable {
         let tips: Double
         let bonus: Double
         let trips: Int
+        var distanceKm: Double = 0
+        var destination: String = ""
+        var cash: Double = 0
         let note: String
     }
 
@@ -34,17 +36,17 @@ struct CSVExporter: Sendable {
     var timeZone: TimeZone = .current
 
     func shifts(_ rows: [ShiftRow]) -> String {
-        table(header: ["start", "end", "hours", "km", "moving_hours", "earnings", "note"], rows: rows.map { row in
+        table(header: ["start", "end", "hours", "km", "earnings", "note"], rows: rows.map { row in
             [date(row.start), row.end.map(date) ?? "",
              row.end.map { number($0.timeIntervalSince(row.start) / 3600) } ?? "",
-             number(row.distanceKm), number(row.movingHours), number(row.earnings), row.note]
+             number(row.distanceKm), number(row.earnings), row.note]
         })
     }
 
     func earnings(_ rows: [EarningRow]) -> String {
-        table(header: ["date", "platform", "fares", "tips", "bonus", "total", "trips", "note"], rows: rows.map {
+        table(header: ["date", "platform", "fares", "tips", "bonus", "total", "trips", "cash", "km", "destination", "note"], rows: rows.map {
             [date($0.date), $0.platform.title, number($0.fares), number($0.tips), number($0.bonus),
-             number($0.fares + $0.tips + $0.bonus), String($0.trips), $0.note]
+             number($0.fares + $0.tips + $0.bonus), String($0.trips), number($0.cash), number($0.distanceKm), $0.destination, $0.note]
         })
     }
 

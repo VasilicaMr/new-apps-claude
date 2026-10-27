@@ -1,0 +1,97 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Ask ${applicationName}" : {
+      "localizations" : {
+        "en" : {
+          "stringSet" : {
+            "state" : "translated",
+            "values" : [
+              "Ask ${applicationName}",
+              "Ask ${applicationName} a question",
+              "Add to ${applicationName}"
+            ]
+          }
+        },
+        "fr" : {
+          "stringSet" : {
+            "state" : "translated",
+            "values" : [
+              "Demande à ${applicationName}",
+              "Pose une question à ${applicationName}",
+              "Ajoute dans ${applicationName}"
+            ]
+          }
+        }
+      }
+    },
+    "End my shift in ${applicationName}" : {
+      "localizations" : {
+        "en" : {
+          "stringSet" : {
+            "state" : "translated",
+            "values" : [
+              "End my shift in ${applicationName}",
+              "Stop shift in ${applicationName}"
+            ]
+          }
+        },
+        "fr" : {
+          "stringSet" : {
+            "state" : "translated",
+            "values" : [
+              "Termine mon service dans ${applicationName}",
+              "Arrête le service dans ${applicationName}"
+            ]
+          }
+        }
+      }
+    },
+    "How much did I make today in ${applicationName}" : {
+      "localizations" : {
+        "en" : {
+          "stringSet" : {
+            "state" : "translated",
+            "values" : [
+              "How much did I make today in ${applicationName}",
+              "Today's earnings in ${applicationName}"
+            ]
+          }
+        },
+        "fr" : {
+          "stringSet" : {
+            "state" : "translated",
+            "values" : [
+              "Combien j’ai gagné aujourd’hui dans ${applicationName}",
+              "Mes gains du jour dans ${applicationName}"
+            ]
+          }
+        }
+      }
+    },
+    "Start my shift in ${applicationName}" : {
+      "localizations" : {
+        "en" : {
+          "stringSet" : {
+            "state" : "translated",
+            "values" : [
+              "Start my shift in ${applicationName}",
+              "Start shift in ${applicationName}"
+            ]
+          }
+        },
+        "fr" : {
+          "stringSet" : {
+            "state" : "translated",
+            "values" : [
+              "Démarre mon service dans ${applicationName}",
+              "Démarre le service dans ${applicationName}",
+              "Commence mon service dans ${applicationName}"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

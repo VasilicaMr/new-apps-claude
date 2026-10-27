@@ -1,0 +1,48 @@
+Que vous reste-t-il vraiment après le carburant, la voiture et la commission de l’application ? DriveCap est le carnet de bord des chauffeurs VTC et taxi qui transforme vos captures de gains en chiffres clairs : ce que vous avez gagné, ce que ça a coûté et ce qu’il vous reste par heure et par km.
+
+VOS GAINS LUS DEPUIS UNE CAPTURE
+• Faites une capture d’une course, d’une journée ou d’une semaine dans votre application de chauffeur
+• DriveCap lit pour vous le montant des courses, les pourboires, les bonus, le nombre de courses, les kilomètres et la destination
+• Quand vous terminez un service, il passe directement à la lecture de votre capture de gains
+• Avec Pro, il trouve tout seul les nouvelles captures de gains et les affiche sur l’accueil, prêtes à ajouter en un geste
+
+VOS SERVICES CHRONOMÉTRÉS
+• Démarrez et terminez un service en un geste
+• Le chrono du service sur l’écran verrouillé et dans la Dynamic Island
+• Les mains libres avec Siri : « Démarre mon service dans DriveCap »
+
+VOS FRAIS SANS RIEN TAPER
+• Prenez un reçu de carburant ou de garage en photo et DriveCap remplit la catégorie, le total, les litres, la station et la date
+• Toutes vos dépenses dans un seul journal, avec la photo du reçu
+
+VOS VRAIS CHIFFRES
+• Le net après frais pour la journée, la semaine, le mois ou l’année
+• Gains et bénéfice par heure et par km
+• Comparez les applications et voyez où part votre argent, par catégorie
+
+GAGNEZ MIEUX (PRO)
+• Votre tarif minimum : le vrai coût de votre voiture au km, pour savoir quelles courses vous font perdre de l’argent
+• Objectif de la semaine : les heures qu’il vous faut encore pour garder ce que vous voulez
+• Meilleurs moments : les jours et les heures qui vous rapportent le plus
+
+DEMANDEZ, TOUT SIMPLEMENT
+Demandez « Combien j’ai gagné cette semaine ? » ou tapez « carburant 70 € 38 L » et DriveCap vous répond ou l’ajoute pour vous. Utilise Apple Intelligence sur les iPhone compatibles et comprend les questions courantes même sans.
+
+LES PAPIERS DE LA VOITURE À JOUR
+Des rappels pour le contrôle technique, l’assurance, la vignette et la vidange, par date ou par kilomètres, avec une alerte 30, 7 et 1 jour avant.
+
+PRIVÉ PAR CONCEPTION
+• Pas de compte, pas d’inscription
+• Tout ce que vous enregistrez reste sur votre iPhone
+• Les captures et les reçus sont lus sur l’iPhone et ne sont jamais envoyés
+• Exportez un CSV pour votre comptable ou une sauvegarde (Pro)
+
+GRATUIT ET PRO
+DriveCap est gratuit pour les services, les saisies manuelles, les statistiques, les reçus, les rappels et l’assistant, avec 10 lectures de captures par mois.
+DriveCap Pro ajoute la lecture illimitée des captures, les captures trouvées pour vous, Gagnez mieux et l’export CSV. Choisissez un abonnement mensuel ou annuel, tous deux avec 7 jours d’essai gratuit, ou un achat unique à vie.
+
+Les abonnements se renouvellent automatiquement sauf résiliation au moins 24 heures avant la fin de la période en cours. Gérez-les ou résiliez-les dans les réglages de votre compte Apple.
+Conditions d’utilisation : https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Politique de confidentialité : https://adaptivebyte.com/privacy-policy/
+
+DriveCap est une application indépendante, sans lien avec Uber, Bolt ou toute autre société de VTC.

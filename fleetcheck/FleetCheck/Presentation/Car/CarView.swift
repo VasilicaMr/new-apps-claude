@@ -26,24 +26,37 @@ struct CarView: View {
             List {
                 Section {
                     Button { editingCar = true } label: {
-                        HStack(spacing: 14) {
+                        HStack(spacing: 16) {
                             Image(systemName: "car.side.fill")
-                                .font(.title)
-                                .foregroundStyle(.white)
-                                .frame(width: 56, height: 56)
-                                .background(Theme.accent.gradient, in: .rect(cornerRadius: 14))
-                            VStack(alignment: .leading, spacing: 2) {
-                                Text(car.map { $0.name.isEmpty ? "Your car" : $0.name } ?? "Your car").font(.headline)
+                                .font(.system(size: 28, weight: .bold))
+                                .frame(width: 64, height: 64)
+                                .background(.white.opacity(0.18), in: .rect(cornerRadius: 18, style: .continuous))
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(car.flatMap { $0.name.isEmpty ? nil : $0.name } ?? String(localized: "Your car"))
+                                    .font(.system(size: 20, weight: .heavy, design: .rounded))
                                 if let plate = car?.plate, !plate.isEmpty {
-                                    Text(plate).font(.subheadline.monospaced()).foregroundStyle(.secondary)
+                                    Text(plate)
+                                        .font(.system(.subheadline, design: .monospaced, weight: .bold))
+                                        .padding(.horizontal, 8)
+                                        .padding(.vertical, 2)
+                                        .background(.white.opacity(0.22), in: .rect(cornerRadius: 6))
                                 }
-                                Text("Odometer \(odometer.kilometers)").font(.caption).foregroundStyle(.secondary)
+                                Text("Odometer \(odometer.kilometers)")
+                                    .font(.system(size: 13, weight: .semibold, design: .rounded))
+                                    .opacity(0.88)
                             }
                             Spacer()
-                            Image(systemName: "pencil").foregroundStyle(.secondary)
+                            Image(systemName: "pencil.circle.fill")
+                                .font(.system(size: 28, weight: .semibold))
+                                .symbolRenderingMode(.hierarchical)
                         }
+                        .padding(18)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .gradientCard(Theme.carGradient, cornerRadius: 26)
                     }
-                    .buttonStyle(.plain)
+                    .buttonStyle(PressableStyle())
+                    .listRowBackground(Color.clear)
+                    .listRowInsets(EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 0))
                 } footer: {
                     Text("Kilometers from tracked shifts and odometer readings on fuel receipts are added automatically.")
                 }
@@ -57,7 +70,7 @@ struct CarView: View {
                         .swipeActions(edge: .leading) {
                             if reminder.repeatMonths != nil || reminder.repeatKm != nil {
                                 Button("Done", systemImage: "checkmark") { markDone(reminder, odometer: odometer) }
-                                    .tint(.green)
+                                    .tint(Theme.positive)
                             }
                         }
                         .swipeActions(edge: .trailing) {
@@ -75,6 +88,7 @@ struct CarView: View {
                     Text("You get a notification 30, 7 and 1 days before each date. Swipe right to mark a repeating item as done.")
                 }
             }
+            .fleetBackground()
             .navigationTitle("Car")
             .sheet(isPresented: $addingReminder) { ReminderForm(odometer: odometer) }
             .sheet(item: $editingReminder) { ReminderForm(odometer: odometer, editing: $0) }
@@ -86,7 +100,7 @@ struct CarView: View {
                     } description: {
                         Text("Add the expiry dates for your inspection (ITP), insurance (RCA) and road vignette so you never drive with expired papers.")
                     } actions: {
-                        Button("Add reminder") { addingReminder = true }.buttonStyle(.borderedProminent)
+                        Button("Add reminder") { addingReminder = true }.buttonStyle(CapsuleButtonStyle())
                     }
                     .padding(.top, 200)
                 }
@@ -117,6 +131,7 @@ struct CarForm: View {
                         .multilineTextAlignment(.trailing)
                 }
             }
+            .fleetBackground()
             .navigationTitle("Car")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -194,6 +209,7 @@ struct ReminderForm: View {
                     TextField("Note (insurer, policy number…)", text: $note, axis: .vertical)
                 }
             }
+            .fleetBackground()
             .navigationTitle(editing == nil ? "New reminder" : "Edit reminder")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

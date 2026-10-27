@@ -6,7 +6,7 @@ struct ScreenshotTextReader: Sendable {
     enum ReadError: LocalizedError {
         case noText
 
-        var errorDescription: String? { "No text found in this image. Use a screenshot of the earnings screen." }
+        var errorDescription: String? { String(localized: "No text found in this image. Use a screenshot of the earnings screen.") }
     }
 
     /// Returns text fragments with positions (origin top-left).
@@ -14,7 +14,7 @@ struct ScreenshotTextReader: Sendable {
         var request = RecognizeTextRequest()
         request.recognitionLevel = .accurate
         request.usesLanguageCorrection = true
-        let preferred = [Locale.Language(identifier: "ro-RO"), Locale.Language(identifier: "en-US")]
+        let preferred = ["ro-RO", "fr-FR", "en-US"].map(Locale.Language.init(identifier:))
         let supported = Set(request.supportedRecognitionLanguages.map(\.minimalIdentifier))
         request.recognitionLanguages = preferred.filter { supported.contains($0.minimalIdentifier) }
 

@@ -21,29 +21,32 @@ struct EarningDraft: Sendable, Equatable {
     var tips: Double = 0
     var bonus: Double = 0
     var trips: Int = 0
+    var distanceKm: Double = 0
+    var destination: String = ""
+    var cashCollected: Double = 0
     var daysAgo: Int = 0
 
     var total: Double { fares + tips + bonus }
 }
 
-/// Understands short entries in English and Romanian without Apple Intelligence.
+/// Understands short entries in English, Romanian and French without Apple Intelligence.
 /// Apple Intelligence handles free-form sentences; this covers the common shorthand on every iPhone.
 struct QuickEntryParser: Sendable {
     private static let categoryWords: [(ExpenseCategory, [String])] = [
         (.fuel, ["fuel", "gas", "petrol", "diesel", "benzina", "motorina", "plin", "alimentat", "carburant",
-                 "omv", "petrom", "mol", "lukoil", "rompetrol", "socar", "gazprom"]),
-        (.charging, ["charge", "charging", "incarcare", "kwh"]),
-        (.carWash, ["wash", "carwash", "spalat", "spalatorie", "spalare"]),
-        (.maintenance, ["service", "revizie", "oil", "ulei", "filtre", "filter"]),
-        (.repair, ["repair", "reparatie", "mecanic", "garage", "garaj"]),
-        (.tyres, ["tyre", "tyres", "tire", "tires", "anvelope", "cauciucuri", "vulcanizare"]),
-        (.insurance, ["insurance", "rca", "casco", "asigurare"]),
+                 "essence", "gazole", "plein", "omv", "petrom", "mol", "lukoil", "rompetrol", "socar", "gazprom"]),
+        (.charging, ["charge", "charging", "incarcare", "recharge", "kwh"]),
+        (.carWash, ["wash", "carwash", "spalat", "spalatorie", "spalare", "lavage"]),
+        (.maintenance, ["service", "revizie", "oil", "ulei", "filtre", "filter", "entretien", "vidange", "revision"]),
+        (.repair, ["repair", "reparatie", "mecanic", "garage", "garaj", "reparation"]),
+        (.tyres, ["tyre", "tyres", "tire", "tires", "anvelope", "cauciucuri", "vulcanizare", "pneu", "pneus"]),
+        (.insurance, ["insurance", "rca", "casco", "asigurare", "assurance"]),
         (.roadTax, ["rovinieta", "vignette", "impozit", "roadtax"]),
-        (.leasing, ["leasing", "rent", "chirie", "rata"]),
-        (.parking, ["parking", "parcare"]),
-        (.tolls, ["toll", "tolls", "peaj", "pod"]),
-        (.fines, ["fine", "amenda", "ticket"]),
-        (.phone, ["phone", "telefon", "abonament", "internet"]),
+        (.leasing, ["leasing", "rent", "chirie", "rata", "loyer", "location"]),
+        (.parking, ["parking", "parcare", "stationnement"]),
+        (.tolls, ["toll", "tolls", "peaj", "pod", "peage"]),
+        (.fines, ["fine", "amenda", "ticket", "amende"]),
+        (.phone, ["phone", "telefon", "abonament", "internet", "forfait"]),
     ]
 
     private static let stationBrands = ["omv", "petrom", "mol", "lukoil", "rompetrol", "socar", "gazprom"]
@@ -52,7 +55,7 @@ struct QuickEntryParser: Sendable {
         let folded = text.folding(options: [.caseInsensitive, .diacriticInsensitive], locale: nil)
         let words = folded.split { !$0.isLetter && !$0.isNumber }.map(String.init)
         let wordSet = Set(words)
-        let daysAgo = wordSet.contains("yesterday") || wordSet.contains("ieri") ? 1 : 0
+        let daysAgo = !wordSet.isDisjoint(with: ["yesterday", "ieri", "hier"]) ? 1 : 0
 
         if let platform = platform(in: wordSet) {
             return earning(platform: platform, folded: folded, daysAgo: daysAgo)
@@ -90,9 +93,9 @@ struct QuickEntryParser: Sendable {
             }
             return nil
         }
-        let tips = tagged(["tips", "tip", "bacsis", "bacsisuri"]) ?? 0
+        let tips = tagged(["tips", "tip", "bacsisuri", "bacsis", "pourboires", "pourboire"]) ?? 0
         let bonus = tagged(["bonus", "promo", "promotii", "promotions", "promotion"]) ?? 0
-        let trips = tagged(["trips", "curse", "rides"]).map { Int($0) } ?? 0
+        let trips = tagged(["trips", "curse", "rides", "courses"]).map { Int($0) } ?? 0
 
         var remaining = numbersWithUnits(in: folded).filter { $0.unit == nil || $0.unit == .money }.map(\.value)
         for used in [tips, bonus, Double(trips)] where used > 0 {
@@ -105,10 +108,11 @@ struct QuickEntryParser: Sendable {
     private enum Unit { case money, liters, kwh, km }
 
     private func numbersWithUnits(in folded: String) -> [(value: Double, unit: Unit?)] {
-        folded.matches(of: #/(\d+(?:[.,]\d{1,3})?)\s*(lei|ron|eur|€|l|litri|liters|litres|kwh|km)?\b/#).compactMap { match in
-            guard let value = EarningsTextParser().amount(in: String(match.output.1)) else { return nil }
-            let unit: Unit? = switch match.output.2.map(String.init) {
-            case "lei", "ron", "eur", "€": .money
+        folded.matches(of: #/(\$)?\s*(\d+(?:[.,]\d{1,3})?)\s*(lei|ron|eur|€|usd|dollars|l|litri|liters|litres|kwh|km)?\b/#).compactMap { match in
+            guard let value = EarningsTextParser().amount(in: String(match.output.2)) else { return nil }
+            if match.output.1 != nil { return (value, .money) } // "$40"
+            let unit: Unit? = switch match.output.3.map(String.init) {
+            case "lei", "ron", "eur", "€", "usd", "dollars": .money
             case "l", "litri", "liters", "litres": .liters
             case "kwh": .kwh
             case "km": .km

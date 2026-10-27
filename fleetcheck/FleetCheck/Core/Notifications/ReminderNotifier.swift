@@ -32,9 +32,9 @@ enum ReminderNotifier {
                 let content = UNMutableNotificationContent()
                 content.title = item.title
                 content.body = switch lead {
-                case 0: "Due today."
-                case 1: "Due tomorrow."
-                default: "Due in \(lead) days, on \(item.dueDate.formatted(date: .abbreviated, time: .omitted))."
+                case 0: String(localized: "Due today.")
+                case 1: String(localized: "Due tomorrow.")
+                default: String(localized: "Due in \(lead) days, on \(item.dueDate.formatted(date: .abbreviated, time: .omitted)).")
                 }
                 content.sound = .default
                 let trigger = UNCalendarNotificationTrigger(

@@ -1,0 +1,78 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "CFBundleDisplayName" : {
+      "comment" : "Bundle display name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "DriveCap"
+          }
+        }
+      }
+    },
+    "CFBundleName" : {
+      "comment" : "Bundle name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "FleetCheck"
+          }
+        }
+      }
+    },
+    "NSCameraUsageDescription" : {
+      "comment" : "Privacy - Camera Usage Description",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Take a photo of a receipt and DriveCap fills in the expense for you."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Prenez un reçu en photo et DriveCap remplit la dépense pour vous."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Fă o poză unui bon și DriveCap completează cheltuiala pentru tine."
+          }
+        }
+      }
+    },
+    "NSPhotoLibraryUsageDescription" : {
+      "comment" : "Privacy - Photo Library Usage Description",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "DriveCap finds the earnings screenshots you take in Uber or Bolt and reads them on this iPhone, so you don't have to type the numbers. Images are never stored or sent."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "DriveCap trouve les captures de gains que vous faites dans Uber ou Bolt et les lit sur cet iPhone, pour que vous n’ayez pas à taper les chiffres. Les images ne sont jamais stockées ni envoyées."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "DriveCap găsește capturile cu câștiguri pe care le faci în Uber sau Bolt și le citește pe acest iPhone, ca să nu scrii tu cifrele. Imaginile nu sunt niciodată păstrate sau trimise."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

@@ -3,32 +3,21 @@ import Foundation
 import Observation
 import SwiftData
 
-/// Runs the current shift: GPS tracking, distance, saving the route, and the Live Activity.
+/// Runs the current shift: its clock and the Live Activity. There is no GPS (it drains the battery);
+/// kilometers come from the trip screenshots the driver adds afterwards.
 @MainActor
 @Observable
 final class ShiftStore {
     private(set) var activeShift: Shift?
-    private(set) var distanceMeters: Double = 0
-    private(set) var movingSeconds: Double = 0
-    private(set) var route: [RoutePoint] = []
-    private(set) var gpsStatus: ShiftLocationTracker.Status = .idle
     /// Set when a shift ends so the UI can ask "How much did you earn?".
     var shiftAwaitingEarnings: Shift?
 
     private let context: ModelContext
-    private let tracker = ShiftLocationTracker()
-    private var accumulator = DistanceAccumulator()
-    private var trackingTask: Task<Void, Never>?
     private var activity: Activity<ShiftActivityAttributes>?
-    private var unsavedPoints = 0
-    private var lastActivityUpdate = Date.distantPast
+    private var endingActivity: Task<Void, Never>?
 
     init(context: ModelContext) {
         self.context = context
-        tracker.onStatusChange = { [weak self] status in
-            self?.gpsStatus = status
-            self?.updateActivity(force: true)
-        }
     }
 
     var isOnShift: Bool { activeShift != nil }
@@ -50,21 +39,11 @@ final class ShiftStore {
         attach(to: shift)
     }
 
-    /// Ends the running shift, adds its kilometers to the car's odometer and returns it.
+    /// Ends the running shift and returns it. Its kilometers arrive with the earnings screenshots.
     @discardableResult
     func endShift() -> Shift? {
         guard let shift = activeShift else { return nil }
-        trackingTask?.cancel()
-        trackingTask = nil
-        tracker.stop()
-
         shift.end = .now
-        shift.distanceMeters = accumulator.distanceMeters
-        shift.movingSeconds = accumulator.movingSeconds
-        shift.route = route
-        let car = context.car()
-        car.odometerKm += shift.distanceKm
-        car.odometerUpdatedAt = .now
         try? context.save()
 
         endActivity()
@@ -73,44 +52,23 @@ final class ShiftStore {
         return shift
     }
 
-    /// Short summary used by Siri and the Live Activity button.
-    func endShiftSummary() -> String? {
-        guard let shift = endShift() else { return nil }
+    /// Short summary used by Siri and the Live Activity button. Returns once the Live Activity
+    /// has really ended, because the app may be suspended right after.
+    func endShiftSummary() async -> String? {
+        let shift = endShift()
+        await endingActivity?.value
+        // A card left over from a relaunch or an earlier shift would still show an End button.
+        for leftover in Activity<ShiftActivityAttributes>.activities where leftover.content.state.endDate == nil {
+            await leftover.end(nil, dismissalPolicy: .immediate)
+        }
+        guard let shift else { return nil }
         let hours = Formatters.duration(shift.duration)
-        return "Shift ended: \(shift.distanceKm.kilometers) in \(hours). Open FleetCheck to add what you earned."
+        return String(localized: "Shift ended after \(hours). Open DriveCap and add the screenshots of your trips.")
     }
 
     private func attach(to shift: Shift) {
         activeShift = shift
-        route = shift.route
-        accumulator = DistanceAccumulator(distanceMeters: shift.distanceMeters, movingSeconds: shift.movingSeconds, lastPoint: route.last)
-        distanceMeters = accumulator.distanceMeters
-        movingSeconds = accumulator.movingSeconds
         startActivity(for: shift)
-
-        let samples = tracker.start()
-        trackingTask = Task { [weak self] in
-            for await sample in samples {
-                self?.handle(sample)
-            }
-        }
-    }
-
-    private func handle(_ sample: LocationSample) {
-        guard let shift = activeShift, let point = accumulator.add(sample) else { return }
-        route.append(point)
-        distanceMeters = accumulator.distanceMeters
-        movingSeconds = accumulator.movingSeconds
-        unsavedPoints += 1
-        // Save regularly so a crash or iOS terminating the app loses at most a few hundred meters.
-        if unsavedPoints >= 10 {
-            shift.distanceMeters = distanceMeters
-            shift.movingSeconds = movingSeconds
-            shift.route = route
-            try? context.save()
-            unsavedPoints = 0
-        }
-        updateActivity()
     }
 
     // MARK: - Live Activity
@@ -120,7 +78,6 @@ final class ShiftStore {
         // Reuse the card if the app was relaunched mid-shift.
         if let existing = Activity<ShiftActivityAttributes>.activities.first(where: { $0.attributes.startDate == shift.start }) {
             activity = existing
-            updateActivity(force: true)
             return
         }
         for stale in Activity<ShiftActivityAttributes>.activities {
@@ -128,24 +85,17 @@ final class ShiftStore {
         }
         activity = try? Activity.request(
             attributes: ShiftActivityAttributes(startDate: shift.start),
-            content: ActivityContent(state: activityState, staleDate: nil))
+            content: ActivityContent(state: .init(endDate: nil), staleDate: nil))
     }
 
-    private var activityState: ShiftActivityAttributes.ContentState {
-        .init(distanceKm: distanceMeters / 1000, isWaitingForGPS: gpsStatus != .tracking)
-    }
-
-    private func updateActivity(force: Bool = false) {
-        guard let activity, force || Date.now.timeIntervalSince(lastActivityUpdate) >= 20 else { return }
-        lastActivityUpdate = .now
-        let state = activityState
-        Task { await activity.update(ActivityContent(state: state, staleDate: nil)) }
-    }
-
+    /// Shows "Shift ended" with the totals for a moment, then removes the card. The default policy
+    /// would leave it on the Lock Screen for hours, still looking like a running shift.
     private func endActivity() {
         guard let activity else { return }
-        let state = activityState
-        Task { await activity.end(ActivityContent(state: state, staleDate: nil), dismissalPolicy: .default) }
+        let state = ShiftActivityAttributes.ContentState(endDate: .now)
+        endingActivity = Task {
+            await activity.end(ActivityContent(state: state, staleDate: nil), dismissalPolicy: .after(.now + 120))
+        }
         self.activity = nil
     }
 }

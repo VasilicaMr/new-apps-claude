@@ -45,6 +45,19 @@ struct EarningsTextParserTests {
         #expect(result.trips == 18)
     }
 
+    @Test func parsesFrenchDay() {
+        let result = parser.parse(lines: [
+            "Gains", "Aujourd’hui", "186,30 €",
+            "Gains des courses  158,80 €", "Pourboires  12,50 €", "Primes  15,00 €", "Courses  15",
+            "Espèces encaissées  40,00 €", "En ligne  7 h 50 min",
+        ])
+        #expect(result.total == 186.3)
+        #expect(result.fares == 158.8)
+        #expect(result.tips == 12.5)
+        #expect(result.bonus == 15)
+        #expect(result.trips == 15)
+    }
+
     @Test func parsesRomanianBoltWeek() {
         let result = parser.parse(lines: [
             "Bolt", "Săptămâna 5 - 11 oct.", "1.874,30 lei",
@@ -57,6 +70,45 @@ struct EarningsTextParserTests {
         #expect(result.tips == 41.5)
         #expect(result.bonus == 130)
         #expect(result.trips == 64)
+    }
+
+    @Test("Trip screen: kilometers and the drop-off address")
+    func parsesTripDistanceAndDestination() {
+        let result = parser.parse(lines: [
+            "Detalii cursă", "Bolt", "28,40 lei", "Tarif  24,90 lei", "Bacșiș  3,50 lei", "Distanță  12,6 km", "Durată  27 min",
+            "10:32  Strada Lipscani 5, București", "10:59  Bulevardul Unirii 21, București",
+        ])
+        #expect(result.scope == .trip)
+        #expect(result.total == 28.4)
+        #expect(result.distanceKm == 12.6)
+        #expect(result.destination == "Bulevardul Unirii 21, București")
+    }
+
+    @Test("A labelled drop-off wins; the address can be on the next row")
+    func parsesDropOffLabel() {
+        let lines = ["Trip details", "Uber", "Pickup", "Aeroportul Henri Coandă", "Drop-off", "Calea Victoriei 120", "Distance  18.2 km"]
+        #expect(parser.destination(in: lines) == "Calea Victoriei 120")
+        #expect(parser.distance(in: ["Bonus 3 km away", "Distance  18.2 km"]) == 18.2)
+    }
+
+    @Test("Weekly summaries give kilometers but no destination")
+    func weekHasNoDestination() {
+        let result = parser.parse(lines: ["Bolt", "Săptămâna 5 - 11 oct.", "1.874,30 lei", "Curse  64", "Distanță parcursă  612,5 km", "Str. Exemplu 1"])
+        #expect(result.distanceKm == 612.5)
+        #expect(result.destination == nil)
+    }
+
+    @Test("Cash is read separately and never added to the earnings")
+    func readsCashCollected() {
+        let result = parser.parse(lines: [
+            "Uber", "Today", "RON 412.50", "Trip earnings  RON 380.00", "Tips  RON 32.50",
+            "Cash collected  -RON 120.00", "Cash out  RON 292.50", "Trips  11",
+        ])
+        #expect(result.total == 412.5)
+        #expect(result.fares == 380)
+        #expect(result.cashCollected == 120)
+        #expect(parser.cash(in: ["Numerar încasat", "145,00 lei"]) == 145)
+        #expect(parser.cash(in: ["Cash out balance  RON 50.00"]) == nil)
     }
 
     @Test func reportSummary() {
@@ -119,6 +171,7 @@ struct EarningsScreenshotScannerTests {
         #expect(result.fares == 30.7)
         #expect(result.tips == 3.5)
         #expect(result.trips == 1)
+        #expect(result.distanceKm == 9.4)
     }
 
     @Test("Romanian Uber week: points and online time are ignored, the date range means a week")
@@ -141,6 +194,7 @@ struct EarningsScreenshotScannerTests {
         #expect(result.tips == 12)
         #expect(result.fares == 306.4)
         #expect(result.trips == 14)
+        #expect(result.cashCollected == 145)
     }
 
     @Test func keepsTheTextItRead() async throws {
