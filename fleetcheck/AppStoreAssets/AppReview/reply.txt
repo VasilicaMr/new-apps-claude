@@ -1,0 +1,29 @@
+Hello, thank you for reviewing DriveCap. A screen recording made on a physical iPhone with the latest iOS is attached.
+
+1. SCREEN RECORDING
+It starts at app launch and shows the tutorial, a shift, reading a sample earnings screenshot, scanning a receipt, Stats, Diary, Car reminders, Ask, the Pro paywall, a sandbox purchase, the unlocked Pro features and Restore purchases.
+DriveCap has no account, registration or login, so there is no account deletion flow. There is no user-generated content shared with others: all data stays on the user's iPhone and can be erased in Settings > Delete all data.
+
+2. PURPOSE AND AUDIENCE
+DriveCap is a personal logbook for individual ride-hailing and taxi drivers (Uber, Bolt, FREENOW...). Drivers see their gross fares but not what they keep after fuel, car costs and commission. DriveCap reads their own earnings screenshots and fuel receipts, times shifts, shows the real net per day, hour and km, and reminds them of car paperwork (inspection, insurance, vignette, oil change). It is for the general public, not for a specific company or fleet, and is not affiliated with any platform.
+
+3. HOW TO USE
+No login or credentials are needed. A sample earnings screenshot is attached in App Review Information.
+- Save the sample screenshot to Photos.
+- Open DriveCap and go through the tutorial (the last page is the Pro offer; it can be closed).
+- On Home tap Start shift, then End shift, and pick the sample screenshot: fares, tips, trips and km are filled in. Tap Save.
+- Scan receipt on Home fills in an expense from a photo.
+- See results in Stats and Diary; add paperwork dates in Car.
+- Tap the sparkles button (Ask) and ask "How much did I make this week?".
+- Paid features: Settings (gear on Home) > Upgrade to DriveCap Pro. Monthly or yearly subscription (1-week free trial) or one-time Lifetime purchase. Pro unlocks unlimited screenshot reading (free: 10 a month), screenshots found automatically in Photos, Earn smarter (minimum fare, weekly goal, best times) and CSV export. Restore in Settings > Restore purchases.
+
+4. EXTERNAL SERVICES
+None. No server, account system, analytics, ads or third-party SDKs; the app makes no network requests of its own. It uses only Apple frameworks on the device: Apple Intelligence (Foundation Models, on-device), Vision text recognition, StoreKit, Photos and Camera (with permission), Live Activities, App Intents and local notifications. Screenshots and receipts are never uploaded.
+
+5. REGIONAL DIFFERENCES
+The app works the same in all regions (English, French, Romanian; currency chosen in Settings). Where Apple Intelligence is unavailable (device, region or language), built-in on-device parsers provide the same features.
+
+6. REGULATED INDUSTRY / THIRD-PARTY MATERIAL
+Not applicable. DriveCap is a personal record-keeping tool: it provides no transport service, processes no payments besides In-App Purchase and gives no tax, legal or financial advice. It contains no third-party content; it only reads screenshots the user took of their own earnings. Platform names are used only to describe compatibility.
+
+Contact: Marin Vasilica, vasilica.pirlitu@gmail.com

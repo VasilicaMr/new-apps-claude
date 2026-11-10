@@ -3,7 +3,8 @@ import UserNotifications
 
 /// First-launch walkthrough in the order the driver should do things: upload earnings, add costs, see profit.
 /// Each step can switch on what it describes (screenshots, notifications), so by the end the app runs mostly by itself.
-/// The last page offers DriveCap Pro; the driver can buy there or carry on with the free version.
+/// The last page offers DriveCap Pro; the driver can buy there or carry on with the free version. Buying or restoring
+/// closes the tutorial straight away.
 /// Replay it from Settings.
 struct TutorialView: View {
     let onFinish: () -> Void
@@ -70,7 +71,7 @@ struct TutorialView: View {
                     pageView(pages[index]).tag(index)
                 }
                 ScrollView {
-                    PaywallContent(selectedID: $plan, compact: true)
+                    PaywallContent(selectedID: $plan, compact: true, onUnlocked: onFinish)
                         .padding(.horizontal, 20)
                         .padding(.bottom, 24)
                 }
@@ -90,7 +91,7 @@ struct TutorialView: View {
 
             if isOnPaywall && !pro.isPro {
                 VStack(spacing: 6) {
-                    PaywallBuyButton(selectedID: plan)
+                    PaywallBuyButton(selectedID: plan, onUnlocked: onFinish)
                         .padding(.bottom, 4)
                     Button("Continue with the free version", action: onFinish)
                         .font(.system(.subheadline, design: .rounded, weight: .bold))
@@ -123,6 +124,10 @@ struct TutorialView: View {
         .padding(.top)
         .background(Theme.canvas.ignoresSafeArea())
         .task { await permissions.refresh(inbox: inbox) }
+        // However Pro arrives (buy button, restore, a purchase finishing in the background), go on to the app.
+        .onChange(of: pro.isPro) { _, isPro in
+            if isPro && isOnPaywall { onFinish() }
+        }
     }
 
     private func pageView(_ page: TutorialPage) -> some View {

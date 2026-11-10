@@ -23,22 +23,25 @@ struct PrimaryButton: View {
                 } else if let systemImage {
                     Image(systemName: systemImage)
                 }
-                Text(title).fontWeight(.semibold)
+                Text(title)
             }
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, Theme.Spacing.m)
+            .font(.system(size: 17, weight: .bold, design: .rounded))
+            .lineLimit(1)
+            .minimumScaleFactor(0.7)
+            .frame(maxWidth: .infinity, minHeight: 50)
             .background {
-                let shape = RoundedRectangle(cornerRadius: Theme.Radius.control, style: .continuous)
                 if isEnabled {
-                    shape.fill(Theme.Gradients.primary)
+                    Capsule().fill(Theme.Gradients.primary)
                 } else {
-                    shape.fill(Theme.Palette.surfaceElevated)
+                    Capsule().fill(Theme.Palette.surfaceElevated)
                 }
             }
+            .overlay(Capsule().stroke(Theme.Palette.gradientStroke.opacity(isEnabled ? 1 : 0), lineWidth: 1))
             .foregroundStyle(isEnabled ? Theme.Palette.onAccent : Theme.Palette.textSecondary)
-            .shadow(color: Theme.Palette.accent.opacity(isEnabled ? 0.30 : 0), radius: 10, y: 5)
+            .shadow(color: Theme.Palette.accent.opacity(isEnabled ? 0.30 : 0), radius: 6, y: 4)
+            .contentShape(Capsule())
         }
-        .buttonStyle(.plain)
+        .buttonStyle(PressableStyle())
         .disabled(!isEnabled || isLoading)
         .accessibilityIdentifier(accessibilityID ?? "")
     }
@@ -55,14 +58,17 @@ struct SecondaryButton: View {
         Button(action: action) {
             HStack(spacing: Theme.Spacing.s) {
                 if let systemImage { Image(systemName: systemImage) }
-                Text(title).fontWeight(.medium)
+                Text(title)
             }
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, Theme.Spacing.m)
-            .foregroundStyle(Theme.Palette.textPrimary)
-            .cardSurface(radius: Theme.Radius.control)
+            .font(.system(size: 17, weight: .bold, design: .rounded))
+            .lineLimit(1)
+            .minimumScaleFactor(0.7)
+            .frame(maxWidth: .infinity, minHeight: 50)
+            .foregroundStyle(Theme.Palette.accent)
+            .background(Theme.Palette.accent.opacity(0.12), in: Capsule())
+            .contentShape(Capsule())
         }
-        .buttonStyle(.plain)
+        .buttonStyle(PressableStyle())
         .accessibilityIdentifier(accessibilityID ?? "")
     }
 }
@@ -128,9 +134,9 @@ struct SectionHeader: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: Theme.Spacing.xs) {
-            Text(title).font(.system(.title3, design: .rounded).bold()).foregroundStyle(Theme.Palette.textPrimary)
+            Text(title).font(.system(.title3, design: .rounded, weight: .heavy)).foregroundStyle(Theme.Palette.textPrimary)
             if let subtitle {
-                Text(subtitle).font(.subheadline).foregroundStyle(Theme.Palette.textSecondary)
+                Text(subtitle).font(.subheadline.weight(.medium)).foregroundStyle(Theme.Palette.textSecondary)
             }
         }
     }

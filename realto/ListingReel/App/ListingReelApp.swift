@@ -12,6 +12,10 @@ struct ListingReelApp: App {
     #endif
     @State private var container = DIContainer()
 
+    init() {
+        Theme.applyAppearance()
+    }
+
     var body: some Scene {
         WindowGroup {
             RootView(container: container)

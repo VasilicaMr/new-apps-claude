@@ -97,9 +97,9 @@ struct HomeView: View {
             VStack(alignment: .leading, spacing: Theme.Spacing.l) {
                 heroCard
                 VStack(spacing: Theme.Spacing.m) {
-                    stepRow(systemImage: "video.fill", title: "Add your walkthrough clips")
-                    stepRow(systemImage: "paintbrush.pointed.fill", title: "Pick a style and add your branding")
-                    stepRow(systemImage: "square.and.arrow.up.fill", title: "Export for Reels, feed and YouTube")
+                    stepRow(systemImage: "video.fill", tint: Theme.Palette.teal, title: "Add your walkthrough clips")
+                    stepRow(systemImage: "paintbrush.pointed.fill", tint: Theme.Palette.violet, title: "Pick a style and add your branding")
+                    stepRow(systemImage: "square.and.arrow.up.fill", tint: Theme.Palette.accentAlt, title: "Export for Reels, feed and YouTube")
                 }
             }
             .padding(Theme.Spacing.l)
@@ -111,25 +111,23 @@ struct HomeView: View {
     private var heroCard: some View {
         VStack(alignment: .leading, spacing: Theme.Spacing.m) {
             Image(systemName: "house.and.flag.fill")
-                .font(.system(size: 40, weight: .semibold))
+                .font(.system(size: 26, weight: .bold))
+                .frame(width: 52, height: 52)
+                .background(.white.opacity(0.18), in: RoundedRectangle(cornerRadius: 15, style: .continuous))
             Text("Turn raw walkthroughs into\nbranded listing videos")
-                .font(.system(.title2, design: .rounded).bold())
+                .font(.system(.title2, design: .rounded, weight: .heavy))
             Text("No account. Works offline. Under 5 minutes.")
-                .font(.subheadline.weight(.medium))
-                .opacity(0.9)
+                .font(.system(.subheadline, design: .rounded, weight: .semibold))
+                .opacity(0.88)
         }
-        .foregroundStyle(Theme.Palette.onAccent)
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(Theme.Spacing.l)
-        .background(Theme.Gradients.hero, in: RoundedRectangle(cornerRadius: Theme.Radius.card, style: .continuous))
-        .overlay(RoundedRectangle(cornerRadius: Theme.Radius.card, style: .continuous)
-            .strokeBorder(Color.white.opacity(0.35)))
-        .shadow(color: Theme.Palette.accent.opacity(0.25), radius: 16, y: 8)
+        .gradientCard(Theme.Gradients.primary)
     }
 
-    private func stepRow(systemImage: String, title: LocalizedStringKey) -> some View {
+    private func stepRow(systemImage: String, tint: Color, title: LocalizedStringKey) -> some View {
         HStack(spacing: Theme.Spacing.m) {
-            GradientIconBadge(systemImage: systemImage, gradient: Theme.Gradients.primary, size: 40)
+            IconBadge(systemImage: systemImage, tint: tint, size: 40)
             Text(title)
                 .font(.subheadline.weight(.semibold))
                 .foregroundStyle(Theme.Palette.textPrimary)
@@ -176,14 +174,14 @@ struct HomeView: View {
                     if let first = project.orderedClips.first {
                         AssetThumbnailView(localIdentifier: first.sourceIdentifier, side: 64)
                     } else {
-                        GradientIconBadge(systemImage: "film", size: 64)
+                        GradientIconBadge(systemImage: "film", gradient: Theme.Gradients.media, size: 64)
                     }
                     VStack(alignment: .leading, spacing: 2) {
                         Text(project.propertyInfo.address.isEmpty ? project.name : project.propertyInfo.address)
-                            .font(.headline).foregroundStyle(Theme.Palette.textPrimary)
+                            .font(.system(.headline, design: .rounded, weight: .bold)).foregroundStyle(Theme.Palette.textPrimary)
                             .lineLimit(1)
                         Text(clipsSubtitle(for: project))
-                            .font(.caption).foregroundStyle(Theme.Palette.textSecondary)
+                            .font(.caption.weight(.medium)).foregroundStyle(Theme.Palette.textSecondary)
                     }
                     Spacer()
                     Image(systemName: "chevron.right")
@@ -195,7 +193,7 @@ struct HomeView: View {
                 .padding(Theme.Spacing.m)
                 .cardSurface()
             }
-            .buttonStyle(.plain)
+            .buttonStyle(PressableStyle())
             .contextMenu {
                 Button {
                     coordinator.startOpenHousePost(from: project)

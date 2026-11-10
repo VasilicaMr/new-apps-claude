@@ -1,5 +1,8 @@
 # App Store Connect assets
 
+For the full publishing checklist (app record, privacy, build upload, review), see
+[`AppStoreConnect.md`](AppStoreConnect.md). In-app purchases are in [`InAppPurchases.md`](InAppPurchases.md).
+
 ## Header and Search Results (iOS 27)
 
 Upload these on the app version page under **Header and Search Results**, or in the **Asset Library**.

@@ -69,6 +69,9 @@ final class ProStore {
             let transaction = try verification.payloadValue
             await transaction.finish()
             await refreshEntitlements()
+            // currentEntitlements can lag behind a purchase that just went through (TestFlight, sandbox),
+            // so a verified transaction for one of our products unlocks Pro by itself.
+            if ProductID.all.contains(transaction.productID), transaction.revocationDate == nil { setPro(true) }
             return isPro
         } catch StoreKitError.userCancelled {
             return false
@@ -101,6 +104,10 @@ final class ProStore {
         #if DEBUG
         if let forced = Self.forcedPro { active = forced }
         #endif
+        setPro(active)
+    }
+
+    private func setPro(_ active: Bool) {
         isPro = active
         UserDefaults.standard.set(active, forKey: cacheKey)
     }

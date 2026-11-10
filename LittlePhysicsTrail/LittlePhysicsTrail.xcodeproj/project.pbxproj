@@ -1,0 +1,609 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2121E07B89EBA387864DDE41 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FA63E98EF04D5F739BF3CA /* AppContainer.swift */; };
+		2ED34F18784C1A822A76B3B5 /* ConfettiBurst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167A8DBDBE5B832EC83330EB /* ConfettiBurst.swift */; };
+		3033DBE2E16B9D839C9C74D5 /* JourneyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A014AABA90BA3123A268D1 /* JourneyViewModel.swift */; };
+		332133D453B0ED0352578B7A /* UnlockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C36C44B1286B2D367EF5D8 /* UnlockViewModel.swift */; };
+		33B84E7A62BD7AAD4EC021EB /* StoreKitPurchaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA9305C4C276E9FB5531014 /* StoreKitPurchaseService.swift */; };
+		3AAED325D8A3837C2FA414C8 /* JourneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCEC04A8DFBC8793A42027 /* JourneyView.swift */; };
+		3BFB2014C718985AC6CC43E2 /* StarsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D335A01CA1C91A643CDACEA4 /* StarsRow.swift */; };
+		40668D521BF9563C4354F90F /* LittlePhysicsTrailUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7740AAA768262E8B136310 /* LittlePhysicsTrailUITests.swift */; };
+		49DC4C6C2C95DFA4D8D92B8A /* LittlePhysicsTrailApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF99F2A3A6770613C2E98D9 /* LittlePhysicsTrailApp.swift */; };
+		4C8206C0AC94093631E8E416 /* StopTheme+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1321D82937A146AFECB548 /* StopTheme+Color.swift */; };
+		4D1254CF649AFECF09960041 /* UnlockJourneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DBBB77504F3AF6E961E39D /* UnlockJourneyView.swift */; };
+		6466D8E1A95DE4BAC82518C1 /* JourneyMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EF41A0EEEC738E6A99C625 /* JourneyMapView.swift */; };
+		6A9F80784AC419F5A71E2C1E /* SpeechNarrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC98CA51D10DC41477FA7389 /* SpeechNarrator.swift */; };
+		6F4843AA0B925E007C4C0819 /* BigIdeaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7194CB881C17BEDC852A767F /* BigIdeaView.swift */; };
+		7C74878F5E1A78ACABEEEAA1 /* LessonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A42E83BECF991C406FAA3F /* LessonViewModel.swift */; };
+		7D4540B07A7313926136EF60 /* GrownUpsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B5A11FD1E5D08EA820B668 /* GrownUpsView.swift */; };
+		818CE335F4EBABB30C42164A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C8A0DD385FC79B254BAE5F0 /* Assets.xcassets */; };
+		A8D0FEE2F7618CFCF92007BE /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 39CA64C567F58D8E0DCD1232 /* PrivacyInfo.xcprivacy */; };
+		BD24D6C3D937B362324A62B0 /* TrailDomain in Frameworks */ = {isa = PBXBuildFile; productRef = D5FCF39AFE3FE0A1B0CE5154 /* TrailDomain */; };
+		C08E273FF973A1C3DC200E2A /* GrownUpsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061E01B6804DB3BA154FC00 /* GrownUpsViewModel.swift */; };
+		D56C03E7756BEAFAE61CA318 /* SortGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B3F7A58D8A5971851F0163 /* SortGameView.swift */; };
+		E0E6D1448B81102DC9765B5C /* LessonFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEF3231C0D4E17129D01B63 /* LessonFlowView.swift */; };
+		FAC2C98BC82962BD4AE9A990 /* TrailData in Frameworks */ = {isa = PBXBuildFile; productRef = 4B9C437B2A39265D641D2138 /* TrailData */; };
+		FBF4CEF90F6720DCB918B06A /* NubeeTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1CBBC5EF7A76EDCFEA03D9 /* NubeeTheme.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8E8DEFBCA31DDA81289F53FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94BDB42D6F842371C585C72C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD739A0BF234FDA9C89A7252;
+			remoteInfo = LittlePhysicsTrail;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01CBB5661EC4A142DF547295 /* LittlePhysicsTrailUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = LittlePhysicsTrailUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		10DBBB77504F3AF6E961E39D /* UnlockJourneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockJourneyView.swift; sourceTree = "<group>"; };
+		11C36C44B1286B2D367EF5D8 /* UnlockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockViewModel.swift; sourceTree = "<group>"; };
+		12A42E83BECF991C406FAA3F /* LessonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewModel.swift; sourceTree = "<group>"; };
+		167A8DBDBE5B832EC83330EB /* ConfettiBurst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiBurst.swift; sourceTree = "<group>"; };
+		30B5A11FD1E5D08EA820B668 /* GrownUpsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrownUpsView.swift; sourceTree = "<group>"; };
+		39CA64C567F58D8E0DCD1232 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		3A1CBBC5EF7A76EDCFEA03D9 /* NubeeTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NubeeTheme.swift; sourceTree = "<group>"; };
+		43B3F7A58D8A5971851F0163 /* SortGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortGameView.swift; sourceTree = "<group>"; };
+		4687EF84E8DBCFAFC4566C30 /* PhysicsTrailCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = PhysicsTrailCore; path = Packages/PhysicsTrailCore; sourceTree = SOURCE_ROOT; };
+		4C8A0DD385FC79B254BAE5F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4D7740AAA768262E8B136310 /* LittlePhysicsTrailUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittlePhysicsTrailUITests.swift; sourceTree = "<group>"; };
+		5CEF3231C0D4E17129D01B63 /* LessonFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonFlowView.swift; sourceTree = "<group>"; };
+		5D7FE1673968C23142F66AF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5DF99F2A3A6770613C2E98D9 /* LittlePhysicsTrailApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittlePhysicsTrailApp.swift; sourceTree = "<group>"; };
+		62EF41A0EEEC738E6A99C625 /* JourneyMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyMapView.swift; sourceTree = "<group>"; };
+		69FA63E98EF04D5F739BF3CA /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
+		7194CB881C17BEDC852A767F /* BigIdeaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigIdeaView.swift; sourceTree = "<group>"; };
+		7EA9305C4C276E9FB5531014 /* StoreKitPurchaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitPurchaseService.swift; sourceTree = "<group>"; };
+		A3A014AABA90BA3123A268D1 /* JourneyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyViewModel.swift; sourceTree = "<group>"; };
+		BD6BF739FD16097965FAE6B2 /* LittlePhysicsTrail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LittlePhysicsTrail.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC98CA51D10DC41477FA7389 /* SpeechNarrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechNarrator.swift; sourceTree = "<group>"; };
+		CECCEC04A8DFBC8793A42027 /* JourneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyView.swift; sourceTree = "<group>"; };
+		D061E01B6804DB3BA154FC00 /* GrownUpsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrownUpsViewModel.swift; sourceTree = "<group>"; };
+		D335A01CA1C91A643CDACEA4 /* StarsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsRow.swift; sourceTree = "<group>"; };
+		FA1321D82937A146AFECB548 /* StopTheme+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StopTheme+Color.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3D2CE4A6C7978100E44EC4F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD24D6C3D937B362324A62B0 /* TrailDomain in Frameworks */,
+				FAC2C98BC82962BD4AE9A990 /* TrailData in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		13066AE7BDE11D08786B9E02 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				4687EF84E8DBCFAFC4566C30 /* PhysicsTrailCore */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		18756CD915D2160B3BBA78DE /* Unlock */ = {
+			isa = PBXGroup;
+			children = (
+				10DBBB77504F3AF6E961E39D /* UnlockJourneyView.swift */,
+				11C36C44B1286B2D367EF5D8 /* UnlockViewModel.swift */,
+			);
+			path = Unlock;
+			sourceTree = "<group>";
+		};
+		38CE5883BEB9407F4C727C2E /* GrownUps */ = {
+			isa = PBXGroup;
+			children = (
+				30B5A11FD1E5D08EA820B668 /* GrownUpsView.swift */,
+				D061E01B6804DB3BA154FC00 /* GrownUpsViewModel.swift */,
+			);
+			path = GrownUps;
+			sourceTree = "<group>";
+		};
+		3E27578CA8CEAEA364F4A6DA /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				CC98CA51D10DC41477FA7389 /* SpeechNarrator.swift */,
+				7EA9305C4C276E9FB5531014 /* StoreKitPurchaseService.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		57D31508395240A5AE249D5C /* Journey */ = {
+			isa = PBXGroup;
+			children = (
+				62EF41A0EEEC738E6A99C625 /* JourneyMapView.swift */,
+				CECCEC04A8DFBC8793A42027 /* JourneyView.swift */,
+				A3A014AABA90BA3123A268D1 /* JourneyViewModel.swift */,
+			);
+			path = Journey;
+			sourceTree = "<group>";
+		};
+		6E14C846A8461E91AA1C0EEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4C8A0DD385FC79B254BAE5F0 /* Assets.xcassets */,
+				39CA64C567F58D8E0DCD1232 /* PrivacyInfo.xcprivacy */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		77B7E1337B0327A2F441BDD9 /* LittlePhysicsTrail */ = {
+			isa = PBXGroup;
+			children = (
+				5D7FE1673968C23142F66AF6 /* Info.plist */,
+				B91EE45B3CB12D432C3A4F21 /* App */,
+				3E27578CA8CEAEA364F4A6DA /* Infrastructure */,
+				BF4F7312560D1287C4443C87 /* Presentation */,
+				6E14C846A8461E91AA1C0EEA /* Resources */,
+			);
+			path = LittlePhysicsTrail;
+			sourceTree = "<group>";
+		};
+		9EEBA00450B5582D09EB1B24 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BD6BF739FD16097965FAE6B2 /* LittlePhysicsTrail.app */,
+				01CBB5661EC4A142DF547295 /* LittlePhysicsTrailUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A7428CF34E8F84ACD7876546 /* LittlePhysicsTrailUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4D7740AAA768262E8B136310 /* LittlePhysicsTrailUITests.swift */,
+			);
+			path = LittlePhysicsTrailUITests;
+			sourceTree = "<group>";
+		};
+		B91EE45B3CB12D432C3A4F21 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				69FA63E98EF04D5F739BF3CA /* AppContainer.swift */,
+				5DF99F2A3A6770613C2E98D9 /* LittlePhysicsTrailApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		BF4F7312560D1287C4443C87 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				DA310C732C2CCB00836782A7 /* DesignSystem */,
+				38CE5883BEB9407F4C727C2E /* GrownUps */,
+				57D31508395240A5AE249D5C /* Journey */,
+				F40B9C19003F01C9868689BF /* Lesson */,
+				18756CD915D2160B3BBA78DE /* Unlock */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CAD6796117CA0F35AADBC492 = {
+			isa = PBXGroup;
+			children = (
+				77B7E1337B0327A2F441BDD9 /* LittlePhysicsTrail */,
+				A7428CF34E8F84ACD7876546 /* LittlePhysicsTrailUITests */,
+				13066AE7BDE11D08786B9E02 /* Packages */,
+				9EEBA00450B5582D09EB1B24 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DA310C732C2CCB00836782A7 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				167A8DBDBE5B832EC83330EB /* ConfettiBurst.swift */,
+				3A1CBBC5EF7A76EDCFEA03D9 /* NubeeTheme.swift */,
+				D335A01CA1C91A643CDACEA4 /* StarsRow.swift */,
+				FA1321D82937A146AFECB548 /* StopTheme+Color.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		F40B9C19003F01C9868689BF /* Lesson */ = {
+			isa = PBXGroup;
+			children = (
+				7194CB881C17BEDC852A767F /* BigIdeaView.swift */,
+				5CEF3231C0D4E17129D01B63 /* LessonFlowView.swift */,
+				12A42E83BECF991C406FAA3F /* LessonViewModel.swift */,
+				43B3F7A58D8A5971851F0163 /* SortGameView.swift */,
+			);
+			path = Lesson;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7CA2496DE6AA7DB231A25038 /* LittlePhysicsTrailUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45ACE964CEE626E01FC807F9 /* Build configuration list for PBXNativeTarget "LittlePhysicsTrailUITests" */;
+			buildPhases = (
+				EA7E7C162F1351FBD3E19CAA /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				882FAAC562A23BE7BD4F4AC3 /* PBXTargetDependency */,
+			);
+			name = LittlePhysicsTrailUITests;
+			productName = LittlePhysicsTrailUITests;
+			productReference = 01CBB5661EC4A142DF547295 /* LittlePhysicsTrailUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		CD739A0BF234FDA9C89A7252 /* LittlePhysicsTrail */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C723940D736CC85D95FA48D /* Build configuration list for PBXNativeTarget "LittlePhysicsTrail" */;
+			buildPhases = (
+				FA09F09ADB249AFA44DC98A2 /* Sources */,
+				D846D41013C0D98F7BDF9F36 /* Resources */,
+				3D2CE4A6C7978100E44EC4F7 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LittlePhysicsTrail;
+			packageProductDependencies = (
+				D5FCF39AFE3FE0A1B0CE5154 /* TrailDomain */,
+				4B9C437B2A39265D641D2138 /* TrailData */,
+			);
+			productName = LittlePhysicsTrail;
+			productReference = BD6BF739FD16097965FAE6B2 /* LittlePhysicsTrail.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		94BDB42D6F842371C585C72C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					7CA2496DE6AA7DB231A25038 = {
+						TestTargetID = CD739A0BF234FDA9C89A7252;
+					};
+				};
+			};
+			buildConfigurationList = D375895B9D09221E074B72F8 /* Build configuration list for PBXProject "LittlePhysicsTrail" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CAD6796117CA0F35AADBC492;
+			packageReferences = (
+				0F1D7C7E79E14DEE5C48B6D8 /* XCLocalSwiftPackageReference "Packages/PhysicsTrailCore" */,
+			);
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CD739A0BF234FDA9C89A7252 /* LittlePhysicsTrail */,
+				7CA2496DE6AA7DB231A25038 /* LittlePhysicsTrailUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D846D41013C0D98F7BDF9F36 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				818CE335F4EBABB30C42164A /* Assets.xcassets in Resources */,
+				A8D0FEE2F7618CFCF92007BE /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EA7E7C162F1351FBD3E19CAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40668D521BF9563C4354F90F /* LittlePhysicsTrailUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA09F09ADB249AFA44DC98A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2121E07B89EBA387864DDE41 /* AppContainer.swift in Sources */,
+				6F4843AA0B925E007C4C0819 /* BigIdeaView.swift in Sources */,
+				2ED34F18784C1A822A76B3B5 /* ConfettiBurst.swift in Sources */,
+				7D4540B07A7313926136EF60 /* GrownUpsView.swift in Sources */,
+				C08E273FF973A1C3DC200E2A /* GrownUpsViewModel.swift in Sources */,
+				6466D8E1A95DE4BAC82518C1 /* JourneyMapView.swift in Sources */,
+				3AAED325D8A3837C2FA414C8 /* JourneyView.swift in Sources */,
+				3033DBE2E16B9D839C9C74D5 /* JourneyViewModel.swift in Sources */,
+				E0E6D1448B81102DC9765B5C /* LessonFlowView.swift in Sources */,
+				7C74878F5E1A78ACABEEEAA1 /* LessonViewModel.swift in Sources */,
+				49DC4C6C2C95DFA4D8D92B8A /* LittlePhysicsTrailApp.swift in Sources */,
+				FBF4CEF90F6720DCB918B06A /* NubeeTheme.swift in Sources */,
+				D56C03E7756BEAFAE61CA318 /* SortGameView.swift in Sources */,
+				6A9F80784AC419F5A71E2C1E /* SpeechNarrator.swift in Sources */,
+				3BFB2014C718985AC6CC43E2 /* StarsRow.swift in Sources */,
+				4C8206C0AC94093631E8E416 /* StopTheme+Color.swift in Sources */,
+				33B84E7A62BD7AAD4EC021EB /* StoreKitPurchaseService.swift in Sources */,
+				4D1254CF649AFECF09960041 /* UnlockJourneyView.swift in Sources */,
+				332133D453B0ED0352578B7A /* UnlockViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		882FAAC562A23BE7BD4F4AC3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD739A0BF234FDA9C89A7252 /* LittlePhysicsTrail */;
+			targetProxy = 8E8DEFBCA31DDA81289F53FC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2C55A4EB327E9EDDE24B6163 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		469AA583520FB1D9D5BDE1C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.adaptiveservices.littlephysicstrail.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LittlePhysicsTrail;
+			};
+			name = Release;
+		};
+		A41FB31F7528503AC3D143D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B4DA793AB5385496EDA2B7FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.adaptiveservices.littlephysicstrail.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LittlePhysicsTrail;
+			};
+			name = Debug;
+		};
+		D51BBDC74C0C647072CBB119 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = J5WZTVZJ44;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = LittlePhysicsTrail/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Little Physics Trail";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.adaptiveservices.physicsquest;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D6A4353DCEB86C4CB4EE6A9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = J5WZTVZJ44;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = LittlePhysicsTrail/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Little Physics Trail";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.adaptiveservices.physicsquest;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		45ACE964CEE626E01FC807F9 /* Build configuration list for PBXNativeTarget "LittlePhysicsTrailUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4DA793AB5385496EDA2B7FD /* Debug */,
+				469AA583520FB1D9D5BDE1C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5C723940D736CC85D95FA48D /* Build configuration list for PBXNativeTarget "LittlePhysicsTrail" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D51BBDC74C0C647072CBB119 /* Debug */,
+				D6A4353DCEB86C4CB4EE6A9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D375895B9D09221E074B72F8 /* Build configuration list for PBXProject "LittlePhysicsTrail" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A41FB31F7528503AC3D143D9 /* Debug */,
+				2C55A4EB327E9EDDE24B6163 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		0F1D7C7E79E14DEE5C48B6D8 /* XCLocalSwiftPackageReference "Packages/PhysicsTrailCore" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/PhysicsTrailCore;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4B9C437B2A39265D641D2138 /* TrailData */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TrailData;
+		};
+		D5FCF39AFE3FE0A1B0CE5154 /* TrailDomain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TrailDomain;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 94BDB42D6F842371C585C72C /* Project object */;
+}

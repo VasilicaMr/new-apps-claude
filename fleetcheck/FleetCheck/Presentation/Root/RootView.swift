@@ -14,9 +14,26 @@ struct RootView: View {
     let data: DriverData
 
     var body: some View {
+        // The tutorial takes the place of the app instead of covering it: dismissing a cover right after the
+        // App Store purchase sheet closes can be dropped, which left drivers stuck on the paywall page.
+        // Replaying it from Settings also closes Settings, so finishing always lands on Home.
+        Group {
+            if hasSeenTutorial {
+                tabs
+            } else {
+                TutorialView {
+                    navigation.selectedTab = .home
+                    hasSeenTutorial = true
+                }
+            }
+        }
+        .animation(.easeInOut(duration: 0.3), value: hasSeenTutorial)
+    }
+
+    private var tabs: some View {
         @Bindable var shiftStore = shiftStore
         @Bindable var navigation = navigation
-        TabView(selection: $navigation.selectedTab) {
+        return TabView(selection: $navigation.selectedTab) {
             Tab("Home", systemImage: "house.fill", value: .home) {
                 HomeView(data: data)
             }
@@ -40,9 +57,6 @@ struct RootView: View {
             // Ending a shift goes straight to reading the earnings screenshot.
             EarningForm(shift: shift, scanScreenshot: true)
                 .environment(\.money, MoneyFormatter(currencyCode: currencyCode))
-        }
-        .fullScreenCover(isPresented: Binding(get: { !hasSeenTutorial }, set: { hasSeenTutorial = !$0 })) {
-            TutorialView { hasSeenTutorial = true }
         }
         #if DEBUG
         .sheet(isPresented: .constant(UserDefaults.standard.string(forKey: "debugScanImage") != nil)) {
